@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
+import { InstalacionesHfcPage } from "../pages/instalaciones-hfc/instalaciones-hfc";
+import { InstalacionesDthPage } from "../pages/instalaciones-dth/instalaciones-dth";
+import { ModalInstalacionesHfcPage } from "../pages/modal-instalaciones-hfc/modal-instalaciones-hfc";
+import { ModalInstalacionesDthPage } from "../pages/modal-instalaciones-dth/modal-instalaciones-dth";
+import { ModalMantencionDthPage } from "../pages/modal-mantencion-dth/modal-mantencion-dth";
+import { ModalMantencionHfcPage } from "../pages/modal-mantencion-hfc/modal-mantencion-hfc";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +18,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    InstalacionesHfcPage,
+    InstalacionesDthPage,
+    ModalInstalacionesDthPage,
+    ModalInstalacionesHfcPage,
+    ModalMantencionDthPage,
+    ModalMantencionHfcPage
   ],
   imports: [
     BrowserModule,
@@ -26,10 +34,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    InstalacionesHfcPage,
+    InstalacionesDthPage,
+    ModalInstalacionesDthPage,
+    ModalInstalacionesHfcPage,
+    ModalMantencionDthPage,
+    ModalMantencionHfcPage
   ],
   providers: [
     StatusBar,
