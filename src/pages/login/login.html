@@ -10,17 +10,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <img src="../../assets/imgs/servicorp-logo.png" class="logo"/>
+<ion-content padding text-center>
+  <img src="../../assets/imgs/servicorp-logo.png" class="logo" style="width: 80%; height: auto"/>
   <ion-list inset>
     <ion-item>
       <ion-label>Usuario</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" text-right></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" text-right></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button block (click)="login()">Entrar</button>
+  <div padding>
+    <button ion-button block (click)="login()">Entrar</button>
+  </div>
+  <ion-label>v1.0.0</ion-label>
 </ion-content>

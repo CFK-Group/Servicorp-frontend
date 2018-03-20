@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage } from "../tabs/tabs";
 import { ModalController } from "ionic-angular";
 import { ModalInstalacionesHfcPage } from "../modal-instalaciones-hfc/modal-instalaciones-hfc";
 
@@ -29,6 +28,5 @@ export class InstalacionesHfcPage {
     let modal = this.modalCtrl.create(ModalInstalacionesHfcPage);
     modal.present();
   }
-
 
 }

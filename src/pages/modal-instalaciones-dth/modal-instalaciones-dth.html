@@ -6,13 +6,561 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>ModalInstalacionesDth</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Formulario Instalación DTH</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>OT SERVICORP *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>FOLIO DE SERVICIO *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-list-header color="primary">
+      Atención Cliente - Respuestas Cliente
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Los técnicos cumplieron con <br>fecha y hora acordada *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Técnico se identificó con <br>credencial, nombre, apellido *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vestían uniforme y correctamente <br>ordenados *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Explicaron el detalle del trabajo <br>antes de comenzar *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>El trato fue cordial durante <br>la visita *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contaban con herramientas <br>necesarias *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Respondieron sus dudas <br>durante la actividad ejecutada *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dejaron copia de orden de <br>trabajo *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Efectuaron capacitación del uso <br>de los equipos *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quedaron todos los servicios <br>funcionando correctamente, al <br>término de la actividad *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dejaron el lugar limpio al <br>concluir la actividad *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Técnico explicó no desenchufar <br>equipos de electricidad <br>(Decos-C.M.EMTA) *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Entrega clave de acceso wifi <br>y personalizada a cliente *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Capacitó en el uso de control <br>remoto del decodificador *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="primary">
+      Instalación Exterior - Revisión Control Calidad
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Fijación de antena con <br>(4 pernos) *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Conector LNB protegido *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Antena debidamente firme <br>
+        (Sin movimientos) *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Altura acometida en <br>norma (4.5 Mts)</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>La acometida es nueva <br>(No reutilizada)</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ficha de abonado en TAP, <br>rotulada correctamente</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loop de mantención *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ruteo y cableado correcto <br>(40 Cms distancia entre <br>grampas) *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fijación de spliters *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiene pasamuros exterior *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiene loop de goteo <br>bota agua *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="primary">
+      Instalación Interior - Revisión Control Calidad
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Los niveles están <br>dentro del rango *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ruteo y grampeado correctos <br>(40 cm entre grampas) *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Curva de cableado mayor <br>o igual a 90 grados *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Conector armado y prensado <br>correctamente *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Uso conector de compresión <br>claro *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cable PIN es nuevo *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Conectores correctamente <br>torqueados *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiene filtro Hum en <br>instalación de TV *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tiene cable HDMI en <br>decodificador y TV HD *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Deja equipo modo <br>Nat (CM-Emta) *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Certifica / cambia canal <br>de transmisión de wifi *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Informó número telefónico <br>asignado *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+        <ion-option value="N/A">N/A</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="primary">
+      Revisión de Equipos
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Dirección correcta *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Técnico visitó domicilio *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>HFC/DTH *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="HFC">HFC</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Decos Std *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Decos HD *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Cantidad de equipos <br>corresponde a contrato *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="primary">
+      Niveles DTH
+    </ion-list-header>
+    <ion-item>
+      <ion-label>1 TP (12092) N. Señal *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1 TP (12092) N. Calidad *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1 TP (12092) C/N *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1 TP (12172) N. Señal *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1 TP (12172) N. Calidad *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1 TP (12172) C/N *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-list-header color="primary">
+      Niveles HFC
+    </ion-list-header>
+    <ion-item>
+      <ion-label>TX *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>RX *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>SNR *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-list-header color="primary">
+      Observaciones
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Observaciones *</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-list-header color="primary">
+      Conformidad Control Certificación Calidad
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Se genera vista <br>técnica por garantía *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Se realiza reparación <br>menor *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Reutilizada instalación *</ion-label>
+      <ion-select [(ngModel)]="a" interface="popover">
+        <ion-option value="Si">Si</ion-option>
+        <ion-option value="No">No</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list-header color="primary">
+      Consumo de Materiales
+    </ion-list-header>
+    <ion-item>
+      <ion-label>1004311 - Conectores <br>RG-06 F a compresión *</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1008635 - Cable coaxial <br>doble malla RG-6 blanco <br>sin mensajero (indoor)(1) *</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004177 - Acopladores <br>direccional interior 1 vía <br>9dB *</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004178 - Acopladores <br>direccional interior 1 vía <br>12dB *</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004271 - Grampa <br>blanca Telefónica Nº 7 <br>(pin interior) *</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004171 - Amarra <br>cables nylon 4,8 x 15,6</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004167 - Gomas para <br>Taps</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004179 - Grampa RG-6 <br>blancas</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004180 - Grampa RG-6 <br>negra</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004812 - Bloqueador <br>de voltaje</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004183 - Atenuador <br>Fam 3</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004184 - Atenuador <br>Fam 6</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004185 - Atenuador <br>Fam 8</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004186 - Atenuador <br>Fam 10</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004173 - Splitter 2 vías <br>(4dB)</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1003508 - Conector <br>RJ-45</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1003507 - Conector <br>RJ-11</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004270 - Ficha <br>abonado (marca <br>acometida) rojo</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1003553 - Roseta <br>telefónica RJ-11</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004181 - Conectores <br>ground block</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004518 - Control <br>remoto caja digital</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1008608 - Cable <br>teléfono plano 4 <br>conductores</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004409 - Pilas <br>alcalinas AAA</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004526 - Cable <br>video componente 3 <br>conexiones</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004836 - Cable HDMI</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004233 - Cable audio <br>video RCA</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004176 - Acopladores <br>direccional interior 1 vía <br>6dB</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004288 - LNB</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1008635 - Cable coaxial <br>blanco</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004311 - Conectores</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004672 - LNB dual</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004191 - LNB quad</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>1004648 - Spliter</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-list-header color="primary">
+      Código de Barra
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Código Decodificador *</ion-label>
+      <button ion-button item-end color="primary">Tomar Código</button>
+    </ion-item>
 
-<ion-content padding>
-
+  </ion-list>
 </ion-content>

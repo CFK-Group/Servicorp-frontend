@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {TabsPage} from "../tabs/tabs";
 import { AlertController } from "ionic-angular";
+import { CategoriasPage } from "../categorias/categorias";
 
 /**
  * Generated class for the LoginPage page.
@@ -34,7 +34,7 @@ export class LoginPage {
   }
 
   login(){
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(CategoriasPage);
   }
 
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 
 /**
- * Generated class for the ModalInstalacionesDthPage page.
+ * Generated class for the ModalDesconexionPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-modal-instalaciones-dth',
-  templateUrl: 'modal-instalaciones-dth.html',
+  selector: 'page-modal-desconexion',
+  templateUrl: 'modal-desconexion.html',
 })
-export class ModalInstalacionesDthPage {
+export class ModalDesconexionPage {
 
   constructor(private navParams: NavParams, private view: ViewController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalInstalacionesDthPage');
+    console.log('ionViewDidLoad ModalDesconexionPage');
   }
 
   closeModal() {
