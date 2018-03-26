@@ -17,6 +17,8 @@ import { ModalInstalacionesDthPage } from "../pages/modal-instalaciones-dth/moda
 import { ModalMantencionDthPage } from "../pages/modal-mantencion-dth/modal-mantencion-dth";
 import { ModalMantencionHfcPage } from "../pages/modal-mantencion-hfc/modal-mantencion-hfc";
 import { ModalDesconexionPage } from "../pages/modal-desconexion/modal-desconexion";
+import { Camera } from "@ionic-native/camera";
+import { Base64ToGallery } from "@ionic-native/base64-to-gallery";
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ModalDesconexionPage } from "../pages/modal-desconexion/modal-desconexi
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    Base64ToGallery
   ]
 })
 export class AppModule {}

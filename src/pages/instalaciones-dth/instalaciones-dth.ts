@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from "ionic-angular";
-import {ModalDesconexionPage} from "../modal-desconexion/modal-desconexion";
+import {ModalInstalacionesDthPage} from "../modal-instalaciones-dth/modal-instalaciones-dth";
 
 /**
  * Generated class for the InstalacionesDthPage page.
@@ -25,7 +25,7 @@ export class InstalacionesDthPage {
   }
 
   openModal(){
-    let modal = this.modalCtrl.create(ModalDesconexionPage);
+    let modal = this.modalCtrl.create(ModalInstalacionesDthPage);
     modal.present();
   }
 
