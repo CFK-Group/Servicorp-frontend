@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
+import { ModalMantencionHfcPage } from "../modal-mantencion-hfc/modal-mantencion-hfc";
 
 /**
  * Generated class for the MantencionHfcPage page.
@@ -15,11 +16,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MantencionHfcPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MantencionHfcPage');
+  }
+
+  openModal(){
+    let modal = this.modalCtrl.create(ModalMantencionHfcPage);
+    modal.present();
   }
 
 }

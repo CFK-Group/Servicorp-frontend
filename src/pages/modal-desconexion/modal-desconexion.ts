@@ -34,10 +34,10 @@ export class ModalDesconexionPage {
   getPicture(){
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 1920,
-      targetHeight: 1080,
+      targetWidth: 1000,
+      targetHeight: 1000,
       quality: 100,
-      saveToPhotoAlbum: true
+      correctOrientation: true
     };
     this.camera.getPicture( options )
       .then(imageData => {

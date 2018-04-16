@@ -424,23 +424,23 @@
       Consumo de Materiales
     </ion-list-header>
     <ion-item>
-      <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión *</ion-label>
+      <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión</ion-label>
       <ion-input text-right type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1) *</ion-label>
+      <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
       <ion-input text-right type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB *</ion-label>
+      <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
       <ion-input text-right type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB *</ion-label>
+      <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
       <ion-input text-right type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior) *</ion-label>
+      <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
       <ion-input text-right type="number"></ion-input>
     </ion-item>
     <ion-item>
@@ -559,23 +559,25 @@
       Código de Barra
     </ion-list-header>
     <ion-item>
-      <ion-label text-wrap>Código Decodificador *</ion-label>
+      <ion-label text-wrap>Código Decodificador</ion-label>
       <button ion-button item-end color="primary">Tomar Código</button>
     </ion-item>
   </ion-list>
   <ion-buttons>
     <ion-grid>
       <ion-row>
-        <ion-col col-6>
-          <button ion-button icon-only block><ion-icon name="camera"></ion-icon></button>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button icon-right block>Imágenes <ion-icon name="image"></ion-icon></button>
+        <ion-col col>
+          <button ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></button>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col col-12>
-          <button ion-button block>Enviar</button>
+        <ion-col col *ngFor="let image of images">
+          <img src="{{image}}">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col>
+          <button ion-button block (click)="guardarFormulario()">Enviar</button>
         </ion-col>
       </ion-row>
     </ion-grid>
