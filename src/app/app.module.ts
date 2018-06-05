@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { LoginPage } from '../pages/login/login';
 import { CategoriasPage } from "../pages/categorias/categorias";
 import { InstalacionesHfcPage } from "../pages/instalaciones-hfc/instalaciones-hfc";
@@ -19,6 +18,8 @@ import { ModalMantencionHfcPage } from "../pages/modal-mantencion-hfc/modal-mant
 import { ModalDesconexionPage } from "../pages/modal-desconexion/modal-desconexion";
 import { Camera } from "@ionic-native/camera";
 import { Base64ToGallery } from "@ionic-native/base64-to-gallery";
+import { HttpClientModule } from '@angular/common/http';
+import { ApiServiceProvider } from '../providers/api-service/api-service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { Base64ToGallery } from "@ionic-native/base64-to-gallery";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -61,7 +63,9 @@ import { Base64ToGallery } from "@ionic-native/base64-to-gallery";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    Base64ToGallery
+    ApiServiceProvider,
+    Base64ToGallery,
+    ApiServiceProvider
   ]
 })
 export class AppModule {}

@@ -18,84 +18,86 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label text-wrap>OT SERVICORP *</ion-label>
-      <ion-input text-right type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
-      <ion-input text-right type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Técnico corta acometida *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Técnico retira acometida *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Desconexión OK *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Cliente activo *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Certificador desconecta *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Se corta ilegal *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>No permiten realizar corte *</ion-label>
-      <ion-select [(ngModel)]="a" interface="popover">
-        <ion-option value="Si">Si</ion-option>
-        <ion-option value="No">No</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label text-wrap>Observaciones</ion-label>
-      <ion-input text-right type="text"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-grid>
-    <ion-row>
-      <ion-col col>
-        <button ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col *ngFor="let image of images">
-        <img src="{{image}}">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col>
-        <button ion-button block (click)="guardarFormulario()">Enviar</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
+    <ion-list>
+      <ion-item>
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+        <ion-input formControlName="folio_servicio" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico corta acometida *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico retira acometida *</ion-label>
+        <ion-select formControlName="resp_2" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Desconexión OK *</ion-label>
+        <ion-select formControlName="resp_3" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Cliente activo *</ion-label>
+        <ion-select formControlName="resp_4" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Certificador desconecta *</ion-label>
+        <ion-select formControlName="resp_5" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Se corta ilegal *</ion-label>
+        <ion-select formControlName="resp_6" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>No permiten realizar corte *</ion-label>
+        <ion-select formControlName="resp_7" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Observaciones</ion-label>
+        <ion-input formControlName="resp_8" text-right type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col col>
+          <button ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col *ngFor="let image of images">
+          <img src="{{image}}">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col>
+          <button ion-button block type="submit" [disabled]="!desconexionForm.valid">Enviar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
