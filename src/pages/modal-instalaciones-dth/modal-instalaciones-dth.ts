@@ -123,7 +123,11 @@ export class ModalInstalacionesDthPage {
       resp_86: [''],
       resp_87: [''],
       resp_88: [''],
-      resp_89: ['']
+      resp_89: [''],
+      imagen_1: this.images[0],
+      imagen_2: this.images[1],
+      imagen_3: this.images[2],
+      imagen_4: this.images[3],
     })
   }
 

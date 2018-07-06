@@ -19,7 +19,7 @@
 
 
 <ion-content>
-  <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar()">
+  <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar('mantencionesHfc')">
     <ion-list>
       <ion-item>
         <ion-label text-wrap>OT SERVICORP *</ion-label>
@@ -557,19 +557,37 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>Código Decodificador</ion-label>
-        <button ion-button item-end color="primary">Tomar Código</button>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+      </ion-item>
+      <ion-item *ngIf="cod_decodificador !== ''">
+        <ion-grid>
+          <ion-row>
+              <ion-col col-4 offset-4>
+                <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+cod_decodificador)">
+              </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-item>
     </ion-list>
     <ion-buttons>
       <ion-grid>
         <ion-row>
           <ion-col col>
-            <button ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></button>
+            <a ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></a>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col *ngFor="let image of images">
-            <img src="{{image}}">
+          <ion-col col-3>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[0])" *ngIf="images.length > 0">
+          </ion-col>
+          <ion-col col-3>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[1])" *ngIf="images.length > 1">
+          </ion-col>
+          <ion-col col-3>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[2])" *ngIf="images.length > 2">
+          </ion-col>
+          <ion-col col-3>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[3])" *ngIf="images.length > 3">
           </ion-col>
         </ion-row>
         <ion-row>

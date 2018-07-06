@@ -29,6 +29,7 @@ export class LoginPage {
   }
 
   login(){
+    console.time('login')
     let loading = this.loadingCtrl.create({
       content: 'Iniciando Sesión'
     });
@@ -37,6 +38,7 @@ export class LoginPage {
     console.table(user);
     this.api.login(user)
     .then((res: any) => {
+      console.timeEnd('login')
       loading.dismiss();
       console.table(res);
       if(res.success === true){
@@ -53,6 +55,7 @@ export class LoginPage {
       }
     })
     .catch( (reason) => {
+      console.timeEnd('login')
       loading.dismiss();
       let alert = this.alertCtrl.create({
         title: 'Error al iniciar sesión.',
@@ -78,7 +81,7 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad LoginPage');
   }
 
 }

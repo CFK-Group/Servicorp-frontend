@@ -1,8 +1,10 @@
 import { Component } from '@angular/core'
-import {IonicPage, NavParams, ViewController, LoadingController} from 'ionic-angular'
-import {FormBuilder, FormGroup, Validators} from "@angular/forms"
-import {ApiServiceProvider} from "../../providers/api-service/api-service"
+import { IonicPage, NavParams, LoadingController, ViewController } from 'ionic-angular'
+import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { AlertController } from 'ionic-angular'
+import { Camera, CameraOptions } from '@ionic-native/camera'
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 
 /**
  * Generated class for the ModalMantencionDthPage page.
@@ -19,8 +21,9 @@ import { AlertController } from 'ionic-angular'
 export class ModalMantencionDthPage {
 
   mantencionesDth: FormGroup;
+  images = [];
 
-  constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesDth = this.createMantencionesDthForm();
   }
 
@@ -119,30 +122,36 @@ export class ModalMantencionDthPage {
       resp_85: [''],
       resp_86: [''],
       resp_87: [''],
-      resp_88: ['']
+      resp_88: [''],
+      imagen_1: this.images[0],
+      imagen_2: this.images[1],
+      imagen_3: this.images[2],
+      imagen_4: this.images[3],
     });
   }
 
   enviar(){
     let loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
-    });
+    })
     loading.present();
-    console.table(this.mantencionesDth.value);
+    console.table(this.mantencionesDth.value)
+    console.log('Guardando imagenes en el dispositivo...')
+    for(let i = 0; i < this.images.length; i++){
+      this.savePicture(this.images[i], 'form123_')
+    }
+    console.log('Imagenes guardadas.')
     this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
     .then( (res: any) => {
-      loading.dismiss();
+      loading.dismiss()
       if(res.success === true){
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Formulario enviado',
-          subTitle: res.message,
+          subTitle: 'Formulario enviado correctamente',
           buttons: ['OK']
         })
         alert.present()
-        this.closeModal();
       }else{
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: res.message,
@@ -153,12 +162,12 @@ export class ModalMantencionDthPage {
     })
     .catch( (reason:any) => {
       loading.dismiss()
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: reason.message,
-          buttons: ['OK']
-        })
-        alert.present()
+      let alert = this.alertCtrl.create({
+        title: 'Error al enviar formulario',
+        subTitle: reason.message,
+        buttons: ['OK']
+      })
+      alert.present()
     })
   }
 
@@ -168,6 +177,31 @@ export class ModalMantencionDthPage {
 
   closeModal() {
     this.view.dismiss();
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100,
+      correctOrientation: true
+    };
+    this.camera.getPicture( options )
+      .then(imageData => {
+        this.images.push(imageData)
+      })
+      .catch(error =>{
+        console.error( error )
+      });
+  }
+
+  savePicture(pictureBase64:string, prefix:string){
+    this.base64ToGallery.base64ToGallery(pictureBase64, { prefix: prefix })
+    .then(
+      res => console.log('Saved image to gallery ', res),
+      err => console.log('Error saving image to gallery ', err)
+    );
   }
 
 }

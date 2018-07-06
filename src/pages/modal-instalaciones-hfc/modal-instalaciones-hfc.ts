@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavParams, ViewController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiServiceProvider } from "../../providers/api-service/api-service";
+import { Component } from '@angular/core'
+import { IonicPage, NavParams, LoadingController, ViewController } from 'ionic-angular'
+import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { ApiServiceProvider } from "../../providers/api-service/api-service"
+import { AlertController } from 'ionic-angular'
+import { Camera, CameraOptions } from '@ionic-native/camera'
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 
 /**
  * Generated class for the ModalInstalacionesHfcPage page.
@@ -17,10 +20,11 @@ import { ApiServiceProvider } from "../../providers/api-service/api-service";
 })
 export class ModalInstalacionesHfcPage {
 
-  instalacionesHfc: FormGroup;
+  instalacionesHfc: FormGroup
+  images = [];
 
-  constructor(private api: ApiServiceProvider, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
-    this.instalacionesHfc = this.createInstalacionesHfcForm();
+  constructor(private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+    this.instalacionesHfc = this.createInstalacionesHfcForm()
   }
 
   private createInstalacionesHfcForm(){
@@ -119,31 +123,86 @@ export class ModalInstalacionesHfcPage {
       resp_86: [''],
       resp_87: [''],
       resp_88: [''],
-      resp_89: ['']
-    });
+      resp_89: [''],
+      imagen_1: this.images[0],
+      imagen_2: this.images[1],
+      imagen_3: this.images[2],
+      imagen_4: this.images[3],
+    })
   }
 
   enviar(){
-    // mostrar loading aqui
-    console.table(this.instalacionesHfc.value);
+    let loading = this.loadingCtrl.create({
+      content: 'Enviando formulario'
+    })
+    loading.present()
+    console.table(this.instalacionesHfc.value)
+    console.log('Guardando imagenes en el dispositivo...')
+    for(let i = 0; i < this.images.length; i++){
+      this.savePicture(this.images[i], 'form123_')
+    }
+    console.log('Imagenes guardadas.')
     this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
     .then( (res: any) => {
-      // quitar loading aqui
+      loading.dismiss()
       if(res.success === true){
-        alert(res.message); // cambiar por popup de confirmacion
-        this.closeModal();
+        let alert = this.alertCtrl.create({
+          title: 'Formulario enviado',
+          subTitle: 'Formulario enviado correctamente',
+          buttons: ['OK']
+        })
+        alert.present()
       }else{
-          alert(`error al enviar formulario: ${res.message}`) // cambiar por popup de error
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: res.message,
+          buttons: ['OK']
+        })
+        alert.present()
       }
+    })
+    .catch( (reason:any) => {
+      loading.dismiss()
+      let alert = this.alertCtrl.create({
+        title: 'Error al enviar formulario',
+        subTitle: reason.message,
+        buttons: ['OK']
+      })
+      alert.present()
     })
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalInstalacionesHfcPage');
+    console.log('ionViewDidLoad ModalInstalacionesHfcPage')
   }
 
   closeModal() {
-    this.view.dismiss();
+    this.view.dismiss()
+  }
+
+  getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100,
+      correctOrientation: true
+    }
+    this.camera.getPicture( options )
+      .then(imageData => {
+        this.images.push(imageData)
+      })
+      .catch(error =>{
+        console.error( error )
+      })
+  }
+
+  savePicture(pictureBase64:string, prefix:string){
+    this.base64ToGallery.base64ToGallery(pictureBase64, { prefix: prefix })
+    .then(
+      res => console.log('Saved image to gallery ', res),
+      err => console.log('Error saving image to gallery ', err)
+    )
   }
 
 }

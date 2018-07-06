@@ -556,19 +556,19 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>Código Decodificador</ion-label>
-        <button ion-button item-end color="primary">Tomar Código</button>
+        <a ion-button item-end color="primary">Tomar Código</a>
       </ion-item>
     </ion-list>
     <ion-buttons>
       <ion-grid>
         <ion-row>
           <ion-col col>
-            <button ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></button>
+            <a ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></a>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col col *ngFor="let image of images">
-            <img src="{{image}}">
+            <img src="data:image/jpeg;base64,{{image}}">
           </ion-col>
         </ion-row>
         <ion-row>
