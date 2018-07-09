@@ -109,11 +109,17 @@ export class ModalDesconexionPage {
   }
 
   savePicture(pictureBase64:string, prefix:string){
-    this.base64ToGallery.base64ToGallery(pictureBase64, { prefix: prefix })
+    this.base64ToGallery.base64ToGallery(
+      pictureBase64, 
+      { 
+        prefix: `${prefix}_`,
+        mediaScanner: true
+      }
+    )
     .then(
-      res => console.log('Saved image to gallery ', res),
-      err => console.log('Error saving image to gallery ', err)
-    );
+      (res) => console.log('Saved image to gallery ', res),
+      (err) => console.log('Error saving image to gallery ', err)
+    )
   }
 
 }

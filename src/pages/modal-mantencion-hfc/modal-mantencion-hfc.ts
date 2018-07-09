@@ -232,7 +232,7 @@ export class ModalMantencionHfcPage {
     //   imagen_2: [this.images[1]],
     //   imagen_3: [this.images[2]],
     //   imagen_4: [this.images[3]],
-    //   cod_decodificador: [this.cod_decodificador]
+    //   cod_decodificador: [null]
     // })
   }
 
@@ -245,13 +245,13 @@ export class ModalMantencionHfcPage {
     if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for(let i = 0; i < this.images.length; i++){
-        this.savePicture(this.images[i], nombreFormulario)
+        this.savePicture(this.images[i], this.mantencionesHfc.value.ot_servicorp)
       }
       console.log('Imagenes guardadas.')
     }
     if(this.cod_decodificador != ''){
       console.log('Guardando código decodificador en el dispositivo...')
-      this.savePicture(this.cod_decodificador, `cod_${nombreFormulario}`)
+      this.savePicture(this.cod_decodificador, `cod_${this.mantencionesHfc.value.ot_servicorp}`)
       console.log('Código decodificador guardado.')
     }
     this.mantencionesHfc.value.imagen_1 = this.images[0]
@@ -259,7 +259,6 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.value.imagen_3 = this.images[2]
     this.mantencionesHfc.value.imagen_4 = this.images[3]
     this.mantencionesHfc.value.cod_decodificador = this.cod_decodificador
-    console.log(this.mantencionesHfc.value.imagen_1 + 'imagen 1')
     this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
     .then( (res: any) => {
       console.log(this.mantencionesHfc.value)
@@ -306,7 +305,7 @@ export class ModalMantencionHfcPage {
       targetHeight: 1000,
       quality: 100,
       correctOrientation: true
-    };
+    }
     this.camera.getPicture( options )
     .then(imageData => {
       this.images.push(imageData)
@@ -314,7 +313,7 @@ export class ModalMantencionHfcPage {
     })
     .catch(error =>{
       console.error( error )
-    });
+    })
   }
 
   getCodigoVerificador(){
@@ -324,7 +323,7 @@ export class ModalMantencionHfcPage {
       targetHeight: 1000,
       quality: 100,
       correctOrientation: true
-    };
+    }
     this.camera.getPicture( options )
     .then(imageData => {
       this.cod_decodificador = imageData
@@ -332,15 +331,21 @@ export class ModalMantencionHfcPage {
     })
     .catch(error =>{
       console.error( error )
-    });
+    })
   }
 
   savePicture(pictureBase64:string, prefix:string){
-    this.base64ToGallery.base64ToGallery(pictureBase64, { prefix: `${prefix}_` })
+    this.base64ToGallery.base64ToGallery(
+      pictureBase64, 
+      { 
+        prefix: `${prefix}_`,
+        mediaScanner: true
+      }
+    )
     .then(
       (res) => console.log('Saved image to gallery ', res),
       (err) => console.log('Error saving image to gallery ', err)
-    );
+    )
   }
 
 }
