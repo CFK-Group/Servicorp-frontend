@@ -5,6 +5,7 @@ import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { AlertController } from 'ionic-angular'
 import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
+import { DomSanitizer } from '@angular/platform-browser'
 
 /**
  * Generated class for the ModalMantencionDthPage page.
@@ -20,11 +21,12 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 })
 export class ModalMantencionDthPage {
 
-  mantencionesDth: FormGroup;
-  images = [];
+  mantencionesDth: FormGroup
+  images = []
+  cod_decodificador = ''
 
-  constructor(private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
-    this.mantencionesDth = this.createMantencionesDthForm();
+  constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+    this.mantencionesDth = this.createMantencionesDthForm()
   }
 
   private createMantencionesDthForm(){
@@ -33,116 +35,129 @@ export class ModalMantencionDthPage {
       longitud: 0,
       usuario_id: localStorage.getItem('userId'),
       token: localStorage.getItem('userToken'),
-      ot_servicorp: ['', Validators.required],
-      folio_servicio: ['', Validators.required],
-      resp_1: ['', Validators.required],
-      resp_2: ['', Validators.required],
-      resp_3: ['', Validators.required],
-      resp_4: ['', Validators.required],
-      resp_5: ['', Validators.required],
-      resp_6: ['', Validators.required],
-      resp_7: ['', Validators.required],
-      resp_8: ['', Validators.required],
-      resp_9: ['', Validators.required],
-      resp_10: ['', Validators.required],
-      resp_11: ['', Validators.required],
-      resp_12: ['', Validators.required],
-      resp_13: ['', Validators.required],
-      resp_14: ['', Validators.required],
-      resp_15: ['', Validators.required],
-      resp_16: ['', Validators.required],
-      resp_17: [''],
-      resp_18: [''],
-      resp_19: ['', Validators.required],
-      resp_20: [''],
-      resp_21: ['', Validators.required],
-      resp_22: ['', Validators.required],
-      resp_23: ['', Validators.required],
-      resp_24: ['', Validators.required],
-      resp_25: [''],
-      resp_26: [''],
-      resp_27: [''],
-      resp_28: [''],
-      resp_29: ['', Validators.required],
-      resp_30: ['', Validators.required],
-      resp_31: ['', Validators.required],
-      resp_32: [''],
-      resp_33: [''],
-      resp_34: ['', Validators.required],
-      resp_35: ['', Validators.required],
-      resp_36: ['', Validators.required],
-      resp_37: ['', Validators.required],
-      resp_38: [''],
-      resp_39: ['', Validators.required],
-      resp_40: ['', Validators.required],
-      resp_41: ['', Validators.required],
-      resp_42: ['', Validators.required],
-      resp_43: ['', Validators.required],
-      resp_44: ['', Validators.required],
-      resp_45: ['', Validators.required],
-      resp_46: ['', Validators.required],
-      resp_47: ['', Validators.required],
-      resp_48: ['', Validators.required],
-      resp_49: [''],
-      resp_50: [''],
-      resp_51: [''],
-      resp_52: ['', Validators.required],
-      resp_53: ['', Validators.required],
-      resp_54: ['', Validators.required],
-      resp_55: ['', Validators.required],
-      resp_56: [''],
-      resp_57: [''],
-      resp_58: [''],
-      resp_59: [''],
-      resp_60: [''],
-      resp_61: [''],
-      resp_62: [''],
-      resp_63: [''],
-      resp_64: [''],
-      resp_65: [''],
-      resp_66: [''],
-      resp_67: [''],
-      resp_68: [''],
-      resp_69: [''],
-      resp_70: [''],
-      resp_71: [''],
-      resp_72: [''],
-      resp_73: [''],
-      resp_74: [''],
-      resp_75: [''],
-      resp_76: [''],
-      resp_77: [''],
-      resp_78: [''],
-      resp_79: [''],
-      resp_80: [''],
-      resp_81: [''],
-      resp_82: [''],
-      resp_83: [''],
-      resp_84: [''],
-      resp_85: [''],
-      resp_86: [''],
-      resp_87: [''],
-      resp_88: [''],
+      ot_servicorp: [null, Validators.required],
+      folio_servicio: [null, Validators.required],
+      resp_1: [null, Validators.required],
+      resp_2: [null, Validators.required],
+      resp_3: [null, Validators.required],
+      resp_4: [null, Validators.required],
+      resp_5: [null, Validators.required],
+      resp_6: [null, Validators.required],
+      resp_7: [null, Validators.required],
+      resp_8: [null, Validators.required],
+      resp_9: [null, Validators.required],
+      resp_10: [null, Validators.required],
+      resp_11: [null, Validators.required],
+      resp_12: [null, Validators.required],
+      resp_13: [null, Validators.required],
+      resp_14: [null, Validators.required],
+      resp_15: [null, Validators.required],
+      resp_16: [null, Validators.required],
+      resp_17: [null],
+      resp_18: [null],
+      resp_19: [null, Validators.required],
+      resp_20: [null],
+      resp_21: [null, Validators.required],
+      resp_22: [null, Validators.required],
+      resp_23: [null, Validators.required],
+      resp_24: [null, Validators.required],
+      resp_25: [null],
+      resp_26: [null],
+      resp_27: [null],
+      resp_28: [null],
+      resp_29: [null, Validators.required],
+      resp_30: [null, Validators.required],
+      resp_31: [null, Validators.required],
+      resp_32: [null],
+      resp_33: [null],
+      resp_34: [null, Validators.required],
+      resp_35: [null, Validators.required],
+      resp_36: [null, Validators.required],
+      resp_37: [null, Validators.required],
+      resp_38: [null],
+      resp_39: [null, Validators.required],
+      resp_40: [null, Validators.required],
+      resp_41: [null, Validators.required],
+      resp_42: [null, Validators.required],
+      resp_43: [null, Validators.required],
+      resp_44: [null, Validators.required],
+      resp_45: [null, Validators.required],
+      resp_46: [null, Validators.required],
+      resp_47: [null, Validators.required],
+      resp_48: [null, Validators.required],
+      resp_49: [null],
+      resp_50: [null],
+      resp_51: [null],
+      resp_52: [null, Validators.required],
+      resp_53: [null, Validators.required],
+      resp_54: [null, Validators.required],
+      resp_55: [null, Validators.required],
+      resp_56: [null],
+      resp_57: [null],
+      resp_58: [null],
+      resp_59: [null],
+      resp_60: [null],
+      resp_61: [null],
+      resp_62: [null],
+      resp_63: [null],
+      resp_64: [null],
+      resp_65: [null],
+      resp_66: [null],
+      resp_67: [null],
+      resp_68: [null],
+      resp_69: [null],
+      resp_70: [null],
+      resp_71: [null],
+      resp_72: [null],
+      resp_73: [null],
+      resp_74: [null],
+      resp_75: [null],
+      resp_76: [null],
+      resp_77: [null],
+      resp_78: [null],
+      resp_79: [null],
+      resp_80: [null],
+      resp_81: [null],
+      resp_82: [null],
+      resp_83: [null],
+      resp_84: [null],
+      resp_85: [null],
+      resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
       imagen_4: this.images[3],
-    });
+      cod_decodificador: [null]
+    })
   }
 
-  enviar(){
+  enviar(nombreFormulario:string){
     let loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
-    loading.present();
-    console.table(this.mantencionesDth.value)
-    console.log('Guardando imagenes en el dispositivo...')
-    for(let i = 0; i < this.images.length; i++){
-      this.savePicture(this.images[i], 'form123_')
+    loading.present()
+    if(this.images.length > 0){
+      console.log('Guardando imagenes en el dispositivo...')
+      for(let i = 0; i < this.images.length; i++){
+        this.savePicture(this.images[i], this.mantencionesDth.value.ot_servicorp)
+      }
+      console.log('Imagenes guardadas.')
     }
-    console.log('Imagenes guardadas.')
-    this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
+    if(this.cod_decodificador != ''){
+      console.log('Guardando código decodificador en el dispositivo...')
+      this.savePicture(this.cod_decodificador, `cod_${this.mantencionesDth.value.ot_servicorp}`)
+      console.log('Código decodificador guardado.')
+    }
+    this.mantencionesDth.value.imagen_1 = this.images[0]
+    this.mantencionesDth.value.imagen_2 = this.images[1]
+    this.mantencionesDth.value.imagen_3 = this.images[2]
+    this.mantencionesDth.value.imagen_4 = this.images[3]
+    this.mantencionesDth.value.cod_decodificador = this.cod_decodificador
+    this.api.enviarFormularioMantencionHFC(this.mantencionesDth.value)
     .then( (res: any) => {
+      console.log(this.mantencionesDth.value)
       loading.dismiss()
       if(res.success === true){
         let alert = this.alertCtrl.create({
@@ -151,6 +166,7 @@ export class ModalMantencionDthPage {
           buttons: ['OK']
         })
         alert.present()
+        this.closeModal()
       }else{
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
@@ -164,7 +180,7 @@ export class ModalMantencionDthPage {
       loading.dismiss()
       let alert = this.alertCtrl.create({
         title: 'Error al enviar formulario',
-        subTitle: reason.message,
+        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
         buttons: ['OK']
       })
       alert.present()
@@ -172,11 +188,11 @@ export class ModalMantencionDthPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalMantencionDthPage');
+    console.log('ionViewDidLoad ModalMantencionDthPage')
   }
 
   closeModal() {
-    this.view.dismiss();
+    this.view.dismiss()
   }
 
   getPicture(){
@@ -186,14 +202,32 @@ export class ModalMantencionDthPage {
       targetHeight: 1000,
       quality: 100,
       correctOrientation: true
-    };
+    }
     this.camera.getPicture( options )
       .then(imageData => {
         this.images.push(imageData)
       })
       .catch(error =>{
         console.error( error )
-      });
+      })
+  }
+
+  getCodigoVerificador(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      quality: 100,
+      correctOrientation: true
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      this.cod_decodificador = imageData
+      console.log(this.cod_decodificador)
+    })
+    .catch(error =>{
+      console.error( error )
+    })
   }
 
   savePicture(pictureBase64:string, prefix:string){

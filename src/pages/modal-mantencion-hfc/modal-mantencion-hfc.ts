@@ -30,109 +30,6 @@ export class ModalMantencionHfcPage {
   }
 
   private createMantencionesHfcForm(){
-    /* return this.formBuilder.group({
-      latitud: 0,
-      longitud: 0,
-      usuario_id: localStorage.getItem('userId'),
-      token: localStorage.getItem('userToken'),
-      ot_servicorp: [null],
-      folio_servicio: [null],
-      resp_1: [null],
-      resp_2: [null],
-      resp_3: [null],
-      resp_4: [null],
-      resp_5: [null],
-      resp_6: [null],
-      resp_7: [null],
-      resp_8: [null],
-      resp_9: [null],
-      resp_10: [null],
-      resp_11: [null],
-      resp_12: [null],
-      resp_13: [null],
-      resp_14: [null],
-      resp_15: [null],
-      resp_16: [null],
-      resp_17: [null],
-      resp_18: [null],
-      resp_19: [null],
-      resp_20: [null],
-      resp_21: [null],
-      resp_22: [null],
-      resp_23: [null],
-      resp_24: [null],
-      resp_25: [null],
-      resp_26: [null],
-      resp_27: [null],
-      resp_28: [null],
-      resp_29: [null],
-      resp_30: [null],
-      resp_31: [null],
-      resp_32: [null],
-      resp_33: [null],
-      resp_34: [null],
-      resp_35: [null],
-      resp_36: [null],
-      resp_37: [null],
-      resp_38: [null],
-      resp_39: [null],
-      resp_40: [null],
-      resp_41: [null],
-      resp_42: [null],
-      resp_43: [null],
-      resp_44: [null],
-      resp_45: [null],
-      resp_46: [null],
-      resp_47: [null],
-      resp_48: [null],
-      resp_49: [null],
-      resp_50: [null],
-      resp_51: [null],
-      resp_52: [null],
-      resp_53: [null],
-      resp_54: [null],
-      resp_55: [null],
-      resp_56: [null],
-      resp_57: [null],
-      resp_58: [null],
-      resp_59: [null],
-      resp_60: [null],
-      resp_61: [null],
-      resp_62: [null],
-      resp_63: [null],
-      resp_64: [null],
-      resp_65: [null],
-      resp_66: [null],
-      resp_67: [null],
-      resp_68: [null],
-      resp_69: [null],
-      resp_70: [null],
-      resp_71: [null],
-      resp_72: [null],
-      resp_73: [null],
-      resp_74: [null],
-      resp_75: [null],
-      resp_76: [null],
-      resp_77: [null],
-      resp_78: [null],
-      resp_79: [null],
-      resp_80: [null],
-      resp_81: [null],
-      resp_82: [null],
-      resp_83: [null],
-      resp_84: [null],
-      resp_85: [null],
-      resp_86: [null],
-      resp_87: [null],
-      resp_88: [null],
-      imagen_1: [null],
-      imagen_2: [null],
-      imagen_3: [null],
-      imagen_4: [null],
-      cod_decodificador: [null]
-    }) // return para test */
-
-
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
@@ -241,7 +138,6 @@ export class ModalMantencionHfcPage {
       content: 'Enviando formulario'
     })
     loading.present()
-    console.log(this.mantencionesHfc.value)
     if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for(let i = 0; i < this.images.length; i++){
@@ -261,7 +157,6 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.value.cod_decodificador = this.cod_decodificador
     this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
     .then( (res: any) => {
-      console.log(this.mantencionesHfc.value)
       loading.dismiss()
       if(res.success === true){
         let alert = this.alertCtrl.create({
@@ -270,6 +165,7 @@ export class ModalMantencionHfcPage {
           buttons: ['OK']
         })
         alert.present()
+        this.closeModal()
       }else{
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
@@ -283,7 +179,7 @@ export class ModalMantencionHfcPage {
       loading.dismiss()
       let alert = this.alertCtrl.create({
         title: 'Error al enviar formulario',
-        subTitle: reason.message,
+        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
         buttons: ['OK']
       })
       alert.present()
@@ -291,11 +187,11 @@ export class ModalMantencionHfcPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalMantencionHfcPage');
+    console.log('ionViewDidLoad ModalMantencionHfcPage')
   }
 
   closeModal() {
-    this.view.dismiss();
+    this.view.dismiss()
   }
 
   getPicture(){
@@ -309,7 +205,6 @@ export class ModalMantencionHfcPage {
     this.camera.getPicture( options )
     .then(imageData => {
       this.images.push(imageData)
-      console.log(imageData)
     })
     .catch(error =>{
       console.error( error )

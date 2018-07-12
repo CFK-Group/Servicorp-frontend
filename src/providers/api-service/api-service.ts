@@ -11,7 +11,7 @@ import "rxjs/Rx";
 */
 @Injectable()
 export class ApiServiceProvider {
-  url: string = "http://192.168.2.163:3000";
+  url: string = "http://192.168.0.4:3000";
 
   constructor(public api: HttpClient) {
 

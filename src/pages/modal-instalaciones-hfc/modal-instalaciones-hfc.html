@@ -562,7 +562,16 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>Código Decodificador</ion-label>
-        <a ion-button item-end color="primary">Tomar Código</a>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+      </ion-item>
+      <ion-item *ngIf="cod_decodificador !== ''">
+        <ion-grid>
+          <ion-row>
+              <ion-col col-4 offset-4>
+                <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+cod_decodificador)">
+              </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-item>
     </ion-list>
     <ion-buttons>
@@ -573,13 +582,13 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col *ngFor="let image of images">
-            <img src="data:image/jpeg;base64,{{image}}">
+          <ion-col col-3 *ngFor="let image of images">
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col col>
-            <button ion-button block type="submit" [disabled]="!instalacionesHfc.valid">Enviar</button>
+            <button ion-button block type="submit" [disabled]="!mantencionesHfc.valid">Enviar</button>
           </ion-col>
         </ion-row>
       </ion-grid>

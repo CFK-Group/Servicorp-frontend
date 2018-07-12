@@ -577,17 +577,8 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-3>
-            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[0])" *ngIf="images.length > 0">
-          </ion-col>
-          <ion-col col-3>
-            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[1])" *ngIf="images.length > 1">
-          </ion-col>
-          <ion-col col-3>
-            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[2])" *ngIf="images.length > 2">
-          </ion-col>
-          <ion-col col-3>
-            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+images[3])" *ngIf="images.length > 3">
+          <ion-col col-3 *ngFor="let image of images">
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
           </ion-col>
         </ion-row>
         <ion-row>
