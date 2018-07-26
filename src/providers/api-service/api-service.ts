@@ -11,7 +11,7 @@ import "rxjs/Rx";
 */
 @Injectable()
 export class ApiServiceProvider {
-  url: string = "http://192.168.0.4:3000";
+  url: string = "http://192.168.2.163:3000";
 
   constructor(public api: HttpClient) {
 
@@ -21,7 +21,7 @@ export class ApiServiceProvider {
     return this.api.post<User>(`${this.url}/login`, user).toPromise()
   }
 
-  enviarFormularioInstalacionHFC(data){
+  enviarFormularioInstalacionHFC(data:string){
     return this.api.post(`${this.url}/formulario/instalacion/hfc`, data).toPromise()
   }
 
@@ -39,6 +39,14 @@ export class ApiServiceProvider {
 
   enviarFormularioDesconexion(data:string){
     return this.api.post(`${this.url}/formulario/desconexion`, data).toPromise()
+  }
+
+  getFormulario(data){
+    if(data.tipoFormulario !== 'desconexion'){
+      return this.api.get(`${this.url}/formulario/${data.tipoFormulario}/${data.subtipoFormulario}/${data.userToken}`).toPromise()
+    }else {
+      return this.api.get(`${this.url}/formulario/desconexion/${data.userToken}`).toPromise()
+    }
   }
 
 }
