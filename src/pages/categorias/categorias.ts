@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { InstalacionesDthPage } from "../instalaciones-dth/instalaciones-dth";
-import { InstalacionesHfcPage } from "../instalaciones-hfc/instalaciones-hfc";
-import { MantencionHfcPage } from "../mantencion-hfc/mantencion-hfc";
-import { MantencionDthPage } from "../mantencion-dth/mantencion-dth";
-import { DesconexionPage } from "../desconexion/desconexion";
+import { Component } from '@angular/core'
+import { IonicPage, NavController, NavParams } from 'ionic-angular'
+import { InstalacionesDthPage } from "../instalaciones-dth/instalaciones-dth"
+import { InstalacionesHfcPage } from "../instalaciones-hfc/instalaciones-hfc"
+import { MantencionHfcPage } from "../mantencion-hfc/mantencion-hfc"
+import { MantencionDthPage } from "../mantencion-dth/mantencion-dth"
+import { DesconexionPage } from "../desconexion/desconexion"
+import { LoginPage } from "../../pages/login/login"
 
 /**
  * Generated class for the CategoriasPage page.
@@ -24,27 +25,34 @@ export class CategoriasPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoriasPage');
+    console.log('ionViewDidLoad CategoriasPage')
   }
 
   goToInstalacionesHfc(){
-    this.navCtrl.push(InstalacionesHfcPage);
+    this.navCtrl.push(InstalacionesHfcPage)
   }
 
   goToInstalacionesDth(){
-    this.navCtrl.push(InstalacionesDthPage);
+    this.navCtrl.push(InstalacionesDthPage)
   }
 
   goToMantencionHfc(){
-    this.navCtrl.push(MantencionHfcPage);
+    this.navCtrl.push(MantencionHfcPage)
   }
 
   goToMantencionDth(){
-    this.navCtrl.push(MantencionDthPage);
+    this.navCtrl.push(MantencionDthPage)
   }
 
   goToDesconexion(){
-    this.navCtrl.push(DesconexionPage);
+    this.navCtrl.push(DesconexionPage)
+  }
+
+  logout(){
+    localStorage.removeItem('userToken')
+    localStorage.removeItem('userId')
+    this.navCtrl.setRoot(LoginPage)
+    this.navCtrl.popToRoot()
   }
 
 }

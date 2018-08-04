@@ -11,7 +11,7 @@ import "rxjs/Rx";
 */
 @Injectable()
 export class ApiServiceProvider {
-  url: string = "http://192.168.2.163:3000";
+  url: string = "http://localhost:3000";
 
   constructor(public api: HttpClient) {
 
@@ -41,12 +41,20 @@ export class ApiServiceProvider {
     return this.api.post(`${this.url}/formulario/desconexion`, data).toPromise()
   }
 
-  getFormulario(data){
+  getFormularios(data){
     if(data.tipoFormulario !== 'desconexion'){
       return this.api.get(`${this.url}/formulario/${data.tipoFormulario}/${data.subtipoFormulario}/${data.userToken}`).toPromise()
     }else {
       return this.api.get(`${this.url}/formulario/desconexion/${data.userToken}`).toPromise()
     }
+  }
+
+  getFormResponses(formularioId){
+    return this.api.get(`${this.url}/respuestas/${formularioId}/${localStorage.getItem('userToken')}`).toPromise()
+  }
+
+  getFormQuestions(formularioId){
+    return this.api.get(`${this.url}/preguntas/${formularioId}/${localStorage.getItem('userToken')}`).toPromise()
   }
 
 }

@@ -1,0 +1,30 @@
+<!--
+  Generated template for the FormDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Detalle</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let pregunta of preguntas; let respuesta of respuestas">
+      <ion-label text-wrap>{{pregunta.glosa}}</ion-label>
+      <ion-note item-end>{{respuesta.respuesta}}</ion-note>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

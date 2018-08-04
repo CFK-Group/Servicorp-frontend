@@ -27,6 +27,11 @@ export class ModalDesconexionPage {
 
   constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.desconexionForm = this.createDesconexionForm()
+    try{
+      console.log(navParams.get('formData'))
+    }catch(err){
+      console.log('Error al leer parámetros')
+    }
   }
 
   private createDesconexionForm(){

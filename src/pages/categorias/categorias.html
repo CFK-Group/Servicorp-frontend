@@ -6,8 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary" hideBackButton="true">
-    <ion-title>Categorías</ion-title>
+  <ion-navbar color="primary" hideBackButton="true" class="toolbar statusbar-padding">
+    <div class="toolbar-background"></div>
+    <ion-buttons end class="bar-buttons">
+      <button icon-only ion-button class="bar-button bar-button-default disable-hover" (click)="logout()">
+        <span class="button-inner">
+          <ion-icon name="log-out"></ion-icon>
+        </span>
+        <div class="button-effect"></div>
+      </button>
+    </ion-buttons>
+    <div class="toolbar-content">
+      <ion-title class="title">
+        <div class="toolbar-title">Categorías</div>
+      </ion-title>
+    </div>
   </ion-navbar>
 
 </ion-header>
