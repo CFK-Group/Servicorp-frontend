@@ -1,0 +1,549 @@
+<!--
+  Generated template for the ModalInstalacionesDthPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Formulario Instalación DTH</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="instalacionesDth" (ngSubmit)="enviar()">
+    <ion-list>
+      <ion-item>
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+        <ion-input formControlName="folio_servicio" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Atención Cliente - Respuestas Cliente
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Técnico fue amable *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>La presentación del técnico era la correcta *</ion-label>
+        <ion-select formControlName="resp_2" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico informó el trabajo a realizar *</ion-label>
+        <ion-select formControlName="resp_3" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico capacitó capacitación del uso de los equipos *</ion-label>
+        <ion-select formControlName="resp_4" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Instalación de Equipos
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Usó antena Entel *</ion-label>
+        <ion-select formControlName="resp_5" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
+        <ion-select formControlName="resp_6" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Correcta fijación de antena Entel *</ion-label>
+        <ion-select formControlName="resp_7" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Utilizó cables y materiales de Entel *</ion-label>
+        <ion-select formControlName="resp_8" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Correcta instalación LNB Entel *</ion-label>
+        <ion-select formControlName="resp_9" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
+        <ion-select formControlName="resp_10" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Instalación de amarras plásticas *</ion-label>
+        <ion-select formControlName="resp_11" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Ruteo y grapeado exterior *</ion-label>
+        <ion-select formControlName="resp_12" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Loop mantención *</ion-label>
+        <ion-select formControlName="resp_13" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Fijación de multiswitch Entel *</ion-label>
+        <ion-select formControlName="resp_14" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Posee pasamuros exterior *</ion-label>
+        <ion-select formControlName="resp_15" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+        <ion-select formControlName="resp_16" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma *</ion-label>
+        <ion-select formControlName="resp_17" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Usó cableado Entel *</ion-label>
+        <ion-select formControlName="resp_18" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+        <ion-select formControlName="resp_19" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Fijación de los cables de Entel *</ion-label>
+        <ion-select formControlName="resp_20" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Conectores Entel prensados correctamente *</ion-label>
+        <ion-select formControlName="resp_21" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma *</ion-label>
+        <ion-select formControlName="resp_22" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>El o los STB están funcionando correctamente *</ion-label>
+        <ion-select formControlName="resp_23" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles de Señal
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Buen nivel de señal 1 STB *</ion-label>
+        <ion-select formControlName="resp_24" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Buen nivel de señal 2 STB *</ion-label>
+        <ion-select formControlName="resp_25" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Buen nivel de señal 3 STB *</ion-label>
+        <ion-select formControlName="resp_26" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Señal pixeleada *</ion-label>
+        <ion-select formControlName="resp_27" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Otros Datos
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Auditor solicita visita técnica *</ion-label>
+        <ion-select formControlName="resp_28" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Motivo de la baja</ion-label>
+        <ion-select formControlName="resp_29" interface="popover">
+          <!-- faltan los motivos------------------------------------------------------------------------ -->
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Cantidad decos según plan *</ion-label>
+        <ion-input formControlName="resp_30" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Cantidad decos existentes en domicilio *</ion-label>
+        <ion-input formControlName="resp_31" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Cantidad multiswitch *</ion-label>
+        <ion-input formControlName="resp_32" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Tamaño antena *</ion-label>
+        <ion-select formControlName="resp_33" interface="popover">
+          <ion-option value="60">60</ion-option>
+          <ion-option value="90">90</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles a Tomar - Principal
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>T1 (10728 H) Principal *</ion-label>
+        <ion-input formControlName="resp_34" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T2 (10768 H) Principal *</ion-label>
+        <ion-input formControlName="resp_35" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T3 (10808 H) Principal *</ion-label>
+        <ion-input formControlName="resp_36" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T4 (10808 H) Principal</ion-label>
+        <ion-input formControlName="resp_37" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T5 (10888 H) Principal</ion-label>
+        <ion-input formControlName="resp_38" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T6 (10928 H) Principal</ion-label>
+        <ion-input formControlName="resp_39" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T7 (11222 H) Principal</ion-label>
+        <ion-input formControlName="resp_40" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T8 (11262 H) Principal</ion-label>
+        <ion-input formControlName="resp_41" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T9 (11302 H) Principal</ion-label>
+        <ion-input formControlName="resp_42" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T10 (11342 H) Principal</ion-label>
+        <ion-input formControlName="resp_43" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T11 (1382 H) Principal</ion-label>
+        <ion-input formControlName="resp_44" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T12 (11422 H) Principal</ion-label>
+        <ion-input formControlName="resp_45" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T13 (10728 V) Principal *</ion-label>
+        <ion-input formControlName="resp_46" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles a Tomar - Segundo
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>T1 (10728 H) Segundo</ion-label>
+        <ion-input formControlName="resp_47" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T2 (10768 H) Segundo</ion-label>
+        <ion-input formControlName="resp_48" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T3 (10808 H) Segundo</ion-label>
+        <ion-input formControlName="resp_49" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T4 (10808 H) Segundo</ion-label>
+        <ion-input formControlName="resp_50" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T5 (10888 H) Segundo</ion-label>
+        <ion-input formControlName="resp_51" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T6 (10928 H) Segundo</ion-label>
+        <ion-input formControlName="resp_52" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T7 (11222 H) Segundo</ion-label>
+        <ion-input formControlName="resp_53" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T8 (11262 H) Segundo</ion-label>
+        <ion-input formControlName="resp_54" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T9 (11302 H) Segundo</ion-label>
+        <ion-input formControlName="resp_55" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T10 (11342 H) Segundo</ion-label>
+        <ion-input formControlName="resp_56" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T11 (1382 H) Segundo</ion-label>
+        <ion-input formControlName="resp_57" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T12 (11422 H) Segundo</ion-label>
+        <ion-input formControlName="resp_58" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T13 (10728 V) Segundo</ion-label>
+        <ion-input formControlName="resp_59" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles a Tomar - Tercero
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>T1 (10728 H) Tercero</ion-label>
+        <ion-input formControlName="resp_60" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T2 (10768 H) Tercero</ion-label>
+        <ion-input formControlName="resp_61" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T3 (10808 H) Tercero</ion-label>
+        <ion-input formControlName="resp_62" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T4 (10808 H) Tercero</ion-label>
+        <ion-input formControlName="resp_63" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T5 (10888 H) Tercero</ion-label>
+        <ion-input formControlName="resp_64" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T6 (10928 H) Tercero</ion-label>
+        <ion-input formControlName="resp_65" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T7 (11222 H) Tercero</ion-label>
+        <ion-input formControlName="resp_67" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T8 (11262 H) Tercero</ion-label>
+        <ion-input formControlName="resp_68" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T9 (11302 H) Tercero</ion-label>
+        <ion-input formControlName="resp_69" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T10 (11342 H) Tercero</ion-label>
+        <ion-input formControlName="resp_70" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T11 (1382 H) Tercero</ion-label>
+        <ion-input formControlName="resp_71" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T12 (11422 H) Tercero</ion-label>
+        <ion-input formControlName="resp_72" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>T13 (10728 V) Tercero</ion-label>
+        <ion-input formControlName="resp_73" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Observaciones
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Observaciones *</ion-label>
+        <ion-input formControlName="resp_74" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+        <ion-select formControlName="resp_75" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+        <ion-select formControlName="resp_76" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Soluciones *</ion-label>
+        <ion-input formControlName="resp_77" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Cable Entel utilizado *</ion-label>
+        <ion-input formControlName="resp_78" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Conectores *</ion-label>
+        <ion-input formControlName="resp_79" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Amarras *</ion-label>
+        <ion-input formControlName="resp_80" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Pasamuros utilizados *</ion-label>
+        <ion-input formControlName="resp_81" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Tirafondos instalados *</ion-label>
+        <ion-input formControlName="resp_82" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Voltaje Fase Neutro *</ion-label>
+        <ion-input formControlName="resp_83" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Voltaje Fase Tierra *</ion-label>
+        <ion-input formControlName="resp_84" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
+        <ion-input formControlName="resp_85" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Código de Barra
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Código Decodificador</ion-label>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+      </ion-item>
+      <ion-item *ngIf="cod_decodificador !== ''">
+        <ion-grid>
+          <ion-row>
+              <ion-col col-4 offset-4>
+                <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+cod_decodificador)">
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col col>
+            <a ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3 *ngFor="let image of images">
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col>
+            <button ion-button block type="submit" [disabled]="!instalacionesDth.valid">Enviar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+  </form>
+</ion-content>

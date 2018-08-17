@@ -18,6 +18,7 @@ export class FormDetailPage {
 
   respuestas = []
   preguntas = []
+  formulario = []
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private view: ViewController) {
     
@@ -35,10 +36,19 @@ export class FormDetailPage {
     this.api.getFormQuestions(this.navParams.get('formData').id)
       .then((res:any) => {
         this.preguntas = res.data
+        
+        //creando listado de pregunta/respuesta
+        for(let i = 0; i < this.respuestas.length; i++){
+          this.formulario.push({
+            glosa: this.preguntas[i].glosa,
+            respuesta: this.respuestas[i].respuesta
+          })
+        }
       })
       .catch((err) => {
         console.error('Error al traer preguntas: ' + err.message)
       })
+
   }
 
   closeModal() {

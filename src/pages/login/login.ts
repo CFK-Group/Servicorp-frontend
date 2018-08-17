@@ -4,8 +4,8 @@ import { AlertController } from "ionic-angular"
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../app/user'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
-
 import { CategoriasPage } from "../categorias/categorias"
+import { EntelPage } from "../entel/entel"
 
 /**
  * Generated class for the LoginPage page.
@@ -25,8 +25,10 @@ export class LoginPage {
   // user: User[]
 
   constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
-    if(localStorage.getItem('userToken')){
+    if(localStorage.getItem('empresa') == 'claro' || localStorage.getItem('empresa') == 'Claro'){
       this.navCtrl.push(CategoriasPage)
+    } else if(localStorage.getItem('empresa') == 'entel' || localStorage.getItem('empresa') == 'Entel'){
+      this.navCtrl.push(EntelPage)
     }
     this.loginForm = this.createLoginForm()
   }
@@ -38,16 +40,20 @@ export class LoginPage {
     })
     loading.present()
     const user =  new User(this.loginForm.value.username, this.loginForm.value.password)
-    console.table(user)
     this.api.login(user)
-    .then((res: any) => {
+    .then((res:any) => {
       console.timeEnd('login')
       loading.dismiss()
       console.table(res)
       if(res.success === true){
         localStorage.setItem('userToken', res.token)
         localStorage.setItem('userId', res.id_usuario)
-        this.navCtrl.push(CategoriasPage)
+        localStorage.setItem('empresa', res.empresa)
+        if(res.empresa == 'claro' || res.empresa == 'Claro'){
+          this.navCtrl.push(CategoriasPage)
+        }else if(res.empresa == 'entel' || res.empresa == 'Entel'){
+          this.navCtrl.push(EntelPage)
+        }
       }else{
         let alert = this.alertCtrl.create({
           title: 'Error al iniciar sesión',
@@ -72,8 +78,8 @@ export class LoginPage {
   private createLoginForm(){
     if(this.mode === 'develop'){
       return this.formBuilder.group({
-        username: ['test', Validators.required],
-        password: ['test', Validators.required]
+        username: ['test2', Validators.required],
+        password: ['test2', Validators.required]
       })
     }else{
       return this.formBuilder.group({
