@@ -30,7 +30,7 @@ export class DesconexionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DesconexionPage')
-    this.api.getFormularios(this.data)
+    this.api.getFormularios(this.data,'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
         this.formularios = res.data
@@ -47,7 +47,7 @@ export class DesconexionPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
         this.formularios = res.data
@@ -65,7 +65,7 @@ export class DesconexionPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
         this.formularios = res.data

@@ -32,7 +32,7 @@ export class InstalacionesDthPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InstalacionesDthPage')
-    this.api.getFormularios(this.data)
+    this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
@@ -49,7 +49,7 @@ export class InstalacionesDthPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
@@ -67,7 +67,7 @@ export class InstalacionesDthPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesDTH', JSON.stringify(res.data))
         this.formularios = res.data

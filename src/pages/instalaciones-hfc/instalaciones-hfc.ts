@@ -32,7 +32,7 @@ export class InstalacionesHfcPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InstalacionesHfcPage')
-    this.api.getFormularios(this.data)
+    this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
         this.formularios = res.data
@@ -49,7 +49,7 @@ export class InstalacionesHfcPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
         this.formularios = res.data
@@ -67,7 +67,7 @@ export class InstalacionesHfcPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
         this.formularios = res.data

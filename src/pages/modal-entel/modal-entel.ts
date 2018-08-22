@@ -64,16 +64,16 @@ export class ModalEntelPage {
       resp_25: [null, Validators.required],
       resp_26: [null, Validators.required],
       resp_27: [null, Validators.required],
-      resp_28: [null, Validators.required],
+      resp_28: [null],
       resp_29: [null, Validators.required],
-      resp_30: [null],
+      resp_30: [null, Validators.required],
       resp_31: [null, Validators.required],
       resp_32: [null, Validators.required],
       resp_33: [null, Validators.required],
       resp_34: [null, Validators.required],
       resp_35: [null, Validators.required],
-      resp_36: [null, Validators.required],
-      resp_37: [null, Validators.required],
+      resp_36: [null],
+      resp_37: [null],
       resp_38: [null],
       resp_39: [null],
       resp_40: [null],
@@ -81,9 +81,9 @@ export class ModalEntelPage {
       resp_42: [null],
       resp_43: [null],
       resp_44: [null],
-      resp_45: [null],
+      resp_45: [null, Validators.required],
       resp_46: [null],
-      resp_47: [null, Validators.required],
+      resp_47: [null],
       resp_48: [null],
       resp_49: [null],
       resp_50: [null],
@@ -108,8 +108,8 @@ export class ModalEntelPage {
       resp_69: [null],
       resp_70: [null],
       resp_71: [null],
-      resp_72: [null],
-      resp_73: [null],
+      resp_72: [null, Validators.required],
+      resp_73: [null, Validators.required],
       resp_74: [null, Validators.required],
       resp_75: [null, Validators.required],
       resp_76: [null, Validators.required],
@@ -120,8 +120,6 @@ export class ModalEntelPage {
       resp_81: [null, Validators.required],
       resp_82: [null, Validators.required],
       resp_83: [null, Validators.required],
-      resp_84: [null, Validators.required],
-      resp_85: [null, Validators.required],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
@@ -152,7 +150,7 @@ export class ModalEntelPage {
     this.instalacionesDth.value.imagen_3 = this.images[2]
     this.instalacionesDth.value.imagen_4 = this.images[3]
     this.instalacionesDth.value.cod_decodificador = this.cod_decodificador
-    this.api.enviarFormularioMantencionHFC(this.instalacionesDth.value)
+    this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
     .then( (res: any) => {
       console.log(this.instalacionesDth.value)
       loading.dismiss()

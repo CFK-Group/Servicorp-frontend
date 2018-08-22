@@ -22,7 +22,8 @@ export class EntelPage {
   formularios = []
 
   data = {
-    tipoFormulario: 'entel',
+    tipoFormulario: 'instalacion',
+    subtipoFormulario: 'dth',
     userToken: localStorage.getItem('userToken')
   }
 
@@ -31,7 +32,7 @@ export class EntelPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EntelPage')
-    this.api.getFormularios(this.data)
+    this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
         localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
         this.formularios = res.data
@@ -48,7 +49,7 @@ export class EntelPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
         localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
         this.formularios = res.data
@@ -66,7 +67,7 @@ export class EntelPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
         localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
         this.formularios = res.data

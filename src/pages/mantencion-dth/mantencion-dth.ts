@@ -31,7 +31,7 @@ export class MantencionDthPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MantencionDthPage')
-    this.api.getFormularios(this.data)
+    this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
@@ -48,7 +48,7 @@ export class MantencionDthPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
@@ -66,7 +66,7 @@ export class MantencionDthPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data)
+      this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
