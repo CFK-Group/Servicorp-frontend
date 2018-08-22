@@ -20,7 +20,7 @@ import { EntelPage } from "../entel/entel"
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  mode: string = 'develop'  // cambiar entre develop y producion según sea el caso
+  mode: string = 'produccion'  // cambiar entre develop y producion según sea el caso
   loginForm: FormGroup
   // user: User[]
 
