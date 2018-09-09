@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular'
+import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { FormDetailPage } from "../form-detail/form-detail"
 import { ModalEntelPage } from "../modal-entel/modal-entel"
@@ -27,20 +27,26 @@ export class EntelPage {
     userToken: localStorage.getItem('userToken')
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EntelPage')
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando Formularios'
+    })
+    loading.present()
     this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
         localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
+        loading.dismiss()
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
         this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
+        loading.dismiss()
       })
   }
 
@@ -49,16 +55,22 @@ export class EntelPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
+      let loading = this.loadingCtrl.create({
+        content: 'Cargando Formularios'
+      })
+      loading.present()
       this.api.getFormularios(this.data, 'entel')
-      .then((res:any) => {
-        localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
-        this.formularios = res.data
-        console.table(this.formularios)
-      })
-      .catch((err) => {
-        console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
-      })
+        .then((res:any) => {
+          localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
+          this.formularios = res.data
+          console.table(this.formularios)
+          loading.dismiss()
+        })
+        .catch((err) => {
+          console.error('Error: ' + err.message)
+          this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
+          loading.dismiss()
+        })
     })
   }
 

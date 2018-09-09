@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular'
 import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 
 /**
  * Generated class for the ModalMantencionHfcPage page.
@@ -25,7 +26,7 @@ export class ModalMantencionHfcPage {
   images = []
   cod_decodificador = ''
 
-  constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesHfc = this.createMantencionesHfcForm()
   }
 
@@ -127,6 +128,12 @@ export class ModalMantencionHfcPage {
       imagen_2: [this.images[1]],
       imagen_3: [this.images[2]],
       imagen_4: [this.images[3]],
+      imagen_5: this.images[4],
+      imagen_6: this.images[5],
+      imagen_7: this.images[6],
+      imagen_8: this.images[7],
+      imagen_9: this.images[8],
+      imagen_10: this.images[9],
       cod_decodificador: [null]
     })
   }
@@ -152,6 +159,12 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.value.imagen_2 = this.images[1]
     this.mantencionesHfc.value.imagen_3 = this.images[2]
     this.mantencionesHfc.value.imagen_4 = this.images[3]
+    this.mantencionesHfc.value.imagen_5 = this.images[4]
+    this.mantencionesHfc.value.imagen_6 = this.images[5]
+    this.mantencionesHfc.value.imagen_7 = this.images[6]
+    this.mantencionesHfc.value.imagen_8 = this.images[7]
+    this.mantencionesHfc.value.imagen_9 = this.images[8]
+    this.mantencionesHfc.value.imagen_10 = this.images[9]
     this.mantencionesHfc.value.cod_decodificador = this.cod_decodificador
     this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
     .then( (res: any) => {
@@ -210,20 +223,13 @@ export class ModalMantencionHfcPage {
   }
 
   getCodigoVerificador(){
-    let options: CameraOptions = {
-      destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 1000,
-      targetHeight: 1000,
-      quality: 100,
-      correctOrientation: true
-    }
-    this.camera.getPicture( options )
-    .then(imageData => {
-      this.cod_decodificador = imageData
-      console.log(this.cod_decodificador)
+    this.barcodeScanner.scan()
+    .then(barcodeData => {
+      console.log('Barcode data', barcodeData)
+      this.cod_decodificador = barcodeData.text
     })
-    .catch(error =>{
-      console.error( error )
+    .catch(err => {
+      console.log('Error', err)
     })
   }
 

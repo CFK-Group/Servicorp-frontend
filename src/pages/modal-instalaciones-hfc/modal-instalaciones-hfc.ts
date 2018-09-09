@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular'
 import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 
 /**
  * Generated class for the ModalInstalacionesHfcPage page.
@@ -25,7 +26,7 @@ export class ModalInstalacionesHfcPage {
   images = []
   cod_decodificador = ''
 
-  constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.instalacionesHfc = this.createInstalacionesHfcForm()
   }
 
@@ -130,6 +131,12 @@ export class ModalInstalacionesHfcPage {
       imagen_2: this.images[1],
       imagen_3: this.images[2],
       imagen_4: this.images[3],
+      imagen_5: this.images[4],
+      imagen_6: this.images[5],
+      imagen_7: this.images[6],
+      imagen_8: this.images[7],
+      imagen_9: this.images[8],
+      imagen_10: this.images[9],
       cod_decodificador: [null]
     })
   }
@@ -146,17 +153,18 @@ export class ModalInstalacionesHfcPage {
       }
       console.log('Imagenes guardadas.')
     }
-    if(this.cod_decodificador != ''){
-      console.log('Guardando código decodificador en el dispositivo...')
-      this.savePicture(this.cod_decodificador, `cod_${this.instalacionesHfc.value.ot_servicorp}`)
-      console.log('Código decodificador guardado.')
-    }
     this.instalacionesHfc.value.imagen_1 = this.images[0]
     this.instalacionesHfc.value.imagen_2 = this.images[1]
     this.instalacionesHfc.value.imagen_3 = this.images[2]
     this.instalacionesHfc.value.imagen_4 = this.images[3]
+    this.instalacionesHfc.value.imagen_5 = this.images[4]
+    this.instalacionesHfc.value.imagen_6 = this.images[5]
+    this.instalacionesHfc.value.imagen_7 = this.images[6]
+    this.instalacionesHfc.value.imagen_8 = this.images[7]
+    this.instalacionesHfc.value.imagen_9 = this.images[8]
+    this.instalacionesHfc.value.imagen_10 = this.images[9]
     this.instalacionesHfc.value.cod_decodificador = this.cod_decodificador
-    this.api.enviarFormularioMantencionHFC(this.instalacionesHfc.value)
+    this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
     .then( (res: any) => {
       console.log(this.instalacionesHfc.value)
       loading.dismiss()
@@ -214,20 +222,13 @@ export class ModalInstalacionesHfcPage {
   }
 
   getCodigoVerificador(){
-    let options: CameraOptions = {
-      destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 1000,
-      targetHeight: 1000,
-      quality: 100,
-      correctOrientation: true
-    }
-    this.camera.getPicture( options )
-    .then(imageData => {
-      this.cod_decodificador = imageData
-      console.log(this.cod_decodificador)
+    this.barcodeScanner.scan()
+    .then(barcodeData => {
+      console.log('Barcode data', barcodeData)
+      this.cod_decodificador = barcodeData.text
     })
-    .catch(error =>{
-      console.error( error )
+    .catch(err => {
+      console.log('Error', err)
     })
   }
 

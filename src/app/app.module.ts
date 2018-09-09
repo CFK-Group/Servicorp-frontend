@@ -23,6 +23,7 @@ import { Camera } from "@ionic-native/camera"
 import { Base64ToGallery } from "@ionic-native/base64-to-gallery"
 import { HttpClientModule } from '@angular/common/http'
 import { ApiServiceProvider } from '../providers/api-service/api-service'
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { ApiServiceProvider } from '../providers/api-service/api-service'
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
     ApiServiceProvider,
-    Base64ToGallery
+    Base64ToGallery,
+    BarcodeScanner
   ]
 })
 export class AppModule {}

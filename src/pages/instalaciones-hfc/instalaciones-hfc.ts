@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ModalController } from "ionic-angular"
 import { ModalInstalacionesHfcPage } from "../modal-instalaciones-hfc/modal-instalaciones-hfc"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
@@ -27,20 +27,26 @@ export class InstalacionesHfcPage {
     userToken: localStorage.getItem('userToken')
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InstalacionesHfcPage')
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando Formularios'
+    })
+    loading.present()
     this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
+        loading.dismiss()
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
         this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesHFC'))
+        loading.dismiss()
       })
   }
 
@@ -49,16 +55,22 @@ export class InstalacionesHfcPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
+      let loading = this.loadingCtrl.create({
+        content: 'Cargando Formularios'
+      })
+      loading.present()
       this.api.getFormularios(this.data, 'claro')
-      .then((res:any) => {
-        localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
-        this.formularios = res.data
-        console.table(this.formularios)
-      })
-      .catch((err) => {
-        console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesHFC'))
-      })
+        .then((res:any) => {
+          localStorage.setItem('FormulariosInstalacionesHFC', JSON.stringify(res.data))
+          this.formularios = res.data
+          console.table(this.formularios)
+          loading.dismiss()
+        })
+        .catch((err) => {
+          console.error('Error: ' + err.message)
+          this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesHFC'))
+          loading.dismiss()
+        })
     })
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular'
+import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ModalMantencionDthPage } from "../modal-mantencion-dth/modal-mantencion-dth"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { FormDetailPage } from "../form-detail/form-detail"
@@ -26,20 +26,26 @@ export class MantencionDthPage {
     userToken: localStorage.getItem('userToken')
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, private api: ApiServiceProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MantencionDthPage')
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando Formularios'
+    })
+    loading.present()
     this.api.getFormularios(this.data, 'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
+        loading.dismiss()
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
         this.formularios = JSON.parse(localStorage.getItem('FormulariosMantencionesDTH'))
+        loading.dismiss()
       })
   }
 
@@ -48,16 +54,22 @@ export class MantencionDthPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
+      let loading = this.loadingCtrl.create({
+        content: 'Cargando Formularios'
+      })
+      loading.present()
       this.api.getFormularios(this.data, 'claro')
-      .then((res:any) => {
-        localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
-        this.formularios = res.data
-        console.table(this.formularios)
-      })
-      .catch((err) => {
-        console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosMantencionesDTH'))
-      })
+        .then((res:any) => {
+          localStorage.setItem('FormulariosMantencionesDTH', JSON.stringify(res.data))
+          this.formularios = res.data
+          console.table(this.formularios)
+          loading.dismiss()
+        })
+        .catch((err) => {
+          console.error('Error: ' + err.message)
+          this.formularios = JSON.parse(localStorage.getItem('FormulariosMantencionesDTH'))
+          loading.dismiss()
+        })
     })
   }
 

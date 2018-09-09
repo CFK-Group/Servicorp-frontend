@@ -22,11 +22,11 @@
     <ion-list>
       <ion-item>
         <ion-label text-wrap>OT SERVICORP *</ion-label>
-        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
-        <ion-input formControlName="folio_servicio" text-right type="text"></ion-input>
+        <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
@@ -543,22 +543,14 @@
       <ion-item>
         <ion-label text-wrap>Código Decodificador</ion-label>
         <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
-      </ion-item>
-      <ion-item *ngIf="cod_decodificador !== ''">
-        <ion-grid>
-          <ion-row>
-              <ion-col col-4 offset-4>
-                <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpg;base64,'+cod_decodificador)">
-              </ion-col>
-          </ion-row>
-        </ion-grid>
+        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
       </ion-item>
     </ion-list>
     <ion-buttons>
       <ion-grid>
         <ion-row>
           <ion-col col>
-            <a ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
           </ion-col>
         </ion-row>
         <ion-row>

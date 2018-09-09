@@ -11,7 +11,7 @@ import "rxjs/Rx"
 */
 @Injectable()
 export class ApiServiceProvider {
-  url: string = "http://servicorp.xpass.cl:3000";
+  url: string = "http://servicorp.xpass.cl:3000"
 
   constructor(public api: HttpClient) { }
 
@@ -47,7 +47,7 @@ export class ApiServiceProvider {
     if(data.tipoFormulario !== 'desconexion'){
       return this.api.get(`${this.url}/formulario/${empresa}/${data.tipoFormulario}/${data.subtipoFormulario}/${data.userToken}`).toPromise()
     }else {
-      return this.api.get(`${this.url}/formulario/desconexion/${data.userToken}`).toPromise()
+      return this.api.get(`${this.url}/formulario/${empresa}/desconexion/${data.userToken}`).toPromise()
     }
   }
 

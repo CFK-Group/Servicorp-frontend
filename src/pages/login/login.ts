@@ -20,9 +20,8 @@ import { EntelPage } from "../entel/entel"
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  mode: string = 'produccion'  // cambiar entre develop y producion según sea el caso
+  mode: string = 'develop'  // cambiar entre develop y producion según sea el caso
   loginForm: FormGroup
-  // user: User[]
 
   constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
     if(localStorage.getItem('empresa') == 'claro' || localStorage.getItem('empresa') == 'Claro'){
@@ -65,6 +64,7 @@ export class LoginPage {
     })
     .catch( (reason) => {
       console.timeEnd('login')
+      console.log(reason.message)
       loading.dismiss()
       let alert = this.alertCtrl.create({
         title: 'Error al iniciar sesión.',
@@ -78,8 +78,8 @@ export class LoginPage {
   private createLoginForm(){
     if(this.mode === 'develop'){
       return this.formBuilder.group({
-        username: ['test2', Validators.required],
-        password: ['test2', Validators.required]
+        username: ['test', Validators.required],
+        password: ['test', Validators.required]
       })
     }else{
       return this.formBuilder.group({

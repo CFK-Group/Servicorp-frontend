@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular'
+import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ModalDesconexionPage } from "../modal-desconexion/modal-desconexion"
 import { FormDetailPage } from "../form-detail/form-detail"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
@@ -25,20 +25,26 @@ export class DesconexionPage {
     userToken: localStorage.getItem('userToken')
   }
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DesconexionPage')
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando Formularios'
+    })
+    loading.present()
     this.api.getFormularios(this.data,'claro')
       .then((res:any) => {
         localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
+        loading.dismiss()
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
         this.formularios = JSON.parse(localStorage.getItem('FormulariosDesconexiones'))
+        loading.dismiss()
       })
   }
 
@@ -47,16 +53,22 @@ export class DesconexionPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data, 'claro')
-      .then((res:any) => {
-        localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
-        this.formularios = res.data
-        console.table(this.formularios)
+      let loading = this.loadingCtrl.create({
+        content: 'Cargando Formularios'
       })
-      .catch((err) => {
-        console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosDesconexiones'))
-      })
+      loading.present()
+      this.api.getFormularios(this.data,'claro')
+        .then((res:any) => {
+          localStorage.setItem('FormulariosDesconexiones', JSON.stringify(res.data))
+          this.formularios = res.data
+          console.table(this.formularios)
+          loading.dismiss()
+        })
+        .catch((err) => {
+          console.error('Error: ' + err.message)
+          this.formularios = JSON.parse(localStorage.getItem('FormulariosDesconexiones'))
+          loading.dismiss()
+        })
     })
   }
 
