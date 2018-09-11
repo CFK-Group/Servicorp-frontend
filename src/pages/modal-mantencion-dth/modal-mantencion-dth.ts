@@ -166,7 +166,7 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.value.imagen_9 = this.images[8]
     this.mantencionesDth.value.imagen_10 = this.images[9]
     this.mantencionesDth.value.cod_decodificador = this.cod_decodificador
-    this.api.enviarFormularioMantencionHFC(this.mantencionesDth.value)
+    this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
     .then( (res: any) => {
       console.log(this.mantencionesDth.value)
       loading.dismiss()

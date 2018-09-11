@@ -169,7 +169,7 @@ export class ModalInstalacionesDthPage {
     this.instalacionesDth.value.imagen_9 = this.images[8]
     this.instalacionesDth.value.imagen_10 = this.images[9]
     this.instalacionesDth.value.cod_decodificador = this.cod_decodificador
-    this.api.enviarFormularioMantencionHFC(this.instalacionesDth.value)
+    this.api.enviarFormularioInstalacionDTH(this.instalacionesDth.value)
     .then( (res: any) => {
       console.log(this.instalacionesDth.value)
       loading.dismiss()
