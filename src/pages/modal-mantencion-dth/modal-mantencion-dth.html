@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="mantencionesDth">
+  <form [formGroup]="mantencionesDth" (ngSubmit)="enviar()">
     <ion-list>
       <ion-item>
         <ion-label text-wrap>OT SERVICORP *</ion-label>

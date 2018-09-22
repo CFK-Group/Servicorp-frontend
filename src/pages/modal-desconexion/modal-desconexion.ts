@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular'
 import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
+import { Geolocation } from '@ionic-native/geolocation'
 
 /**
  * Generated class for the ModalDesconexionPage page.
@@ -25,7 +26,7 @@ export class ModalDesconexionPage {
   image: string = null
   images = []
 
-  constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.desconexionForm = this.createDesconexionForm()
     try{
       console.log(navParams.get('formData'))
@@ -53,7 +54,13 @@ export class ModalDesconexionPage {
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
-      imagen_4: this.images[3]
+      imagen_4: this.images[3],
+      imagen_5: this.images[4],
+      imagen_6: this.images[5],
+      imagen_7: this.images[6],
+      imagen_8: this.images[7],
+      imagen_9: this.images[8],
+      imagen_10: this.images[9]
     })
   }
 
@@ -73,6 +80,21 @@ export class ModalDesconexionPage {
     this.desconexionForm.value.imagen_2 = this.images[1]
     this.desconexionForm.value.imagen_3 = this.images[2]
     this.desconexionForm.value.imagen_4 = this.images[3]
+    this.desconexionForm.value.imagen_5 = this.images[4]
+    this.desconexionForm.value.imagen_6 = this.images[5]
+    this.desconexionForm.value.imagen_7 = this.images[6]
+    this.desconexionForm.value.imagen_8 = this.images[7]
+    this.desconexionForm.value.imagen_9 = this.images[8]
+    this.desconexionForm.value.imagen_10 = this.images[9]
+
+    // capturando posicion gps
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.desconexionForm.value.latitud = resp.coords.latitude
+      this.desconexionForm.value.longitud = resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error)
+    })
+
     this.api.enviarFormularioDesconexion(this.desconexionForm.value)
     .then( (res: any) => {
       loading.dismiss()
@@ -97,7 +119,7 @@ export class ModalDesconexionPage {
       loading.dismiss()
       let alert = this.alertCtrl.create({
         title: 'Error al enviar formulario',
-        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+        subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
         buttons: ['OK']
       })
       alert.present()

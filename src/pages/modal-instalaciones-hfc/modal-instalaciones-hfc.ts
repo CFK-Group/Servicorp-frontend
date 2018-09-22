@@ -7,6 +7,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { Geolocation } from '@ionic-native/geolocation'
 
 /**
  * Generated class for the ModalInstalacionesHfcPage page.
@@ -26,7 +27,7 @@ export class ModalInstalacionesHfcPage {
   images = []
   cod_decodificador = ''
 
-  constructor(private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
     this.instalacionesHfc = this.createInstalacionesHfcForm()
   }
 
@@ -164,6 +165,15 @@ export class ModalInstalacionesHfcPage {
     this.instalacionesHfc.value.imagen_9 = this.images[8]
     this.instalacionesHfc.value.imagen_10 = this.images[9]
     this.instalacionesHfc.value.cod_decodificador = this.cod_decodificador
+
+    // capturando posicion gps
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.instalacionesHfc.value.latitud = resp.coords.latitude
+      this.instalacionesHfc.value.longitud = resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error)
+    })
+
     this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
     .then( (res: any) => {
       console.log(this.instalacionesHfc.value)

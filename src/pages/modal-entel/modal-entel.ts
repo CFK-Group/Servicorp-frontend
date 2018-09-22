@@ -7,6 +7,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { Geolocation } from '@ionic-native/geolocation'
 
 /**
  * Generated class for the ModalInstalacionesDthPage page.
@@ -26,7 +27,7 @@ export class ModalEntelPage {
   images = []
   cod_decodificador = ''
   
-  constructor(public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController, private barcodeScanner: BarcodeScanner) {
+  constructor(private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController, private barcodeScanner: BarcodeScanner) {
     this.instalacionesDth = this.createInstalacionesDthForm()
   }
   
@@ -163,6 +164,15 @@ export class ModalEntelPage {
     this.instalacionesDth.value.imagen_9 = this.images[8]
     this.instalacionesDth.value.imagen_10 = this.images[9]
     this.instalacionesDth.value.cod_decodificador = this.cod_decodificador
+
+    // capturando posicion gps
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.instalacionesDth.value.latitud = resp.coords.latitude
+      this.instalacionesDth.value.longitud = resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error)
+    })
+
     this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
     .then( (res: any) => {
       console.log(this.instalacionesDth.value)
