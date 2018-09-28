@@ -88,12 +88,13 @@ export class ModalDesconexionPage {
     this.desconexionForm.value.imagen_10 = this.images[9]
 
     // capturando posicion gps
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.desconexionForm.value.latitud = resp.coords.latitude
-      this.desconexionForm.value.longitud = resp.coords.longitude
-    }).catch((error) => {
-      console.log('Error getting location', error)
-    })
+    // this.geolocation.getCurrentPosition()
+    // .then((resp) => {
+    //   this.desconexionForm.value.latitud = resp.coords.latitude
+    //   this.desconexionForm.value.longitud = resp.coords.longitude
+    // }).catch((error) => {
+    //   console.log('Error getting location', error)
+    // })
 
     this.api.enviarFormularioDesconexion(this.desconexionForm.value)
     .then( (res: any) => {
