@@ -21,7 +21,7 @@
     <ion-item color="primary">Formularios</ion-item>
     <ion-item text-center *ngFor="let formulario of formularios" (click)="detail(formulario)">
       <p>Certificación de Desconexión</p>
-      <p>{{formulario.create_time}}</p>
+      <p>{{formulario.create_time | date: 'medium'}}</p>
     </ion-item>
   </ion-list>
 
