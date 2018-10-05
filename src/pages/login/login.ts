@@ -6,6 +6,7 @@ import { User } from '../../app/user'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { CategoriasPage } from "../categorias/categorias"
 import { EntelPage } from "../entel/entel"
+import * as moment from 'moment'
 
 /**
  * Generated class for the LoginPage page.
@@ -45,6 +46,7 @@ export class LoginPage {
       loading.dismiss()
       console.table(res)
       if(res.success === true){
+        localStorage.setItem('lastLogin', moment().format('DD-MM-YYYY'))
         localStorage.setItem('userToken', res.token)
         localStorage.setItem('userId', res.id_usuario)
         localStorage.setItem('empresa', res.empresa)

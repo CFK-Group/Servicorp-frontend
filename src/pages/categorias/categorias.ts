@@ -52,6 +52,7 @@ export class CategoriasPage {
     localStorage.removeItem('userToken')
     localStorage.removeItem('userId')
     localStorage.removeItem('empresa')
+    localStorage.removeItem('lastLogin')
     this.navCtrl.setRoot(LoginPage)
     this.navCtrl.popToRoot()
   }
