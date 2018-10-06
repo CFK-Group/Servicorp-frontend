@@ -90,40 +90,12 @@ export class ModalDesconexionPage {
     // capturando posicion gps
     this.geolocation.getCurrentPosition()
     .then((resp) => {
+      console.log(resp)
       this.desconexionForm.value.latitud = resp.coords.latitude
       this.desconexionForm.value.longitud = resp.coords.longitude
+      this.send(loading)
     }).catch((error) => {
       console.log('Error getting location', error)
-    })
-
-    this.api.enviarFormularioDesconexion(this.desconexionForm.value)
-    .then( (res: any) => {
-      loading.dismiss()
-      if(res.success === true){
-        let alert = this.alertCtrl.create({
-          title: 'Formulario enviado',
-          subTitle: 'Formulario de Desconexión enviado correctamente',
-          buttons: ['OK']
-        })
-        alert.present()
-        this.closeModal()
-      }else{
-        let alert = this.alertCtrl.create({
-          title: 'Error (500) en el servidor',
-          subTitle: 'Vuelva a intentarlo más tarde.',
-          buttons: ['OK']
-        })
-        alert.present()        
-      }
-    })
-    .catch( err => {
-      loading.dismiss()
-      let alert = this.alertCtrl.create({
-        title: 'Error al enviar formulario',
-        subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
-        buttons: ['OK']
-      })
-      alert.present()
     })
   }
 
@@ -154,8 +126,8 @@ export class ModalDesconexionPage {
 
   savePicture(pictureBase64:string, prefix:string){
     this.base64ToGallery.base64ToGallery(
-      pictureBase64, 
-      { 
+      pictureBase64,
+      {
         prefix: `${prefix}_`,
         mediaScanner: true
       }
@@ -164,6 +136,38 @@ export class ModalDesconexionPage {
       (res) => console.log('Saved image to gallery ', res),
       (err) => console.log('Error saving image to gallery ', err)
     )
+  }
+
+  send(loading){
+    this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+      .then( (res: any) => {
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario de Desconexión enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error (500) en el servidor',
+            subTitle: 'Vuelva a intentarlo más tarde.',
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( err => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
+          buttons: ['OK']
+        })
+        alert.present()
+      })
   }
 
 }

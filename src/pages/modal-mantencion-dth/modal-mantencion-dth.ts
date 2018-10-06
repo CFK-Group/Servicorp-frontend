@@ -172,39 +172,9 @@ export class ModalMantencionDthPage {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.mantencionesDth.value.latitud = resp.coords.latitude
       this.mantencionesDth.value.longitud = resp.coords.longitude
+      this.send(loading)
     }).catch((error) => {
       console.log('Error getting location', error)
-    })
-
-    this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
-    .then( (res: any) => {
-      console.log(this.mantencionesDth.value)
-      loading.dismiss()
-      if(res.success === true){
-        let alert = this.alertCtrl.create({
-          title: 'Formulario enviado',
-          subTitle: 'Formulario enviado correctamente',
-          buttons: ['OK']
-        })
-        alert.present()
-        this.closeModal()
-      }else{
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: res.message,
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch( (reason:any) => {
-      loading.dismiss()
-      let alert = this.alertCtrl.create({
-        title: 'Error al enviar formulario',
-        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-        buttons: ['OK']
-      })
-      alert.present()
     })
   }
 
@@ -234,7 +204,7 @@ export class ModalMantencionDthPage {
   }
 
   getCodigoVerificador(){
-    this.barcodeScanner.scan()
+    this.barcodeScanner.scan({'showTorchButton': true})
     .then(barcodeData => {
       console.log('Barcode data', barcodeData)
       this.cod_decodificador = barcodeData.text
@@ -246,8 +216,8 @@ export class ModalMantencionDthPage {
 
   savePicture(pictureBase64:string, prefix:string){
     this.base64ToGallery.base64ToGallery(
-      pictureBase64, 
-      { 
+      pictureBase64,
+      {
         prefix: `${prefix}_`,
         mediaScanner: true
       }
@@ -258,4 +228,36 @@ export class ModalMantencionDthPage {
     )
   }
 
+  send(loading){
+    this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
+      .then( (res: any) => {
+        console.log(this.mantencionesDth.value)
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error al enviar formulario',
+            subTitle: res.message,
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( (reason:any) => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+          buttons: ['OK']
+        })
+        alert.present()
+      })
+  }
 }

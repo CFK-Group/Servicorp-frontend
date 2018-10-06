@@ -172,38 +172,9 @@ export class ModalMantencionHfcPage {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.mantencionesHfc.value.latitud = resp.coords.latitude
       this.mantencionesHfc.value.longitud = resp.coords.longitude
+      this.send(loading)
     }).catch((error) => {
       console.log('Error getting location', error)
-    })
-
-    this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
-    .then( (res: any) => {
-      loading.dismiss()
-      if(res.success === true){
-        let alert = this.alertCtrl.create({
-          title: 'Formulario enviado',
-          subTitle: 'Formulario enviado correctamente',
-          buttons: ['OK']
-        })
-        alert.present()
-        this.closeModal()
-      }else{
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: res.message,
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch( (reason:any) => {
-      loading.dismiss()
-      let alert = this.alertCtrl.create({
-        title: 'Error al enviar formulario',
-        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-        buttons: ['OK']
-      })
-      alert.present()
     })
   }
 
@@ -233,7 +204,7 @@ export class ModalMantencionHfcPage {
   }
 
   getCodigoVerificador(){
-    this.barcodeScanner.scan()
+    this.barcodeScanner.scan({'showTorchButton': true})
     .then(barcodeData => {
       console.log('Barcode data', barcodeData)
       this.cod_decodificador = barcodeData.text
@@ -245,8 +216,8 @@ export class ModalMantencionHfcPage {
 
   savePicture(pictureBase64:string, prefix:string){
     this.base64ToGallery.base64ToGallery(
-      pictureBase64, 
-      { 
+      pictureBase64,
+      {
         prefix: `${prefix}_`,
         mediaScanner: true
       }
@@ -257,4 +228,35 @@ export class ModalMantencionHfcPage {
     )
   }
 
+  send(loading){
+    this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
+      .then( (res: any) => {
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error al enviar formulario',
+            subTitle: res.message,
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( (reason:any) => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+          buttons: ['OK']
+        })
+        alert.present()
+      })
+  }
 }

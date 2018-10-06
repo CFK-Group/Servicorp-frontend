@@ -26,11 +26,11 @@ export class ModalEntelPage {
   instalacionesDth: FormGroup
   images = []
   cod_decodificador = ''
-  
+
   constructor(private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController, private barcodeScanner: BarcodeScanner) {
     this.instalacionesDth = this.createInstalacionesDthForm()
   }
-  
+
   private createInstalacionesDthForm(){
     return this.formBuilder.group({
       latitud: 0,
@@ -167,42 +167,15 @@ export class ModalEntelPage {
 
     // capturando posicion gps
     this.geolocation.getCurrentPosition().then((resp) => {
+      console.log(resp)
       this.instalacionesDth.value.latitud = resp.coords.latitude
       this.instalacionesDth.value.longitud = resp.coords.longitude
+      this.send(loading)
     }).catch((error) => {
       console.log('Error getting location', error)
     })
 
-    this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
-    .then( (res: any) => {
-      console.log(this.instalacionesDth.value)
-      loading.dismiss()
-      if(res.success === true){
-        let alert = this.alertCtrl.create({
-          title: 'Formulario enviado',
-          subTitle: 'Formulario enviado correctamente',
-          buttons: ['OK']
-        })
-        alert.present()
-        this.closeModal()
-      }else{
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: res.message,
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch( (reason:any) => {
-      loading.dismiss()
-      let alert = this.alertCtrl.create({
-        title: 'Error al enviar formulario',
-        subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-        buttons: ['OK']
-      })
-      alert.present()
-    })
+
   }
 
   ionViewDidLoad() {
@@ -231,7 +204,7 @@ export class ModalEntelPage {
   }
 
   getCodigoVerificador(){
-    this.barcodeScanner.scan()
+    this.barcodeScanner.scan({'showTorchButton': true})
     .then(barcodeData => {
       console.log('Barcode data', barcodeData)
       this.cod_decodificador = barcodeData.text
@@ -243,8 +216,8 @@ export class ModalEntelPage {
 
   savePicture(pictureBase64:string, prefix:string){
     this.base64ToGallery.base64ToGallery(
-      pictureBase64, 
-      { 
+      pictureBase64,
+      {
         prefix: `${prefix}_`,
         mediaScanner: true
       }
@@ -253,6 +226,39 @@ export class ModalEntelPage {
       (res) => console.log('Saved image to gallery ', res),
       (err) => console.log('Error saving image to gallery ', err)
     )
+  }
+
+  send(loading){
+    this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
+      .then( (res: any) => {
+        console.log(this.instalacionesDth.value)
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error al enviar formulario',
+            subTitle: res.message,
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( (reason:any) => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+          buttons: ['OK']
+        })
+        alert.present()
+      })
   }
 
 }
