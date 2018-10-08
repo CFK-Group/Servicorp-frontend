@@ -93,10 +93,40 @@ export class ModalDesconexionPage {
       console.log(resp)
       this.desconexionForm.value.latitud = resp.coords.latitude
       this.desconexionForm.value.longitud = resp.coords.longitude
-      this.send(loading)
+      this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+      .then( (res: any) => {
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario de Desconexión enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error (500) en el servidor',
+            subTitle: 'Vuelva a intentarlo más tarde.',
+            buttons: ['OK']
+          })
+          alert.present()        
+        }
+      })
+      .catch( err => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
+          buttons: ['OK']
+        })
+        alert.present()
+      })
     }).catch((error) => {
+      loading.dismiss()
       console.log('Error getting location', error)
     })
+
   }
 
   ionViewDidLoad() {

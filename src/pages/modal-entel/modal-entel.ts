@@ -170,12 +170,40 @@ export class ModalEntelPage {
       console.log(resp)
       this.instalacionesDth.value.latitud = resp.coords.latitude
       this.instalacionesDth.value.longitud = resp.coords.longitude
-      this.send(loading)
+      this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
+      .then( (res: any) => {
+        console.log(this.instalacionesDth.value)
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error al enviar formulario',
+            subTitle: res.message,
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( (reason:any) => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+          buttons: ['OK']
+        })
+        alert.present()
+      })
     }).catch((error) => {
+      loading.dismiss()
       console.log('Error getting location', error)
     })
-
-
   }
 
   ionViewDidLoad() {
