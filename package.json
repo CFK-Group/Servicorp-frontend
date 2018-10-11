@@ -44,8 +44,7 @@
     "phonegap-plugin-barcodescanner": "^8.0.0",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18",
-    "cordova-plugin-geolocation": "4.0.1"
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.2.0",

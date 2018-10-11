@@ -20,25 +20,25 @@
 <ion-content>
   <form [formGroup]="instalacionesDth" (ngSubmit)="enviar()">
     <ion-list>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.ot_servicorp === null}">
         <ion-label text-wrap>OT SERVICORP *</ion-label>
         <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_1 === null}">
         <ion-label text-wrap>Técnico fue amable *</ion-label>
         <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_2 === null}">
         <ion-label text-wrap>La presentación del técnico era la correcta *</ion-label>
         <ion-select formControlName="resp_2" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -46,7 +46,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_3 === null}">
         <ion-label text-wrap>Técnico informó el trabajo a realizar *</ion-label>
         <ion-select formControlName="resp_3" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -54,7 +54,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_4 === null}">
         <ion-label text-wrap>Técnico capacitó capacitación del uso de los equipos *</ion-label>
         <ion-select formControlName="resp_4" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -65,7 +65,7 @@
       <ion-list-header color="primary">
         Instalación de Equipos
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_5 === null}">
         <ion-label text-wrap>Usó antena Entel *</ion-label>
         <ion-select formControlName="resp_5" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -73,7 +73,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_6 === null}">
         <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
         <ion-select formControlName="resp_6" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -81,7 +81,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_7 === null}">
         <ion-label text-wrap>Correcta fijación de antena Entel *</ion-label>
         <ion-select formControlName="resp_7" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -89,7 +89,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_8 === null}">
         <ion-label text-wrap>Utilizó cables y materiales de Entel *</ion-label>
         <ion-select formControlName="resp_8" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -97,7 +97,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_9 === null}">
         <ion-label text-wrap>Correcta instalación LNB Entel *</ion-label>
         <ion-select formControlName="resp_9" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -105,7 +105,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_10 === null}">
         <ion-label text-wrap>Instalación de amarras plásticas *</ion-label>
         <ion-select formControlName="resp_10" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -113,7 +113,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_11 === null}">
         <ion-label text-wrap>Ruteo y grapeado exterior *</ion-label>
         <ion-select formControlName="resp_11" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -121,7 +121,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_12 === null}">
         <ion-label text-wrap>Loop mantención *</ion-label>
         <ion-select formControlName="resp_12" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -129,7 +129,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_13 === null}">
         <ion-label text-wrap>Fijación de multiswitch Entel *</ion-label>
         <ion-select formControlName="resp_13" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -137,7 +137,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_14 === null}">
         <ion-label text-wrap>Posee pasamuros exterior *</ion-label>
         <ion-select formControlName="resp_14" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -145,7 +145,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_15 === null}">
         <ion-label text-wrap>Posee pasamuros interior *</ion-label>
         <ion-select formControlName="resp_15" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -153,7 +153,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_16 === null}">
         <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma *</ion-label>
         <ion-select formControlName="resp_16" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -161,7 +161,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_17 === null}">
         <ion-label text-wrap>Usó cableado Entel *</ion-label>
         <ion-select formControlName="resp_17" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -169,7 +169,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_18 === null}">
         <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
         <ion-select formControlName="resp_18" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -177,7 +177,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_19 === null}">
         <ion-label text-wrap>Fijación de los cables de Entel *</ion-label>
         <ion-select formControlName="resp_19" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -185,7 +185,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_20 === null}">
         <ion-label text-wrap>Conectores Entel prensados correctamente *</ion-label>
         <ion-select formControlName="resp_20" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -193,7 +193,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_21 === null}">
         <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma *</ion-label>
         <ion-select formControlName="resp_21" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -201,7 +201,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_22 === null}">
         <ion-label text-wrap>El o los STB están funcionando correctamente *</ion-label>
         <ion-select formControlName="resp_22" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -212,28 +212,28 @@
       <ion-list-header color="primary">
         Niveles de Señal
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_23 === null}">
         <ion-label text-wrap>Buen nivel de señal 1 STB *</ion-label>
         <ion-select formControlName="resp_23" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_24 === null}">
         <ion-label text-wrap>Buen nivel de señal 2 STB *</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_25 === null}">
         <ion-label text-wrap>Buen nivel de señal 3 STB *</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_26 === null}">
         <ion-label text-wrap>Señal pixeleada *</ion-label>
         <ion-select formControlName="resp_26" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -243,7 +243,7 @@
       <ion-list-header color="primary">
         Otros Datos
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_27 === null}">
         <ion-label text-wrap>Auditor solicita visita técnica *</ion-label>
         <ion-select formControlName="resp_27" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -260,19 +260,19 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_29 === null}">
         <ion-label text-wrap>Cantidad decos según plan *</ion-label>
         <ion-input formControlName="resp_29" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_30 === null}">
         <ion-label text-wrap>Cantidad decos existentes en domicilio *</ion-label>
         <ion-input formControlName="resp_30" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_31 === null}">
         <ion-label text-wrap>Cantidad multiswitch *</ion-label>
         <ion-input formControlName="resp_31" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_32 === null}">
         <ion-label text-wrap>Tamaño antena *</ion-label>
         <ion-select formControlName="resp_32" interface="popover">
           <ion-option value="60">60</ion-option>
@@ -282,15 +282,15 @@
       <ion-list-header color="primary">
         Niveles a Tomar - Principal
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_33 === null}">
         <ion-label text-wrap>T1 (10728 H) Principal *</ion-label>
         <ion-input formControlName="resp_33" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_34 === null}">
         <ion-label text-wrap>T2 (10768 H) Principal *</ion-label>
         <ion-input formControlName="resp_34" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_35 === null}">
         <ion-label text-wrap>T3 (10808 H) Principal *</ion-label>
         <ion-input formControlName="resp_35" text-right type="number"></ion-input>
       </ion-item>
@@ -330,7 +330,7 @@
         <ion-label text-wrap>T12 (11422 H) Principal</ion-label>
         <ion-input formControlName="resp_44" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_45 === null}">
         <ion-label text-wrap>T13 (10728 V) Principal *</ion-label>
         <ion-input formControlName="resp_45" text-right type="number"></ion-input>
       </ion-item>
@@ -447,57 +447,57 @@
       <ion-list-header color="primary">
         Observaciones
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_72 === null}">
         <ion-label text-wrap>Observaciones *</ion-label>
         <ion-input formControlName="resp_72" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_73 === null}">
         <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
         <ion-select formControlName="resp_73" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_74 === null}">
         <ion-label text-wrap>Se realiza reparación menor *</ion-label>54
         <ion-select formControlName="resp_74" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_75 === null}">
         <ion-label text-wrap>Soluciones *</ion-label>
         <ion-input formControlName="resp_75" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_76 === null}">
         <ion-label text-wrap>Cable Entel utilizado *</ion-label>
         <ion-input formControlName="resp_76" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_77 === null}">
         <ion-label text-wrap>Conectores *</ion-label>
         <ion-input formControlName="resp_77" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_78 === null}">
         <ion-label text-wrap>Amarras *</ion-label>
         <ion-input formControlName="resp_78" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_79 === null}">
         <ion-label text-wrap>Pasamuros utilizados *</ion-label>
         <ion-input formControlName="resp_79" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_80 === null}">
         <ion-label text-wrap>Tirafondos instalados *</ion-label>
         <ion-input formControlName="resp_80" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_81 === null}">
         <ion-label text-wrap>Voltaje Fase Neutro *</ion-label>
         <ion-input formControlName="resp_81" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_82 === null}">
         <ion-label text-wrap>Voltaje Fase Tierra *</ion-label>
         <ion-input formControlName="resp_82" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_83 === null}">
         <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
         <ion-input formControlName="resp_83" text-right type="text"></ion-input>
       </ion-item>

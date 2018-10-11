@@ -21,18 +21,18 @@
 <ion-content>
   <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar('mantencionesHfc')">
     <ion-list>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>OT SERVICORP *</ion-label>
         <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_1 === null}">
         <ion-label text-wrap>Los técnicos cumplieron con fecha y hora acordada *</ion-label>
         <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -40,7 +40,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_2 === null}">
         <ion-label text-wrap>Técnico se identificó con credencial, nombre, apellido *</ion-label>
         <ion-select formControlName="resp_2" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -48,7 +48,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_3 === null}">
         <ion-label text-wrap>Vestían uniforme y correctamente ordenados *</ion-label>
         <ion-select formControlName="resp_3" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -56,7 +56,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_4 === null}">
         <ion-label text-wrap>Explicaron el detalle del trabajo antes de comenzar *</ion-label>
         <ion-select formControlName="resp_4" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -64,7 +64,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_5 === null}">
         <ion-label text-wrap>El trato fue cordial durante la visita *</ion-label>
         <ion-select formControlName="resp_5" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -72,7 +72,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_6 === null}">
         <ion-label text-wrap>Contaban con herramientas necesarias *</ion-label>
         <ion-select formControlName="resp_6" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -80,7 +80,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_7 === null}">
         <ion-label text-wrap>Respondieron sus dudas durante la actividad ejecutada *</ion-label>
         <ion-select formControlName="resp_7" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -88,7 +88,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_8 === null}">
         <ion-label text-wrap>Dejaron copia de orden de trabajo *</ion-label>
         <ion-select formControlName="resp_8" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -96,7 +96,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_9 === null}">
         <ion-label text-wrap>Efectuaron capacitación del uso de los equipos *</ion-label>
         <ion-select formControlName="resp_9" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -104,7 +104,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_10 === null}">
         <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad *</ion-label>
         <ion-select formControlName="resp_10" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -112,7 +112,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_11 === null}">
         <ion-label text-wrap>Dejaron el lugar limpio al concluir la actividad *</ion-label>
         <ion-select formControlName="resp_11" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -120,7 +120,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_12 === null}">
         <ion-label text-wrap>Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA) *</ion-label>
         <ion-select formControlName="resp_12" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -128,7 +128,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_13 === null}">
         <ion-label text-wrap>Entrega clave de acceso wifi y personalizada a cliente *</ion-label>
         <ion-select formControlName="resp_13" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -136,7 +136,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_14 === null}">
         <ion-label text-wrap>Capacitó en el uso de control remoto del decodificador *</ion-label>
         <ion-select formControlName="resp_14" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -155,11 +155,11 @@
         <ion-label text-wrap>Técnico deja antena debidamente firme (Sin movimiento)</ion-label>
         <ion-input formControlName="resp_16" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_17 === null}">
         <ion-label text-wrap>Técnico cambia acometida dañada *</ion-label>
         <ion-input formControlName="resp_17" text-right type="text"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_18 === null}">
         <ion-label text-wrap>Técnico certifica o cambia ground block *</ion-label>
         <ion-select formControlName="resp_18" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -167,21 +167,21 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_19 === null}">
         <ion-label text-wrap>Técnico fija splitter *</ion-label>
         <ion-select formControlName="resp_19" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_20 === null}">
         <ion-label text-wrap>Técnico instala bloqueador de voltaje (Filtro HUM) *</ion-label>
         <ion-select formControlName="resp_20" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_21 === null}">
         <ion-label text-wrap>Técnico certifica o cambia conectores *</ion-label>
         <ion-select formControlName="resp_21" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -191,14 +191,14 @@
       <ion-list-header color="primary">
         Instalación Interior - Revisión Control Calidad
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_22 === null}">
         <ion-label text-wrap>Técnico certifica o cambia cableado interior *</ion-label>
         <ion-select formControlName="resp_22" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_23 === null}">
         <ion-label text-wrap>Técnico certifica o cambia cable PIN *</ion-label>
         <ion-select formControlName="resp_23" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -206,7 +206,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_24 === null}">
         <ion-label text-wrap>Técnico certifica o cambia roseta telefónica *</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -214,7 +214,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_25 === null}">
         <ion-label text-wrap>Técnico certifica o cambia equipo telefónico *</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -222,14 +222,14 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_26 === null}">
         <ion-label text-wrap>Técnico deja conectores correctamente torqueados *</ion-label>
         <ion-select formControlName="resp_26" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_27 === null}">
         <ion-label text-wrap>Técnico certifica o cambia cable HDMI *</ion-label>
         <ion-select formControlName="resp_27" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -237,7 +237,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_28 === null}">
         <ion-label text-wrap>Técnico certifica o cambia cable RCA *</ion-label>
         <ion-select formControlName="resp_28" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -245,7 +245,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_29 === null}">
         <ion-label text-wrap>Técnico certifica o cambia decodificador/Cmo MTA *</ion-label>
         <ion-select formControlName="resp_29" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -253,7 +253,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_30 === null}">
         <ion-label text-wrap>Técnico dejó equipo modo nat (CM-Emta) *</ion-label>
         <ion-select formControlName="resp_30" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -261,7 +261,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_31 === null}">
         <ion-label text-wrap>Técnico certifica o cambia canal de transmición WIFI *</ion-label>
         <ion-select formControlName="resp_31" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -269,14 +269,14 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_32 === null}">
         <ion-label text-wrap>Técnico certifica niveles operacines (CM-MTA-DECO) *</ion-label>
         <ion-select formControlName="resp_32" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_33 === null}">
         <ion-label text-wrap>Técnico certifica o cambia control remoto *</ion-label>
         <ion-select formControlName="resp_33" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -284,7 +284,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_34 === null}">
         <ion-label text-wrap>Técnico certifica o cambia pasivos splitter-dc *</ion-label>
         <ion-select formControlName="resp_34" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -295,7 +295,7 @@
       <ion-list-header color="primary">
         Revisión de Equipos
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_35 === null}">
         <ion-label text-wrap>Dirección correcta *</ion-label>
         <ion-select formControlName="resp_35" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -309,21 +309,21 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_37 === null}">
         <ion-label text-wrap>HFC/DTH *</ion-label>
         <ion-select formControlName="resp_37" interface="popover">
           <ion-option value="HFC">HFC</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_38 === null}">
         <ion-label text-wrap>Decos Std *</ion-label>
         <ion-input formControlName="resp_38" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_39 === null}">
         <ion-label text-wrap>Decos HD *</ion-label>
         <ion-input formControlName="resp_39" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_40 === null}">
         <ion-label text-wrap>Cantidad de equipos corresponde a contrato *</ion-label>
         <ion-select formControlName="resp_40" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -360,43 +360,43 @@
       <ion-list-header color="primary">
         Niveles HFC
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>TX *</ion-label>
         <ion-input formControlName="resp_47" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>RX *</ion-label>
         <ion-input formControlName="resp_48" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>SNR *</ion-label>
         <ion-input formControlName="resp_49" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Observaciones
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>Observaciones *</ion-label>
         <ion-input formControlName="resp_50" text-right type="text"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Conformidad Control Certificación Calidad
       </ion-list-header>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>Se genera vista técnica por garantía *</ion-label>
         <ion-select formControlName="resp_51" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>Se realiza reparación menor *</ion-label>
         <ion-select formControlName="resp_52" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>Reutilizada instalación *</ion-label>
         <ion-select formControlName="resp_53" interface="popover">
           <ion-option value="Si">Si</ion-option>

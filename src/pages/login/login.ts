@@ -21,7 +21,7 @@ import * as moment from 'moment'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  mode: string = 'develop'  // cambiar entre develop y producion según sea el caso
+  mode: string = 'producion'  // cambiar entre develop y producion según sea el caso
   loginForm: FormGroup
 
   constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
