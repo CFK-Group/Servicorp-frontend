@@ -220,14 +220,14 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_24 === null}">
-        <ion-label text-wrap>Buen nivel de señal 2 STB *</ion-label>
+        <ion-label text-wrap>Buen nivel de señal 2 STB</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_25 === null}">
-        <ion-label text-wrap>Buen nivel de señal 3 STB *</ion-label>
+        <ion-label text-wrap>Buen nivel de señal 3 STB</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -452,7 +452,7 @@
         <ion-input formControlName="resp_72" text-right type="text"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_73 === null}">
-        <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+        <ion-label text-wrap>Reutiliza material con autorización cliente *</ion-label>
         <ion-select formControlName="resp_73" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -514,7 +514,8 @@
       <ion-grid>
         <ion-row>
           <ion-col col>
-            <a ion-button icon-only block (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block *ngIf="images.length === 10">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
           </ion-col>
         </ion-row>
         <ion-row>

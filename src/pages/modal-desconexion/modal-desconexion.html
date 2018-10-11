@@ -85,7 +85,8 @@
     <ion-grid>
       <ion-row>
         <ion-col col>
-          <a ion-button icon-only block (click)="getPicture()"><ion-icon name="camera"></ion-icon></a>
+          <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+          <a ion-button icon-only block *ngIf="images.length === 10">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
         </ion-col>
       </ion-row>
       <ion-row>
