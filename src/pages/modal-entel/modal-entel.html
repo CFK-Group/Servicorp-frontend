@@ -36,6 +36,7 @@
         <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_2 === null}">
@@ -217,6 +218,7 @@
         <ion-select formControlName="resp_23" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_24 === null}">
@@ -254,10 +256,11 @@
       <ion-item>
         <ion-label text-wrap>Motivo de la baja</ion-label>
         <ion-select formControlName="resp_28" interface="popover">
-          <!-- faltan los motivos-------------------------------------------------- -->
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
+          <ion-option value="Por TV">Por TV</ion-option>
+          <ion-option value="Por Internet">Por Internet</ion-option>
+          <ion-option value="Por Call (post venta)">Por Call (post venta)</ion-option>
+          <ion-option value="Por Técnico">Por Técnico</ion-option>
+          <ion-option value="Otra">Otra</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_29 === null}">
@@ -467,39 +470,39 @@
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_75 === null}">
         <ion-label text-wrap>Soluciones *</ion-label>
-        <ion-input formControlName="resp_75" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_75" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_76 === null}">
         <ion-label text-wrap>Cable Entel utilizado *</ion-label>
-        <ion-input formControlName="resp_76" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_76" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_77 === null}">
         <ion-label text-wrap>Conectores *</ion-label>
-        <ion-input formControlName="resp_77" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_77" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_78 === null}">
         <ion-label text-wrap>Amarras *</ion-label>
-        <ion-input formControlName="resp_78" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_78" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_79 === null}">
         <ion-label text-wrap>Pasamuros utilizados *</ion-label>
-        <ion-input formControlName="resp_79" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_79" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_80 === null}">
         <ion-label text-wrap>Tirafondos instalados *</ion-label>
-        <ion-input formControlName="resp_80" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_80" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_81 === null}">
         <ion-label text-wrap>Voltaje Fase Neutro *</ion-label>
-        <ion-input formControlName="resp_81" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_81" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_82 === null}">
         <ion-label text-wrap>Voltaje Fase Tierra *</ion-label>
-        <ion-input formControlName="resp_82" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_82" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_83 === null}">
         <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
-        <ion-input formControlName="resp_83" text-right type="text"></ion-input>
+        <ion-input formControlName="resp_83" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Código de Barra
