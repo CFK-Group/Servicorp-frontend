@@ -124,7 +124,7 @@ export class ModalDesconexionPage {
       })
     }).catch((error) => {
       loading.dismiss()
-      console.log('Error getting location', error)
+      console.log('Error getting location', error.message)
     })
 
   }

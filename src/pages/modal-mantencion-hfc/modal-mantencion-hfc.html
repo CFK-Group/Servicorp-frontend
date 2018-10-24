@@ -153,7 +153,11 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Técnico deja antena debidamente firme (Sin movimiento)</ion-label>
-        <ion-input formControlName="resp_16" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_16" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_17 === null}">
         <ion-label text-wrap>Técnico cambia acometida dañada *</ion-label>
@@ -162,8 +166,8 @@
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_18 === null}">
         <ion-label text-wrap>Técnico certifica o cambia ground block *</ion-label>
         <ion-select formControlName="resp_18" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -335,27 +339,51 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-        <ion-input formControlName="resp_41" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_41" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-        <ion-input formControlName="resp_42" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_42" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-        <ion-input formControlName="resp_43" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_43" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-        <ion-input formControlName="resp_44" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_44" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-        <ion-input formControlName="resp_45" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_45" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-        <ion-input formControlName="resp_46" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_46" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-list-header color="primary">
         Niveles HFC
