@@ -129,7 +129,7 @@
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_13 === null}">
         <ion-label text-wrap>Entrega clave de acceso wifi y personalizada a cliente *</ion-label>
-        <ion-select formControlName="resp_13" interface="popover">
+        <ion-select formControlName="resp_13" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -166,7 +166,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Altura acometida en norma (4.5 Mts)</ion-label>
-        <ion-select formControlName="resp_18" interface="popover">
+        <ion-select formControlName="resp_18" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -174,16 +174,18 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>La acometida es nueva (No reutilizada)</ion-label>
-        <ion-select formControlName="resp_19" interface="popover">
+        <ion-select formControlName="resp_19" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Ficha de abonado en TAP, rotulada correctamente</ion-label>
-        <ion-select formControlName="resp_20" interface="popover">
+        <ion-select formControlName="resp_20" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_21 === null}">
@@ -261,7 +263,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Cable PIN es nuevo</ion-label>
-        <ion-select formControlName="resp_31" interface="popover">
+        <ion-select formControlName="resp_31" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -276,7 +278,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Tiene filtro Hum en instalación de TV</ion-label>
-        <ion-select formControlName="resp_33" interface="popover">
+        <ion-select formControlName="resp_33" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -292,7 +294,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Deja equipo modo Nat (CM-Emta)</ion-label>
-        <ion-select formControlName="resp_35" interface="popover">
+        <ion-select formControlName="resp_35" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -300,7 +302,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Certifica / cambia canal de transmisión de wifi</ion-label>
-        <ion-select formControlName="resp_36" interface="popover">
+        <ion-select formControlName="resp_36" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -308,7 +310,7 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Informó número telefónico asignado</ion-label>
-        <ion-select formControlName="resp_37" interface="popover">
+        <ion-select formControlName="resp_37" interface="popover" [disabled]="true">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -384,15 +386,15 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>TX</ion-label>
-        <ion-input formControlName="resp_50" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_50" text-right type="text" [disabled]="true"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>RX</ion-label>
-        <ion-input formControlName="resp_51" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_51" text-right type="text" [disabled]="true"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>SNR</ion-label>
-        <ion-input formControlName="resp_52" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_52" text-right type="text" [disabled]="true"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Observaciones
