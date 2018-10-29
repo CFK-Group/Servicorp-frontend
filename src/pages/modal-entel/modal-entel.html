@@ -221,18 +221,20 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_24 === null}">
+      <ion-item [>
         <ion-label text-wrap>Buen nivel de señal 2 STB</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_25 === null}">
+      <ion-item>
         <ion-label text-wrap>Buen nivel de señal 3 STB</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_26 === null}">

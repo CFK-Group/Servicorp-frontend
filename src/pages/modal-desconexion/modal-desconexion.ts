@@ -86,15 +86,24 @@ export class ModalDesconexionPage {
     this.desconexionForm.value.imagen_8 = this.images[7]
     this.desconexionForm.value.imagen_9 = this.images[8]
     this.desconexionForm.value.imagen_10 = this.images[9]
-
+    console.log('iniciando toma de coordenadas')
     // capturando posicion gps
-    this.geolocation.getCurrentPosition()
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    this.geolocation.getCurrentPosition(options)
     .then((resp) => {
+      console.log('tomando coordenadas')
       console.log(resp)
-      this.desconexionForm.value.latitud = resp.coords.latitude
-      this.desconexionForm.value.longitud = resp.coords.longitude
+      this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
+      this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
+      console.log('Coordenadas: ' + this.desconexionForm.value.latitud+','+this.desconexionForm.value.longitud)
+      console.log('Enviando Formulario')
       this.api.enviarFormularioDesconexion(this.desconexionForm.value)
       .then( (res: any) => {
+        console.log('formulario enviado')
         loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({
@@ -110,10 +119,11 @@ export class ModalDesconexionPage {
             subTitle: 'Vuelva a intentarlo más tarde.',
             buttons: ['OK']
           })
-          alert.present()        
+          alert.present()
         }
       })
       .catch( err => {
+        console.log('formulario NO enviado')
         loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
@@ -169,8 +179,10 @@ export class ModalDesconexionPage {
   }
 
   send(loading){
+    console.log('Enviando formulario de desconexion')
     this.api.enviarFormularioDesconexion(this.desconexionForm.value)
       .then( (res: any) => {
+        console.log('Formulario Enviado')
         loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({

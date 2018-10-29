@@ -58,7 +58,7 @@ export class ModalMantencionDthPage {
       resp_17: ['N/A'],
       resp_18: ['N/A'],
       resp_19: [null, Validators.required],
-      resp_20: [null],
+      resp_20: ['N/A'],
       resp_21: [null, Validators.required],
       resp_22: [null, Validators.required],
       resp_23: ['N/A'],
@@ -169,7 +169,12 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.value.cod_decodificador = this.cod_decodificador
 
     // capturando posicion gps
-    this.geolocation.getCurrentPosition().then((resp) => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    this.geolocation.getCurrentPosition(options).then((resp) => {
       this.mantencionesDth.value.latitud = resp.coords.latitude
       this.mantencionesDth.value.longitud = resp.coords.longitude
       this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
