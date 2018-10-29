@@ -172,7 +172,12 @@ export class ModalInstalacionesDthPage {
     this.instalacionesDth.value.cod_decodificador = this.cod_decodificador
 
     // capturando posicion gps
-    this.geolocation.getCurrentPosition().then((resp) => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    this.geolocation.getCurrentPosition(options).then((resp) => {
       this.instalacionesDth.value.latitud = resp.coords.latitude
       this.instalacionesDth.value.longitud = resp.coords.longitude
       this.api.enviarFormularioInstalacionDTH(this.instalacionesDth.value)

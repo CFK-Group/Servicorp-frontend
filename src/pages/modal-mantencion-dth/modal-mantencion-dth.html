@@ -148,11 +148,19 @@
       </ion-list-header>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_15 === null}">
         <ion-label text-wrap>Fijación de antena con (4 pernos) *</ion-label>
-        <ion-input formControlName="resp_15" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_15" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_16 === null}">
         <ion-label text-wrap>Técnico deja antena debidamente firme (Sin movimiento) *</ion-label>
-        <ion-input formControlName="resp_16" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_16" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Técnico cambia acometida dañada</ion-label>
@@ -178,6 +186,7 @@
         <ion-select formControlName="resp_20" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_21 === null}">

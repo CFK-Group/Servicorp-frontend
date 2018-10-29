@@ -56,9 +56,9 @@ export class ModalInstalacionesHfcPage {
       resp_15: ['N/A', Validators.required],
       resp_16: ['N/A', Validators.required],
       resp_17: ['N/A', Validators.required],
-      resp_18: [null],
-      resp_19: [null],
-      resp_20: [null],
+      resp_18: [null, Validators.required],
+      resp_19: [null, Validators.required],
+      resp_20: [null, Validators.required],
       resp_21: [null, Validators.required],
       resp_22: [null, Validators.required],
       resp_23: [null, Validators.required],
@@ -167,7 +167,12 @@ export class ModalInstalacionesHfcPage {
     this.instalacionesHfc.value.cod_decodificador = this.cod_decodificador
 
     // capturando posicion gps
-    this.geolocation.getCurrentPosition().then((resp) => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    this.geolocation.getCurrentPosition(options).then((resp) => {
       this.instalacionesHfc.value.latitud = resp.coords.latitude
       this.instalacionesHfc.value.longitud = resp.coords.longitude
       this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
