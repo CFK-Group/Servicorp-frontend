@@ -68,101 +68,102 @@ export class ModalDesconexionPage {
     if(this.desconexionForm.value.latitud === 0 && this.desconexionForm.value.longitud === 0){
       const alert = this.alertCtrl.create({
         title: 'GPS Apagado',
-        subTitle: 'Encienda su GPS antes de enviar el formulario por favor',
+        subTitle: 'Encienda su GPS antes de enviar el formulario.',
         buttons: ['OK']
       })
       alert.present()
-    }
-    if(this.desconexionForm.value.imagen_1 === null){
-      const confirm = this.alertCtrl.create({
-        title: 'Formulario sin imágenes',
-        message: '¿Desea enviar el formulario sin imágenes?',
-        buttons: [
-          {
-            text: 'Cancelar',
-            handler: () => {
-              console.log('se canceló')
-            }
-          },
-          {
-            text: 'OK',
-            handler: () => {
-              let loading = this.loadingCtrl.create({
-                content: 'Enviando formulario'
-              })
-              loading.present()
-              if(this.images.length > 0){
-                console.log('Guardando imagenes en el dispositivo...')
-                for(let i = 0; i < this.images.length; i++){
-                  this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp)
-                }
-                console.log('Imagenes guardadas.')
+    }else{
+      if(this.desconexionForm.value.imagen_1 === null){
+        const confirm = this.alertCtrl.create({
+          title: 'Formulario sin imágenes',
+          message: '¿Desea enviar el formulario sin imágenes?',
+          buttons: [
+            {
+              text: 'Cancelar',
+              handler: () => {
+                console.log('se canceló')
               }
-              this.desconexionForm.value.imagen_1 = this.images[0]
-              this.desconexionForm.value.imagen_2 = this.images[1]
-              this.desconexionForm.value.imagen_3 = this.images[2]
-              this.desconexionForm.value.imagen_4 = this.images[3]
-              this.desconexionForm.value.imagen_5 = this.images[4]
-              this.desconexionForm.value.imagen_6 = this.images[5]
-              this.desconexionForm.value.imagen_7 = this.images[6]
-              this.desconexionForm.value.imagen_8 = this.images[7]
-              this.desconexionForm.value.imagen_9 = this.images[8]
-              this.desconexionForm.value.imagen_10 = this.images[9]
-              console.log('iniciando toma de coordenadas')
-              // capturando posicion gps
-              var options = {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-              };
-              this.geolocation.getCurrentPosition(options)
-              .then((resp) => {
-                console.log('tomando coordenadas')
-                console.log(resp)
-                this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
-                this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
-                console.log('Coordenadas: ' + this.desconexionForm.value.latitud+','+this.desconexionForm.value.longitud)
-                console.log('Enviando Formulario')
-                this.api.enviarFormularioDesconexion(this.desconexionForm.value)
-                .then( (res: any) => {
-                  console.log('formulario enviado')
-                  loading.dismiss()
-                  if(res.success === true){
-                    let alert = this.alertCtrl.create({
-                      title: 'Formulario enviado',
-                      subTitle: 'Formulario de Desconexión enviado correctamente',
-                      buttons: ['OK']
-                    })
-                    alert.present()
-                    this.closeModal()
-                  }else{
-                    let alert = this.alertCtrl.create({
-                      title: 'Error (500) en el servidor',
-                      subTitle: 'Vuelva a intentarlo más tarde.',
-                      buttons: ['OK']
-                    })
-                    alert.present()
+            },
+            {
+              text: 'OK',
+              handler: () => {
+                let loading = this.loadingCtrl.create({
+                  content: 'Enviando formulario'
+                })
+                loading.present()
+                if(this.images.length > 0){
+                  console.log('Guardando imagenes en el dispositivo...')
+                  for(let i = 0; i < this.images.length; i++){
+                    this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp)
                   }
-                })
-                .catch( err => {
-                  console.log('formulario NO enviado')
-                  loading.dismiss()
-                  let alert = this.alertCtrl.create({
-                    title: 'Error al enviar formulario',
-                    subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
-                    buttons: ['OK']
+                  console.log('Imagenes guardadas.')
+                }
+                this.desconexionForm.value.imagen_1 = this.images[0]
+                this.desconexionForm.value.imagen_2 = this.images[1]
+                this.desconexionForm.value.imagen_3 = this.images[2]
+                this.desconexionForm.value.imagen_4 = this.images[3]
+                this.desconexionForm.value.imagen_5 = this.images[4]
+                this.desconexionForm.value.imagen_6 = this.images[5]
+                this.desconexionForm.value.imagen_7 = this.images[6]
+                this.desconexionForm.value.imagen_8 = this.images[7]
+                this.desconexionForm.value.imagen_9 = this.images[8]
+                this.desconexionForm.value.imagen_10 = this.images[9]
+                console.log('iniciando toma de coordenadas')
+                // capturando posicion gps
+                var options = {
+                  enableHighAccuracy: true,
+                  timeout: 5000,
+                  maximumAge: 0
+                };
+                this.geolocation.getCurrentPosition(options)
+                .then((resp) => {
+                  console.log('tomando coordenadas')
+                  console.log(resp)
+                  this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
+                  this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
+                  console.log('Coordenadas: ' + this.desconexionForm.value.latitud+','+this.desconexionForm.value.longitud)
+                  console.log('Enviando Formulario')
+                  this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+                  .then( (res: any) => {
+                    console.log('formulario enviado')
+                    loading.dismiss()
+                    if(res.success === true){
+                      let alert = this.alertCtrl.create({
+                        title: 'Formulario enviado',
+                        subTitle: 'Formulario de Desconexión enviado correctamente',
+                        buttons: ['OK']
+                      })
+                      alert.present()
+                      this.closeModal()
+                    }else{
+                      let alert = this.alertCtrl.create({
+                        title: 'Error (500) en el servidor',
+                        subTitle: 'Vuelva a intentarlo más tarde.',
+                        buttons: ['OK']
+                      })
+                      alert.present()
+                    }
                   })
-                  alert.present()
+                  .catch( err => {
+                    console.log('formulario NO enviado')
+                    loading.dismiss()
+                    let alert = this.alertCtrl.create({
+                      title: 'Error al enviar formulario',
+                      subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
+                      buttons: ['OK']
+                    })
+                    alert.present()
+                  })
+                }).catch((error) => {
+                  loading.dismiss()
+                  console.log('Error getting location', error.message)
                 })
-              }).catch((error) => {
-                loading.dismiss()
-                console.log('Error getting location', error.message)
-              })
+              }
             }
-          }
-        ]
-      })
-      confirm.present()
+          ]
+        })
+        confirm.present()
+      }
     }
   }
 
