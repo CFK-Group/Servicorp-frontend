@@ -143,72 +143,92 @@ export class ModalInstalacionesHfcPage {
   }
 
   enviar(nombreFormulario:string){
-    let loading = this.loadingCtrl.create({
-      content: 'Enviando formulario'
-    })
-    loading.present()
-    if(this.images.length > 0){
-      console.log('Guardando imagenes en el dispositivo...')
-      for(let i = 0; i < this.images.length; i++){
-        this.savePicture(this.images[i], this.instalacionesHfc.value.ot_servicorp)
-      }
-      console.log('Imagenes guardadas.')
+    if(this.instalacionesHfc.value.imagen_1 === null){
+      const confirm = this.alertCtrl.create({
+        title: 'Formulario sin imágenes',
+        message: '¿Desea enviar el formulario sin imágenes?',
+        buttons: [
+          {
+            text: 'Cancelar',
+            handler: () => {
+              console.log('se canceló')
+            }
+          },
+          {
+            text: 'OK',
+            handler: () => {
+              let loading = this.loadingCtrl.create({
+                content: 'Enviando formulario'
+              })
+              loading.present()
+              if(this.images.length > 0){
+                console.log('Guardando imagenes en el dispositivo...')
+                for(let i = 0; i < this.images.length; i++){
+                  this.savePicture(this.images[i], this.instalacionesHfc.value.ot_servicorp)
+                }
+                console.log('Imagenes guardadas.')
+              }
+              this.instalacionesHfc.value.imagen_1 = this.images[0]
+              this.instalacionesHfc.value.imagen_2 = this.images[1]
+              this.instalacionesHfc.value.imagen_3 = this.images[2]
+              this.instalacionesHfc.value.imagen_4 = this.images[3]
+              this.instalacionesHfc.value.imagen_5 = this.images[4]
+              this.instalacionesHfc.value.imagen_6 = this.images[5]
+              this.instalacionesHfc.value.imagen_7 = this.images[6]
+              this.instalacionesHfc.value.imagen_8 = this.images[7]
+              this.instalacionesHfc.value.imagen_9 = this.images[8]
+              this.instalacionesHfc.value.imagen_10 = this.images[9]
+              this.instalacionesHfc.value.cod_decodificador = this.cod_decodificador
+          
+              // capturando posicion gps
+              var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+              };
+              this.geolocation.getCurrentPosition(options).then((resp) => {
+                this.instalacionesHfc.value.latitud = resp.coords.latitude
+                this.instalacionesHfc.value.longitud = resp.coords.longitude
+                this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
+                .then( (res: any) => {
+                  console.log(this.instalacionesHfc.value)
+                  loading.dismiss()
+                  if(res.success === true){
+                    let alert = this.alertCtrl.create({
+                      title: 'Formulario enviado',
+                      subTitle: 'Formulario enviado correctamente',
+                      buttons: ['OK']
+                    })
+                    alert.present()
+                    this.closeModal()
+                  }else{
+                    let alert = this.alertCtrl.create({
+                      title: 'Error al enviar formulario',
+                      subTitle: res.message,
+                      buttons: ['OK']
+                    })
+                    alert.present()
+                  }
+                })
+                .catch( (reason:any) => {
+                  loading.dismiss()
+                  let alert = this.alertCtrl.create({
+                    title: 'Error al enviar formulario',
+                    subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+                    buttons: ['OK']
+                  })
+                  alert.present()
+                })
+              }).catch((error) => {
+                loading.dismiss()
+                console.log('Error getting location', error)
+              })
+            }
+          }
+        ]
+      })
+      confirm.present()
     }
-    this.instalacionesHfc.value.imagen_1 = this.images[0]
-    this.instalacionesHfc.value.imagen_2 = this.images[1]
-    this.instalacionesHfc.value.imagen_3 = this.images[2]
-    this.instalacionesHfc.value.imagen_4 = this.images[3]
-    this.instalacionesHfc.value.imagen_5 = this.images[4]
-    this.instalacionesHfc.value.imagen_6 = this.images[5]
-    this.instalacionesHfc.value.imagen_7 = this.images[6]
-    this.instalacionesHfc.value.imagen_8 = this.images[7]
-    this.instalacionesHfc.value.imagen_9 = this.images[8]
-    this.instalacionesHfc.value.imagen_10 = this.images[9]
-    this.instalacionesHfc.value.cod_decodificador = this.cod_decodificador
-
-    // capturando posicion gps
-    var options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    this.geolocation.getCurrentPosition(options).then((resp) => {
-      this.instalacionesHfc.value.latitud = resp.coords.latitude
-      this.instalacionesHfc.value.longitud = resp.coords.longitude
-      this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
-      .then( (res: any) => {
-        console.log(this.instalacionesHfc.value)
-        loading.dismiss()
-        if(res.success === true){
-          let alert = this.alertCtrl.create({
-            title: 'Formulario enviado',
-            subTitle: 'Formulario enviado correctamente',
-            buttons: ['OK']
-          })
-          alert.present()
-          this.closeModal()
-        }else{
-          let alert = this.alertCtrl.create({
-            title: 'Error al enviar formulario',
-            subTitle: res.message,
-            buttons: ['OK']
-          })
-          alert.present()
-        }
-      })
-      .catch( (reason:any) => {
-        loading.dismiss()
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-          buttons: ['OK']
-        })
-        alert.present()
-      })
-    }).catch((error) => {
-      loading.dismiss()
-      console.log('Error getting location', error)
-    })
   }
 
   ionViewDidLoad() {
