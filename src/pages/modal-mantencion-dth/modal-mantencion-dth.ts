@@ -140,6 +140,14 @@ export class ModalMantencionDthPage {
   }
 
   enviar(nombreFormulario:string){
+    if(this.mantencionesDth.value.latitud === 0 && this.mantencionesDth.value.longitud === 0){
+      const alert = this.alertCtrl.create({
+        title: 'GPS Apagado',
+        subTitle: 'Encienda su GPS antes de enviar el formulario por favor',
+        buttons: ['OK']
+      })
+      alert.present()
+    }
     if(this.mantencionesDth.value.imagen_1 === null){
       const confirm = this.alertCtrl.create({
         title: 'Formulario sin imágenes',

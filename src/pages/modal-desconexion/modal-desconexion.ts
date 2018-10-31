@@ -65,6 +65,14 @@ export class ModalDesconexionPage {
   }
 
   enviar(nombreFormulario:string){
+    if(this.desconexionForm.value.latitud === 0 && this.desconexionForm.value.longitud === 0){
+      const alert = this.alertCtrl.create({
+        title: 'GPS Apagado',
+        subTitle: 'Encienda su GPS antes de enviar el formulario por favor',
+        buttons: ['OK']
+      })
+      alert.present()
+    }
     if(this.desconexionForm.value.imagen_1 === null){
       const confirm = this.alertCtrl.create({
         title: 'Formulario sin imágenes',

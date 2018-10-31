@@ -140,6 +140,14 @@ export class ModalMantencionHfcPage {
   }
 
   enviar(nombreFormulario:string){
+    if(this.mantencionesHfc.value.latitud === 0 && this.mantencionesHfc.value.longitud === 0){
+      const alert = this.alertCtrl.create({
+        title: 'GPS Apagado',
+        subTitle: 'Encienda su GPS antes de enviar el formulario por favor',
+        buttons: ['OK']
+      })
+      alert.present()
+    }
     if(this.mantencionesHfc.value.imagen_1 === null){
       const confirm = this.alertCtrl.create({
         title: 'Formulario sin imágenes',
