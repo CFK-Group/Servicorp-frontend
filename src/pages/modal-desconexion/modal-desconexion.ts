@@ -32,46 +32,20 @@ export class ModalDesconexionPage {
   }
 
   private createDesconexionForm(){
-    return this.formBuilder.group({
-      latitud: 0,
-      longitud: 0,
-      usuario_id: localStorage.getItem('userId'),
-      token: localStorage.getItem('userToken'),
-      ot_servicorp: [null, Validators.required],
-      folio_servicio: [null, Validators.required],
-      resp_1: [null, Validators.required],
-      resp_2: [null, Validators.required],
-      resp_3: [null, Validators.required],
-      resp_4: [null, Validators.required],
-      resp_5: [null, Validators.required],
-      resp_6: [null, Validators.required],
-      resp_7: [null, Validators.required],
-      resp_8: [null],
-      imagen_1: this.images[0],
-      imagen_2: this.images[1],
-      imagen_3: this.images[2],
-      imagen_4: this.images[3],
-      imagen_5: this.images[4],
-      imagen_6: this.images[5],
-      imagen_7: this.images[6],
-      imagen_8: this.images[7],
-      imagen_9: this.images[8],
-      imagen_10: this.images[9]
-    })
     // return this.formBuilder.group({
     //   latitud: 0,
     //   longitud: 0,
     //   usuario_id: localStorage.getItem('userId'),
     //   token: localStorage.getItem('userToken'),
-    //   ot_servicorp: [null],
-    //   folio_servicio: [null],
-    //   resp_1: [null],
-    //   resp_2: [null],
-    //   resp_3: [null],
-    //   resp_4: [null],
-    //   resp_5: [null],
-    //   resp_6: [null],
-    //   resp_7: [null],
+    //   ot_servicorp: [null, Validators.required],
+    //   folio_servicio: [null, Validators.required],
+    //   resp_1: [null, Validators.required],
+    //   resp_2: [null, Validators.required],
+    //   resp_3: [null, Validators.required],
+    //   resp_4: [null, Validators.required],
+    //   resp_5: [null, Validators.required],
+    //   resp_6: [null, Validators.required],
+    //   resp_7: [null, Validators.required],
     //   resp_8: [null],
     //   imagen_1: this.images[0],
     //   imagen_2: this.images[1],
@@ -84,6 +58,32 @@ export class ModalDesconexionPage {
     //   imagen_9: this.images[8],
     //   imagen_10: this.images[9]
     // })
+    return this.formBuilder.group({
+      latitud: 0,
+      longitud: 0,
+      usuario_id: localStorage.getItem('userId'),
+      token: localStorage.getItem('userToken'),
+      ot_servicorp: [null],
+      folio_servicio: [null],
+      resp_1: [null],
+      resp_2: [null],
+      resp_3: [null],
+      resp_4: [null],
+      resp_5: [null],
+      resp_6: [null],
+      resp_7: [null],
+      resp_8: [null],
+      imagen_1: this.images[0],
+      imagen_2: this.images[1],
+      imagen_3: this.images[2],
+      imagen_4: this.images[3],
+      imagen_5: this.images[4],
+      imagen_6: this.images[5],
+      imagen_7: this.images[6],
+      imagen_8: this.images[7],
+      imagen_9: this.images[8],
+      imagen_10: this.images[9]
+    })
   }
 
   enviar(nombreFormulario:string){

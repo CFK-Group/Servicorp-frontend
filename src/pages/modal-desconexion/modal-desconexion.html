@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
+  <form [formGroup]="desconexionForm" (ngSubmit)="enviarFormulario()">
     <ion-list>
       <ion-item [ngClass]="{'invalid': desconexionForm.value.ot_servicorp === null}">
         <ion-label text-wrap>OT SERVICORP *</ion-label>
