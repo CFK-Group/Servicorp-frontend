@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { ApiServiceProvider } from '../providers/api-service/api-service'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Geolocation } from '@ionic-native/geolocation'
+import { Diagnostic } from '@ionic-native/diagnostic'
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { Geolocation } from '@ionic-native/geolocation'
     ApiServiceProvider,
     Base64ToGallery,
     BarcodeScanner,
-    Geolocation
+    Geolocation,
+    Diagnostic
   ]
 })
 export class AppModule {}

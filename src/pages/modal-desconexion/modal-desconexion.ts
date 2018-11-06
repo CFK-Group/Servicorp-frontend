@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavParams, LoadingController, ViewController } from 'ionic-angular'
+import { IonicPage, LoadingController, ViewController } from 'ionic-angular'
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { AlertController } from 'ionic-angular'
@@ -7,6 +7,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera'
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { Geolocation } from '@ionic-native/geolocation'
+import { Diagnostic } from '@ionic-native/diagnostic'
 
 /**
  * Generated class for the ModalDesconexionPage page.
@@ -26,13 +27,8 @@ export class ModalDesconexionPage {
   image: string = null
   images = []
 
-  constructor(private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.desconexionForm = this.createDesconexionForm()
-    try{
-      console.log(navParams.get('formData'))
-    }catch(err){
-      console.log('Error al leer parámetros')
-    }
   }
 
   private createDesconexionForm(){
@@ -62,17 +58,38 @@ export class ModalDesconexionPage {
       imagen_9: this.images[8],
       imagen_10: this.images[9]
     })
+    // return this.formBuilder.group({
+    //   latitud: 0,
+    //   longitud: 0,
+    //   usuario_id: localStorage.getItem('userId'),
+    //   token: localStorage.getItem('userToken'),
+    //   ot_servicorp: [null],
+    //   folio_servicio: [null],
+    //   resp_1: [null],
+    //   resp_2: [null],
+    //   resp_3: [null],
+    //   resp_4: [null],
+    //   resp_5: [null],
+    //   resp_6: [null],
+    //   resp_7: [null],
+    //   resp_8: [null],
+    //   imagen_1: this.images[0],
+    //   imagen_2: this.images[1],
+    //   imagen_3: this.images[2],
+    //   imagen_4: this.images[3],
+    //   imagen_5: this.images[4],
+    //   imagen_6: this.images[5],
+    //   imagen_7: this.images[6],
+    //   imagen_8: this.images[7],
+    //   imagen_9: this.images[8],
+    //   imagen_10: this.images[9]
+    // })
   }
 
   enviar(nombreFormulario:string){
-    if(this.desconexionForm.value.latitud === 0 && this.desconexionForm.value.longitud === 0){
-      const alert = this.alertCtrl.create({
-        title: 'GPS Apagado',
-        subTitle: 'Encienda su GPS antes de enviar el formulario.',
-        buttons: ['OK']
-      })
-      alert.present()
-    }else{
+    this.diagnostic.isGpsLocationEnabled()
+    .then((res:any) => {
+
       if(this.desconexionForm.value.imagen_1 === null){
         const confirm = this.alertCtrl.create({
           title: 'Formulario sin imágenes',
@@ -164,7 +181,16 @@ export class ModalDesconexionPage {
         })
         confirm.present()
       }
-    }
+    })
+    .catch(err => {
+      console.log(err)
+      const alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: JSON.stringify(err),
+        buttons: ['OK']
+      })
+      alert.present()
+    })
   }
 
   ionViewDidLoad() {

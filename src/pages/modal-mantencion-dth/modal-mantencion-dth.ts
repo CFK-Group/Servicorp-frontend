@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavParams, LoadingController, ViewController } from 'ionic-angular'
+import { IonicPage, LoadingController, ViewController } from 'ionic-angular'
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { AlertController } from 'ionic-angular'
@@ -8,6 +8,7 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Geolocation } from '@ionic-native/geolocation'
+import { Diagnostic } from '@ionic-native/diagnostic'
 
 /**
  * Generated class for the ModalMantencionDthPage page.
@@ -27,7 +28,7 @@ export class ModalMantencionDthPage {
   images = []
   cod_decodificador = ''
 
-  constructor(private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, private navParams: NavParams, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesDth = this.createMantencionesDthForm()
   }
 
@@ -140,14 +141,9 @@ export class ModalMantencionDthPage {
   }
 
   enviar(nombreFormulario:string){
-    if(this.mantencionesDth.value.latitud === 0 && this.mantencionesDth.value.longitud === 0){
-      const alert = this.alertCtrl.create({
-        title: 'GPS Apagado',
-        subTitle: 'Encienda su GPS antes de enviar el formulario por favor',
-        buttons: ['OK']
-      })
-      alert.present()
-    }else{
+    this.diagnostic.isLocationEnabled()
+    .then((res:any) => {
+
       if(this.mantencionesDth.value.imagen_1 === null){
         const confirm = this.alertCtrl.create({
           title: 'Formulario sin imágenes',
@@ -239,7 +235,15 @@ export class ModalMantencionDthPage {
         })
         confirm.present()
       }
-    }
+    })
+    .catch(err => {
+      const alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: err,
+        buttons: ['OK']
+      })
+      alert.present()
+    })
   }
 
   ionViewDidLoad() {
