@@ -140,10 +140,10 @@ export class ModalMantencionHfcPage {
     })
   }
 
-  enviar(nombreFormulario:string){
+  enviar(){
     this.diagnostic.isGpsLocationEnabled()
     .then((res:any) => {
-      if(this.mantencionesHfc.value.imagen_1 === null){
+      if(this.images[0] == null){
         const confirm = this.alertCtrl.create({
           title: 'Formulario sin imágenes',
           message: '¿Desea enviar el formulario sin imágenes?',
@@ -157,76 +157,14 @@ export class ModalMantencionHfcPage {
             {
               text: 'OK',
               handler: () => {
-                let loading = this.loadingCtrl.create({
-                  content: 'Enviando formulario'
-                })
-                loading.present()
-                if(this.images.length > 0){
-                  console.log('Guardando imagenes en el dispositivo...')
-                  for(let i = 0; i < this.images.length; i++){
-                    this.savePicture(this.images[i], this.mantencionesHfc.value.ot_servicorp)
-                  }
-                  console.log('Imagenes guardadas.')
-                }
-                if(this.cod_decodificador != ''){
-                  console.log('Guardando código decodificador en el dispositivo...')
-                  this.savePicture(this.cod_decodificador, `cod_${this.mantencionesHfc.value.ot_servicorp}`)
-                  console.log('Código decodificador guardado.')
-                }
-                this.mantencionesHfc.value.imagen_1 = this.images[0]
-                this.mantencionesHfc.value.imagen_2 = this.images[1]
-                this.mantencionesHfc.value.imagen_3 = this.images[2]
-                this.mantencionesHfc.value.imagen_4 = this.images[3]
-                this.mantencionesHfc.value.imagen_5 = this.images[4]
-                this.mantencionesHfc.value.imagen_6 = this.images[5]
-                this.mantencionesHfc.value.imagen_7 = this.images[6]
-                this.mantencionesHfc.value.imagen_8 = this.images[7]
-                this.mantencionesHfc.value.imagen_9 = this.images[8]
-                this.mantencionesHfc.value.imagen_10 = this.images[9]
-                this.mantencionesHfc.value.cod_decodificador = this.cod_decodificador
-            
-                // capturando posicion gps
-                this.geolocation.getCurrentPosition().then((resp) => {
-                  this.mantencionesHfc.value.latitud = resp.coords.latitude
-                  this.mantencionesHfc.value.longitud = resp.coords.longitude
-                  this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
-                  .then( (res: any) => {
-                    loading.dismiss()
-                    if(res.success === true){
-                      let alert = this.alertCtrl.create({
-                        title: 'Formulario enviado',
-                        subTitle: 'Formulario enviado correctamente',
-                        buttons: ['OK']
-                      })
-                      alert.present()
-                      this.closeModal()
-                    }else{
-                      let alert = this.alertCtrl.create({
-                        title: 'Error al enviar formulario',
-                        subTitle: res.message,
-                        buttons: ['OK']
-                      })
-                      alert.present()
-                    }
-                  })
-                  .catch( (reason:any) => {
-                    loading.dismiss()
-                    let alert = this.alertCtrl.create({
-                      title: 'Error al enviar formulario',
-                      subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-                      buttons: ['OK']
-                    })
-                    alert.present()
-                  })
-                }).catch((error) => {
-                  loading.dismiss()
-                  console.log('Error getting location', error)
-                })
+                this.enviarFormulario()
               }
             }
           ]
         })
         confirm.present()
+      }else{
+        this.enviarFormulario()
       }
     })
     .catch(err => {
@@ -236,6 +174,74 @@ export class ModalMantencionHfcPage {
         buttons: ['OK']
       })
       alert.present()
+    })
+  }
+
+  enviarFormulario(){
+    let loading = this.loadingCtrl.create({
+      content: 'Enviando formulario'
+    })
+    loading.present()
+    if(this.images.length > 0){
+      console.log('Guardando imagenes en el dispositivo...')
+      for(let i = 0; i < this.images.length; i++){
+        this.savePicture(this.images[i], this.mantencionesHfc.value.ot_servicorp)
+      }
+      console.log('Imagenes guardadas.')
+    }
+    if(this.cod_decodificador != ''){
+      console.log('Guardando código decodificador en el dispositivo...')
+      this.savePicture(this.cod_decodificador, `cod_${this.mantencionesHfc.value.ot_servicorp}`)
+      console.log('Código decodificador guardado.')
+    }
+    this.mantencionesHfc.value.imagen_1 = this.images[0]
+    this.mantencionesHfc.value.imagen_2 = this.images[1]
+    this.mantencionesHfc.value.imagen_3 = this.images[2]
+    this.mantencionesHfc.value.imagen_4 = this.images[3]
+    this.mantencionesHfc.value.imagen_5 = this.images[4]
+    this.mantencionesHfc.value.imagen_6 = this.images[5]
+    this.mantencionesHfc.value.imagen_7 = this.images[6]
+    this.mantencionesHfc.value.imagen_8 = this.images[7]
+    this.mantencionesHfc.value.imagen_9 = this.images[8]
+    this.mantencionesHfc.value.imagen_10 = this.images[9]
+    this.mantencionesHfc.value.cod_decodificador = this.cod_decodificador
+
+    // capturando posicion gps
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.mantencionesHfc.value.latitud = resp.coords.latitude
+      this.mantencionesHfc.value.longitud = resp.coords.longitude
+      this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
+      .then( (res: any) => {
+        loading.dismiss()
+        if(res.success === true){
+          let alert = this.alertCtrl.create({
+            title: 'Formulario enviado',
+            subTitle: 'Formulario enviado correctamente',
+            buttons: ['OK']
+          })
+          alert.present()
+          this.closeModal()
+        }else{
+          let alert = this.alertCtrl.create({
+            title: 'Error al enviar formulario',
+            subTitle: res.message,
+            buttons: ['OK']
+          })
+          alert.present()
+        }
+      })
+      .catch( (reason:any) => {
+        loading.dismiss()
+        let alert = this.alertCtrl.create({
+          title: 'Error al enviar formulario',
+          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
+          buttons: ['OK']
+        })
+        alert.present()
+      })
+    }).catch((error) => {
+      loading.dismiss()
+      console.log('Error getting location', error)
     })
   }
 
