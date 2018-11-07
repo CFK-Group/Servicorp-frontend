@@ -89,31 +89,44 @@ export class ModalDesconexionPage {
   enviar(nombreFormulario:string){
     this.diagnostic.isGpsLocationEnabled()
     .then((res:any) => {
-      if(this.images[0] == null){
-        const confirm = this.alertCtrl.create({
-          title: 'Formulario sin imágenes',
-          message: '¿Desea enviar el formulario sin imágenes?',
-          buttons: [
-            {
-              text: 'Cancelar',
-              handler: () => {
-                console.log('se canceló')
+      console.log('GPS COMMUNICATION SUCCESSFULL')
+      if (res) {
+        console.log('GPS ENABLED')
+        if (this.images[0] == null) {
+          const confirm = this.alertCtrl.create({
+            title: 'Formulario sin imágenes',
+            message: '¿Desea enviar el formulario sin imágenes?',
+            buttons: [
+              {
+                text: 'Cancelar',
+                handler: () => {
+                  console.log('se canceló')
+                }
+              },
+              {
+                text: 'OK',
+                handler: () => {
+                  this.enviarFormulario()
+                }
               }
-            },
-            {
-              text: 'OK',
-              handler: () => {
-                this.enviarFormulario()
-              }
-            }
-          ]
-        })
-        confirm.present()
+            ]
+          })
+          confirm.present()
+        } else {
+          this.enviarFormulario()
+        }
       }else{
-        this.enviarFormulario()
+        console.log('GPS DISABLED')
+        const alert = this.alertCtrl.create({
+          title: 'Error',
+          subTitle: 'Necesitas activar tu GPS',
+          buttons: ['OK']
+        })
+        alert.present()
       }
     })
     .catch(err => {
+      console.log('Falla de comunicacion con el GPS')
       console.log(err)
       const alert = this.alertCtrl.create({
         title: 'Error',
@@ -236,40 +249,6 @@ export class ModalDesconexionPage {
       (res) => console.log('Saved image to gallery ', res),
       (err) => console.log('Error saving image to gallery ', err)
     )
-  }
-
-  send(loading){
-    console.log('Enviando formulario de desconexion')
-    this.api.enviarFormularioDesconexion(this.desconexionForm.value)
-      .then( (res: any) => {
-        console.log('Formulario Enviado')
-        loading.dismiss()
-        if(res.success === true){
-          let alert = this.alertCtrl.create({
-            title: 'Formulario enviado',
-            subTitle: 'Formulario de Desconexión enviado correctamente',
-            buttons: ['OK']
-          })
-          alert.present()
-          this.closeModal()
-        }else{
-          let alert = this.alertCtrl.create({
-            title: 'Error (500) en el servidor',
-            subTitle: 'Vuelva a intentarlo más tarde.',
-            buttons: ['OK']
-          })
-          alert.present()
-        }
-      })
-      .catch( err => {
-        loading.dismiss()
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
-          buttons: ['OK']
-        })
-        alert.present()
-      })
   }
 
 }
