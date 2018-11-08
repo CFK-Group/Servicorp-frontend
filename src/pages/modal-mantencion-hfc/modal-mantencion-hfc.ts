@@ -143,34 +143,48 @@ export class ModalMantencionHfcPage {
   enviar(){
     this.diagnostic.isGpsLocationEnabled()
     .then((res:any) => {
-      if(this.images[0] == null){
-        const confirm = this.alertCtrl.create({
-          title: 'Formulario sin imágenes',
-          message: '¿Desea enviar el formulario sin imágenes?',
-          buttons: [
-            {
-              text: 'Cancelar',
-              handler: () => {
-                console.log('se canceló');
+      console.log('GPS COMMUNICATION SUCCESSFULL')
+      if (res) {
+        console.log('GPS ENABLED')
+        if (this.images[0] == null) {
+          const confirm = this.alertCtrl.create({
+            title: 'Formulario sin imágenes',
+            message: '¿Desea enviar el formulario sin imágenes?',
+            buttons: [
+              {
+                text: 'Cancelar',
+                handler: () => {
+                  console.log('se canceló')
+                }
+              },
+              {
+                text: 'OK',
+                handler: () => {
+                  this.enviarFormulario()
+                }
               }
-            },
-            {
-              text: 'OK',
-              handler: () => {
-                this.enviarFormulario()
-              }
-            }
-          ]
-        })
-        confirm.present()
+            ]
+          })
+          confirm.present()
+        } else {
+          this.enviarFormulario()
+        }
       }else{
-        this.enviarFormulario()
+        console.log('GPS DISABLED')
+        const alert = this.alertCtrl.create({
+          title: 'Error',
+          subTitle: 'Necesitas activar tu GPS',
+          buttons: ['OK']
+        })
+        alert.present()
       }
     })
     .catch(err => {
+      console.log('Falla de comunicacion con el GPS')
+      console.log(err)
       const alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: err,
+        subTitle: JSON.stringify(err),
         buttons: ['OK']
       })
       alert.present()
@@ -208,8 +222,8 @@ export class ModalMantencionHfcPage {
 
     // capturando posicion gps
     this.geolocation.getCurrentPosition().then((resp) => {
-      this.mantencionesHfc.value.latitud = resp.coords.latitude
-      this.mantencionesHfc.value.longitud = resp.coords.longitude
+      this.mantencionesHfc.value.latitud = resp.coords.latitude || 'e'
+      this.mantencionesHfc.value.longitud = resp.coords.longitude || 'eclear'
       this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
       .then( (res: any) => {
         loading.dismiss()

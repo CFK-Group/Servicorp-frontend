@@ -140,34 +140,48 @@ export class ModalEntelPage {
   enviar(){
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
-      if(this.images[0] == null){
-        const confirm = this.alertCtrl.create({
-          title: 'Formulario sin imágenes',
-          message: '¿Desea enviar el formulario sin imágenes?',
-          buttons: [
-            {
-              text: 'Cancelar',
-              handler: () => {
-                console.log('se canceló')
+      console.log('GPS COMMUNICATION SUCCESSFULL')
+      if (res) {
+        console.log('GPS ENABLED')
+        if (this.images[0] == null) {
+          const confirm = this.alertCtrl.create({
+            title: 'Formulario sin imágenes',
+            message: '¿Desea enviar el formulario sin imágenes?',
+            buttons: [
+              {
+                text: 'Cancelar',
+                handler: () => {
+                  console.log('se canceló')
+                }
+              },
+              {
+                text: 'OK',
+                handler: () => {
+                  this.enviarFormulario()
+                }
               }
-            },
-            {
-              text: 'OK',
-              handler: () => {
-                this.enviarFormulario()
-              }
-            }
-          ]
-        })
-        confirm.present()
+            ]
+          })
+          confirm.present()
+        } else {
+          this.enviarFormulario()
+        }
       }else{
-        this.enviarFormulario()
+        console.log('GPS DISABLED')
+        const alert = this.alertCtrl.create({
+          title: 'Error',
+          subTitle: 'Necesitas activar tu GPS',
+          buttons: ['OK']
+        })
+        alert.present()
       }
     })
     .catch(err => {
+      console.log('Falla de comunicacion con el GPS')
+      console.log(err)
       const alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: err,
+        subTitle: JSON.stringify(err),
         buttons: ['OK']
       })
       alert.present()
@@ -211,8 +225,8 @@ export class ModalEntelPage {
     };
     this.geolocation.getCurrentPosition(options).then((resp) => {
       console.log(resp)
-      this.instalacionesDth.value.latitud = resp.coords.latitude
-      this.instalacionesDth.value.longitud = resp.coords.longitude
+      this.instalacionesDth.value.latitud = resp.coords.latitude || 'e'
+      this.instalacionesDth.value.longitud = resp.coords.longitude || 'eclear'
       this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
       .then( (res: any) => {
         console.log(this.instalacionesDth.value)
