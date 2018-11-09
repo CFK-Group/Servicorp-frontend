@@ -161,7 +161,11 @@
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_17 === null}">
         <ion-label text-wrap>Técnico cambia acometida dañada *</ion-label>
-        <ion-input formControlName="resp_17" text-right type="text"></ion-input>
+        <ion-select formControlName="resp_17" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_18 === null}">
         <ion-label text-wrap>Técnico certifica o cambia ground block *</ion-label>
