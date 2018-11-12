@@ -16,9 +16,8 @@ import { ApiServiceProvider } from '../../providers/api-service/api-service'
 })
 export class FormDetailPage {
 
-  respuestas = []
-  preguntas = []
   formulario = []
+  imagenes = []
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiServiceProvider, private view: ViewController, public loadingCtrl: LoadingController) {
     
@@ -30,32 +29,24 @@ export class FormDetailPage {
       content: 'Cargando Formularios'
     })
     loading.present()
-    this.api.getFormResponses(this.navParams.get('formData').id)
-      .then((res:any) => {
-        this.respuestas = res.data
-        this.api.getFormQuestions(this.navParams.get('formData').id)
-          .then((res:any) => {
-            this.preguntas = res.data
-            
-            //creando listado de pregunta/respuesta
-            for(let i = 0; i < this.respuestas.length; i++){
-              this.formulario.push({
-                glosa: this.preguntas[i].glosa,
-                respuesta: this.respuestas[i].respuesta
-              })
-            }
-            loading.dismiss()
-          })
-          .catch((err) => {
-            console.error('Error al traer preguntas: ' + err.message)
-            loading.dismiss()
-          })
-      })
-      .catch((err) => {
-        console.error('Error al traer respuestas: ' + err.message)
-        loading.dismiss()
-      })
-
+    this.api.getFormQuestions(this.navParams.get('formData').id)
+    .then((res:any) => {
+      this.formulario = res.data
+      console.log(this.formulario)
+    })
+    .catch((err) => {
+      console.error('Error al traer preguntas: ' + err.message)
+      loading.dismiss()
+    })
+    this.api.getFormImgs(this.navParams.get('formData').id)
+    .then((res:any) => {
+      this.imagenes = res.data
+      loading.dismiss()
+    })
+    .catch((err) => {
+      console.error('Error al traer imágenes: ' + err.message)
+      loading.dismiss()
+    })
   }
 
   closeModal() {

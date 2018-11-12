@@ -25,6 +25,10 @@
       <ion-label text-wrap>{{form.glosa}}</ion-label>
       <ion-note item-end>{{form.respuesta}}</ion-note>
     </ion-item>
+
+    <ion-item *ngFor="let img of imagenes">
+      <img [src]="img.data.ruta">
+    </ion-item>
   </ion-list>
 
 </ion-content>
