@@ -27,7 +27,7 @@
     </ion-item>
 
     <ion-item *ngFor="let img of imagenes">
-      <img [src]="img.data.ruta">
+      <img [src]="'http://genesis.xpass.cl:3001/'+img.ruta">
     </ion-item>
   </ion-list>
 

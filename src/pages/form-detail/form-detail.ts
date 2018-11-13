@@ -41,6 +41,7 @@ export class FormDetailPage {
     this.api.getFormImgs(this.navParams.get('formData').id)
     .then((res:any) => {
       this.imagenes = res.data
+      console.log(this.imagenes)
       loading.dismiss()
     })
     .catch((err) => {
