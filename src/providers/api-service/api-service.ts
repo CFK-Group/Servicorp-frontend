@@ -60,4 +60,8 @@ export class ApiServiceProvider {
     return this.api.get(`${this.url}/preguntas/${formularioId}/${localStorage.getItem('userToken')}`).toPromise()
   }
 
+  getFormImgs(formularioId){
+    return this.api.get(`${this.url}/imgs/${formularioId}/${localStorage.getItem('userToken')}`).toPromise()
+  }
+
 }
