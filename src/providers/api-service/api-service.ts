@@ -12,7 +12,7 @@ import "rxjs/Rx"
 @Injectable()
 export class ApiServiceProvider {
   url: string = "http://genesis.xpass.cl:3001"
-  // url: string = "http://192.168.0.3:3001"
+  // url: string = "http://192.168.0.4:3001"
 
   constructor(public api: HttpClient) { }
 
@@ -62,6 +62,10 @@ export class ApiServiceProvider {
 
   getFormImgs(formularioId){
     return this.api.get(`${this.url}/imgs/${formularioId}/${localStorage.getItem('userToken')}`).toPromise()
+  }
+
+  putQuestions(data, tipoFormularioId){
+    return this.api.put(`${this.url}/edit-form/${tipoFormularioId}/${localStorage.getItem('userToken')}`, data).toPromise()
   }
 
 }
