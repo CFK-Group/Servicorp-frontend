@@ -823,359 +823,359 @@ export class FormDetailPage {
               this.id_folio_servicio = this.formulario[i].id
               break
               case 'Los técnicos cumplieron con fecha y hora acordada':
-              this.id_resp_1 = this.formulario[i].id  
+              this.id_resp_1 = this.formulario[i].id
               this.resp_1 = this.formulario[i].respuesta
               break
               case 'Técnico se identificó con credencial, nombre, apellido':
-              this.id_resp_2 = this.formulario[i].id  
+              this.id_resp_2 = this.formulario[i].id
               this.resp_2 = this.formulario[i].respuesta
               break
               case 'Vestían uniforme y correctamente ordenados':
-              this.id_resp_3 = this.formulario[i].id  
+              this.id_resp_3 = this.formulario[i].id
               this.resp_3 = this.formulario[i].respuesta
               break
               case 'Explicaron el detalle del trabajo antes de comenzar':
-              this.id_resp_4 = this.formulario[i].id  
+              this.id_resp_4 = this.formulario[i].id
               this.resp_4 = this.formulario[i].respuesta
               break
               case 'El trato fue cordial durante la visita':
-              this.id_resp_5 = this.formulario[i].id  
+              this.id_resp_5 = this.formulario[i].id
               this.resp_5 = this.formulario[i].respuesta
               break
               case 'Contaban con herramientas necesarias':
-              this.id_resp_6 = this.formulario[i].id  
+              this.id_resp_6 = this.formulario[i].id
               this.resp_6 = this.formulario[i].respuesta
               break
               case 'Respondieron sus dudas durante la actividad ejecutada':
-              this.id_resp_7 = this.formulario[i].id  
+              this.id_resp_7 = this.formulario[i].id
               this.resp_7 = this.formulario[i].respuesta
               break
               case 'Dejaron copia de orden de trabajo':
-              this.id_resp_8 = this.formulario[i].id  
+              this.id_resp_8 = this.formulario[i].id
               this.resp_8 = this.formulario[i].respuesta
               break
               case 'Efectuaron capacitación del uso de los equipos':
-              this.id_resp_9 = this.formulario[i].id  
+              this.id_resp_9 = this.formulario[i].id
               this.resp_9 = this.formulario[i].respuesta
               break
               case 'Quedaron todos los servicios funcionando correctamente, al término de la actividad':
-              this.id_resp_10 = this.formulario[i].id  
+              this.id_resp_10 = this.formulario[i].id
               this.resp_10 = this.formulario[i].respuesta
               break
               case 'Dejaron el lugar limpio al concluir la actividad':
-              this.id_resp_11 = this.formulario[i].id  
+              this.id_resp_11 = this.formulario[i].id
               this.resp_11 = this.formulario[i].respuesta
               break
               case 'Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)':
-              this.id_resp_12 = this.formulario[i].id  
+              this.id_resp_12 = this.formulario[i].id
               this.resp_12 = this.formulario[i].respuesta
               break
               case "Entrega clave de acceso wifi y personalizada a cliente":
-              this.id_resp_13 = this.formulario[i].id  
+              this.id_resp_13 = this.formulario[i].id
               this.resp_13 = this.formulario[i].respuesta
               break
               case 'Capacitó en el uso de control remoto del decodificador':
-              this.id_resp_14 = this.formulario[i].id  
+              this.id_resp_14 = this.formulario[i].id
               this.resp_14 = this.formulario[i].respuesta
               break
               case 'Fijacion de antena con (4 pernos)':
-              this.id_resp_15 = this.formulario[i].id  
+              this.id_resp_15 = this.formulario[i].id
               this.resp_15 = this.formulario[i].respuesta
               break
               case 'Conector LNB protegido':
-              this.id_resp_16 = this.formulario[i].id  
+              this.id_resp_16 = this.formulario[i].id
               this.resp_16 = this.formulario[i].respuesta
               break
               case 'Antena debidamente firme (Sin movimientos)':
-              this.id_resp_17 = this.formulario[i].id  
+              this.id_resp_17 = this.formulario[i].id
               this.resp_17 = this.formulario[i].respuesta
               break
               case 'Altura acometida en norma (4.5 Mts)':
-              this.id_resp_18 = this.formulario[i].id  
+              this.id_resp_18 = this.formulario[i].id
               this.resp_18 = this.formulario[i].respuesta
               break
               case 'La acometida es nueva (No reutilizada)':
-              this.id_resp_19 = this.formulario[i].id  
+              this.id_resp_19 = this.formulario[i].id
               this.resp_19 = this.formulario[i].respuesta
               break
               case 'Ficha de abonado en TAP, rotulada correctamente':
-              this.id_resp_20 = this.formulario[i].id  
+              this.id_resp_20 = this.formulario[i].id
               this.resp_20 = this.formulario[i].respuesta
               break
               case 'Loop de mantención':
-              this.id_resp_21 = this.formulario[i].id  
+              this.id_resp_21 = this.formulario[i].id
               this.resp_21 = this.formulario[i].respuesta
               break
               case 'Ruteo y cableado correcto (40 Cms distancia entre grampas)':
-              this.id_resp_22 = this.formulario[i].id  
+              this.id_resp_22 = this.formulario[i].id
               this.resp_22 = this.formulario[i].respuesta
               break
               case 'Fijación de spliters':
-              this.id_resp_23 = this.formulario[i].id  
+              this.id_resp_23 = this.formulario[i].id
               this.resp_23 = this.formulario[i].respuesta
               break
               case 'Tiene pasamuros exterior':
-              this.id_resp_24 = this.formulario[i].id  
+              this.id_resp_24 = this.formulario[i].id
               this.resp_24 = this.formulario[i].respuesta
               break
               case 'Tiene loop de goteo bota agua':
-              this.id_resp_25 = this.formulario[i].id  
+              this.id_resp_25 = this.formulario[i].id
               this.resp_25 = this.formulario[i].respuesta
               break
               case 'Los niveles están dentro del rango':
-              this.id_resp_26 = this.formulario[i].id  
+              this.id_resp_26 = this.formulario[i].id
               this.resp_26 = this.formulario[i].respuesta
               break
               case 'Ruteo y grampeado correctos (40 cm entre grampas)':
-              this.id_resp_27 = this.formulario[i].id  
+              this.id_resp_27 = this.formulario[i].id
               this.resp_27 = this.formulario[i].respuesta
               break
               case 'Curva de cableado mayor o igual a 90 grados':
-              this.id_resp_28 = this.formulario[i].id  
+              this.id_resp_28 = this.formulario[i].id
               this.resp_28 = this.formulario[i].respuesta
               break
               case 'Conector armado y prensado correctamente':
-              this.id_resp_29 = this.formulario[i].id  
+              this.id_resp_29 = this.formulario[i].id
               this.resp_29 = this.formulario[i].respuesta
               break
               case 'Uso conector de compresión claro':
-              this.id_resp_30 = this.formulario[i].id  
+              this.id_resp_30 = this.formulario[i].id
               this.resp_30 = this.formulario[i].respuesta
               break
               case 'Cable PIN es nuevo':
-              this.id_resp_31 = this.formulario[i].id  
+              this.id_resp_31 = this.formulario[i].id
               this.resp_31 = this.formulario[i].respuesta
               break
               case 'Conectores correctamente torqueados':
-              this.id_resp_32 = this.formulario[i].id  
+              this.id_resp_32 = this.formulario[i].id
               this.resp_32 = this.formulario[i].respuesta
               break
               case "Tiene filtro Hum en instalación de TV":
-              this.id_resp_33 = this.formulario[i].id  
+              this.id_resp_33 = this.formulario[i].id
               this.resp_33 = this.formulario[i].respuesta
               break
               case 'Tiene cable HDMI en decodificador y TV HD':
-              this.id_resp_34 = this.formulario[i].id  
+              this.id_resp_34 = this.formulario[i].id
               this.resp_34 = this.formulario[i].respuesta
               break
               case "Deja equipo modo Nat (CM-Emta)":
-              this.id_resp_35 = this.formulario[i].id  
+              this.id_resp_35 = this.formulario[i].id
               this.resp_35 = this.formulario[i].respuesta
               break
               case 'Certifica / cambia canal de transmisión de wifi':
-              this.id_resp_36 = this.formulario[i].id  
+              this.id_resp_36 = this.formulario[i].id
               this.resp_36 = this.formulario[i].respuesta
               break
               case 'Informó número telefónico asignado':
-              this.id_resp_37 = this.formulario[i].id  
+              this.id_resp_37 = this.formulario[i].id
               this.resp_37 = this.formulario[i].respuesta
               break
               case 'Dirección correcta':
-              this.id_resp_38 = this.formulario[i].id  
+              this.id_resp_38 = this.formulario[i].id
               this.resp_38 = this.formulario[i].respuesta
               break
               case 'Técnico visitó domicilio':
-              this.id_resp_39 = this.formulario[i].id  
+              this.id_resp_39 = this.formulario[i].id
               this.resp_39 = this.formulario[i].respuesta
               break
               case 'HFC/DTH':
-              this.id_resp_40 = this.formulario[i].id  
+              this.id_resp_40 = this.formulario[i].id
               this.resp_40 = this.formulario[i].respuesta
               break
               case 'Decos Std':
-              this.id_resp_41 = this.formulario[i].id  
+              this.id_resp_41 = this.formulario[i].id
               this.resp_41 = this.formulario[i].respuesta
               break
               case 'Decos HD':
-              this.id_resp_42 = this.formulario[i].id  
+              this.id_resp_42 = this.formulario[i].id
               this.resp_42 = this.formulario[i].respuesta
               break
               case 'Cantidad de equipos corresponde a contrato':
-              this.id_resp_43 = this.formulario[i].id  
+              this.id_resp_43 = this.formulario[i].id
               this.resp_43 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Señal':
-              this.id_resp_44 = this.formulario[i].id  
+              this.id_resp_44 = this.formulario[i].id
               this.resp_44 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Calidad':
-              this.id_resp_45 = this.formulario[i].id  
+              this.id_resp_45 = this.formulario[i].id
               this.resp_45 = this.formulario[i].respuesta
               break
               case '1 TP (12092) C/N':
-              this.id_resp_46 = this.formulario[i].id  
+              this.id_resp_46 = this.formulario[i].id
               this.resp_46 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Señal':
-              this.id_resp_47 = this.formulario[i].id  
+              this.id_resp_47 = this.formulario[i].id
               this.resp_47 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Calidad':
-              this.id_resp_48 = this.formulario[i].id  
+              this.id_resp_48 = this.formulario[i].id
               this.resp_48 = this.formulario[i].respuesta
               break
               case '1 TP (12172) C/N':
-              this.id_resp_49 = this.formulario[i].id  
+              this.id_resp_49 = this.formulario[i].id
               this.resp_49 = this.formulario[i].respuesta
               break
               case 'TX':
-              this.id_resp_50 = this.formulario[i].id  
+              this.id_resp_50 = this.formulario[i].id
               this.resp_50 = this.formulario[i].respuesta
               break
               case 'RX':
-              this.id_resp_51 = this.formulario[i].id  
+              this.id_resp_51 = this.formulario[i].id
               this.resp_51 = this.formulario[i].respuesta
               break
               case 'SNR':
-              this.id_resp_52 = this.formulario[i].id  
+              this.id_resp_52 = this.formulario[i].id
               this.resp_52 = this.formulario[i].respuesta
               break
               case 'Observaciones':
-              this.id_resp_53 = this.formulario[i].id  
+              this.id_resp_53 = this.formulario[i].id
               this.resp_53 = this.formulario[i].respuesta
               break
               case 'Se genera vista técnica por garantía':
-              this.id_resp_54 = this.formulario[i].id  
+              this.id_resp_54 = this.formulario[i].id
               this.resp_54 = this.formulario[i].respuesta
               break
               case 'Se realiza reparación menor':
-              this.id_resp_55 = this.formulario[i].id  
+              this.id_resp_55 = this.formulario[i].id
               this.resp_55 = this.formulario[i].respuesta
               break
               case 'Reutilizada instalación':
-              this.id_resp_56 = this.formulario[i].id  
+              this.id_resp_56 = this.formulario[i].id
               this.resp_56 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores RG-06 F a compresión':
-              this.id_resp_57 = this.formulario[i].id  
+              this.id_resp_57 = this.formulario[i].id
               this.resp_57 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)':
-              this.id_resp_58 = this.formulario[i].id  
+              this.id_resp_58 = this.formulario[i].id
               this.resp_58 = this.formulario[i].respuesta
               break
               case '1004177 - Acopladores direccional interior 1 vía 9dB':
-              this.id_resp_59 = this.formulario[i].id  
+              this.id_resp_59 = this.formulario[i].id
               this.resp_59 = this.formulario[i].respuesta
               break
               case '1004178 - Acopladores direccional interior 1 vía 12dB':
-              this.id_resp_60 = this.formulario[i].id  
+              this.id_resp_60 = this.formulario[i].id
               this.resp_60 = this.formulario[i].respuesta
               break
               case '1004271 - Grampa blanca Telefónica Nº 7 (pin interior)':
-              this.id_resp_61 = this.formulario[i].id  
+              this.id_resp_61 = this.formulario[i].id
               this.resp_61 = this.formulario[i].respuesta
               break
               case '171 - Amarra cables nylon 4,8 x 15,6':
-              this.id_resp_62 = this.formulario[i].id  
+              this.id_resp_62 = this.formulario[i].id
               this.resp_62 = this.formulario[i].respuesta
               break
               case '1004167 - Gomas para Taps':
-              this.id_resp_63 = this.formulario[i].id  
+              this.id_resp_63 = this.formulario[i].id
               this.resp_63 = this.formulario[i].respuesta
               break
               case '1004179 - Grampa RG-6 blancas':
-              this.id_resp_64 = this.formulario[i].id  
+              this.id_resp_64 = this.formulario[i].id
               this.resp_64 = this.formulario[i].respuesta
               break
               case '1004180 - Grampa RG-6 negra':
-              this.id_resp_65 = this.formulario[i].id  
+              this.id_resp_65 = this.formulario[i].id
               this.resp_65 = this.formulario[i].respuesta
               break
               case '1004812 - Bloqueador de voltaje':
-              this.id_resp_66 = this.formulario[i].id  
+              this.id_resp_66 = this.formulario[i].id
               this.resp_66 = this.formulario[i].respuesta
               break
               case '1004183 - Atenuador Fam 3':
-              this.id_resp_67 = this.formulario[i].id  
+              this.id_resp_67 = this.formulario[i].id
               this.resp_67 = this.formulario[i].respuesta
               break
               case '1004184 - Atenuador Fam 6':
-              this.id_resp_68 = this.formulario[i].id  
+              this.id_resp_68 = this.formulario[i].id
               this.resp_68 = this.formulario[i].respuesta
               break
               case '1004185 - Atenuador Fam 8':
-              this.id_resp_69 = this.formulario[i].id  
+              this.id_resp_69 = this.formulario[i].id
               this.resp_69 = this.formulario[i].respuesta
               break
               case '1004186 - Atenuador Fam 10':
-              this.id_resp_70 = this.formulario[i].id  
+              this.id_resp_70 = this.formulario[i].id
               this.resp_70 = this.formulario[i].respuesta
               break
               case '1004173 - Splitter 2 vías (4dB)':
-              this.id_resp_71 = this.formulario[i].id  
+              this.id_resp_71 = this.formulario[i].id
               this.resp_71 = this.formulario[i].respuesta
               break
               case '1003508 - Conector RJ-45':
-              this.id_resp_72 = this.formulario[i].id  
+              this.id_resp_72 = this.formulario[i].id
               this.resp_72 = this.formulario[i].respuesta
               break
               case '1003507 - Conector RJ-11':
-              this.id_resp_73 = this.formulario[i].id  
+              this.id_resp_73 = this.formulario[i].id
               this.resp_73 = this.formulario[i].respuesta
               break
               case '1004270 - Ficha abonado (marca acometida) rojo':
-              this.id_resp_74 = this.formulario[i].id  
+              this.id_resp_74 = this.formulario[i].id
               this.resp_74 = this.formulario[i].respuesta
               break
               case '1003553 - Roseta telefónica RJ-11':
-              this.id_resp_75 = this.formulario[i].id  
+              this.id_resp_75 = this.formulario[i].id
               this.resp_75 = this.formulario[i].respuesta
               break
               case '1004181 - Conectores ground block':
-              this.id_resp_76 = this.formulario[i].id  
+              this.id_resp_76 = this.formulario[i].id
               this.resp_76 = this.formulario[i].respuesta
               break
               case '1004518 - Control remoto caja digital':
-              this.id_resp_77 = this.formulario[i].id  
+              this.id_resp_77 = this.formulario[i].id
               this.resp_77 = this.formulario[i].respuesta
               break
               case '1008608 - Cable teléfono plano 4 conductores':
-              this.id_resp_78 = this.formulario[i].id  
+              this.id_resp_78 = this.formulario[i].id
               this.resp_78 = this.formulario[i].respuesta
               break
               case '1004409 - Pilas alcalinas AAA':
-              this.id_resp_79 = this.formulario[i].id  
+              this.id_resp_79 = this.formulario[i].id
               this.resp_79 = this.formulario[i].respuesta
               break
               case '1004526 - Cable video componente 3 conexiones':
-              this.id_resp_80 = this.formulario[i].id  
+              this.id_resp_80 = this.formulario[i].id
               this.resp_80 = this.formulario[i].respuesta
               break
               case '1004836 - Cable HDMI':
-              this.id_resp_81 = this.formulario[i].id  
+              this.id_resp_81 = this.formulario[i].id
               this.resp_81 = this.formulario[i].respuesta
               break
               case '1004233 - Cable audio video RCA':
-              this.id_resp_82 = this.formulario[i].id  
+              this.id_resp_82 = this.formulario[i].id
               this.resp_82 = this.formulario[i].respuesta
               break
               case '1004176 - Acopladores direccional interior 1 vía 6dB':
-              this.id_resp_83 = this.formulario[i].id  
+              this.id_resp_83 = this.formulario[i].id
               this.resp_83 = this.formulario[i].respuesta
               break
               case '1004288 - LNB':
-              this.id_resp_84 = this.formulario[i].id  
+              this.id_resp_84 = this.formulario[i].id
               this.resp_84 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial blanco':
-              this.id_resp_85 = this.formulario[i].id  
+              this.id_resp_85 = this.formulario[i].id
               this.resp_85 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores':
-              this.id_resp_86 = this.formulario[i].id  
+              this.id_resp_86 = this.formulario[i].id
               this.resp_86 = this.formulario[i].respuesta
               break
               case '1004672 - LNB dual':
-              this.id_resp_87 = this.formulario[i].id  
+              this.id_resp_87 = this.formulario[i].id
               this.resp_87 = this.formulario[i].respuesta
               break
               case '1004191 - LNB quad':
-              this.id_resp_88 = this.formulario[i].id  
+              this.id_resp_88 = this.formulario[i].id
               this.resp_88 = this.formulario[i].respuesta
               break
               case '1004648 - Spliter':
-              this.id_resp_89 = this.formulario[i].id  
+              this.id_resp_89 = this.formulario[i].id
               this.resp_89 = this.formulario[i].respuesta
               break
               case 'Código de barras':
@@ -1196,359 +1196,359 @@ export class FormDetailPage {
                 this.id_folio_servicio = this.formulario[i].id
               break
               case 'Los técnicos cumplieron con fecha y hora acordada':
-              this.id_resp_1 = this.formulario[i].id  
+              this.id_resp_1 = this.formulario[i].id
               this.resp_1 = this.formulario[i].respuesta
               break
               case 'Técnico se identificó con credencial, nombre, apellido':
-              this.id_resp_2 = this.formulario[i].id  
+              this.id_resp_2 = this.formulario[i].id
               this.resp_2 = this.formulario[i].respuesta
               break
               case 'Vestían uniforme y correctamente ordenados':
-              this.id_resp_3 = this.formulario[i].id  
+              this.id_resp_3 = this.formulario[i].id
               this.resp_3 = this.formulario[i].respuesta
               break
               case 'Explicaron el detalle del trabajo antes de comenzar':
-              this.id_resp_4 = this.formulario[i].id  
+              this.id_resp_4 = this.formulario[i].id
               this.resp_4 = this.formulario[i].respuesta
               break
               case 'El trato fue cordial durante la visita':
-              this.id_resp_5 = this.formulario[i].id  
+              this.id_resp_5 = this.formulario[i].id
               this.resp_5 = this.formulario[i].respuesta
               break
               case 'Contaban con herramientas necesarias':
-              this.id_resp_6 = this.formulario[i].id  
+              this.id_resp_6 = this.formulario[i].id
               this.resp_6 = this.formulario[i].respuesta
               break
               case 'Respondieron sus dudas durante la actividad ejecutada':
-              this.id_resp_7 = this.formulario[i].id  
+              this.id_resp_7 = this.formulario[i].id
               this.resp_7 = this.formulario[i].respuesta
               break
               case 'Dejaron copia de orden de trabajo':
-              this.id_resp_8 = this.formulario[i].id  
+              this.id_resp_8 = this.formulario[i].id
               this.resp_8 = this.formulario[i].respuesta
               break
               case 'Efectuaron capacitación del uso de los equipos':
-              this.id_resp_9 = this.formulario[i].id  
+              this.id_resp_9 = this.formulario[i].id
               this.resp_9 = this.formulario[i].respuesta
               break
               case 'Quedaron todos los servicios funcionando correctamente, al término de la actividad':
-              this.id_resp_10 = this.formulario[i].id  
+              this.id_resp_10 = this.formulario[i].id
               this.resp_10 = this.formulario[i].respuesta
               break
               case 'Dejaron el lugar limpio al concluir la actividad':
-              this.id_resp_11 = this.formulario[i].id  
+              this.id_resp_11 = this.formulario[i].id
               this.resp_11 = this.formulario[i].respuesta
               break
               case 'Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)':
-              this.id_resp_12 = this.formulario[i].id  
+              this.id_resp_12 = this.formulario[i].id
               this.resp_12 = this.formulario[i].respuesta
               break
               case 'Entrega clave de acceso wifi y personalizada al cliente':
-              this.id_resp_13 = this.formulario[i].id  
+              this.id_resp_13 = this.formulario[i].id
               this.resp_13 = this.formulario[i].respuesta
               break
               case 'Capacitó en el uso de control remoto del decodificador':
-              this.id_resp_14 = this.formulario[i].id  
+              this.id_resp_14 = this.formulario[i].id
               this.resp_14 = this.formulario[i].respuesta
               break
               case 'Fijacion de antena con (4 pernos)':
-              this.id_resp_15 = this.formulario[i].id  
+              this.id_resp_15 = this.formulario[i].id
               this.resp_15 = this.formulario[i].respuesta
               break
               case 'Conector LNB protegido':
-              this.id_resp_16 = this.formulario[i].id  
+              this.id_resp_16 = this.formulario[i].id
               this.resp_16 = this.formulario[i].respuesta
               break
               case 'Antena debidamente firme (Sin movimientos)':
-              this.id_resp_17 = this.formulario[i].id  
+              this.id_resp_17 = this.formulario[i].id
               this.resp_17 = this.formulario[i].respuesta
               break
               case 'Altura acometida en norma (4.5 Mts)':
-              this.id_resp_18 = this.formulario[i].id  
+              this.id_resp_18 = this.formulario[i].id
               this.resp_18 = this.formulario[i].respuesta
               break
               case 'La acometida es nueva (No reutilizada)':
-              this.id_resp_19 = this.formulario[i].id  
+              this.id_resp_19 = this.formulario[i].id
               this.resp_19 = this.formulario[i].respuesta
               break
               case 'Ficha de abonado en TAP, rotulada correctamente':
-              this.id_resp_20 = this.formulario[i].id  
+              this.id_resp_20 = this.formulario[i].id
               this.resp_20 = this.formulario[i].respuesta
               break
               case 'Loop de mantención':
-              this.id_resp_21 = this.formulario[i].id  
+              this.id_resp_21 = this.formulario[i].id
               this.resp_21 = this.formulario[i].respuesta
               break
               case 'Ruteo y cableado correcto (40 Cms distancia entre grampas)':
-              this.id_resp_22 = this.formulario[i].id  
+              this.id_resp_22 = this.formulario[i].id
               this.resp_22 = this.formulario[i].respuesta
               break
               case 'Fijación de spliters':
-              this.id_resp_23 = this.formulario[i].id  
+              this.id_resp_23 = this.formulario[i].id
               this.resp_23 = this.formulario[i].respuesta
               break
               case 'Tiene pasamuros exterior':
-              this.id_resp_24 = this.formulario[i].id  
+              this.id_resp_24 = this.formulario[i].id
               this.resp_24 = this.formulario[i].respuesta
               break
               case 'Tiene loop de goteo bota agua':
-              this.id_resp_25 = this.formulario[i].id  
+              this.id_resp_25 = this.formulario[i].id
               this.resp_25 = this.formulario[i].respuesta
               break
               case 'Los niveles están dentro del rango':
-              this.id_resp_26 = this.formulario[i].id  
+              this.id_resp_26 = this.formulario[i].id
               this.resp_26 = this.formulario[i].respuesta
               break
               case 'Ruteo y grampeado correctos (40 cm entre grampas)':
-              this.id_resp_27 = this.formulario[i].id  
+              this.id_resp_27 = this.formulario[i].id
               this.resp_27 = this.formulario[i].respuesta
               break
               case 'Curva de cableado mayor o igual a 90 grados':
-              this.id_resp_28 = this.formulario[i].id  
+              this.id_resp_28 = this.formulario[i].id
               this.resp_28 = this.formulario[i].respuesta
               break
               case 'Conector armado y prensado correctamente':
-              this.id_resp_29 = this.formulario[i].id  
+              this.id_resp_29 = this.formulario[i].id
               this.resp_29 = this.formulario[i].respuesta
               break
               case 'Uso conector de compresión claro':
-              this.id_resp_30 = this.formulario[i].id  
+              this.id_resp_30 = this.formulario[i].id
               this.resp_30 = this.formulario[i].respuesta
               break
               case 'Cable PIN es nuevo':
-              this.id_resp_31 = this.formulario[i].id  
+              this.id_resp_31 = this.formulario[i].id
               this.resp_31 = this.formulario[i].respuesta
               break
               case 'Conectores correctamente torqueados':
-              this.id_resp_32 = this.formulario[i].id  
+              this.id_resp_32 = this.formulario[i].id
               this.resp_32 = this.formulario[i].respuesta
               break
               case 'Tiene filtro Hum en instalaciín de TV':
-              this.id_resp_33 = this.formulario[i].id  
+              this.id_resp_33 = this.formulario[i].id
               this.resp_33 = this.formulario[i].respuesta
               break
               case 'Tiene cable HDMI en decodificador y TV HD':
-              this.id_resp_34 = this.formulario[i].id  
+              this.id_resp_34 = this.formulario[i].id
               this.resp_34 = this.formulario[i].respuesta
               break
               case 'Deja equipo en modo Nat (CM-Emta)':
-              this.id_resp_35 = this.formulario[i].id  
+              this.id_resp_35 = this.formulario[i].id
               this.resp_35 = this.formulario[i].respuesta
               break
               case 'Certifica / cambia canal de transmisión de wifi':
-              this.id_resp_36 = this.formulario[i].id  
+              this.id_resp_36 = this.formulario[i].id
               this.resp_36 = this.formulario[i].respuesta
               break
               case 'Informó número telefónico asignado':
-              this.id_resp_37 = this.formulario[i].id  
+              this.id_resp_37 = this.formulario[i].id
               this.resp_37 = this.formulario[i].respuesta
               break
               case 'Dirección correcta':
-              this.id_resp_38 = this.formulario[i].id  
+              this.id_resp_38 = this.formulario[i].id
               this.resp_38 = this.formulario[i].respuesta
               break
               case 'Técnico visitó domicilio':
-              this.id_resp_39 = this.formulario[i].id  
+              this.id_resp_39 = this.formulario[i].id
               this.resp_39 = this.formulario[i].respuesta
               break
               case 'HFC/DTH':
-              this.id_resp_40 = this.formulario[i].id  
+              this.id_resp_40 = this.formulario[i].id
               this.resp_40 = this.formulario[i].respuesta
               break
               case 'Decos Std':
-              this.id_resp_41 = this.formulario[i].id  
+              this.id_resp_41 = this.formulario[i].id
               this.resp_41 = this.formulario[i].respuesta
               break
               case 'Decos HD':
-              this.id_resp_42 = this.formulario[i].id  
+              this.id_resp_42 = this.formulario[i].id
               this.resp_42 = this.formulario[i].respuesta
               break
               case 'Cantidad de equipos corresponde a contrato':
-              this.id_resp_43 = this.formulario[i].id  
+              this.id_resp_43 = this.formulario[i].id
               this.resp_43 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Señal':
-              this.id_resp_44 = this.formulario[i].id  
+              this.id_resp_44 = this.formulario[i].id
               this.resp_44 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Calidad':
-              this.id_resp_45 = this.formulario[i].id  
+              this.id_resp_45 = this.formulario[i].id
               this.resp_45 = this.formulario[i].respuesta
               break
               case '1 TP (12092) C/N':
-              this.id_resp_46 = this.formulario[i].id  
+              this.id_resp_46 = this.formulario[i].id
               this.resp_46 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Señal':
-              this.id_resp_47 = this.formulario[i].id  
+              this.id_resp_47 = this.formulario[i].id
               this.resp_47 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Calidad':
-              this.id_resp_48 = this.formulario[i].id  
+              this.id_resp_48 = this.formulario[i].id
               this.resp_48 = this.formulario[i].respuesta
               break
               case '1 TP (12172) C/N':
-              this.id_resp_49 = this.formulario[i].id  
+              this.id_resp_49 = this.formulario[i].id
               this.resp_49 = this.formulario[i].respuesta
               break
               case 'TX':
-              this.id_resp_50 = this.formulario[i].id  
+              this.id_resp_50 = this.formulario[i].id
               this.resp_50 = this.formulario[i].respuesta
               break
               case 'RX':
-              this.id_resp_51 = this.formulario[i].id  
+              this.id_resp_51 = this.formulario[i].id
               this.resp_51 = this.formulario[i].respuesta
               break
               case 'SNR':
-              this.id_resp_52 = this.formulario[i].id  
+              this.id_resp_52 = this.formulario[i].id
               this.resp_52 = this.formulario[i].respuesta
               break
               case 'Observaciones':
-              this.id_resp_53 = this.formulario[i].id  
+              this.id_resp_53 = this.formulario[i].id
               this.resp_53 = this.formulario[i].respuesta
               break
               case 'Se genera vista técnica por garantía':
-              this.id_resp_54 = this.formulario[i].id  
+              this.id_resp_54 = this.formulario[i].id
               this.resp_54 = this.formulario[i].respuesta
               break
               case 'Se realiza reparación menor':
-              this.id_resp_55 = this.formulario[i].id  
+              this.id_resp_55 = this.formulario[i].id
               this.resp_55 = this.formulario[i].respuesta
               break
               case 'Reutilizada instalación':
-              this.id_resp_56 = this.formulario[i].id  
+              this.id_resp_56 = this.formulario[i].id
               this.resp_56 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores RG-06 F a compresión':
-              this.id_resp_57 = this.formulario[i].id  
+              this.id_resp_57 = this.formulario[i].id
               this.resp_57 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)':
-              this.id_resp_58 = this.formulario[i].id  
+              this.id_resp_58 = this.formulario[i].id
               this.resp_58 = this.formulario[i].respuesta
               break
               case '1004177 - Acopladores direccional interior 1 vía 9dB':
-              this.id_resp_59 = this.formulario[i].id  
+              this.id_resp_59 = this.formulario[i].id
               this.resp_59 = this.formulario[i].respuesta
               break
               case '1004178 - Acopladores direccional interior 1 vía 12dB':
-              this.id_resp_60 = this.formulario[i].id  
+              this.id_resp_60 = this.formulario[i].id
               this.resp_60 = this.formulario[i].respuesta
               break
               case '1004271 - Grampa blanca Telefónica Nº 7 (pin interior)':
-              this.id_resp_61 = this.formulario[i].id  
+              this.id_resp_61 = this.formulario[i].id
               this.resp_61 = this.formulario[i].respuesta
               break
               case '171 - Amarra cables nylon 4,8 x 15,6':
-              this.id_resp_62 = this.formulario[i].id  
+              this.id_resp_62 = this.formulario[i].id
               this.resp_62 = this.formulario[i].respuesta
               break
               case '1004167 - Gomas para Taps':
-              this.id_resp_63 = this.formulario[i].id  
+              this.id_resp_63 = this.formulario[i].id
               this.resp_63 = this.formulario[i].respuesta
               break
               case '1004179 - Grampa RG-6 blancas':
-              this.id_resp_64 = this.formulario[i].id  
+              this.id_resp_64 = this.formulario[i].id
               this.resp_64 = this.formulario[i].respuesta
               break
               case '1004180 - Grampa RG-6 negra':
-              this.id_resp_65 = this.formulario[i].id  
+              this.id_resp_65 = this.formulario[i].id
               this.resp_65 = this.formulario[i].respuesta
               break
               case '1004812 - Bloqueador de voltaje':
-              this.id_resp_66 = this.formulario[i].id  
+              this.id_resp_66 = this.formulario[i].id
               this.resp_66 = this.formulario[i].respuesta
               break
               case '1004183 - Atenuador Fam 3':
-              this.id_resp_67 = this.formulario[i].id  
+              this.id_resp_67 = this.formulario[i].id
               this.resp_67 = this.formulario[i].respuesta
               break
               case '1004184 - Atenuador Fam 6':
-              this.id_resp_68 = this.formulario[i].id  
+              this.id_resp_68 = this.formulario[i].id
               this.resp_68 = this.formulario[i].respuesta
               break
               case '1004185 - Atenuador Fam 8':
-              this.id_resp_69 = this.formulario[i].id  
+              this.id_resp_69 = this.formulario[i].id
               this.resp_69 = this.formulario[i].respuesta
               break
               case '1004186 - Atenuador Fam 10':
-              this.id_resp_70 = this.formulario[i].id  
+              this.id_resp_70 = this.formulario[i].id
               this.resp_70 = this.formulario[i].respuesta
               break
               case '1004173 - Splitter 2 vías (4dB)':
-              this.id_resp_71 = this.formulario[i].id  
+              this.id_resp_71 = this.formulario[i].id
               this.resp_71 = this.formulario[i].respuesta
               break
               case '1003508 - Conector RJ-45':
-              this.id_resp_72 = this.formulario[i].id  
+              this.id_resp_72 = this.formulario[i].id
               this.resp_72 = this.formulario[i].respuesta
               break
               case '1003507 - Conector RJ-11':
-              this.id_resp_73 = this.formulario[i].id  
+              this.id_resp_73 = this.formulario[i].id
               this.resp_73 = this.formulario[i].respuesta
               break
               case '1004270 - Ficha abonado (marca acometida) rojo':
-              this.id_resp_74 = this.formulario[i].id  
+              this.id_resp_74 = this.formulario[i].id
               this.resp_74 = this.formulario[i].respuesta
               break
               case '1003553 - Roseta telefónica RJ-11':
-              this.id_resp_75 = this.formulario[i].id  
+              this.id_resp_75 = this.formulario[i].id
               this.resp_75 = this.formulario[i].respuesta
               break
               case '1004181 - Conectores ground block':
-              this.id_resp_76 = this.formulario[i].id  
+              this.id_resp_76 = this.formulario[i].id
               this.resp_76 = this.formulario[i].respuesta
               break
               case '1004518 - Control remoto caja digital':
-              this.id_resp_77 = this.formulario[i].id  
+              this.id_resp_77 = this.formulario[i].id
               this.resp_77 = this.formulario[i].respuesta
               break
               case '1008608 - Cable teléfono plano 4 conductores':
-              this.id_resp_78 = this.formulario[i].id  
+              this.id_resp_78 = this.formulario[i].id
               this.resp_78 = this.formulario[i].respuesta
               break
               case '1004409 - Pilas alcalinas AAA':
-              this.id_resp_79 = this.formulario[i].id  
+              this.id_resp_79 = this.formulario[i].id
               this.resp_79 = this.formulario[i].respuesta
               break
               case '1004526 - Cable video componente 3 conexiones':
-              this.id_resp_80 = this.formulario[i].id  
+              this.id_resp_80 = this.formulario[i].id
               this.resp_80 = this.formulario[i].respuesta
               break
               case '1004836 - Cable HDMI':
-              this.id_resp_81 = this.formulario[i].id  
+              this.id_resp_81 = this.formulario[i].id
               this.resp_81 = this.formulario[i].respuesta
               break
               case '1004233 - Cable audio video RCA':
-              this.id_resp_82 = this.formulario[i].id  
+              this.id_resp_82 = this.formulario[i].id
               this.resp_82 = this.formulario[i].respuesta
               break
               case '1004176 - Acopladores direccional interior 1 vía 6dB':
-              this.id_resp_83 = this.formulario[i].id  
+              this.id_resp_83 = this.formulario[i].id
               this.resp_83 = this.formulario[i].respuesta
               break
               case '1004288 - LNB':
-              this.id_resp_84 = this.formulario[i].id  
+              this.id_resp_84 = this.formulario[i].id
               this.resp_84 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial blanco':
-              this.id_resp_85 = this.formulario[i].id  
+              this.id_resp_85 = this.formulario[i].id
               this.resp_85 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores':
-              this.id_resp_86 = this.formulario[i].id  
+              this.id_resp_86 = this.formulario[i].id
               this.resp_86 = this.formulario[i].respuesta
               break
               case '1004672 - LNB dual':
-              this.id_resp_87 = this.formulario[i].id  
+              this.id_resp_87 = this.formulario[i].id
               this.resp_87 = this.formulario[i].respuesta
               break
               case '1004191 - LNB quad':
-              this.id_resp_88 = this.formulario[i].id  
+              this.id_resp_88 = this.formulario[i].id
               this.resp_88 = this.formulario[i].respuesta
               break
               case '1004648 - Spliter':
-              this.id_resp_89 = this.formulario[i].id  
+              this.id_resp_89 = this.formulario[i].id
               this.resp_89 = this.formulario[i].respuesta
               break
               case 'Código de barras':
@@ -1569,347 +1569,347 @@ export class FormDetailPage {
                 this.id_folio_servicio = this.formulario[i].id
               break
               case 'Los técnicos cumplieron con fecha y hora acordada':
-              this.resp_1 = this.formulario[i].id  
+              this.resp_1 = this.formulario[i].id
               this.resp_1 = this.formulario[i].respuesta
               break
               case 'Técnico se identificó con credencial, nombre, apellido':
-              this.resp_2 = this.formulario[i].id  
+              this.resp_2 = this.formulario[i].id
               this.resp_2 = this.formulario[i].respuesta
               break
               case 'Vestían uniforme y correctamente ordenados':
-              this.resp_3 = this.formulario[i].id  
+              this.resp_3 = this.formulario[i].id
               this.resp_3 = this.formulario[i].respuesta
               break
               case 'Explicaron el detalle del trabajo antes de comenzar':
-              this.resp_4 = this.formulario[i].id  
+              this.resp_4 = this.formulario[i].id
               this.resp_4 = this.formulario[i].respuesta
               break
               case 'El trato fue cordial durante la visita':
-              this.resp_5 = this.formulario[i].id  
+              this.resp_5 = this.formulario[i].id
               this.resp_5 = this.formulario[i].respuesta
               break
               case 'Contaban con herramientas necesarias':
-              this.resp_6 = this.formulario[i].id  
+              this.resp_6 = this.formulario[i].id
               this.resp_6 = this.formulario[i].respuesta
               break
               case 'Respondieron sus dudas durante la actividad ejecutada':
-              this.resp_7 = this.formulario[i].id  
+              this.resp_7 = this.formulario[i].id
               this.resp_7 = this.formulario[i].respuesta
               break
               case 'Dejaron copia de orden de trabajo':
-              this.resp_8 = this.formulario[i].id  
+              this.resp_8 = this.formulario[i].id
               this.resp_8 = this.formulario[i].respuesta
               break
               case 'Efectuaron capacitación del uso de los equipos':
-              this.resp_9 = this.formulario[i].id  
+              this.resp_9 = this.formulario[i].id
               this.resp_9 = this.formulario[i].respuesta
               break
               case 'Quedaron todos los servicios funcionando correctamente, al término de la actividad':
-              this.resp_10 = this.formulario[i].id  
+              this.resp_10 = this.formulario[i].id
               this.resp_10 = this.formulario[i].respuesta
               break
               case 'Dejaron el lugar limpio al concluir la actividad':
-              this.resp_11 = this.formulario[i].id  
+              this.resp_11 = this.formulario[i].id
               this.resp_11 = this.formulario[i].respuesta
               break
               case 'Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)':
-              this.resp_12 = this.formulario[i].id  
+              this.resp_12 = this.formulario[i].id
               this.resp_12 = this.formulario[i].respuesta
               break
               case 'Entrega clave de acceso wifi y personalizada a cliente':
-              this.resp_13 = this.formulario[i].id  
+              this.resp_13 = this.formulario[i].id
               this.resp_13 = this.formulario[i].respuesta
               break
               case 'Capacitó en el uso de control remoto del decodificador':
-              this.resp_14 = this.formulario[i].id  
+              this.resp_14 = this.formulario[i].id
               this.resp_14 = this.formulario[i].respuesta
               break
               case 'Fijación de antena con (4 pernos)':
-              this.resp_15 = this.formulario[i].id  
+              this.resp_15 = this.formulario[i].id
               this.resp_15 = this.formulario[i].respuesta
               break
               case 'Técnico deja antena debidamente firme (Sin movimiento)':
-              this.resp_16 = this.formulario[i].id  
+              this.resp_16 = this.formulario[i].id
               this.resp_16 = this.formulario[i].respuesta
               break
               case 'Técnico cambia acometida dañada':
-              this.resp_17 = this.formulario[i].id  
+              this.resp_17 = this.formulario[i].id
               this.resp_17 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia ground block':
-              this.resp_18 = this.formulario[i].id  
+              this.resp_18 = this.formulario[i].id
               this.resp_18 = this.formulario[i].respuesta
               break
               case 'Técnico fija spliter':
-              this.resp_19 = this.formulario[i].id  
+              this.resp_19 = this.formulario[i].id
               this.resp_19 = this.formulario[i].respuesta
               break
               case 'Técnico instala bloqueador de voltaje (Filtro HUM)':
-              this.resp_20 = this.formulario[i].id  
+              this.resp_20 = this.formulario[i].id
               this.resp_20 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia conectores':
-              this.resp_21 = this.formulario[i].id  
+              this.resp_21 = this.formulario[i].id
               this.resp_21 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cableado interior':
-              this.resp_22 = this.formulario[i].id  
+              this.resp_22 = this.formulario[i].id
               this.resp_22 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable PIN':
-              this.resp_23 = this.formulario[i].id  
+              this.resp_23 = this.formulario[i].id
               this.resp_23 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia roseta telefónica':
-              this.resp_24 = this.formulario[i].id  
+              this.resp_24 = this.formulario[i].id
               this.resp_24 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia equipo telefónico':
-              this.resp_25 = this.formulario[i].id  
+              this.resp_25 = this.formulario[i].id
               this.resp_25 = this.formulario[i].respuesta
               break
               case 'Técnico deja conectores correctamente torqueados':
-              this.resp_26 = this.formulario[i].id  
+              this.resp_26 = this.formulario[i].id
               this.resp_26 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable HDMI':
-              this.resp_27 = this.formulario[i].id  
+              this.resp_27 = this.formulario[i].id
               this.resp_27 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable RCA':
-              this.resp_28 = this.formulario[i].id  
+              this.resp_28 = this.formulario[i].id
               this.resp_28 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia decodificador/Cmo MTA':
-              this.resp_29 = this.formulario[i].id  
+              this.resp_29 = this.formulario[i].id
               this.resp_29 = this.formulario[i].respuesta
               break
               case 'Técnico dejó equipo modo nat (CM-Emta)':
-              this.resp_30 = this.formulario[i].id  
+              this.resp_30 = this.formulario[i].id
               this.resp_30 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia canal de transmición WIFI':
-              this.resp_31 = this.formulario[i].id  
+              this.resp_31 = this.formulario[i].id
               this.resp_31 = this.formulario[i].respuesta
               break
               case 'Técnico certifica niveles operacines (CM-MTA-DECO)':
-              this.resp_32 = this.formulario[i].id  
+              this.resp_32 = this.formulario[i].id
               this.resp_32 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia control remoto':
-              this.resp_33 = this.formulario[i].id  
+              this.resp_33 = this.formulario[i].id
               this.resp_33 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia pasivos spliter-dc':
-              this.resp_34 = this.formulario[i].id  
+              this.resp_34 = this.formulario[i].id
               this.resp_34 = this.formulario[i].respuesta
               break
               case 'Dirección correcta':
-              this.resp_35 = this.formulario[i].id  
+              this.resp_35 = this.formulario[i].id
               this.resp_35 = this.formulario[i].respuesta
               break
               case 'Técnico visitó domicilio':
-              this.resp_36 = this.formulario[i].id  
+              this.resp_36 = this.formulario[i].id
               this.resp_36 = this.formulario[i].respuesta
               break
               case 'HFC/DTH':
-              this.resp_37 = this.formulario[i].id  
+              this.resp_37 = this.formulario[i].id
               this.resp_37 = this.formulario[i].respuesta
               break
               case 'Decos Std':
-              this.resp_38 = this.formulario[i].id  
+              this.resp_38 = this.formulario[i].id
               this.resp_38 = this.formulario[i].respuesta
               break
               case 'Decos HD':
-              this.resp_39 = this.formulario[i].id  
+              this.resp_39 = this.formulario[i].id
               this.resp_39 = this.formulario[i].respuesta
               break
               case 'Cantidad de equipos corresponde a contrato':
-              this.resp_40 = this.formulario[i].id  
+              this.resp_40 = this.formulario[i].id
               this.resp_40 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Señal':
-              this.resp_41 = this.formulario[i].id  
+              this.resp_41 = this.formulario[i].id
               this.resp_41 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Calidad':
-              this.resp_42 = this.formulario[i].id  
+              this.resp_42 = this.formulario[i].id
               this.resp_42 = this.formulario[i].respuesta
               break
               case '1 TP (12092) C/N':
-              this.resp_43 = this.formulario[i].id  
+              this.resp_43 = this.formulario[i].id
               this.resp_43 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Señal':
-              this.resp_44 = this.formulario[i].id  
+              this.resp_44 = this.formulario[i].id
               this.resp_44 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Calidad':
-              this.resp_45 = this.formulario[i].id  
+              this.resp_45 = this.formulario[i].id
               this.resp_45 = this.formulario[i].respuesta
               break
               case '1 TP (12172) C/N':
-              this.resp_46 = this.formulario[i].id  
+              this.resp_46 = this.formulario[i].id
               this.resp_46 = this.formulario[i].respuesta
               break
               case 'TX':
-              this.resp_47 = this.formulario[i].id  
+              this.resp_47 = this.formulario[i].id
               this.resp_47 = this.formulario[i].respuesta
               break
               case 'RX':
-              this.resp_48 = this.formulario[i].id  
+              this.resp_48 = this.formulario[i].id
               this.resp_48 = this.formulario[i].respuesta
               break
               case 'SNR':
-              this.resp_49 = this.formulario[i].id  
+              this.resp_49 = this.formulario[i].id
               this.resp_49 = this.formulario[i].respuesta
               break
               case 'Observaciones':
-              this.resp_50 = this.formulario[i].id  
+              this.resp_50 = this.formulario[i].id
               this.resp_50 = this.formulario[i].respuesta
               break
               case 'Se genera vista técnica por garantía':
-              this.resp_51 = this.formulario[i].id  
+              this.resp_51 = this.formulario[i].id
               this.resp_51 = this.formulario[i].respuesta
               break
               case 'Se realiza reparación menor':
-              this.resp_52 = this.formulario[i].id  
+              this.resp_52 = this.formulario[i].id
               this.resp_52 = this.formulario[i].respuesta
               break
               case 'Reutilizada instalación':
-              this.resp_53 = this.formulario[i].id  
+              this.resp_53 = this.formulario[i].id
               this.resp_53 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores RG-06 F a compresión':
-              this.resp_54 = this.formulario[i].id  
+              this.resp_54 = this.formulario[i].id
               this.resp_54 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)':
-              this.resp_55 = this.formulario[i].id  
+              this.resp_55 = this.formulario[i].id
               this.resp_55 = this.formulario[i].respuesta
               break
               case '1004177 - Acopladores direccional interior 1 vía 9dB':
-              this.resp_56 = this.formulario[i].id  
+              this.resp_56 = this.formulario[i].id
               this.resp_56 = this.formulario[i].respuesta
               break
               case '1004178 - Acopladores direccional interior 1 vía 12dB':
-              this.resp_57 = this.formulario[i].id  
+              this.resp_57 = this.formulario[i].id
               this.resp_57 = this.formulario[i].respuesta
               break
               case '1004271 - Grampa blanca Telefónica Nº 7 (pin interior)':
-              this.resp_58 = this.formulario[i].id  
+              this.resp_58 = this.formulario[i].id
               this.resp_58 = this.formulario[i].respuesta
               break
               case '1004171 - Amarra cables nylon 4,8 x 15,6':
-              this.resp_59 = this.formulario[i].id  
+              this.resp_59 = this.formulario[i].id
               this.resp_59 = this.formulario[i].respuesta
               break
               case '1004167 - Gomas para Taps':
-              this.resp_60 = this.formulario[i].id  
+              this.resp_60 = this.formulario[i].id
               this.resp_60 = this.formulario[i].respuesta
               break
               case '1004179 - Grampa RG-6 blancas':
-              this.resp_61 = this.formulario[i].id  
+              this.resp_61 = this.formulario[i].id
               this.resp_61 = this.formulario[i].respuesta
               break
               case '1004180 - Grampa RG-6 negra':
-              this.resp_62 = this.formulario[i].id  
+              this.resp_62 = this.formulario[i].id
               this.resp_62 = this.formulario[i].respuesta
               break
               case '1004812 - Bloqueador de voltaje':
-              this.resp_63 = this.formulario[i].id  
+              this.resp_63 = this.formulario[i].id
               this.resp_63 = this.formulario[i].respuesta
               break
               case '1004183 - Atenuador Fam 3':
-              this.resp_64 = this.formulario[i].id  
+              this.resp_64 = this.formulario[i].id
               this.resp_64 = this.formulario[i].respuesta
               break
               case '1004184 - Atenuador Fam 6':
-              this.resp_65 = this.formulario[i].id  
+              this.resp_65 = this.formulario[i].id
               this.resp_65 = this.formulario[i].respuesta
               break
               case '1004185 - Atenuador Fam 8':
-              this.resp_66 = this.formulario[i].id  
+              this.resp_66 = this.formulario[i].id
               this.resp_66 = this.formulario[i].respuesta
               break
               case '1004186 - Atenuador Fam 10':
-              this.resp_67 = this.formulario[i].id  
+              this.resp_67 = this.formulario[i].id
               this.resp_67 = this.formulario[i].respuesta
               break
               case '1004173 - Splitter 2 vías (4dB)':
-              this.resp_68 = this.formulario[i].id  
+              this.resp_68 = this.formulario[i].id
               this.resp_68 = this.formulario[i].respuesta
               break
               case '1003508 - Conector RJ-45':
-              this.resp_69 = this.formulario[i].id  
+              this.resp_69 = this.formulario[i].id
               this.resp_69 = this.formulario[i].respuesta
               break
               case '1003507 - Conector RJ-11':
-              this.resp_70 = this.formulario[i].id  
+              this.resp_70 = this.formulario[i].id
               this.resp_70 = this.formulario[i].respuesta
               break
               case '1004270 - Ficha abonado (marca acometida) rojo':
-              this.resp_71 = this.formulario[i].id  
+              this.resp_71 = this.formulario[i].id
               this.resp_71 = this.formulario[i].respuesta
               break
               case '1003553 - Roseta telefónica RJ-11':
-              this.resp_72 = this.formulario[i].id  
+              this.resp_72 = this.formulario[i].id
               this.resp_72 = this.formulario[i].respuesta
               break
               case '1004181 - Conectores ground block':
-              this.resp_73 = this.formulario[i].id  
+              this.resp_73 = this.formulario[i].id
               this.resp_73 = this.formulario[i].respuesta
               break
               case '1004518 - Control remoto caja digital':
-              this.resp_74 = this.formulario[i].id  
+              this.resp_74 = this.formulario[i].id
               this.resp_74 = this.formulario[i].respuesta
               break
               case '1008608 - Cable teléfono plano 4 conductores':
-              this.resp_75 = this.formulario[i].id  
+              this.resp_75 = this.formulario[i].id
               this.resp_75 = this.formulario[i].respuesta
               break
               case '1004409 - Pilas alcalinas AAA':
-              this.resp_76 = this.formulario[i].id  
+              this.resp_76 = this.formulario[i].id
               this.resp_76 = this.formulario[i].respuesta
               break
               case '1004526 - Cable video componente 3 conexiones':
-              this.resp_77 = this.formulario[i].id  
+              this.resp_77 = this.formulario[i].id
               this.resp_77 = this.formulario[i].respuesta
               break
               case '1004836 - Cable HDMI':
-              this.resp_78 = this.formulario[i].id  
+              this.resp_78 = this.formulario[i].id
               this.resp_78 = this.formulario[i].respuesta
               break
               case '1004233 - Cable audio video RCA':
-              this.resp_79 = this.formulario[i].id  
+              this.resp_79 = this.formulario[i].id
               this.resp_79 = this.formulario[i].respuesta
               break
               case '1004176 - Acopladores direccional interior 1 vía 6dB':
-              this.resp_80 = this.formulario[i].id  
+              this.resp_80 = this.formulario[i].id
               this.resp_80 = this.formulario[i].respuesta
               break
               case '1004288 - LNB':
-              this.resp_81 = this.formulario[i].id  
+              this.resp_81 = this.formulario[i].id
               this.resp_81 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial blanco':
-              this.resp_82 = this.formulario[i].id  
+              this.resp_82 = this.formulario[i].id
               this.resp_82 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores':
-              this.resp_83 = this.formulario[i].id  
+              this.resp_83 = this.formulario[i].id
               this.resp_83 = this.formulario[i].respuesta
               break
               case '1004672 - LNB dual':
-              this.resp_84 = this.formulario[i].id  
+              this.resp_84 = this.formulario[i].id
               this.resp_84 = this.formulario[i].respuesta
               break
               case '1004191 - LNB quad':
-              this.resp_85 = this.formulario[i].id  
+              this.resp_85 = this.formulario[i].id
               this.resp_85 = this.formulario[i].respuesta
               break
               case '1004648 - Splitter':
-              this.resp_86 = this.formulario[i].id  
+              this.resp_86 = this.formulario[i].id
               this.resp_86 = this.formulario[i].respuesta
               break
               case 'Código de barras':
@@ -1929,349 +1929,349 @@ export class FormDetailPage {
                 this.id_folio_servicio = this.formulario[i].id
               break
               case 'Los técnicos cumplieron con fecha y hora acordada':
-              this.resp_1 = this.formulario[i].id  
+              this.resp_1 = this.formulario[i].id
               this.resp_1 = this.formulario[i].respuesta
               break
               case 'Técnico se identificó con credencial, nombre, apellido':
-              this.resp_2 = this.formulario[i].id  
+              this.resp_2 = this.formulario[i].id
               this.resp_2 = this.formulario[i].respuesta
               break
               case 'Vestían uniforme y correctamente ordenados':
-              this.resp_3 = this.formulario[i].id  
+              this.resp_3 = this.formulario[i].id
               this.resp_3 = this.formulario[i].respuesta
               break
               case 'Explicaron el detalle del trabajo antes de comenzar':
-              this.resp_4 = this.formulario[i].id  
+              this.resp_4 = this.formulario[i].id
               this.resp_4 = this.formulario[i].respuesta
               break
               case 'El trato fue cordial durante la visita':
-              this.resp_5 = this.formulario[i].id  
+              this.resp_5 = this.formulario[i].id
               this.resp_5 = this.formulario[i].respuesta
               break
               case 'Contaban con herramientas necesarias':
-              this.resp_6 = this.formulario[i].id  
+              this.resp_6 = this.formulario[i].id
               this.resp_6 = this.formulario[i].respuesta
               break
               case 'Respondieron sus dudas durante la actividad ejecutada':
-              this.resp_7 = this.formulario[i].id  
+              this.resp_7 = this.formulario[i].id
               this.resp_7 = this.formulario[i].respuesta
               break
               case 'Dejaron copia de orden de trabajo':
-              this.resp_8 = this.formulario[i].id  
+              this.resp_8 = this.formulario[i].id
               this.resp_8 = this.formulario[i].respuesta
               break
               case 'Efectuaron capacitación del uso de los equipos':
-              this.resp_9 = this.formulario[i].id  
+              this.resp_9 = this.formulario[i].id
               this.resp_9 = this.formulario[i].respuesta
               break
               case 'Quedaron todos los servicios funcionando correctamente, al término de la actividad':
-              this.resp_10 = this.formulario[i].id  
+              this.resp_10 = this.formulario[i].id
               this.resp_10 = this.formulario[i].respuesta
               break
               case 'Dejaron el lugar limpio al concluir la actividad':
-              this.resp_11 = this.formulario[i].id  
+              this.resp_11 = this.formulario[i].id
               this.resp_11 = this.formulario[i].respuesta
               break
               case 'Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)':
-              this.resp_12 = this.formulario[i].id  
+              this.resp_12 = this.formulario[i].id
               this.resp_12 = this.formulario[i].respuesta
               break
               case 'Entrega clave de acceso wifi y personalizada a cliente':
-              this.resp_13 = this.formulario[i].id  
+              this.resp_13 = this.formulario[i].id
               this.resp_13 = this.formulario[i].respuesta
               break
               case 'Capacitó en el uso de control remoto del decodificador':
-              this.resp_14 = this.formulario[i].id  
+              this.resp_14 = this.formulario[i].id
               this.resp_14 = this.formulario[i].respuesta
               break
               case 'Fijación de antena con (4 pernos)':
-              this.resp_15 = this.formulario[i].id  
+              this.resp_15 = this.formulario[i].id
               this.resp_15 = this.formulario[i].respuesta
               break
               case 'Técnico deja antena debidamente firme (Sin movimiento)':
-              this.resp_16 = this.formulario[i].id  
+              this.resp_16 = this.formulario[i].id
               this.resp_16 = this.formulario[i].respuesta
               break
               case 'Técnico cambia acometida dañada':
-              this.resp_17 = this.formulario[i].id  
+              this.resp_17 = this.formulario[i].id
               this.resp_17 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia ground block':
-              this.resp_18 = this.formulario[i].id  
+              this.resp_18 = this.formulario[i].id
               this.resp_18 = this.formulario[i].respuesta
               break
               case 'Técnico fija spliter':
-              this.resp_19 = this.formulario[i].id  
+              this.resp_19 = this.formulario[i].id
               this.resp_19 = this.formulario[i].respuesta
               break
               case 'Técnico instala bloqueador de voltaje (Filtro HUM)':
-              this.resp_20 = this.formulario[i].id  
+              this.resp_20 = this.formulario[i].id
               this.resp_20 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia conectores':
-              this.resp_21 = this.formulario[i].id  
+              this.resp_21 = this.formulario[i].id
               this.resp_21 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cableado interior':
-              this.resp_22 = this.formulario[i].id  
+              this.resp_22 = this.formulario[i].id
               this.resp_22 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable PIN':
-              this.resp_23 = this.formulario[i].id  
+              this.resp_23 = this.formulario[i].id
               this.resp_23 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia roseta telefónica':
-              this.resp_24 = this.formulario[i].id  
+              this.resp_24 = this.formulario[i].id
               this.resp_24 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia equipo telefónico':
-              this.resp_25 = this.formulario[i].id  
+              this.resp_25 = this.formulario[i].id
               this.resp_25 = this.formulario[i].respuesta
               break
               case 'Técnico deja conectores correctamente torqueados':
-              this.resp_26 = this.formulario[i].id  
+              this.resp_26 = this.formulario[i].id
               this.resp_26 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable HDMI':
-              this.resp_27 = this.formulario[i].id  
+              this.resp_27 = this.formulario[i].id
               this.resp_27 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia cable RCA':
-              this.resp_28 = this.formulario[i].id  
+              this.resp_28 = this.formulario[i].id
               this.resp_28 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia decodificador/Cmo MTA':
-              this.resp_29 = this.formulario[i].id  
+              this.resp_29 = this.formulario[i].id
               this.resp_29 = this.formulario[i].respuesta
               break
               case 'Técnico dejó equipo modo nat (CM-Emta)':
-              this.resp_30 = this.formulario[i].id  
+              this.resp_30 = this.formulario[i].id
               this.resp_30 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia canal de transmición WIFI':
-              this.resp_31 = this.formulario[i].id  
+              this.resp_31 = this.formulario[i].id
               this.resp_31 = this.formulario[i].respuesta
               break
               case 'Técnico certifica niveles operacines (CM-MTA-DECO)':
-              this.resp_32 = this.formulario[i].id  
+              this.resp_32 = this.formulario[i].id
               this.resp_32 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia control remoto':
-              this.resp_33 = this.formulario[i].id  
+              this.resp_33 = this.formulario[i].id
               this.resp_33 = this.formulario[i].respuesta
               break
               case 'Técnico certifica o cambia pasivos spliter-dc':
-              this.resp_34 = this.formulario[i].id  
+              this.resp_34 = this.formulario[i].id
               this.resp_34 = this.formulario[i].respuesta
               break
               case 'Dirección correcta':
-              this.resp_35 = this.formulario[i].id  
+              this.resp_35 = this.formulario[i].id
               this.resp_35 = this.formulario[i].respuesta
               break
               case 'Técnico visitó domicilio':
-              this.resp_36 = this.formulario[i].id  
+              this.resp_36 = this.formulario[i].id
               this.resp_36 = this.formulario[i].respuesta
               break
               case 'HFC/DTH':
-              this.resp_37 = this.formulario[i].id  
+              this.resp_37 = this.formulario[i].id
               this.resp_37 = this.formulario[i].respuesta
               break
               case 'Decos Std':
-              this.resp_38 = this.formulario[i].id  
+              this.resp_38 = this.formulario[i].id
               this.resp_38 = this.formulario[i].respuesta
               break
               case 'Decos HD':
-              this.resp_39 = this.formulario[i].id  
+              this.resp_39 = this.formulario[i].id
               this.resp_39 = this.formulario[i].respuesta
               break
               case 'Cantidad de equipos corresponde a contrato':
-              this.resp_40 = this.formulario[i].id  
+              this.resp_40 = this.formulario[i].id
               this.resp_40 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Señal':
-              this.resp_41 = this.formulario[i].id  
+              this.resp_41 = this.formulario[i].id
               this.resp_41 = this.formulario[i].respuesta
               break
               case '1 TP (12092) N. Calidad':
-              this.resp_42 = this.formulario[i].id  
+              this.resp_42 = this.formulario[i].id
               this.resp_42 = this.formulario[i].respuesta
               break
               case '1 TP (12092) C/N':
-              this.resp_43 = this.formulario[i].id  
+              this.resp_43 = this.formulario[i].id
               this.resp_43 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Señal':
-              this.resp_44 = this.formulario[i].id  
+              this.resp_44 = this.formulario[i].id
               this.resp_44 = this.formulario[i].respuesta
               break
               case '1 TP (12172) N. Calidad':
-              this.resp_45 = this.formulario[i].id  
+              this.resp_45 = this.formulario[i].id
               this.resp_45 = this.formulario[i].respuesta
               break
               case '1 TP (12172) C/N':
-              this.resp_46 = this.formulario[i].id  
+              this.resp_46 = this.formulario[i].id
               this.resp_46 = this.formulario[i].respuesta
               break
               case 'TX':
-              this.resp_47 = this.formulario[i].id  
+              this.resp_47 = this.formulario[i].id
               this.resp_47 = this.formulario[i].respuesta
               break
               case 'RX':
-              this.resp_48 = this.formulario[i].id  
+              this.resp_48 = this.formulario[i].id
               this.resp_48 = this.formulario[i].respuesta
               break
               case 'SNR':
-              this.resp_49 = this.formulario[i].id  
+              this.resp_49 = this.formulario[i].id
               this.resp_49 = this.formulario[i].respuesta
               break
               case 'Observaciones':
-              this.resp_50 = this.formulario[i].id  
+              this.resp_50 = this.formulario[i].id
               this.resp_50 = this.formulario[i].respuesta
               break
               case 'Se genera vista técnica por garantía':
-              this.resp_51 = this.formulario[i].id  
+              this.resp_51 = this.formulario[i].id
               this.resp_51 = this.formulario[i].respuesta
               break
               case 'Se realiza reparación menor':
-              this.resp_52 = this.formulario[i].id  
+              this.resp_52 = this.formulario[i].id
               this.resp_52 = this.formulario[i].respuesta
               break
               case 'Reutilizada instalación':
-              this.resp_53 = this.formulario[i].id  
+              this.resp_53 = this.formulario[i].id
               this.resp_53 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores RG-06 F a compresión':
-              this.resp_54 = this.formulario[i].id  
+              this.resp_54 = this.formulario[i].id
               this.resp_54 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)':
-              this.resp_55 = this.formulario[i].id  
+              this.resp_55 = this.formulario[i].id
               this.resp_55 = this.formulario[i].respuesta
               break
               case '1004177 - Acopladores direccional interior 1 vía 9dB':
-              this.resp_56 = this.formulario[i].id  
+              this.resp_56 = this.formulario[i].id
               this.resp_56 = this.formulario[i].respuesta
               break
               case '1004178 - Acopladores direccional interior 1 vía 12dB':
-              this.resp_57 = this.formulario[i].id  
+              this.resp_57 = this.formulario[i].id
               this.resp_57 = this.formulario[i].respuesta
               break
               case '1004271 - Grampa blanca Telefónica Nº 7 (pin interior)':
-              this.resp_58 = this.formulario[i].id  
+              this.resp_58 = this.formulario[i].id
               this.resp_58 = this.formulario[i].respuesta
               break
               case '1004171 - Amarra cables nylon 4,8 x 15,6':
-              this.resp_59 = this.formulario[i].id  
+              this.resp_59 = this.formulario[i].id
               this.resp_59 = this.formulario[i].respuesta
               break
               case '1004167 - Gomas para Taps':
-              this.resp_60 = this.formulario[i].id  
+              this.resp_60 = this.formulario[i].id
               this.resp_60 = this.formulario[i].respuesta
               break
               case '1004179 - Grampa RG-6 blancas':
-              this.resp_61 = this.formulario[i].id  
-      
-      
+              this.resp_61 = this.formulario[i].id
+
+
               this.resp_61 = this.formulario[i].respuesta
               break
               case '1004180 - Grampa RG-6 negra':
-              this.resp_62 = this.formulario[i].id  
+              this.resp_62 = this.formulario[i].id
               this.resp_62 = this.formulario[i].respuesta
               break
               case '1004812 - Bloqueador de voltaje':
-              this.resp_63 = this.formulario[i].id  
+              this.resp_63 = this.formulario[i].id
               this.resp_63 = this.formulario[i].respuesta
               break
               case '1004183 - Atenuador Fam 3':
-              this.resp_64 = this.formulario[i].id  
+              this.resp_64 = this.formulario[i].id
               this.resp_64 = this.formulario[i].respuesta
               break
               case '1004184 - Atenuador Fam 6':
-              this.resp_65 = this.formulario[i].id  
+              this.resp_65 = this.formulario[i].id
               this.resp_65 = this.formulario[i].respuesta
               break
               case '1004185 - Atenuador Fam 8':
-              this.resp_66 = this.formulario[i].id  
+              this.resp_66 = this.formulario[i].id
               this.resp_66 = this.formulario[i].respuesta
               break
               case '1004186 - Atenuador Fam 10':
-              this.resp_67 = this.formulario[i].id  
+              this.resp_67 = this.formulario[i].id
               this.resp_67 = this.formulario[i].respuesta
               break
               case '1004173 - Splitter 2 vías (4dB)':
-              this.resp_68 = this.formulario[i].id  
+              this.resp_68 = this.formulario[i].id
               this.resp_68 = this.formulario[i].respuesta
               break
               case '1003508 - Conector RJ-45':
-              this.resp_69 = this.formulario[i].id  
+              this.resp_69 = this.formulario[i].id
               this.resp_69 = this.formulario[i].respuesta
               break
               case '1003507 - Conector RJ-11':
-              this.resp_70 = this.formulario[i].id  
+              this.resp_70 = this.formulario[i].id
               this.resp_70 = this.formulario[i].respuesta
               break
               case '1004270 - Ficha abonado (marca acometida) rojo':
-              this.resp_71 = this.formulario[i].id  
+              this.resp_71 = this.formulario[i].id
               this.resp_71 = this.formulario[i].respuesta
               break
               case '1003553 - Roseta telefónica RJ-11':
-              this.resp_72 = this.formulario[i].id  
+              this.resp_72 = this.formulario[i].id
               this.resp_72 = this.formulario[i].respuesta
               break
               case '1004181 - Conectores ground block':
-              this.resp_73 = this.formulario[i].id  
+              this.resp_73 = this.formulario[i].id
               this.resp_73 = this.formulario[i].respuesta
               break
               case '1004518 - Control remoto caja digital':
-              this.resp_74 = this.formulario[i].id  
+              this.resp_74 = this.formulario[i].id
               this.resp_74 = this.formulario[i].respuesta
               break
               case '1008608 - Cable teléfono plano 4 conductores':
-              this.resp_75 = this.formulario[i].id  
+              this.resp_75 = this.formulario[i].id
               this.resp_75 = this.formulario[i].respuesta
               break
               case '1004409 - Pilas alcalinas AAA':
-              this.resp_76 = this.formulario[i].id  
+              this.resp_76 = this.formulario[i].id
               this.resp_76 = this.formulario[i].respuesta
               break
               case '1004526 - Cable video componente 3 conexiones':
-              this.resp_77 = this.formulario[i].id  
+              this.resp_77 = this.formulario[i].id
               this.resp_77 = this.formulario[i].respuesta
               break
               case '1004836 - Cable HDMI':
-              this.resp_78 = this.formulario[i].id  
+              this.resp_78 = this.formulario[i].id
               this.resp_78 = this.formulario[i].respuesta
               break
               case '1004233 - Cable audio video RCA':
-              this.resp_79 = this.formulario[i].id  
+              this.resp_79 = this.formulario[i].id
               this.resp_79 = this.formulario[i].respuesta
               break
               case '1004176 - Acopladores direccional interior 1 vía 6dB':
-              this.resp_80 = this.formulario[i].id  
+              this.resp_80 = this.formulario[i].id
               this.resp_80 = this.formulario[i].respuesta
               break
               case '1004288 - LNB':
-              this.resp_81 = this.formulario[i].id  
+              this.resp_81 = this.formulario[i].id
               this.resp_81 = this.formulario[i].respuesta
               break
               case '1008635 - Cable coaxial blanco':
-              this.resp_82 = this.formulario[i].id  
+              this.resp_82 = this.formulario[i].id
               this.resp_82 = this.formulario[i].respuesta
               break
               case '1004311 - Conectores':
-              this.resp_83 = this.formulario[i].id  
+              this.resp_83 = this.formulario[i].id
               this.resp_83 = this.formulario[i].respuesta
               break
               case '1004672 - LNB dual':
-              this.resp_84 = this.formulario[i].id  
+              this.resp_84 = this.formulario[i].id
               this.resp_84 = this.formulario[i].respuesta
               break
               case '1004191 - LNB quad':
-              this.resp_85 = this.formulario[i].id  
+              this.resp_85 = this.formulario[i].id
               this.resp_85 = this.formulario[i].respuesta
               break
               case '1004648 - Splitter':
-              this.resp_86 = this.formulario[i].id  
+              this.resp_86 = this.formulario[i].id
               this.resp_86 = this.formulario[i].respuesta
               break
               case 'Código de barras':
@@ -2336,335 +2336,335 @@ export class FormDetailPage {
                 this.id_folio_servicio = this.formulario[i].id
               break
               case 'Técnico fue amable':
-              this.resp_1 = this.formulario[i].id  
+              this.resp_1 = this.formulario[i].id
               this.resp_1= this.formulario[i].respuesta
               break
               case "La presentación del técnico era la correcta":
-              this.resp_2 = this.formulario[i].id  
+              this.resp_2 = this.formulario[i].id
               this.resp_2= this.formulario[i].respuesta
               break
               case "Técnico informó el trabajo a realizar":
-              this.resp_3 = this.formulario[i].id  
+              this.resp_3 = this.formulario[i].id
               this.resp_3= this.formulario[i].respuesta
               break
               case "Técnico capacitó capacitación del uso de los equipos":
-              this.resp_4 = this.formulario[i].id  
+              this.resp_4 = this.formulario[i].id
               this.resp_4= this.formulario[i].respuesta
               break
               case "Usó antena Entel":
-              this.resp_5 = this.formulario[i].id  
+              this.resp_5 = this.formulario[i].id
               this.resp_5= this.formulario[i].respuesta
               break
               case "Correcta ubicación de antena Entel":
-              this.resp_6 = this.formulario[i].id  
+              this.resp_6 = this.formulario[i].id
               this.resp_6= this.formulario[i].respuesta
               break
               case "Correcta fijación de antena Entel":
-              this.resp_7 = this.formulario[i].id  
+              this.resp_7 = this.formulario[i].id
               this.resp_7= this.formulario[i].respuesta
               break
               case "Utilizó cables y materiales de Entel":
-              this.resp_8 = this.formulario[i].id  
+              this.resp_8 = this.formulario[i].id
               this.resp_8= this.formulario[i].respuesta
               break
               case "Correcta instalación LNB Entel":
-              this.resp_9 = this.formulario[i].id  
+              this.resp_9 = this.formulario[i].id
               this.resp_9= this.formulario[i].respuesta
               break
               case "Instalación de amarras plásticas":
-              this.resp_10 = this.formulario[i].id  
+              this.resp_10 = this.formulario[i].id
               this.resp_10= this.formulario[i].respuesta
               break
               case "Ruteo y grapeado exterior":
-              this.resp_11 = this.formulario[i].id  
+              this.resp_11 = this.formulario[i].id
               this.resp_11 = this.formulario[i].respuesta
               break
               case "Loop mantención":
-              this.resp_12 = this.formulario[i].id  
+              this.resp_12 = this.formulario[i].id
               this.resp_12 = this.formulario[i].respuesta
               break
               case "Fijación de multiswitch Entel":
-              this.resp_13 = this.formulario[i].id  
+              this.resp_13 = this.formulario[i].id
               this.resp_13 = this.formulario[i].respuesta
               break
               case "Posee pasamuros exterior":
-              this.resp_14 = this.formulario[i].id  
+              this.resp_14 = this.formulario[i].id
               this.resp_14 = this.formulario[i].respuesta
               break
               case "Posee pasamuros interior":
-              this.resp_15 = this.formulario[i].id  
+              this.resp_15 = this.formulario[i].id
               this.resp_15 = this.formulario[i].respuesta
               break
               case "En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma":
-              this.resp_16 = this.formulario[i].id  
+              this.resp_16 = this.formulario[i].id
               this.resp_16 = this.formulario[i].respuesta
               break
               case "Usó cableado Entel":
-              this.resp_17 = this.formulario[i].id  
+              this.resp_17 = this.formulario[i].id
               this.resp_17 = this.formulario[i].respuesta
               break
               case "Ruteo y grapeado interior":
-              this.resp_18 = this.formulario[i].id  
+              this.resp_18 = this.formulario[i].id
               this.resp_18 = this.formulario[i].respuesta
               break
               case "Fijación de los cables de Entel":
-              this.resp_19 = this.formulario[i].id  
+              this.resp_19 = this.formulario[i].id
               this.resp_19 = this.formulario[i].respuesta
               break
               case "Conectores Entel prensados correctamente":
-              this.resp_20 = this.formulario[i].id  
+              this.resp_20 = this.formulario[i].id
               this.resp_20 = this.formulario[i].respuesta
               break
               case "El o los STB se encuentran bien ubicados según norma":
-              this.resp_21 = this.formulario[i].id  
+              this.resp_21 = this.formulario[i].id
               this.resp_21 = this.formulario[i].respuesta
               break
               case "El o los STB están funcionando correctamente":
-              this.resp_22 = this.formulario[i].id  
+              this.resp_22 = this.formulario[i].id
               this.resp_22 = this.formulario[i].respuesta
               break
               case "Buen nivel de señal 1 STB":
-              this.resp_23 = this.formulario[i].id  
+              this.resp_23 = this.formulario[i].id
               this.resp_23 = this.formulario[i].respuesta
               break
               case "Buen nivel de señal 2 STB":
-              this.resp_24 = this.formulario[i].id  
+              this.resp_24 = this.formulario[i].id
               this.resp_24 = this.formulario[i].respuesta
               break
               case "Buen nivel de señal 3 STB":
-              this.resp_25 = this.formulario[i].id  
+              this.resp_25 = this.formulario[i].id
               this.resp_25 = this.formulario[i].respuesta
               break
               case "Señal pixeleada":
-              this.resp_26 = this.formulario[i].id  
+              this.resp_26 = this.formulario[i].id
               this.resp_26 = this.formulario[i].respuesta
               break
               case "Auditor solicita visita técnica":
-              this.resp_27 = this.formulario[i].id  
+              this.resp_27 = this.formulario[i].id
               this.resp_27 = this.formulario[i].respuesta
               break
               case "Motivo de la baja":
-              this.resp_28 = this.formulario[i].id  
+              this.resp_28 = this.formulario[i].id
               this.resp_28 = this.formulario[i].respuesta
               break
               case "Cantidad decos según plan":
-              this.resp_29 = this.formulario[i].id  
+              this.resp_29 = this.formulario[i].id
               this.resp_29 = this.formulario[i].respuesta
               break
               case "Cantidad decos existentes en domicilio":
-              this.resp_30 = this.formulario[i].id  
+              this.resp_30 = this.formulario[i].id
               this.resp_30 = this.formulario[i].respuesta
               break
               case "Cantidad multiswitch":
-              this.resp_31 = this.formulario[i].id  
+              this.resp_31 = this.formulario[i].id
               this.resp_31 = this.formulario[i].respuesta
               break
               case "Tamaño antena":
-              this.resp_32 = this.formulario[i].id  
+              this.resp_32 = this.formulario[i].id
               this.resp_32 = this.formulario[i].respuesta
               break
               case "T1 (10728 H) Principal":
-              this.resp_33 = this.formulario[i].id  
+              this.resp_33 = this.formulario[i].id
               this.resp_33 = this.formulario[i].respuesta
               break
               case "T2 (10768 H) Principal":
-              this.resp_34 = this.formulario[i].id  
+              this.resp_34 = this.formulario[i].id
               this.resp_34 = this.formulario[i].respuesta
               break
               case "T3 (10808 H) Principal":
-              this.resp_35 = this.formulario[i].id  
+              this.resp_35 = this.formulario[i].id
               this.resp_35 = this.formulario[i].respuesta
               break
               case "T4 (10808 H) Principal":
-              this.resp_36 = this.formulario[i].id  
+              this.resp_36 = this.formulario[i].id
               this.resp_36 = this.formulario[i].respuesta
               break
               case "T5 (10888 H) Principal":
-              this.resp_37 = this.formulario[i].id  
+              this.resp_37 = this.formulario[i].id
               this.resp_37 = this.formulario[i].respuesta
               break
               case "T6 (10928 H) Principal":
-              this.resp_38 = this.formulario[i].id  
+              this.resp_38 = this.formulario[i].id
               this.resp_38 = this.formulario[i].respuesta
               break
               case "T7 (11222 H) Principal":
-              this.resp_39 = this.formulario[i].id  
+              this.resp_39 = this.formulario[i].id
               this.resp_39 = this.formulario[i].respuesta
               break
               case "T8 (11262 H) Principal":
-              this.resp_40 = this.formulario[i].id  
+              this.resp_40 = this.formulario[i].id
               this.resp_40 = this.formulario[i].respuesta
               break
               case "T9 (11302 H) Principal":
-              this.resp_41 = this.formulario[i].id  
+              this.resp_41 = this.formulario[i].id
               this.resp_41 = this.formulario[i].respuesta
               break
               case "T10 (11342 H) Principal":
-              this.resp_42 = this.formulario[i].id  
+              this.resp_42 = this.formulario[i].id
               this.resp_42 = this.formulario[i].respuesta
               break
               case "T11 (1382 H) Principal":
-              this.resp_43 = this.formulario[i].id  
+              this.resp_43 = this.formulario[i].id
               this.resp_43 = this.formulario[i].respuesta
               break
               case "T12 (11422 H) Principal":
-              this.resp_44 = this.formulario[i].id  
+              this.resp_44 = this.formulario[i].id
               this.resp_44 = this.formulario[i].respuesta
               break
               case "T13 (10728 V) Principal":
-              this.resp_45 = this.formulario[i].id  
+              this.resp_45 = this.formulario[i].id
               this.resp_45 = this.formulario[i].respuesta
               break
               case "T1 (10728 H) Segundo":
-              this.resp_46 = this.formulario[i].id  
+              this.resp_46 = this.formulario[i].id
               this.resp_46 = this.formulario[i].respuesta
               break
               case "T2 (10768 H) Segundo":
-              this.resp_47 = this.formulario[i].id  
+              this.resp_47 = this.formulario[i].id
               this.resp_47 = this.formulario[i].respuesta
               break
               case "T3 (10808 H) Segundo":
-              this.resp_48 = this.formulario[i].id  
+              this.resp_48 = this.formulario[i].id
               this.resp_48 = this.formulario[i].respuesta
               break
               case "T4 (10808 H) Segundo":
-              this.resp_49 = this.formulario[i].id  
+              this.resp_49 = this.formulario[i].id
               this.resp_49 = this.formulario[i].respuesta
               break
               case "T5 (10888 H) Segundo":
-              this.resp_50 = this.formulario[i].id  
+              this.resp_50 = this.formulario[i].id
               this.resp_50 = this.formulario[i].respuesta
               break
               case "T6 (10928 H) Segundo":
-              this.resp_51 = this.formulario[i].id  
+              this.resp_51 = this.formulario[i].id
               this.resp_51 = this.formulario[i].respuesta
               break
               case "T7 (11222 H) Segundo":
-              this.resp_52 = this.formulario[i].id  
+              this.resp_52 = this.formulario[i].id
               this.resp_52 = this.formulario[i].respuesta
               break
               case "T8 (11262 H) Segundo":
-              this.resp_53 = this.formulario[i].id  
+              this.resp_53 = this.formulario[i].id
               this.resp_53 = this.formulario[i].respuesta
               break
               case "T9 (11302 H) Segundo":
-              this.resp_54 = this.formulario[i].id  
+              this.resp_54 = this.formulario[i].id
               this.resp_54 = this.formulario[i].respuesta
               break
               case "T10 (11342 H) Segundo":
-              this.resp_55 = this.formulario[i].id  
+              this.resp_55 = this.formulario[i].id
               this.resp_55 = this.formulario[i].respuesta
               break
               case "T11 (1382 H) Segundo":
-              this.resp_56 = this.formulario[i].id  
+              this.resp_56 = this.formulario[i].id
               this.resp_56 = this.formulario[i].respuesta
               break
               case "T12 (11422 H) Segundo":
-              this.resp_57 = this.formulario[i].id  
+              this.resp_57 = this.formulario[i].id
               this.resp_57 = this.formulario[i].respuesta
               break
               case "T13 (10728 V) Segundo":
-              this.resp_58 = this.formulario[i].id  
+              this.resp_58 = this.formulario[i].id
               this.resp_58 = this.formulario[i].respuesta
               break
               case "T1 (10728 H) Tercero":
-              this.resp_59 = this.formulario[i].id  
+              this.resp_59 = this.formulario[i].id
               this.resp_59 = this.formulario[i].respuesta
               break
               case "T2 (10768 H) Tercero":
-              this.resp_60 = this.formulario[i].id  
+              this.resp_60 = this.formulario[i].id
               this.resp_60 = this.formulario[i].respuesta
               break
               case "T3 (10808 H) Tercero":
-              this.resp_61 = this.formulario[i].id  
+              this.resp_61 = this.formulario[i].id
               this.resp_61 = this.formulario[i].respuesta
               break
               case "T4 (10808 H) Tercero":
-              this.resp_62 = this.formulario[i].id  
+              this.resp_62 = this.formulario[i].id
               this.resp_62 = this.formulario[i].respuesta
               break
               case "T5 (10888 H) Tercero":
-              this.resp_63 = this.formulario[i].id  
+              this.resp_63 = this.formulario[i].id
               this.resp_63 = this.formulario[i].respuesta
               break
               case "T6 (10928 H) Tercero":
-              this.resp_64 = this.formulario[i].id  
+              this.resp_64 = this.formulario[i].id
               this.resp_64 = this.formulario[i].respuesta
               break
               case "T7 (11222 H) Tercero":
-              this.resp_65 = this.formulario[i].id  
+              this.resp_65 = this.formulario[i].id
               this.resp_65 = this.formulario[i].respuesta
               break
               case "T8 (11262 H) Tercero":
-              this.resp_66 = this.formulario[i].id  
+              this.resp_66 = this.formulario[i].id
               this.resp_66 = this.formulario[i].respuesta
               break
               case "T9 (11302 H) Tercero":
-              this.resp_67 = this.formulario[i].id  
+              this.resp_67 = this.formulario[i].id
               this.resp_67 = this.formulario[i].respuesta
               break
               case "T10 (11342 H) Tercero":
-              this.resp_68 = this.formulario[i].id  
+              this.resp_68 = this.formulario[i].id
               this.resp_68 = this.formulario[i].respuesta
               break
               case "T11 (1382 H) Tercero":
-              this.resp_69 = this.formulario[i].id  
+              this.resp_69 = this.formulario[i].id
               this.resp_69 = this.formulario[i].respuesta
               break
               case "T12 (11422 H) Tercero":
-              this.resp_70 = this.formulario[i].id  
+              this.resp_70 = this.formulario[i].id
               this.resp_70 = this.formulario[i].respuesta
               break
               case "T13 (10728 V) Tercero":
-              this.resp_71 = this.formulario[i].id  
+              this.resp_71 = this.formulario[i].id
               this.resp_71 = this.formulario[i].respuesta
               break
               case "Observaciones":
-              this.resp_72 = this.formulario[i].id  
+              this.resp_72 = this.formulario[i].id
               this.resp_72 = this.formulario[i].respuesta
               break
               case "Utiliza material con autorización cliente":
-              this.resp_73 = this.formulario[i].id  
+              this.resp_73 = this.formulario[i].id
               this.resp_73 = this.formulario[i].respuesta
               break
               case "Soluciones":
-              this.resp_74 = this.formulario[i].id  
+              this.resp_74 = this.formulario[i].id
               this.resp_74 = this.formulario[i].respuesta
               break
               case "Cable Entel utilizado":
-              this.resp_75 = this.formulario[i].id  
+              this.resp_75 = this.formulario[i].id
               this.resp_75 = this.formulario[i].respuesta
               break
               case "Se realiza reparación menor":
-              this.resp_76 = this.formulario[i].id  
+              this.resp_76 = this.formulario[i].id
               this.resp_76 = this.formulario[i].respuesta
               break
               case "Conectores":
-              this.resp_77 = this.formulario[i].id  
+              this.resp_77 = this.formulario[i].id
               this.resp_77 = this.formulario[i].respuesta
               break
               case "Amarras":
-              this.resp_78 = this.formulario[i].id  
+              this.resp_78 = this.formulario[i].id
               this.resp_78 = this.formulario[i].respuesta
               break
               case "Pasamuros utilizados":
-              this.resp_79 = this.formulario[i].id  
+              this.resp_79 = this.formulario[i].id
               this.resp_79 = this.formulario[i].respuesta
               break
               case "Tirafondos instalados":
-              this.resp_80 = this.formulario[i].id  
+              this.resp_80 = this.formulario[i].id
               this.resp_80 = this.formulario[i].respuesta
               break
               case "Voltaje Fase Neutro":
-              this.resp_81 = this.formulario[i].id  
+              this.resp_81 = this.formulario[i].id
               this.resp_81 = this.formulario[i].respuesta
               break
               case "Voltaje Fase Tierra":
-              this.resp_82 = this.formulario[i].id  
+              this.resp_82 = this.formulario[i].id
               this.resp_82 = this.formulario[i].respuesta
               break
               case "Voltaje Neutro Tierra":
-              this.resp_83 = this.formulario[i].id  
+              this.resp_83 = this.formulario[i].id
               this.resp_83 = this.formulario[i].respuesta
               break
               case 'Código de barras':
@@ -2684,6 +2684,7 @@ export class FormDetailPage {
       console.error('Error al traer preguntas: ' + err.message)
       loading.dismiss()
     })
+
     this.api.getFormImgs(this.navParams.get('formData').id)
     .then((res:any) => {
       this.imagenes = res.data
