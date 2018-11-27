@@ -2170,8 +2170,6 @@ export class FormDetailPage {
               break
               case '1004179 - Grampa RG-6 blancas':
               this.resp_61 = this.formulario[i].id
-
-
               this.resp_61 = this.formulario[i].respuesta
               break
               case '1004180 - Grampa RG-6 negra':
