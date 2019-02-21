@@ -171,7 +171,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesHfc.value.resp_21 === null}">
         <ion-label text-wrap>Altura acometida en norma (4.5 Mts) *</ion-label>
         <ion-select formControlName="resp_18" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -179,7 +179,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesHfc.value.resp_21 === null}">
         <ion-label text-wrap>La acometida es nueva (No reutilizada) *</ion-label>
         <ion-select formControlName="resp_19" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -187,7 +187,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesHfc.value.resp_21 === null}">
         <ion-label text-wrap>Ficha de abonado en TAP, rotulada correctamente *</ion-label>
         <ion-select formControlName="resp_20" interface="popover">
           <ion-option value="Si">Si</ion-option>

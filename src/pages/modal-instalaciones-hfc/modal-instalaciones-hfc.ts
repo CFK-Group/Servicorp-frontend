@@ -182,12 +182,12 @@ export class ModalInstalacionesHfcPage {
         alert.present()
       }
     })
-    .catch(err => {
+    .catch(error => {
       console.log('Falla de comunicacion con el GPS')
-      console.log(err)
+      console.log('Error:', error)
       const alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: JSON.stringify(err),
+        subTitle: JSON.stringify(error),
         buttons: ['OK']
       })
       alert.present()
@@ -248,7 +248,7 @@ export class ModalInstalacionesHfcPage {
           alert.present()
         }
       })
-      .catch( (reason:any) => {
+      .catch( (error:any) => {
         loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
@@ -256,6 +256,7 @@ export class ModalInstalacionesHfcPage {
           buttons: ['OK']
         })
         alert.present()
+        console.log('Error:', error)
       })
     }).catch((error) => {
       loading.dismiss()
@@ -294,8 +295,8 @@ export class ModalInstalacionesHfcPage {
       console.log('Barcode data', barcodeData)
       this.cod_decodificador = barcodeData.text
     })
-    .catch(err => {
-      console.log('Error', err)
+    .catch(error => {
+      console.log('Error', error)
     })
   }
 
@@ -335,7 +336,7 @@ export class ModalInstalacionesHfcPage {
           alert.present()
         }
       })
-      .catch( (reason:any) => {
+      .catch( (error:any) => {
         loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
