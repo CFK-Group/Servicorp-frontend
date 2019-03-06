@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../app/user'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { CategoriasPage } from "../categorias/categorias"
-import { MantencionDthEntelPage } from "../../pages/mantencion-dth-entel/mantencion-dth-entel"
 import * as moment from 'moment'
 
 /**
@@ -21,17 +20,15 @@ import * as moment from 'moment'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  mode: string = 'producion'  // cambiar entre develop y producion según sea el caso
+  mode: string = 'develop'  // cambiar entre develop y producion según sea el caso
   loginForm: FormGroup
   VersionNumber: string
 
   constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
-    if(localStorage.getItem('empresa') == 'claro' || localStorage.getItem('empresa') == 'Claro'){
-      this.navCtrl.push(CategoriasPage)
-    } else if(localStorage.getItem('empresa') == 'entel' || localStorage.getItem('empresa') == 'Entel'){
-      this.navCtrl.push(MantencionDthEntelPage)
-    }
     this.loginForm = this.createLoginForm()
+    if(localStorage.getItem('empresa')){
+      this.navCtrl.push(CategoriasPage)
+    }
   }
 
   login(){
@@ -51,11 +48,7 @@ export class LoginPage {
         localStorage.setItem('userToken', res.token)
         localStorage.setItem('userId', res.id_usuario)
         localStorage.setItem('empresa', res.empresa)
-        if(res.empresa == 'claro' || res.empresa == 'Claro'){
-          this.navCtrl.push(CategoriasPage)
-        }else if(res.empresa == 'entel' || res.empresa == 'Entel'){
-          this.navCtrl.push(MantencionDthEntelPage)
-        }
+        this.navCtrl.push(CategoriasPage)
       }else{
         let alert = this.alertCtrl.create({
           title: 'Error al iniciar sesión',

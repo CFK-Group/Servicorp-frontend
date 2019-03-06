@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { FormDetailPage } from "../form-detail/form-detail"
-import { ModalMantencionDthEntelPage } from "../modal-mantencion-dth-entel/modal-mantencion-dth-entel"
+import { ModalInstalacionesDthEntelPage } from "../modal-instalaciones-dth-entel/modal-instalaciones-dth-entel"
 import { LoginPage } from "../../pages/login/login"
 
 /**
@@ -14,10 +14,10 @@ import { LoginPage } from "../../pages/login/login"
 
 @IonicPage()
 @Component({
-  selector: 'page-mantencion-dth-entel',
-  templateUrl: 'mantencion-dth-entel.html',
+  selector: 'page-instalaciones-dth-entel',
+  templateUrl: 'instalaciones-dth-entel.html',
 })
-export class MantencionDthEntelPage {
+export class InstalacionesDthEntelPage {
 
   formularios = []
 
@@ -38,20 +38,20 @@ export class MantencionDthEntelPage {
     loading.present()
     this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
-        localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
+        localStorage.setItem('FormulariosInstalacionesDTHEntel', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
         loading.dismiss()
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
+        this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesDTHEntel'))
         loading.dismiss()
       })
   }
 
   openModal(){
-    let modal = this.modalCtrl.create(ModalMantencionDthEntelPage)
+    let modal = this.modalCtrl.create(ModalInstalacionesDthEntelPage)
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
@@ -61,14 +61,14 @@ export class MantencionDthEntelPage {
       loading.present()
       this.api.getFormularios(this.data, 'entel')
         .then((res:any) => {
-          localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
+          localStorage.setItem('FormulariosInstalacionesDTHEntel', JSON.stringify(res.data))
           this.formularios = res.data
           console.table(this.formularios)
           loading.dismiss()
         })
         .catch((err) => {
           console.error('Error: ' + err.message)
-          this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
+          this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesDTHEntel'))
           loading.dismiss()
         })
     })
@@ -81,13 +81,13 @@ export class MantencionDthEntelPage {
       console.log('modal cerrado')
       this.api.getFormularios(this.data, 'entel')
       .then((res:any) => {
-        localStorage.setItem('FormulariosEntel', JSON.stringify(res.data))
+        localStorage.setItem('FormulariosInstalacionesDTHEntel', JSON.stringify(res.data))
         this.formularios = res.data
         console.table(this.formularios)
       })
       .catch((err) => {
         console.error('Error: ' + err.message)
-        this.formularios = JSON.parse(localStorage.getItem('FormulariosEntel'))
+        this.formularios = JSON.parse(localStorage.getItem('FormulariosInstalacionesDTHEntel'))
       })
     })
   }

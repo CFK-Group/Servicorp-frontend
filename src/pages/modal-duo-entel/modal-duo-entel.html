@@ -1,0 +1,113 @@
+<!--
+  Generated template for the ModalDuoEntelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Formulario DUO</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
+    <ion-list>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.folio_servicio === null}">
+        <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+        <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico corta acometida *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_2 === null}">
+        <ion-label text-wrap>Técnico retira acometida *</ion-label>
+        <ion-select formControlName="resp_2" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_3 === null}">
+        <ion-label text-wrap>Desconexión OK *</ion-label>
+        <ion-select formControlName="resp_3" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_4 === null}">
+        <ion-label text-wrap>Cliente activo *</ion-label>
+        <ion-select formControlName="resp_4" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_5 === null}">
+        <ion-label text-wrap>Certificador desconecta *</ion-label>
+        <ion-select formControlName="resp_5" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_6 === null}">
+        <ion-label text-wrap>Se corta ilegal *</ion-label>
+        <ion-select formControlName="resp_6" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_7 === null}">
+        <ion-label text-wrap>No permiten realizar corte *</ion-label>
+        <ion-select formControlName="resp_7" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Observaciones</ion-label>
+        <ion-input formControlName="resp_8" text-right type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col col>
+          <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{images.length}}/10
+            <ion-icon name="camera"></ion-icon></a>
+          <a ion-button icon-only block *ngIf="images.length === 10">{{images.length}}/10<ion-icon name="camera">
+            </ion-icon></a>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 *ngFor="let image of images">
+          <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col>
+          <button ion-button block type="submit" [disabled]="!desconexionForm.valid">Enviar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

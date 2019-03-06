@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { ModalMantencionDthEntelPage } from './modal-mantencion-dth-entel';
+import { ModalInstalacionesDthEntelPage } from './modal-instalaciones-dth-entel';
 
 @NgModule({
   declarations: [
-    ModalMantencionDthEntelPage,
+    ModalInstalacionesDthEntelPage,
   ],
   imports: [
-    IonicPageModule.forChild(ModalMantencionDthEntelPage),
+    IonicPageModule.forChild(ModalInstalacionesDthEntelPage),
   ],
 })
 export class ModalEntelPageModule {}

@@ -11,8 +11,8 @@ import { InstalacionesDthPage } from "../pages/instalaciones-dth/instalaciones-d
 import { MantencionHfcPage } from "../pages/mantencion-hfc/mantencion-hfc"
 import { MantencionDthPage } from "../pages/mantencion-dth/mantencion-dth"
 import { DesconexionPage } from "../pages/desconexion/desconexion"
-import { MantencionDthEntelPage } from "../pages/mantencion-dth-entel/mantencion-dth-entel"
-import { ModalMantencionDthEntelPage } from "../pages/modal-mantencion-dth-entel/modal-mantencion-dth-entel"
+import { InstalacionesDthEntelPage } from "../pages/instalaciones-dth-entel/instalaciones-dth-entel"
+import { ModalInstalacionesDthEntelPage } from "../pages/modal-instalaciones-dth-entel/modal-instalaciones-dth-entel"
 import { ModalInstalacionesHfcPage } from "../pages/modal-instalaciones-hfc/modal-instalaciones-hfc"
 import { ModalInstalacionesDthPage } from "../pages/modal-instalaciones-dth/modal-instalaciones-dth"
 import { ModalMantencionDthPage } from "../pages/modal-mantencion-dth/modal-mantencion-dth"
@@ -26,6 +26,10 @@ import { ApiServiceProvider } from '../providers/api-service/api-service'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
+import { BafiEntelPage } from "../pages/bafi-entel/bafi-entel"
+import { DuoEntelPage } from "../pages/duo-entel/duo-entel"
+import { ModalBafiEntelPage } from "../pages/modal-bafi-entel/modal-bafi-entel"
+import { ModalDuoEntelPage } from "../pages/modal-duo-entel/modal-duo-entel"
 
 @NgModule({
   declarations: [
@@ -43,8 +47,12 @@ import { Diagnostic } from '@ionic-native/diagnostic'
     ModalMantencionHfcPage,
     ModalDesconexionPage,
     FormDetailPage,
-    MantencionDthEntelPage,
-    ModalMantencionDthEntelPage
+    InstalacionesDthEntelPage,
+    ModalInstalacionesDthEntelPage,
+    BafiEntelPage,
+    DuoEntelPage,
+    ModalBafiEntelPage,
+    ModalDuoEntelPage
   ],
   imports: [
     BrowserModule,
@@ -67,8 +75,12 @@ import { Diagnostic } from '@ionic-native/diagnostic'
     ModalMantencionHfcPage,
     ModalDesconexionPage,
     FormDetailPage,
-    MantencionDthEntelPage,
-    ModalMantencionDthEntelPage
+    InstalacionesDthEntelPage,
+    ModalInstalacionesDthEntelPage,
+    ModalBafiEntelPage,
+    ModalDuoEntelPage,
+    BafiEntelPage,
+    DuoEntelPage
   ],
   providers: [
     StatusBar,
