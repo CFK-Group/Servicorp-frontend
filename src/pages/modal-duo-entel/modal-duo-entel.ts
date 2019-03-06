@@ -22,16 +22,16 @@ import { Diagnostic } from '@ionic-native/diagnostic'
   templateUrl: 'modal-duo-entel.html',
 })
 export class ModalDuoEntelPage {
-  desconexionForm: FormGroup
+  instalacionesDthEntelForm: FormGroup
 
   image: string = null
   images = []
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
-    this.desconexionForm = this.createDesconexionForm()
+    this.instalacionesDthEntelForm = this.createInstalacionesDthEntelForm()
   }
 
-  private createDesconexionForm() {
+  private createInstalacionesDthEntelForm() {
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
