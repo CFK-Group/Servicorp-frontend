@@ -11,8 +11,8 @@ import { InstalacionesDthPage } from "../pages/instalaciones-dth/instalaciones-d
 import { MantencionHfcPage } from "../pages/mantencion-hfc/mantencion-hfc"
 import { MantencionDthPage } from "../pages/mantencion-dth/mantencion-dth"
 import { DesconexionPage } from "../pages/desconexion/desconexion"
-import { EntelPage } from "../pages/entel/entel"
-import { ModalEntelPage } from "../pages/modal-entel/modal-entel"
+import { MantencionDthEntelPage } from "../pages/mantencion-dth-entel/mantencion-dth-entel"
+import { ModalMantencionDthEntelPage } from "../pages/modal-mantencion-dth-entel/modal-mantencion-dth-entel"
 import { ModalInstalacionesHfcPage } from "../pages/modal-instalaciones-hfc/modal-instalaciones-hfc"
 import { ModalInstalacionesDthPage } from "../pages/modal-instalaciones-dth/modal-instalaciones-dth"
 import { ModalMantencionDthPage } from "../pages/modal-mantencion-dth/modal-mantencion-dth"
@@ -43,8 +43,8 @@ import { Diagnostic } from '@ionic-native/diagnostic'
     ModalMantencionHfcPage,
     ModalDesconexionPage,
     FormDetailPage,
-    EntelPage,
-    ModalEntelPage
+    MantencionDthEntelPage,
+    ModalMantencionDthEntelPage
   ],
   imports: [
     BrowserModule,
@@ -67,8 +67,8 @@ import { Diagnostic } from '@ionic-native/diagnostic'
     ModalMantencionHfcPage,
     ModalDesconexionPage,
     FormDetailPage,
-    EntelPage,
-    ModalEntelPage
+    MantencionDthEntelPage,
+    ModalMantencionDthEntelPage
   ],
   providers: [
     StatusBar,

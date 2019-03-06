@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar'
 import { SplashScreen } from '@ionic-native/splash-screen'
 import { LoginPage } from "../pages/login/login"
 import { CategoriasPage } from '../pages/categorias/categorias'
-import { EntelPage } from '../pages/entel/entel'
+import { MantencionDthEntelPage } from "../pages/mantencion-dth-entel/mantencion-dth-entel"
 import * as moment from 'moment'
 
 @Component({
@@ -24,7 +24,7 @@ export class MyApp {
         if(localStorage.getItem('empresa') == 'claro' || localStorage.getItem('empresa') == 'Claro'){
           this.rootPage = CategoriasPage
         }else if(localStorage.getItem('empresa') == 'entel' || localStorage.getItem('empresa') == 'Entel'){
-          this.rootPage = EntelPage
+          this.rootPage = MantencionDthEntelPage
         }
       }else {
         this.logout()

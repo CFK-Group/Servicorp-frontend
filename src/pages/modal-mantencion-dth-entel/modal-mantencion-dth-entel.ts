@@ -19,10 +19,10 @@ import { Diagnostic } from '@ionic-native/diagnostic'
 
 @IonicPage()
 @Component({
-  selector: 'page-modal-entel',
-  templateUrl: 'modal-entel.html',
+  selector: 'page-modal-mantencion-dth-entel',
+  templateUrl: 'modal-mantencion-dth-entel.html',
 })
-export class ModalEntelPage {
+export class ModalMantencionDthEntelPage {
 
   instalacionesDth: FormGroup
   images = []

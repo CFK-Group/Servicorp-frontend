@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { IonicPage, ModalController, NavController, NavParams, LoadingController } from 'ionic-angular'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { FormDetailPage } from "../form-detail/form-detail"
-import { ModalEntelPage } from "../modal-entel/modal-entel"
+import { ModalMantencionDthEntelPage } from "../modal-mantencion-dth-entel/modal-mantencion-dth-entel"
 import { LoginPage } from "../../pages/login/login"
 
 /**
@@ -14,10 +14,10 @@ import { LoginPage } from "../../pages/login/login"
 
 @IonicPage()
 @Component({
-  selector: 'page-entel',
-  templateUrl: 'entel.html',
+  selector: 'page-mantencion-dth-entel',
+  templateUrl: 'mantencion-dth-entel.html',
 })
-export class EntelPage {
+export class MantencionDthEntelPage {
 
   formularios = []
 
@@ -51,7 +51,7 @@ export class EntelPage {
   }
 
   openModal(){
-    let modal = this.modalCtrl.create(ModalEntelPage)
+    let modal = this.modalCtrl.create(ModalMantencionDthEntelPage)
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
