@@ -145,20 +145,20 @@ export class ModalDuoEntelPage {
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp)
+        this.savePicture(this.images[i], this.instalacionesDthEntelForm.value.ot_servicorp)
       }
       console.log('Imagenes guardadas.')
     }
-    this.desconexionForm.value.imagen_1 = this.images[0]
-    this.desconexionForm.value.imagen_2 = this.images[1]
-    this.desconexionForm.value.imagen_3 = this.images[2]
-    this.desconexionForm.value.imagen_4 = this.images[3]
-    this.desconexionForm.value.imagen_5 = this.images[4]
-    this.desconexionForm.value.imagen_6 = this.images[5]
-    this.desconexionForm.value.imagen_7 = this.images[6]
-    this.desconexionForm.value.imagen_8 = this.images[7]
-    this.desconexionForm.value.imagen_9 = this.images[8]
-    this.desconexionForm.value.imagen_10 = this.images[9]
+    this.instalacionesDthEntelForm.value.imagen_1 = this.images[0]
+    this.instalacionesDthEntelForm.value.imagen_2 = this.images[1]
+    this.instalacionesDthEntelForm.value.imagen_3 = this.images[2]
+    this.instalacionesDthEntelForm.value.imagen_4 = this.images[3]
+    this.instalacionesDthEntelForm.value.imagen_5 = this.images[4]
+    this.instalacionesDthEntelForm.value.imagen_6 = this.images[5]
+    this.instalacionesDthEntelForm.value.imagen_7 = this.images[6]
+    this.instalacionesDthEntelForm.value.imagen_8 = this.images[7]
+    this.instalacionesDthEntelForm.value.imagen_9 = this.images[8]
+    this.instalacionesDthEntelForm.value.imagen_10 = this.images[9]
     console.log('iniciando toma de coordenadas')
     // capturando posicion gps
     var options = {
@@ -170,18 +170,18 @@ export class ModalDuoEntelPage {
       .then((resp) => {
         console.log('tomando coordenadas')
         console.log(resp)
-        this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
-        this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
-        console.log('Coordenadas: ' + this.desconexionForm.value.latitud + ',' + this.desconexionForm.value.longitud)
+        this.instalacionesDthEntelForm.value.latitud = resp.coords.latitude || 'e'
+        this.instalacionesDthEntelForm.value.longitud = resp.coords.longitude || 'eclear'
+        console.log('Coordenadas: ' + this.instalacionesDthEntelForm.value.latitud + ',' + this.instalacionesDthEntelForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+        this.api.enviarFormularioDesconexion(this.instalacionesDthEntelForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
             loading.dismiss()
             if (res.success === true) {
               let alert = this.alertCtrl.create({
                 title: 'Formulario enviado',
-                subTitle: 'Formulario de Desconexión enviado correctamente',
+                subTitle: 'Formulario de Instalación DTH enviado correctamente',
                 buttons: ['OK']
               })
               alert.present()
