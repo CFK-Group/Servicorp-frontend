@@ -23,9 +23,8 @@ import { Diagnostic } from '@ionic-native/diagnostic'
 })
 export class ModalDuoEntelPage {
   instalacionesDthEntelForm: FormGroup
-
-  image: string = null
   images = []
+  cod_decodificador = ''
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.instalacionesDthEntelForm = this.createInstalacionesDthEntelForm()
@@ -126,7 +125,7 @@ export class ModalDuoEntelPage {
         }
       })
       .catch(err => {
-        console.log('Falla de comunicacion con el GPS')
+        console.log('Falla de comunicación con el GPS')
         console.log(err)
         const alert = this.alertCtrl.create({
           title: 'Error',

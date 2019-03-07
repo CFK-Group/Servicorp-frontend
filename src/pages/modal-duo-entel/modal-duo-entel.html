@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
+  <form [formGroup]="instalacionesDthEntelForm" (ngSubmit)="enviar()">
     <ion-list>
       <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
         <ion-label text-wrap>OT SERVICORP *</ion-label>
@@ -31,6 +31,581 @@
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
       </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico fue amable *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>La presentación del técnico fue la correcta *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>técnico informño lel trabajo a realizar *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico capacitó en uso de equipos *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Instalación de Equipos
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Ruteo y grapeado exterior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Posee pasamuros exterior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        DTH
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Uso antena Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Utilizó el cable y materiales de Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta instalación LNB Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Instalación de amarras plásticas *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Loop mantención *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Fijación multiswitch Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>En las esquinas de los ángulos de los cables (ángulo de curvatura) ¿Está según norma? *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Usó cableado Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Fijación de los cables de Entel *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Conectores Entel prensados correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>El o los STB están funcionando correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        BAFI
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta ubicación de dispositivo ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta fijación de dispositivo ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta fijación de pasador que une dispositivo ODU al mástil *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Inclinación de mástil se encuentra entre -15º a 15º *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>ODU sellado con tapón correspondiente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Color VERDE en luz de dispositivo OUTDOOR *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Deja loop de mantención en ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Utiliza pasamuros exterior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Conectores RJ-45 están prensados correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU funcionando correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU instalada donde indicó cliente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU conectada a Smart TV *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles de Señal
+      </ion-list-header>
+      <ion-list-header class="center" color="grey">
+        DTH
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Buen nivel de señal 1 STB *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Buen nivel de señal 2 STB *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Buen nivel de señal 3 STB *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Señal pixelada *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Auditor solicita visita técnica *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Motivo de la baja *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="TV">Si</ion-option>
+          <ion-option value="Internet">No</ion-option>
+          <ion-option value="Otra">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Cantidad decos según plan *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Cantidad decos existentes en domicilio *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Cantidad multiswitch *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Tamaño antena *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        Niveles a tomar - Principal
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T1 (10728H) Principal *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T2 (10768H) Principal *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T3 (10808H) Principal *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T4 (10808H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T5 (10888H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T6 (10928H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T7 (11222H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T8 (11262H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T9 (11302H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T10 (11342H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T11 (1382H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T12 (11422H) Principal</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T13 (10728V) Principal *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        Niveles a tomar - Segundo
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T1 (10728H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T2 (10768H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T3 (10808H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T4 (10808H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T5 (10888H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T6 (10928H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T7 (11222H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T8 (11262H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T9 (11302H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T10 (11342H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T11 (1382H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T12 (11422H) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T13 (10728V) Segundo</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        Niveles a tomar - Tercero
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T1 (10728H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T2 (10768H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T3 (10808H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T4 (10808H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T5 (10888H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T6 (10928H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T7 (11222H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T8 (11262H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T9 (11302H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T10 (11342H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T11 (1382H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T12 (11422H) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>T13 (10728V) Tercero</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header class="center" color="grey">
+        BAFI
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Valor del parámetro RSPR(dBm) *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Valor del parámetro SINR(dB) *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Velocidad de navegación de subida *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Velocidad de navegación de bajada *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Material Utilizado
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Cable Entel utilizado *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Conectores *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Amarras *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Pasamuros utilizados *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Tirafondos instalados *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Voltaje Face Neutro *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Voltaje Face Tierra *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Observaciones
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Observaciones *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.resp_1 === null}">
+        <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDthEntelForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Soluciones *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Código de Barra
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Código Decodificador</ion-label>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar
+          Código</a>
+        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
+      </ion-item>
     </ion-list>
     <ion-grid>
       <ion-row>
@@ -48,7 +623,7 @@
       </ion-row>
       <ion-row>
         <ion-col col>
-          <button ion-button block type="submit" [disabled]="!desconexionForm.valid">Enviar</button>
+          <button ion-button block type="submit">Enviar</button>
         </ion-col>
       </ion-row>
     </ion-grid>
