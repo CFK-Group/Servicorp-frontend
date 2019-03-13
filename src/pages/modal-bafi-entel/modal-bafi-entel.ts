@@ -22,10 +22,11 @@ import { Diagnostic } from '@ionic-native/diagnostic'
   templateUrl: 'modal-bafi-entel.html',
 })
 export class ModalBafiEntelPage {
+  
   bafiForm: FormGroup
-
   image: string = null
   images = []
+  cod_decodificador = ''
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.bafiForm = this.createBafiForm()
@@ -145,20 +146,20 @@ export class ModalBafiEntelPage {
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp)
+        this.savePicture(this.images[i], this.bafiForm.value.ot_servicorp)
       }
       console.log('Imagenes guardadas.')
     }
-    this.desconexionForm.value.imagen_1 = this.images[0]
-    this.desconexionForm.value.imagen_2 = this.images[1]
-    this.desconexionForm.value.imagen_3 = this.images[2]
-    this.desconexionForm.value.imagen_4 = this.images[3]
-    this.desconexionForm.value.imagen_5 = this.images[4]
-    this.desconexionForm.value.imagen_6 = this.images[5]
-    this.desconexionForm.value.imagen_7 = this.images[6]
-    this.desconexionForm.value.imagen_8 = this.images[7]
-    this.desconexionForm.value.imagen_9 = this.images[8]
-    this.desconexionForm.value.imagen_10 = this.images[9]
+    this.bafiForm.value.imagen_1 = this.images[0]
+    this.bafiForm.value.imagen_2 = this.images[1]
+    this.bafiForm.value.imagen_3 = this.images[2]
+    this.bafiForm.value.imagen_4 = this.images[3]
+    this.bafiForm.value.imagen_5 = this.images[4]
+    this.bafiForm.value.imagen_6 = this.images[5]
+    this.bafiForm.value.imagen_7 = this.images[6]
+    this.bafiForm.value.imagen_8 = this.images[7]
+    this.bafiForm.value.imagen_9 = this.images[8]
+    this.bafiForm.value.imagen_10 = this.images[9]
     console.log('iniciando toma de coordenadas')
     // capturando posicion gps
     var options = {
@@ -170,11 +171,11 @@ export class ModalBafiEntelPage {
       .then((resp) => {
         console.log('tomando coordenadas')
         console.log(resp)
-        this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
-        this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
-        console.log('Coordenadas: ' + this.desconexionForm.value.latitud + ',' + this.desconexionForm.value.longitud)
+        this.bafiForm.value.latitud = resp.coords.latitude || 'e'
+        this.bafiForm.value.longitud = resp.coords.longitude || 'eclear'
+        console.log('Coordenadas: ' + this.bafiForm.value.latitud + ',' + this.bafiForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+        this.api.enviarFormularioDesconexion(this.bafiForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
             loading.dismiss()

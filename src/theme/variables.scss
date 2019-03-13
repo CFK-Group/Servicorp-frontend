@@ -88,3 +88,15 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+ion-label{
+  color: black !important;
+}
+
+[color="primary"] ion-label{
+  color: white !important;
+}
+
+.invalid{
+  background-color: #ffebee;
+}

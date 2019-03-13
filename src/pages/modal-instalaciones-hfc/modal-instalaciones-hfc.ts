@@ -30,6 +30,33 @@ export class ModalInstalacionesHfcPage {
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.instalacionesHfc = this.createInstalacionesHfcForm()
+    this.instalacionesHfc.controls['resp_11'].disable()
+    this.instalacionesHfc.controls['resp_12'].disable()
+    this.instalacionesHfc.controls['resp_13'].disable()
+    this.instalacionesHfc.controls['resp_38'].disable()
+    this.instalacionesHfc.controls['resp_39'].disable()
+    this.instalacionesHfc.controls['resp_40'].disable()
+    this.instalacionesHfc.controls['resp_41'].disable()
+    this.instalacionesHfc.controls['resp_42'].disable()
+    this.instalacionesHfc.controls['resp_43'].disable()
+    this.instalacionesHfc.controls['resp_44'].disable()
+    this.instalacionesHfc.controls['resp_45'].disable()
+    this.instalacionesHfc.controls['resp_46'].disable()
+    this.instalacionesHfc.controls['resp_47'].disable()
+    this.instalacionesHfc.controls['resp_48'].disable()
+    this.instalacionesHfc.controls['resp_49'].disable()
+    this.instalacionesHfc.controls['resp_50'].disable()
+    this.instalacionesHfc.controls['resp_51'].disable()
+    this.instalacionesHfc.controls['resp_52'].disable()
+    this.instalacionesHfc.controls['resp_53'].disable()
+    this.instalacionesHfc.controls['resp_54'].disable()
+    this.instalacionesHfc.controls['resp_55'].disable()
+    this.instalacionesHfc.controls['resp_56'].disable()
+    this.instalacionesHfc.controls['resp_57'].disable()
+    this.instalacionesHfc.controls['resp_58'].disable()
+    this.instalacionesHfc.controls['resp_59'].disable()
+    this.instalacionesHfc.controls['resp_60'].disable()
+    this.instalacionesHfc.controls['resp_61'].disable()
   }
 
   private createInstalacionesHfcForm(){
@@ -50,13 +77,13 @@ export class ModalInstalacionesHfcPage {
       resp_8: [null, Validators.required],
       resp_9: [null, Validators.required],
       resp_10: [null, Validators.required],
-      resp_11: [null, Validators.required],
-      resp_12: [null, Validators.required],
-      resp_13: [null, Validators.required],
+      resp_11: ['N/A'],
+      resp_12: ['N/A'],
+      resp_13: ['N/A'],
       resp_14: [null, Validators.required],
-      resp_15: ['N/A', Validators.required],
-      resp_16: ['N/A', Validators.required],
-      resp_17: ['N/A', Validators.required],
+      resp_15: [null, Validators.required],
+      resp_16: [null, Validators.required],
+      resp_17: [null, Validators.required],
       resp_18: [null, Validators.required],
       resp_19: [null, Validators.required],
       resp_20: [null, Validators.required],
@@ -77,30 +104,30 @@ export class ModalInstalacionesHfcPage {
       resp_35: [null, Validators.required],
       resp_36: [null, Validators.required],
       resp_37: [null, Validators.required],
-      resp_38: [null, Validators.required],
-      resp_39: [null, Validators.required],
-      resp_40: [null, Validators.required],
-      resp_41: [null, Validators.required],
-      resp_42: [null, Validators.required],
-      resp_43: [null, Validators.required],
-      resp_44: ['N/A', Validators.required],
-      resp_45: ['N/A', Validators.required],
-      resp_46: ['N/A', Validators.required],
-      resp_47: ['N/A', Validators.required],
-      resp_48: ['N/A', Validators.required],
-      resp_49: ['N/A', Validators.required],
-      resp_50: [null, Validators.required],
-      resp_51: [null, Validators.required],
-      resp_52: [null, Validators.required],
-      resp_53: [null, Validators.required],
-      resp_54: [null, Validators.required],
-      resp_55: [null, Validators.required],
-      resp_56: [null, Validators.required],
-      resp_57: [null],
-      resp_58: [null],
-      resp_59: [null],
-      resp_60: [null],
-      resp_61: [null],
+      resp_38: ['N/A'],
+      resp_39: ['N/A'],
+      resp_40: ['N/A'],
+      resp_41: ['N/A'],
+      resp_42: ['N/A'],
+      resp_43: ['N/A'],
+      resp_44: ['N/A'],
+      resp_45: ['N/A'],
+      resp_46: ['N/A'],
+      resp_47: ['N/A'],
+      resp_48: ['N/A'],
+      resp_49: ['N/A'],
+      resp_50: ['N/A'],
+      resp_51: ['N/A'],
+      resp_52: ['N/A'],
+      resp_53: ['N/A'],
+      resp_54: ['N/A'],
+      resp_55: ['N/A'],
+      resp_56: ['N/A'],
+      resp_57: ['N/A'],
+      resp_58: ['N/A'],
+      resp_59: ['N/A'],
+      resp_60: ['N/A'],
+      resp_61: ['N/A'],
       resp_62: [null],
       resp_63: [null],
       resp_64: [null],
@@ -129,6 +156,25 @@ export class ModalInstalacionesHfcPage {
       resp_87: [null],
       resp_88: [null],
       resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
