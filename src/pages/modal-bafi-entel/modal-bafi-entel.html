@@ -18,75 +18,237 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
+  <form [formGroup]="bafiForm" (ngSubmit)="enviar()">
     <ion-list>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.ot_servicorp === null}">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
         <ion-label text-wrap>OT SERVICORP *</ion-label>
         <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.folio_servicio === null}">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_1 === null}">
-        <ion-label text-wrap>Técnico corta acometida *</ion-label>
+      <ion-list-header color="primary">
+        Atención Cliente - Respuestas Cliente
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico fue amable *</ion-label>
         <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_2 === null}">
-        <ion-label text-wrap>Técnico retira acometida *</ion-label>
-        <ion-select formControlName="resp_2" interface="popover">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>La presentación del técnico fue la correcta *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_3 === null}">
-        <ion-label text-wrap>Desconexión OK *</ion-label>
-        <ion-select formControlName="resp_3" interface="popover">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico informó lel trabajo a realizar *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_4 === null}">
-        <ion-label text-wrap>Cliente activo *</ion-label>
-        <ion-select formControlName="resp_4" interface="popover">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Técnico capacitó en uso de equipos *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_5 === null}">
-        <ion-label text-wrap>Certificador desconecta *</ion-label>
-        <ion-select formControlName="resp_5" interface="popover">
+      <ion-list-header color="primary">
+        Instalación de Equipos
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta ubicación de dispositivo ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_6 === null}">
-        <ion-label text-wrap>Se corta ilegal *</ion-label>
-        <ion-select formControlName="resp_6" interface="popover">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta fijación de mástil de dispositivo ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_7 === null}">
-        <ion-label text-wrap>No permiten realizar corte *</ion-label>
-        <ion-select formControlName="resp_7" interface="popover">
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Correcta fijación de pasador que une dispositivo ODU al mástil *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Inclinación de mástil se encuentra entre -15º a 15º *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>ODU sellado con tapón correspondiente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Color VERDE de luz de dispositivo OUTDOOR *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Deja loop de mantención en dispositivo ODU *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Utiliza pasamuros exterior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Conectores RJ-45 están prensados correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU funcionando correctamente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU instalada donde indicó cliente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>IDU conectada a Smart TV *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles de Señal
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Valor del parámetro RSPR (dBm) *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Valor del parámetro SINR (dB) *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Velocidad de navegación de subida *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Velocidad de navegación de bajada *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Observaciones
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Observaciones *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>Soluciones *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Código de Barra
+      </ion-list-header>
       <ion-item>
-        <ion-label text-wrap>Observaciones</ion-label>
-        <ion-input formControlName="resp_8" text-right type="text"></ion-input>
+        <ion-label text-wrap>Código Decodificador</ion-label>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Visita Técnica *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': bafiForm.value.resp_1 === null}">
+        <ion-label text-wrap>Motivo de la baja *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option>Por TV</ion-option>
+          <ion-option>Por Internet</ion-option>
+          <ion-option>Por Call</ion-option>
+          <ion-option>Post Venta</ion-option>
+          <ion-option>Por Técnico</ion-option>
+          <ion-option>Otra</ion-option>
+          <ion-option>N/A</ion-option>
+        </ion-select>
       </ion-item>
     </ion-list>
     <ion-grid>
@@ -105,7 +267,7 @@
       </ion-row>
       <ion-row>
         <ion-col col>
-          <button ion-button block type="submit" [disabled]="!desconexionForm.valid">Enviar</button>
+          <button ion-button block type="submit">Enviar</button>
         </ion-col>
       </ion-row>
     </ion-grid>

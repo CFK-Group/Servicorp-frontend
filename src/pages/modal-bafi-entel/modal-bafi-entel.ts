@@ -22,16 +22,16 @@ import { Diagnostic } from '@ionic-native/diagnostic'
   templateUrl: 'modal-bafi-entel.html',
 })
 export class ModalBafiEntelPage {
-  desconexionForm: FormGroup
+  bafiForm: FormGroup
 
   image: string = null
   images = []
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
-    this.desconexionForm = this.createDesconexionForm()
+    this.bafiForm = this.createBafiForm()
   }
 
-  private createDesconexionForm() {
+  private createBafiForm() {
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
