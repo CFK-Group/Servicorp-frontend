@@ -30,6 +30,35 @@ export class ModalMantencionHfcPage {
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesHfc = this.createMantencionesHfcForm()
+    this.mantencionesHfc.controls['resp_15'].disable()
+    this.mantencionesHfc.controls['resp_16'].disable()
+    this.mantencionesHfc.controls['resp_38'].disable()
+    this.mantencionesHfc.controls['resp_39'].disable()
+    this.mantencionesHfc.controls['resp_40'].disable()
+    this.mantencionesHfc.controls['resp_41'].disable()
+    this.mantencionesHfc.controls['resp_42'].disable()
+    this.mantencionesHfc.controls['resp_43'].disable()
+    this.mantencionesHfc.controls['resp_44'].disable()
+    this.mantencionesHfc.controls['resp_45'].disable()
+    this.mantencionesHfc.controls['resp_46'].disable()
+    this.mantencionesHfc.controls['resp_47'].disable()
+    this.mantencionesHfc.controls['resp_48'].disable()
+    this.mantencionesHfc.controls['resp_49'].disable()
+    this.mantencionesHfc.controls['resp_50'].disable()
+    this.mantencionesHfc.controls['resp_51'].disable()
+    this.mantencionesHfc.controls['resp_52'].disable()
+    this.mantencionesHfc.controls['resp_53'].disable()
+    this.mantencionesHfc.controls['resp_54'].disable()
+    this.mantencionesHfc.controls['resp_55'].disable()
+    this.mantencionesHfc.controls['resp_56'].disable()
+    this.mantencionesHfc.controls['resp_57'].disable()
+    this.mantencionesHfc.controls['resp_58'].disable()
+    this.mantencionesHfc.controls['resp_59'].disable()
+    this.mantencionesHfc.controls['resp_60'].disable()
+    this.mantencionesHfc.controls['resp_61'].disable()
+    this.mantencionesHfc.controls['resp_62'].disable()
+    this.mantencionesHfc.controls['resp_63'].disable()
+    this.mantencionesHfc.controls['resp_64'].disable()
   }
 
   private createMantencionesHfcForm(){
@@ -75,42 +104,42 @@ export class ModalMantencionHfcPage {
       resp_33: [null, Validators.required],
       resp_34: [null, Validators.required],
       resp_35: [null, Validators.required],
-      resp_36: [null],
+      resp_36: [null, Validators.required],
       resp_37: [null, Validators.required],
-      resp_38: [null, Validators.required],
-      resp_39: [null, Validators.required],
-      resp_40: [null, Validators.required],
+      resp_38: ['N/A'],
+      resp_39: ['N/A'],
+      resp_40: ['N/A'],
       resp_41: ['N/A'],
       resp_42: ['N/A'],
       resp_43: ['N/A'],
       resp_44: ['N/A'],
       resp_45: ['N/A'],
       resp_46: ['N/A'],
-      resp_47: [null, Validators.required],
-      resp_48: [null, Validators.required],
-      resp_49: [null, Validators.required],
-      resp_50: [null, Validators.required],
-      resp_51: [null, Validators.required],
-      resp_52: [null, Validators.required],
-      resp_53: [null, Validators.required],
-      resp_54: [null],
-      resp_55: [null],
-      resp_56: [null],
-      resp_57: [null],
-      resp_58: [null],
-      resp_59: [null],
-      resp_60: [null],
-      resp_61: [null],
-      resp_62: [null],
-      resp_63: [null],
-      resp_64: [null],
-      resp_65: [null],
-      resp_66: [null],
-      resp_67: [null],
-      resp_68: [null],
-      resp_69: [null],
-      resp_70: [null],
-      resp_71: [null],
+      resp_47: ['N/A'],
+      resp_48: ['N/A'],
+      resp_49: ['N/A'],
+      resp_50: ['N/A'],
+      resp_51: ['N/A'],
+      resp_52: ['N/A'],
+      resp_53: ['N/A'],
+      resp_54: ['N/A'],
+      resp_55: ['N/A'],
+      resp_56: ['N/A'],
+      resp_57: ['N/A'],
+      resp_58: ['N/A'],
+      resp_59: ['N/A'],
+      resp_60: ['N/A'],
+      resp_61: ['N/A'],
+      resp_62: ['N/A'],
+      resp_63: ['N/A'],
+      resp_64: ['N/A'],
+      resp_65: [null, Validators.required],
+      resp_66: [null, Validators.required],
+      resp_67: [null, Validators.required],
+      resp_68: [null, Validators.required],
+      resp_69: [null, Validators.required],
+      resp_70: [null, Validators.required],
+      resp_71: [null, Validators.required],
       resp_72: [null],
       resp_73: [null],
       resp_74: [null],
@@ -126,16 +155,38 @@ export class ModalMantencionHfcPage {
       resp_84: [null],
       resp_85: [null],
       resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
+      resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       imagen_1: [this.images[0]],
       imagen_2: [this.images[1]],
       imagen_3: [this.images[2]],
       imagen_4: [this.images[3]],
-      imagen_5: this.images[4],
-      imagen_6: this.images[5],
-      imagen_7: this.images[6],
-      imagen_8: this.images[7],
-      imagen_9: this.images[8],
-      imagen_10: this.images[9],
+      imagen_5: [this.images[4]],
+      imagen_6: [this.images[5]],
+      imagen_7: [this.images[6]],
+      imagen_8: [this.images[7]],
+      imagen_9: [this.images[8]],
+      imagen_10: [this.images[9]],
       cod_decodificador: [null]
     })
   }

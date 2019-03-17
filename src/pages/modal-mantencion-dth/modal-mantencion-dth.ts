@@ -30,6 +30,17 @@ export class ModalMantencionDthPage {
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesDth = this.createMantencionesDthForm()
+    this.mantencionesDth.controls['resp_8'].disable()
+    this.mantencionesDth.controls['resp_12'].disable()
+    this.mantencionesDth.controls['resp_15'].disable()
+    this.mantencionesDth.controls['resp_16'].disable()
+    this.mantencionesDth.controls['resp_18'].disable()
+    this.mantencionesDth.controls['resp_23'].disable()
+    this.mantencionesDth.controls['resp_25'].disable()
+    this.mantencionesDth.controls['resp_28'].disable()
+    this.mantencionesDth.controls['resp_62'].disable()
+    this.mantencionesDth.controls['resp_63'].disable()
+    this.mantencionesDth.controls['resp_64'].disable()
   }
 
   private createMantencionesDthForm(){
@@ -126,6 +137,28 @@ export class ModalMantencionDthPage {
       resp_84: [null],
       resp_85: [null],
       resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
+      resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],

@@ -31,8 +31,16 @@
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
       </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_2 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_1 === null}">
         <ion-label text-wrap>Técnico se identificó con credencial, nombre, apellido *</ion-label>
+        <ion-select formControlName="resp_1" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_2 === null}">
+        <ion-label text-wrap>Vestían uniforme y correctamente ordenados *</ion-label>
         <ion-select formControlName="resp_2" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -40,7 +48,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_3 === null}">
-        <ion-label text-wrap>Vestían uniforme y correctamente ordenados *</ion-label>
+        <ion-label text-wrap>Explicaron el detalle del trabajo antes de comenzar *</ion-label>
         <ion-select formControlName="resp_3" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -48,7 +56,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_4 === null}">
-        <ion-label text-wrap>Explicaron el detalle del trabajo antes de comenzar *</ion-label>
+        <ion-label text-wrap>Respondieron sus dudas durante la actividad ejecutada *</ion-label>
         <ion-select formControlName="resp_4" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -56,23 +64,39 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_5 === null}">
-        <ion-label text-wrap>El trato fue cordial durante la visita *</ion-label>
+        <ion-label text-wrap>Dejaron copia de orden de trabajo *</ion-label>
         <ion-select formControlName="resp_5" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_6 === null}">
+        <ion-label text-wrap>Efectuaron capacitación del uso de los equipos *</ion-label>
+        <ion-select formControlName="resp_6" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_7 === null}">
-        <ion-label text-wrap>Respondieron sus dudas durante la actividad ejecutada *</ion-label>
+        <ion-label text-wrap>Explica importancia de instalar o reemplazar el cableado por uno nuevo *</ion-label>
         <ion-select formControlName="resp_7" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Explica como conectarse a la red WIFI</ion-label>
+        <ion-select formControlName="resp_8" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_9 === null}">
-        <ion-label text-wrap>Efectuaron capacitación del uso de los equipos *</ion-label>
+        <ion-label text-wrap>Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA) *</ion-label>
         <ion-select formControlName="resp_9" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -80,7 +104,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_10 === null}">
-        <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad *</ion-label>
+        <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente al término de la actividad *</ion-label>
         <ion-select formControlName="resp_10" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -95,25 +119,9 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_12 === null}">
-        <ion-label text-wrap>Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA) *</ion-label>
+      <ion-item>
+        <ion-label text-wrap>Entraga clave de acceso WIFI y personalizada a cliente</ion-label>
         <ion-select formControlName="resp_12" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_13 === null}">
-        <ion-label text-wrap>Entrega clave de acceso wifi y personalizada a cliente *</ion-label>
-        <ion-select formControlName="resp_13" interface="popover" [disabled]="true">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_14 === null}">
-        <ion-label text-wrap>Capacitó en el uso de control remoto del decodificador *</ion-label>
-        <ion-select formControlName="resp_14" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -122,32 +130,151 @@
       <ion-list-header color="primary">
         Instalación Exterior - Revisión Control Calidad
       </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_15 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_13 === null}">
         <ion-label text-wrap>Fijación de antena con (4 pernos) *</ion-label>
-        <ion-select formControlName="resp_15" interface="popover">
+        <ion-select formControlName="resp_13" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_16 === null}">
-        <ion-label text-wrap>Conector LNB protegido *</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_14 === null}">
+        <ion-label text-wrap>Técnico deja antena debidamente firme (Sin movimiento) *</ion-label>
+        <ion-select formControlName="resp_14" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico cambia acometida dañada</ion-label>
+        <ion-select formControlName="resp_15" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico certifica o cambia ground block</ion-label>
         <ion-select formControlName="resp_16" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_17 === null}">
+        <ion-label text-wrap>Técnico fija splitter *</ion-label>
+        <ion-select formControlName="resp_17" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico instala bloqueador de voltaje (Filtro HUM)</ion-label>
+        <ion-select formControlName="resp_18" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_19 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia conectores *</ion-label>
+        <ion-select formControlName="resp_19" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_20 === null}">
+        <ion-label text-wrap>Técnico deja conectores correctamente torqueados *</ion-label>
+        <ion-select formControlName="resp_20" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-list-header color="primary">
         Instalación Interior - Revisión Control Calidad
       </ion-list-header>
-      
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_21 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia cableado interior *</ion-label>
+        <ion-select formControlName="resp_21" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_22 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia conectores *</ion-label>
+        <ion-select formControlName="resp_22" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico certifica o cambia cable PIN</ion-label>
+        <ion-select formControlName="resp_23" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico certifica o cambia roseta telefónica</ion-label>
+        <ion-select formControlName="resp_24" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico certifica o cambia equipo telefónico</ion-label>
+        <ion-select formControlName="resp_25" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_26 === null}">
+        <ion-label text-wrap>Técnico deja conectores correctamente torqueados *</ion-label>
+        <ion-select formControlName="resp_26" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_27 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia decodificador/Cmo MTA *</ion-label>
+        <ion-select formControlName="resp_27" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Técnico certifica o cambia canal de transmisión WIFI</ion-label>
+        <ion-select formControlName="resp_28" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_29 === null}">
+        <ion-label text-wrap>Técnico certifica niveles operaciones (CM-MTA-DECO) *</ion-label>
+        <ion-select formControlName="resp_29" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_30 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia control remoto *</ion-label>
+        <ion-select formControlName="resp_30" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_31 === null}">
+        <ion-label text-wrap>Técnico certifica o cambia pasivos splitter-dc *</ion-label>
+        <ion-select formControlName="resp_31" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-list-header color="primary">
         Revisión de Equipos
       </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_35 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_32 === null}">
         <ion-label text-wrap>Dirección correcta *</ion-label>
-        <ion-select formControlName="resp_35" interface="popover">
+        <ion-select formControlName="resp_32" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -155,29 +282,29 @@
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Técnico visitó domicilio</ion-label>
-        <ion-select formControlName="resp_36" interface="popover">
+        <ion-select formControlName="resp_33" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_37 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_34 === null}">
         <ion-label text-wrap>HFC/DTH *</ion-label>
-        <ion-select formControlName="resp_37" interface="popover">
+        <ion-select formControlName="resp_34" interface="popover">
           <ion-option value="DTH">DTH</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_38 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_35 === null}">
         <ion-label text-wrap>Decos Std *</ion-label>
-        <ion-input formControlName="resp_38" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_35" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_39 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_36 === null}">
         <ion-label text-wrap>Decos HD *</ion-label>
-        <ion-input formControlName="resp_39" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_36" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_40 === null}">
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_37 === null}">
         <ion-label text-wrap>Cantidad de equipos corresponde a contrato *</ion-label>
-        <ion-select formControlName="resp_40" interface="popover">
+        <ion-select formControlName="resp_37" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -186,52 +313,254 @@
       <ion-list-header color="primary">
         Niveles DTH
       </ion-list-header>
-      
-      
-      <ion-list-header color="primary">
-        Niveles HFC
+      <ion-list-header text-center color="grey">
+        Decodificador Principal
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_38 === null}">
+        <ion-label text-wrap>1 TP (12092) N. Señal *</ion-label>
+        <ion-select formControlName="resp_38" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_39 === null}">
+        <ion-label text-wrap>1 TP (12092) N. Calidad *</ion-label>
+        <ion-select formControlName="resp_39" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_40 === null}">
+        <ion-label text-wrap>1 TP (12092) C/N *</ion-label>
+        <ion-select formControlName="resp_40" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_41 === null}">
+        <ion-label text-wrap>1 TP (12172) N. Señal *</ion-label>
+        <ion-select formControlName="resp_41" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_42 === null}">
+        <ion-label text-wrap>1 TP (12172) N. Calidad *</ion-label>
+        <ion-select formControlName="resp_42" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_43 === null}">
+        <ion-label text-wrap>1 TP (12172) C/N *</ion-label>
+        <ion-select formControlName="resp_43" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header text-center color="grey">
+        Decodificador Segundo
       </ion-list-header>
       <ion-item>
-        <ion-label text-wrap>TX</ion-label>
-        <ion-input formControlName="resp_47" text-right type="text" [disabled]="true"></ion-input>
+        <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
+        <ion-select formControlName="resp_44" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>RX</ion-label>
-        <ion-input formControlName="resp_48" text-right type="text" [disabled]="true"></ion-input>
+        <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
+        <ion-select formControlName="resp_45" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>SNR</ion-label>
-        <ion-input formControlName="resp_49" text-right type="text" [disabled]="true"></ion-input>
+        <ion-label text-wrap>1 TP (12092) C/N</ion-label>
+        <ion-select formControlName="resp_46" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
-      <ion-list-header color="primary">
-        Observaciones
-      </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_50 === null}">
-        <ion-label text-wrap>Observaciones *</ion-label>
-        <ion-input formControlName="resp_50" text-right type="text"></ion-input>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
+        <ion-select formControlName="resp_47" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
-      <ion-list-header color="primary">
-        Conformidad Control Certificación Calidad
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+        <ion-select formControlName="resp_48" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+        <ion-select formControlName="resp_49" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header text-center color="grey">
+        Decodificador Tercero
       </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_51 === null}">
-        <ion-label text-wrap>Se genera vista técnica por garantía *</ion-label>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
+        <ion-select formControlName="resp_50" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
         <ion-select formControlName="resp_51" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_52 === null}">
-        <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12092) C/N</ion-label>
         <ion-select formControlName="resp_52" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_53 === null}">
-        <ion-label text-wrap>Reutilizada instalación *</ion-label>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
         <ion-select formControlName="resp_53" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+        <ion-select formControlName="resp_54" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+        <ion-select formControlName="resp_55" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header text-center color="grey">
+        Decodificador HD
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_56 === null}">
+        <ion-label text-wrap>1 TP (12092) N. Señal *</ion-label>
+        <ion-select formControlName="resp_56" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_57 === null}">
+        <ion-label text-wrap>1 TP (12092) N. Calidad *</ion-label>
+        <ion-select formControlName="resp_57" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_58 === null}">
+        <ion-label text-wrap>1 TP (12092) C/N *</ion-label>
+        <ion-select formControlName="resp_58" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_59 === null}">
+        <ion-label text-wrap>1 TP (12172) N. Señal *</ion-label>
+        <ion-select formControlName="resp_59" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_60 === null}">
+        <ion-label text-wrap>1 TP (12172) N. Calidad *</ion-label>
+        <ion-select formControlName="resp_60" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_61 === null}">
+        <ion-label text-wrap>1 TP (12172) C/N *</ion-label>
+        <ion-select formControlName="resp_61" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Niveles HFC
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>TX</ion-label>
+        <ion-input formControlName="resp_62" text-right type="text" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>RX</ion-label>
+        <ion-input formControlName="resp_63" text-right type="text" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>SNR</ion-label>
+        <ion-input formControlName="resp_64" text-right type="text" [disabled]="true"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Observaciones
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_65 === null}">
+        <ion-label text-wrap>Observaciones *</ion-label>
+        <ion-input formControlName="resp_65" text-right type="text"></ion-input>
+      </ion-item>
+      <ion-list-header color="primary">
+        Conformidad Control Certificación Calidad
+      </ion-list-header>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_66 === null}">
+        <ion-label text-wrap>Se genera vista técnica por garantía *</ion-label>
+        <ion-select formControlName="resp_66" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_67 === null}">
+        <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+        <ion-select formControlName="resp_67" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_68 === null}">
+        <ion-label text-wrap>Reutilizada instalación *</ion-label>
+        <ion-select formControlName="resp_68" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
@@ -242,163 +571,163 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión</ion-label>
-        <ion-input formControlName="resp_54" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
-        <ion-input formControlName="resp_55" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
-        <ion-input formControlName="resp_56" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
-        <ion-input formControlName="resp_57" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
-        <ion-input formControlName="resp_58" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004174 - Spliter 3 vías</ion-label>
-        <ion-input formControlName="resp_58" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004171 - Amarra cables nylon 4,8 x 15,6</ion-label>
-        <ion-input formControlName="resp_59" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004167 - Gomas para Taps</ion-label>
-        <ion-input formControlName="resp_60" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004179 - Grampa RG-6 blancas</ion-label>
-        <ion-input formControlName="resp_61" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
-        <ion-input formControlName="resp_62" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004812 - Bloqueador de voltaje</ion-label>
-        <ion-input formControlName="resp_63" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004183 - Atenuador Fam 3</ion-label>
-        <ion-input formControlName="resp_64" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004184 - Atenuador Fam 6</ion-label>
-        <ion-input formControlName="resp_65" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004185 - Atenuador Fam 8</ion-label>
-        <ion-input formControlName="resp_66" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004186 - Atenuador Fam 10</ion-label>
-        <ion-input formControlName="resp_67" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1004173 - Splitter 2 vías (4dB)</ion-label>
-        <ion-input formControlName="resp_68" text-right type="number"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label text-wrap>1003508 - Conector RJ-45</ion-label>
         <ion-input formControlName="resp_69" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1003507 - Conector RJ-11</ion-label>
+        <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
         <ion-input formControlName="resp_70" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004270 - Ficha abonado (marca acometida) rojo</ion-label>
+        <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
         <ion-input formControlName="resp_71" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1003553 - Roseta telefónica RJ-11</ion-label>
+        <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
         <ion-input formControlName="resp_72" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004181 - Conectores ground block</ion-label>
+        <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
         <ion-input formControlName="resp_73" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004518 - Control remoto caja digital</ion-label>
+        <ion-label text-wrap>1004174 - Spliter 3 vías</ion-label>
         <ion-input formControlName="resp_74" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1008608 - Cable teléfono plano 4 conductores</ion-label>
+        <ion-label text-wrap>1004171 - Amarra cables nylon 4,8 x 15,6</ion-label>
         <ion-input formControlName="resp_75" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004409 - Pilas alcalinas AAA</ion-label>
+        <ion-label text-wrap>1004167 - Gomas para Taps</ion-label>
         <ion-input formControlName="resp_76" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004526 - Cable video componente 3 conexiones</ion-label>
+        <ion-label text-wrap>1004179 - Grampa RG-6 blancas</ion-label>
         <ion-input formControlName="resp_77" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004836 - Cable HDMI</ion-label>
+        <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
         <ion-input formControlName="resp_78" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004233 - Cable audio video RCA</ion-label>
+        <ion-label text-wrap>1004812 - Bloqueador de voltaje</ion-label>
         <ion-input formControlName="resp_79" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004176 - Acopladores direccional interior 1 vía 6dB</ion-label>
+        <ion-label text-wrap>1004183 - Atenuador Fam 3</ion-label>
         <ion-input formControlName="resp_80" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004288 - LNB</ion-label>
+        <ion-label text-wrap>1004184 - Atenuador Fam 6</ion-label>
         <ion-input formControlName="resp_81" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1008635 - Cable coaxial blanco</ion-label>
+        <ion-label text-wrap>1004185 - Atenuador Fam 8</ion-label>
         <ion-input formControlName="resp_82" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004311 - Conectores</ion-label>
+        <ion-label text-wrap>1004186 - Atenuador Fam 10</ion-label>
         <ion-input formControlName="resp_83" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004672 - LNB dual</ion-label>
+        <ion-label text-wrap>1004173 - Splitter 2 vías (4dB)</ion-label>
         <ion-input formControlName="resp_84" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004191 - LNB quad</ion-label>
+        <ion-label text-wrap>1003508 - Conector RJ-45</ion-label>
         <ion-input formControlName="resp_85" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004648 - Splitter</ion-label>
+        <ion-label text-wrap>1003507 - Conector RJ-11</ion-label>
         <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004270 - Ficha abonado (marca acometida) rojo</ion-label>
+        <ion-input formControlName="resp_87" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1003553 - Roseta telefónica RJ-11</ion-label>
+        <ion-input formControlName="resp_88" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004181 - Conectores ground block</ion-label>
+        <ion-input formControlName="resp_89" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004518 - Control remoto caja digital</ion-label>
+        <ion-input formControlName="resp_90" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1008608 - Cable teléfono plano 4 conductores</ion-label>
+        <ion-input formControlName="resp_91" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004409 - Pilas alcalinas AAA</ion-label>
+        <ion-input formControlName="resp_92" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004526 - Cable video componente 3 conexiones</ion-label>
+        <ion-input formControlName="resp_93" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004836 - Cable HDMI</ion-label>
+        <ion-input formControlName="resp_94" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004233 - Cable audio video RCA</ion-label>
+        <ion-input formControlName="resp_95" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004176 - Acopladores direccional interior 1 vía 6dB</ion-label>
+        <ion-input formControlName="resp_96" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004288 - LNB</ion-label>
+        <ion-input formControlName="resp_97" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1008635 - Cable coaxial blanco</ion-label>
+        <ion-input formControlName="resp_98" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004311 - Conectores</ion-label>
+        <ion-input formControlName="resp_99" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004672 - LNB dual</ion-label>
+        <ion-input formControlName="resp_100" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004191 - LNB quad</ion-label>
+        <ion-input formControlName="resp_101" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>1004648 - Splitter</ion-label>
+        <ion-input formControlName="resp_102" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Cable Negro</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_103" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Cable Blanco</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_104" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Conectores</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_105" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Grampas</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_106" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Splitter</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_107" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>DCs</ion-label>
-        <ion-input formControlName="resp_86" text-right type="number"></ion-input>
+        <ion-input formControlName="resp_108" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Código de Barra
