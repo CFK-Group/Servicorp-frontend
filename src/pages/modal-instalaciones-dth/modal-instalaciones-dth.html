@@ -147,24 +147,24 @@
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_15 === null}">
         <ion-label text-wrap>Altura acometida en norma (4,5 Mts)</ion-label>
         <ion-select formControlName="resp_15" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_16 === null}">
         <ion-label text-wrap>La acometida es nueva (no reutilizada)</ion-label>
         <ion-select formControlName="resp_16" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_17 === null}">
         <ion-label text-wrap>Ficha de abonado en TAP rotulada correctamente</ion-label>
         <ion-select formControlName="resp_17" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -173,6 +173,7 @@
         <ion-select formControlName="resp_18" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_19 === null}">
@@ -187,6 +188,7 @@
         <ion-select formControlName="resp_20" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_21 === null}">
@@ -241,11 +243,12 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_28 === null}">
+      <ion-item>
         <ion-label text-wrap>Cable PIN es nuevo</ion-label>
         <ion-select formControlName="resp_28" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_29 === null}">
@@ -255,11 +258,12 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_30 === null}">
+      <ion-item>
         <ion-label text-wrap>Tiene filtro HUM en instalación de TV</ion-label>
         <ion-select formControlName="resp_30" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_31 === null}">
@@ -267,27 +271,31 @@
         <ion-select formControlName="resp_31" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>Deja equipo modo nat (CM_Emta)</ion-label>
+        <ion-label text-wrap>Deja equipo modo nat (CM-Emta)</ion-label>
         <ion-select formControlName="resp_32" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Certifica / cambia canal de tranasmisión de wifi</ion-label>
         <ion-select formControlName="resp_33" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Informó número telefónico asignado</ion-label>
         <ion-select formControlName="resp_34" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-list-header color="primary">
@@ -298,7 +306,6 @@
         <ion-select formControlName="resp_35" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_36 === null}">
@@ -306,7 +313,6 @@
         <ion-select formControlName="resp_36" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_37 === null}">
@@ -328,7 +334,6 @@
         <ion-select formControlName="resp_40" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-list-header color="primary">
@@ -339,204 +344,108 @@
       </ion-list-header>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_41 === null}">
         <ion-label text-wrap>1 TP (12092) N. Señal *</ion-label>
-        <ion-select formControlName="resp_41" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_41" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_42 === null}">
         <ion-label text-wrap>1 TP (12092) N. Calidad *</ion-label>
-        <ion-select formControlName="resp_42" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_42" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_43 === null}">
         <ion-label text-wrap>1 TP (12092) C/N *</ion-label>
-        <ion-select formControlName="resp_43" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_43" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_44 === null}">
         <ion-label text-wrap>1 TP (12172) N. Señal *</ion-label>
-        <ion-select formControlName="resp_44" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_44" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_45 === null}">
         <ion-label text-wrap>1 TP (12172) N. Calidad *</ion-label>
-        <ion-select formControlName="resp_45" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_45" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_46 === null}">
         <ion-label text-wrap>1 TP (12172) C/N *</ion-label>
-        <ion-select formControlName="resp_46" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_46" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header text-center color="grey">
         Decodificador Segundo
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-        <ion-select formControlName="resp_47" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_47" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-        <ion-select formControlName="resp_48" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_48" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-        <ion-select formControlName="resp_49" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_49" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-        <ion-select formControlName="resp_50" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_50" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-        <ion-select formControlName="resp_51" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_51" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-        <ion-select formControlName="resp_52" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_52" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header text-center color="grey">
         Decodificador Tercero
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-        <ion-select formControlName="resp_53" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_53" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-        <ion-select formControlName="resp_54" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_54" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-        <ion-select formControlName="resp_55" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_55" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-        <ion-select formControlName="resp_56" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_56" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-        <ion-select formControlName="resp_57" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_57" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-        <ion-select formControlName="resp_58" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_58" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header text-center color="grey">
         Decodificador HD
       </ion-list-header>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_59 === null}">
         <ion-label text-wrap>1 TP (12092) N. Señal *</ion-label>
-        <ion-select formControlName="resp_59" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_59" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_60 === null}">
         <ion-label text-wrap>1 TP (12092) N. Calidad *</ion-label>
-        <ion-select formControlName="resp_60" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_60" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_61 === null}">
         <ion-label text-wrap>1 TP (12092) C/N *</ion-label>
-        <ion-select formControlName="resp_61" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_61" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_62 === null}">
         <ion-label text-wrap>1 TP (12172) N. Señal *</ion-label>
-        <ion-select formControlName="resp_62" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_62" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_63 === null}">
         <ion-label text-wrap>1 TP (12172) N. Calidad *</ion-label>
-        <ion-select formControlName="resp_63" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_63" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_64 === null}">
         <ion-label text-wrap>1 TP (12172) C/N *</ion-label>
-        <ion-select formControlName="resp_64" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
+        <ion-input formControlName="resp_64" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Niveles HFC
@@ -568,7 +477,6 @@
         <ion-select formControlName="resp_69" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_70 === null}">
@@ -576,7 +484,6 @@
         <ion-select formControlName="resp_70" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_71 === null}">
@@ -584,7 +491,6 @@
         <ion-select formControlName="resp_71" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-list-header color="primary">
@@ -726,28 +632,28 @@
         <ion-label text-wrap>1004648 - Splitter</ion-label>
         <ion-input formControlName="resp_105" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Cable Negro</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_106 === null}">
+        <ion-label text-wrap>Cable Negro *</ion-label>
         <ion-input formControlName="resp_106" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Cable Blanco</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_107 === null}">
+        <ion-label text-wrap>Cable Blanco *</ion-label>
         <ion-input formControlName="resp_107" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Conectores</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_108 === null}">
+        <ion-label text-wrap>Conectores *</ion-label>
         <ion-input formControlName="resp_108" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Grampas</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_109 === null}">
+        <ion-label text-wrap>Grampas *</ion-label>
         <ion-input formControlName="resp_109" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Splitter</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_110 === null}">
+        <ion-label text-wrap>Splitter *</ion-label>
         <ion-input formControlName="resp_110" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>DCs</ion-label>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.resp_111 === null}">
+        <ion-label text-wrap>DCs *</ion-label>
         <ion-input formControlName="resp_111" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">

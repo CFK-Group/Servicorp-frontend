@@ -108,7 +108,7 @@
         Instalación Exterior - Revisión Control Calidad
       </ion-list-header>
       <ion-item>
-        <ion-label text-wrap>Fijación de antena con (4 pernos)</ion-label>
+        <ion-label text-wrap>Técnico certifica fijación de antena con (4 pernos)</ion-label>
         <ion-input formControlName="resp_10" text-right type="text"></ion-input>
       </ion-item>
       <ion-item>
@@ -152,7 +152,6 @@
         <ion-select formControlName="resp_16" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_17 === null}">
@@ -160,7 +159,6 @@
         <ion-select formControlName="resp_17" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_18 === null}">
@@ -195,7 +193,6 @@
         <ion-select formControlName="resp_21" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_22 === null}">
@@ -259,7 +256,6 @@
         <ion-select formControlName="resp_29" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_30 === null}">
@@ -286,7 +282,6 @@
         <ion-select formControlName="resp_32" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_33 === null}">
@@ -294,7 +289,6 @@
         <ion-select formControlName="resp_33" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_34 === null}">
@@ -316,7 +310,6 @@
         <ion-select formControlName="resp_37" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-list-header color="primary">
@@ -529,15 +522,15 @@
       <ion-list-header color="primary">
         Niveles HFC
       </ion-list-header>
-      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_62 === null}">
+      <ion-item>
         <ion-label text-wrap>TX *</ion-label>
         <ion-input formControlName="resp_62" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_63 === null}">
+      <ion-item>
         <ion-label text-wrap>RX *</ion-label>
         <ion-input formControlName="resp_63" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_64 === null}">
+      <ion-item>
         <ion-label text-wrap>SNR *</ion-label>
         <ion-input formControlName="resp_64" text-right type="number"></ion-input>
       </ion-item>
@@ -556,7 +549,6 @@
         <ion-select formControlName="resp_66" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_67 === null}">
@@ -564,7 +556,6 @@
         <ion-select formControlName="resp_67" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_68 === null}">
@@ -572,7 +563,6 @@
         <ion-select formControlName="resp_68" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-list-header color="primary">
@@ -714,28 +704,28 @@
         <ion-label text-wrap>1004648 - Splitter</ion-label>
         <ion-input formControlName="resp_102" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Cable negro</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_103 === null}">
+        <ion-label text-wrap>Cable negro *</ion-label>
         <ion-input formControlName="resp_103" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Cable blanco</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_104 === null}">
+        <ion-label text-wrap>Cable blanco *</ion-label>
         <ion-input formControlName="resp_104" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Conectores</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_105 === null}">
+        <ion-label text-wrap>Conectores *</ion-label>
         <ion-input formControlName="resp_105" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Grampas</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_106 === null}">
+        <ion-label text-wrap>Grampas *</ion-label>
         <ion-input formControlName="resp_106" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Splitter</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_107 === null}">
+        <ion-label text-wrap>Splitter *</ion-label>
         <ion-input formControlName="resp_107" text-right type="number"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>DCs</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.resp_108 === null}">
+        <ion-label text-wrap>DCs *</ion-label>
         <ion-input formControlName="resp_108" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">

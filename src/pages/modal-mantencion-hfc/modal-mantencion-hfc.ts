@@ -30,8 +30,8 @@ export class ModalMantencionHfcPage {
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesHfc = this.createMantencionesHfcForm()
-    this.mantencionesHfc.controls['resp_15'].disable()
-    this.mantencionesHfc.controls['resp_16'].disable()
+    this.mantencionesHfc.controls['resp_10'].disable()
+    this.mantencionesHfc.controls['resp_11'].disable()
     this.mantencionesHfc.controls['resp_38'].disable()
     this.mantencionesHfc.controls['resp_39'].disable()
     this.mantencionesHfc.controls['resp_40'].disable()
@@ -171,12 +171,12 @@ export class ModalMantencionHfcPage {
       resp_100: [null],
       resp_101: [null],
       resp_102: [null],
-      resp_103: [null],
-      resp_104: [null],
-      resp_105: [null],
-      resp_106: [null],
-      resp_107: [null],
-      resp_108: [null],
+      resp_103: [null, Validators.required],
+      resp_104: [null, Validators.required],
+      resp_105: [null, Validators.required],
+      resp_106: [null, Validators.required],
+      resp_107: [null, Validators.required],
+      resp_108: [null, Validators.required],
       imagen_1: [this.images[0]],
       imagen_2: [this.images[1]],
       imagen_3: [this.images[2]],
