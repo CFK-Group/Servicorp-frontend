@@ -95,5 +95,5 @@
     </plugin>
     <plugin name="cordova.plugins.diagnostic" spec="^4.0.10" />
     <plugin name="cordova-plugin-app-version" spec="^0.1.9" />
-    <engine name="android" spec="^7.1.1" />
+    <engine name="android" spec="7.1.4" />
 </widget>
