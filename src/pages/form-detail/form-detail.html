@@ -23,7 +23,7 @@
   <ion-list>
 
     <!-- formulario de instalacion hfc -->
-    <form *ngIf="this.mostrarFormInstalacionesHfc" [formGroup]="instalacionesHfcForm" (ngSubmit)="actualizarFormulario('instalacionesHfc')">
+    <form *ngIf="this.mostrarFormInstalacionesHfc" [formGroup]="instalacionesHfcForm">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT SERVICORP</ion-label>
@@ -626,7 +626,7 @@
     </form>
 
     <!-- formulario de instalacion dth -->
-    <form *ngIf="this.mostrarFormInstalacionesDth" [formGroup]="instalacionesDthForm" (ngSubmit)="actualizarFormulario('instalacionesDth')">
+    <form *ngIf="this.mostrarFormInstalacionesDth" [formGroup]="instalacionesDthForm">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT SERVICORP</ion-label>
@@ -1229,7 +1229,7 @@
     </form>
 
     <!-- formulario de matencion hfc -->
-    <form *ngIf="this.mostrarFormMantencionesHfc" [formGroup]="mantencionesHfcForm" (ngSubmit)="actualizarFormulario('mantencionesHfc')">
+    <form *ngIf="this.mostrarFormMantencionesHfc" [formGroup]="mantencionesHfcForm">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT SERVICORP</ion-label>
@@ -1792,7 +1792,7 @@
     </form>
 
     <!-- formulario de matencion dth -->
-    <form *ngIf="this.mostrarFormMantencionesDth" [formGroup]="mantencionesDthForm" (ngSubmit)="actualizarFormulario('mantencionesDth')">
+    <form *ngIf="this.mostrarFormMantencionesDth" [formGroup]="mantencionesDthForm">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT SERVICORP</ion-label>
@@ -2355,7 +2355,7 @@
     </form>
 
     <!-- formulario de desconexión -->
-    <form *ngIf="this.mostrarFormDesconexion" [formGroup]="desconexionForm" (ngSubmit)="actualizarFormulario('desconexion')">
+    <form *ngIf="this.mostrarFormDesconexion" [formGroup]="desconexionForm">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT SERVICORP</ion-label>
@@ -2421,47 +2421,787 @@
       </ion-list>
     </form>
 
-    <!-- formulario entel -->
-    <form *ngIf="this.mostrarFormInstalacionesDthEntel" [formGroup]="instalacionesDthEntelForm" (ngSubmit)="actualizarFormulario('entel')">
+    <!-- formulario instalaciones dth entel -->
+    <form *ngIf="this.mostrarFormInstalacionesDthEntel" [formGroup]="instalacionesDthEntelForm">
       <ion-list>
-        <ion-item>
-          <ion-label text-wrap>OT SERVICORP</ion-label>
-          <ion-input readonly="true" formControlName="ot_servicorp" text-right type="number" [value]="this.ot_servicorp"></ion-input>
+        <ion-item>
+          <ion-label text-wrap>OT SERVICORP *</ion-label>
+          <ion-input [value]="this.ot_servicorp" readonly="true" formControlName="ot_servicorp" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+          <ion-input [value]="this.folio_servicio" readonly="true" formControlName="folio_servicio" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Atención Cliente - Respuestas Cliente
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Técnico fue amable *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_1" formControlName="resp_1" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>La presentación del técnico era la correcta *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_2" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Técnico informó el trabajo a realizar *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_3" formControlName="resp_3" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Técnico capacitó en el uso de los equipos *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_4" formControlName="resp_4" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Instalación de Equipos
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Usó antena Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_5" formControlName="resp_5" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_6" formControlName="resp_6" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Correcta fijación de antena Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_7" formControlName="resp_7" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Utilizó cables y materiales de Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_8" formControlName="resp_8" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Correcta instalación LNB Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_9" formControlName="resp_9" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Instalación de amarras plásticas *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_10" formControlName="resp_10" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Ruteo y grapeado exterior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_11" formControlName="resp_11" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Loop mantención *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_12" formControlName="resp_12" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Fijación de multiswitch Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_13" formControlName="resp_13" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Posee pasamuros exterior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_14" formControlName="resp_14" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_15" formControlName="resp_15" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_16" formControlName="resp_16" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Usó cableado Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_17" formControlName="resp_17" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_18" formControlName="resp_18" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Fijación de los cables de Entel *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_19" formControlName="resp_19" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Conectores Entel prensados correctamente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_20" formControlName="resp_20" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_21" formControlName="resp_21" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>El o los STB están funcionando correctamente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_22" formControlName="resp_22" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Niveles de Señal
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Buen nivel de señal 1 STB *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_23" formControlName="resp_23" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>FOLIO DE SERVICIO</ion-label>
-          <ion-input readonly="true" formControlName="folio_servicio" text-right type="number" [value]="this.folio_servicio"></ion-input>
+          <ion-label text-wrap>Buen nivel de señal 2 STB</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_24" formControlName="resp_24" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Buen nivel de señal 3 STB</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_25" formControlName="resp_25" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Señal pixeleada *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_26" formControlName="resp_26" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Otros Datos
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Auditor solicita visita técnica *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_27" formControlName="resp_27" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Motivo de la baja</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_28" formControlName="resp_28" interface="popover">
+            <ion-option value="Por TV">Por TV</ion-option>
+            <ion-option value="Por Internet">Por Internet</ion-option>
+            <ion-option value="Por Call (post venta)">Por Call (post venta)</ion-option>
+            <ion-option value="Por Técnico">Por Técnico</ion-option>
+            <ion-option value="Otra">Otra</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad decos según plan *</ion-label>
+          <ion-input [value]="this.resp_29" readonly="true" formControlName="resp_29" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad decos existentes en domicilio *</ion-label>
+          <ion-input [value]="this.resp_30" readonly="true" formControlName="resp_30" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad multiswitch *</ion-label>
+          <ion-input [value]="this.resp_31" readonly="true" formControlName="resp_31" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Tamaño antena *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_32" formControlName="resp_32" interface="popover">
+            <ion-option value="60">60</ion-option>
+            <ion-option value="90">90</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Niveles a Tomar - Principal
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>T1 (10728 H) Principal *</ion-label>
+          <ion-input [value]="this.resp_33="true" formControlName="resp_33" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T2 (10768 H) Principal *</ion-label>
+          <ion-input [value]="this.resp_34="true" formControlName="resp_34" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T3 (10808 H) Principal *</ion-label>
+          <ion-input [value]="this.resp_35="true" formControlName="resp_35" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T4 (10808 H) Principal</ion-label>
+          <ion-input [value]="this.resp_36="true" formControlName="resp_36" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T5 (10888 H) Principal</ion-label>
+          <ion-input [value]="this.resp_37="true" formControlName="resp_37" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T6 (10928 H) Principal</ion-label>
+          <ion-input [value]="this.resp_38="true" formControlName="resp_38" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T7 (11222 H) Principal</ion-label>
+          <ion-input [value]="this.resp_39="true" formControlName="resp_39" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T8 (11262 H) Principal</ion-label>
+          <ion-input [value]="this.resp_40="true" formControlName="resp_40" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T9 (11302 H) Principal</ion-label>
+          <ion-input [value]="this.resp_41="true" formControlName="resp_41" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T10 (11342 H) Principal</ion-label>
+          <ion-input [value]="this.resp_42="true" formControlName="resp_42" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T11 (1382 H) Principal</ion-label>
+          <ion-input [value]="this.resp_43="true" formControlName="resp_43" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T12 (11422 H) Principal</ion-label>
+          <ion-input [value]="this.resp_44="true" formControlName="resp_44" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T13 (10728 V) Principal *</ion-label>
+          <ion-input [value]="this.resp_45="true" formControlName="resp_45" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Niveles a Tomar - Segundo
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>T1 (10728 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_46="true" formControlName="resp_46" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T2 (10768 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_47="true" formControlName="resp_47" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T3 (10808 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_48="true" formControlName="resp_48" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T4 (10808 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_49="true" formControlName="resp_49" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T5 (10888 H) Segundo</ion-label>167
+          <ion-input [value]="this.resp_50="true" formControlName="resp_50" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T6 (10928 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_51="true" formControlName="resp_51" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T7 (11222 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_52="true" formControlName="resp_52" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T8 (11262 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_53="true" formControlName="resp_53" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T9 (11302 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_54="true" formControlName="resp_54" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T10 (11342 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_55="true" formControlName="resp_55" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T11 (1382 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_56="true" formControlName="resp_56" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T12 (11422 H) Segundo</ion-label>
+          <ion-input [value]="this.resp_57="true" formControlName="resp_57" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T13 (10728 V) Segundo</ion-label>
+          <ion-input [value]="this.resp_58="true" formControlName="resp_58" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Niveles a Tomar - Tercero
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>T1 (10728 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_59="true" formControlName="resp_59" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T2 (10768 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_60="true" formControlName="resp_60" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T3 (10808 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_61="true" formControlName="resp_61" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T4 (10808 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_62="true" formControlName="resp_62" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T5 (10888 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_63="true" formControlName="resp_63" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T6 (10928 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_64="true" formControlName="resp_64" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T7 (11222 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_65="true" formControlName="resp_65" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T8 (11262 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_66="true" formControlName="resp_66" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T9 (11302 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_67="true" formControlName="resp_67" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T10 (11342 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_68="true" formControlName="resp_68" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T11 (1382 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_69="true" formControlName="resp_69" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T12 (11422 H) Tercero</ion-label>
+          <ion-input [value]="this.resp_70="true" formControlName="resp_70" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>T13 (10728 V) Tercero</ion-label>
+          <ion-input [value]="this.resp_71="true" formControlName="resp_71" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Observaciones
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Observaciones *</ion-label>
+          <ion-input [value]="this.resp_72="true" formControlName="resp_72" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Reutiliza material con autorización cliente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_73" formControlName="resp_73" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Se realiza reparación menor *</ion-label>54
+          <ion-select disabled [(ngModel)]="this.resp_74" formControlName="resp_74" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Soluciones *</ion-label>
+          <ion-input [value]="this.resp_75" readonly="true" formControlName="resp_75" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cable Entel utilizado *</ion-label>
+          <ion-input [value]="this.resp_76" readonly="true" formControlName="resp_76" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Conectores *</ion-label>
+          <ion-input [value]="this.resp_77" readonly="true" formControlName="resp_77" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Amarras *</ion-label>
+          <ion-input [value]="this.resp_78" readonly="true" formControlName="resp_78" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Pasamuros utilizados *</ion-label>
+          <ion-input [value]="this.resp_79" readonly="true" formControlName="resp_79" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Tirafondos instalados *</ion-label>
+          <ion-input [value]="this.resp_80" readonly="true" formControlName="resp_80" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Fase Neutro *</ion-label>
+          <ion-input [value]="this.resp_81" readonly="true" formControlName="resp_81" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Fase Tierra *</ion-label>
+          <ion-input [value]="this.resp_82" readonly="true" formControlName="resp_82" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
+          <ion-input [value]="this.resp_83" readonly="true" formControlName="resp_83" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Código de Barra
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Código Decodificador</ion-label>
+          <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+          <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
+        </ion-item>
+      </ion-list>
+    </form>
+
+    <!-- formulario bafi entel -->
+    <form *ngIf="this.mostrarFormBafiEntel" [formGroup]="bafiEntelForm">
+      <ion-list>
+        <ion-item>
+          <ion-label text-wrap>OT SERVICORP *</ion-label>
+          <ion-input readonly="true" formControlName="ot_servicorp" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+          <ion-input readonly="true" formControlName="folio_servicio" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Atención Cliente - Respuestas Cliente
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Técnico fue amable *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_1" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>La presentación del técnico fue la correcta *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_2" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Técnico informó el trabajo a realizar *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_3" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Técnico capacitó en uso de equipos *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_4" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Instalación de Equipos
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Correcta ubicación de dispositivo ODU *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_5" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Correcta fijación de mástil de dispositivo ODU *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_6" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Correcta fijación de pasador que une dispositivo ODU al mástil *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_7" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Inclinación de mástil se encuentra entre -15º a 15º *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_8" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>ODU sellado con tapón correspondiente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_9" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Color VERDE de luz de dispositivo OUTDOOR *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_10" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Deja loop de mantención en dispositivo ODU *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_11" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Utiliza pasamuros exterior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_12" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_13" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_14" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Conectores RJ-45 están prensados correctamente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_15" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU funcionando correctamente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_16" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU instalada donde indicó cliente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_17" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU conectada a Smart TV *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_18" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header color="primary">
+          Niveles de Señal
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Valor del parámetro RSPR (dBm) *</ion-label>
+          <ion-input readonly="true" formControlName="resp_19" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Valor del parámetro SINR (dB) *</ion-label>
+          <ion-input readonly="true" formControlName="resp_20" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Velocidad de navegación de subida *</ion-label>
+          <ion-input readonly="true" formControlName="resp_21" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Velocidad de navegación de bajada *</ion-label>
+          <ion-input readonly="true" formControlName="resp_22" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Observaciones
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Observaciones *</ion-label>
+          <ion-input readonly="true" formControlName="resp_23" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_24" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_25" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Soluciones *</ion-label>
+          <ion-input readonly="true" formControlName="resp_26" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Código de Barra
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Código Decodificador</ion-label>
+          <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''">N/A</a>
+          <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
+          </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Visita Técnica *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_27" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Motivo de la baja *</ion-label>
+          <ion-select disabled [(ngModel)]="this.resp_2" formControlName="resp_28" interface="popover">
+            <ion-option>Por TV</ion-option>
+            <ion-option>Por Internet</ion-option>
+            <ion-option>Por Call</ion-option>
+            <ion-option>Post Venta</ion-option>
+            <ion-option>Por Técnico</ion-option>
+            <ion-option>Otra</ion-option>
+            <ion-option>N/A</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </form>
+
+    <!-- formulario bafi entel -->
+    <form *ngIf="this.mostrarFormDuoEntel" [formGroup]="duoEntelForm">
+      <ion-list>
+        <ion-item>
+          <ion-label text-wrap>OT SERVICORP *</ion-label>
+          <ion-input readonly="true" formControlName="ot_servicorp" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
+          <ion-input readonly="true" formControlName="folio_servicio" text-right type="number"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Atención Cliente - Respuestas Cliente
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>Técnico fue amable</ion-label>
-          <ion-select disabled formControlName="resp_1" interface="popover" [(ngModel)]="this.resp_1">
+          <ion-label text-wrap>Técnico fue amable *</ion-label>
+          <ion-select formControlName="resp_1" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
             <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>La presentación del técnico era la correcta</ion-label>
-          <ion-select disabled formControlName="resp_2" interface="popover" [(ngModel)]="this.resp_2">
+          <ion-label text-wrap>La presentación del técnico fue la correcta *</ion-label>
+          <ion-select formControlName="resp_2" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
             <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Técnico informó el trabajo a realizar</ion-label>
-          <ion-select disabled formControlName="resp_3" interface="popover" [(ngModel)]="this.resp_3">
+          <ion-label text-wrap>Técnico informó lel trabajo a realizar *</ion-label>
+          <ion-select formControlName="resp_3" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
             <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Técnico capacitó capacitación del uso de los equipos</ion-label>
-          <ion-select disabled formControlName="resp_4" interface="popover" [(ngModel)]="this.resp_4">
+          <ion-label text-wrap>Técnico capacitó en uso de equipos *</ion-label>
+          <ion-select formControlName="resp_4" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
             <ion-option value="N/A">N/A</ion-option>
@@ -2471,444 +3211,535 @@
           Instalación de Equipos
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>Usó antena Entel</ion-label>
-          <ion-select disabled formControlName="resp_5" interface="popover" [(ngModel)]="this.resp_5">
+          <ion-label text-wrap>Ruteo y grapeado exterior *</ion-label>
+          <ion-select formControlName="resp_5" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Posee pasamuros exterior *</ion-label>
+          <ion-select formControlName="resp_6" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
             <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
+        <ion-list-header text-center color="grey">
+          DTH
+        </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>Correcta ubicación de antena Entel</ion-label>
-          <ion-select disabled formControlName="resp_6" interface="popover" [(ngModel)]="this.resp_6">
+          <ion-label text-wrap>Uso antena Entel *</ion-label>
+          <ion-select formControlName="resp_7" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Correcta fijación de antena Entel</ion-label>
-          <ion-select disabled formControlName="resp_7" interface="popover" [(ngModel)]="this.resp_7">
+          <ion-label text-wrap>Correcta ubicación de antena Entel *</ion-label>
+          <ion-select formControlName="resp_8" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Utilizó cables y materiales de Entel</ion-label>
-          <ion-select disabled formControlName="resp_8" interface="popover" [(ngModel)]="this.resp_8">
+          <ion-label text-wrap>Utilizó el cable y materiales de Entel *</ion-label>
+          <ion-select formControlName="resp_9" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Correcta instalación LNB Entel</ion-label>
-          <ion-select disabled formControlName="resp_9" interface="popover" [(ngModel)]="this.resp_9">
+          <ion-label text-wrap>Correcta instalación LNB Entel *</ion-label>
+          <ion-select formControlName="resp_10" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Instalación de amarras plásticas</ion-label>
-          <ion-select disabled formControlName="resp_10" interface="popover" [(ngModel)]="this.resp_10">
+          <ion-label text-wrap>Instalación de amarras plásticas *</ion-label>
+          <ion-select formControlName="resp_11" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Ruteo y grapeado exterior</ion-label>
-          <ion-select disabled formControlName="resp_11" interface="popover" [(ngModel)]="this.resp_11">
+          <ion-label text-wrap>Ruteo y grapeado interior *</ion-label>
+          <ion-select formControlName="resp_12" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Loop mantención</ion-label>
-          <ion-select disabled formControlName="resp_12" interface="popover" [(ngModel)]="this.resp_12">
+          <ion-label text-wrap>Loop mantención *</ion-label>
+          <ion-select formControlName="resp_13" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Fijación de multiswitch Entel</ion-label>
-          <ion-select disabled formControlName="resp_13" interface="popover" [(ngModel)]="this.resp_13">
+          <ion-label text-wrap>Fijación multiswitch Entel *</ion-label>
+          <ion-select formControlName="resp_14" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Posee pasamuros exterior</ion-label>
-          <ion-select disabled formControlName="resp_14" interface="popover" [(ngModel)]="this.resp_14">
+          <ion-label text-wrap>Posee pasamuros interior *</ion-label>
+          <ion-select formControlName="resp_15" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Posee pasamuros interior</ion-label>
-          <ion-select disabled formControlName="resp_15" interface="popover" [(ngModel)]="this.resp_15">
+          <ion-label text-wrap>En las esquinas de los ángulos de los cables (ángulo de curvatura) ¿Está según norma? *</ion-label>
+          <ion-select formControlName="resp_16" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma</ion-label>
-          <ion-select disabled formControlName="resp_16" interface="popover" [(ngModel)]="this.resp_16">
+          <ion-label text-wrap>Usó cableado Entel *</ion-label>
+          <ion-select formControlName="resp_17" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Usó cableado Entel</ion-label>
-          <ion-select disabled formControlName="resp_17" interface="popover" [(ngModel)]="this.resp_17">
+          <ion-label text-wrap>Fijación de los cables de Entel *</ion-label>
+          <ion-select formControlName="resp_18" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Ruteo y grapeado interior</ion-label>
-          <ion-select disabled formControlName="resp_18" interface="popover" [(ngModel)]="this.resp_18">
+          <ion-label text-wrap>Conectores Entel prensados correctamente *</ion-label>
+          <ion-select formControlName="resp_19" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Fijación de los cables de Entel</ion-label>
-          <ion-select disabled formControlName="resp_19" interface="popover" [(ngModel)]="this.resp_19">
+          <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma *</ion-label>
+          <ion-select formControlName="resp_20" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Conectores Entel prensados correctamente</ion-label>
-          <ion-select disabled formControlName="resp_20" interface="popover" [(ngModel)]="this.resp_20">
+          <ion-label text-wrap>El o los STB están funcionando correctamente *</ion-label>
+          <ion-select formControlName="resp_21" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header text-center color="grey">
+          BAFI
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Correcta ubicación de dispositivo ODU *</ion-label>
+          <ion-select formControlName="resp_22" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>El o los STB se encuentran bien ubicados según norma</ion-label>
-          <ion-select disabled formControlName="resp_21" interface="popover" [(ngModel)]="this.resp_21">
+          <ion-label text-wrap>Correcta fijación de dispositivo ODU *</ion-label>
+          <ion-select formControlName="resp_23" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>El o los STB están funcionando correctamente</ion-label>
-          <ion-select disabled formControlName="resp_22" interface="popover" [(ngModel)]="this.resp_22">
+          <ion-label text-wrap>Correcta fijación de pasador que une dispositivo ODU al mástil *</ion-label>
+          <ion-select formControlName="resp_24" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Inclinación de mástil se encuentra entre -15º a 15º *</ion-label>
+          <ion-select formControlName="resp_25" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>ODU sellado con tapón correspondiente *</ion-label>
+          <ion-select formControlName="resp_26" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Color VERDE en luz de dispositivo OUTDOOR *</ion-label>
+          <ion-select formControlName="resp_27" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Deja loop de mantención en ODU *</ion-label>
+          <ion-select formControlName="resp_28" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Utiliza pasamuros exterior *</ion-label>
+          <ion-select formControlName="resp_29" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Conectores RJ-45 están prensados correctamente *</ion-label>
+          <ion-select formControlName="resp_30" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU funcionando correctamente *</ion-label>
+          <ion-select formControlName="resp_31" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU instalada donde indicó cliente *</ion-label>
+          <ion-select formControlName="resp_32" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>IDU conectada a Smart TV *</ion-label>
+          <ion-select formControlName="resp_33" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
         <ion-list-header color="primary">
           Niveles de Señal
         </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Buen nivel de señal 1 STB</ion-label>
-          <ion-select disabled formControlName="resp_23" interface="popover" [(ngModel)]="this.resp_23">
-            <ion-option value="Si">Si</ion-option>
-            <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Buen nivel de señal 2 STB</ion-label>
-          <ion-select disabled formControlName="resp_24" interface="popover" [(ngModel)]="this.resp_24">
-            <ion-option value="Si">Si</ion-option>
-            <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Buen nivel de señal 3 STB</ion-label>
-          <ion-select disabled formControlName="resp_25" interface="popover" [(ngModel)]="this.resp_25">
-            <ion-option value="Si">Si</ion-option>
-            <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Señal pixeleada</ion-label>
-          <ion-select disabled formControlName="resp_26" interface="popover" [(ngModel)]="this.resp_26">
-            <ion-option value="Si">Si</ion-option>
-            <ion-option value="No">No</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-list-header color="primary">
-          Otros Datos
+        <ion-list-header text-center color="grey">
+          DTH
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>Auditor solicita visita técnica</ion-label>
-          <ion-select disabled formControlName="resp_27" interface="popover" [(ngModel)]="this.resp_27">
+          <ion-label text-wrap>Buen nivel de señal 1 STB *</ion-label>
+          <ion-select formControlName="resp_34" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
-            <ion-option value="N/A">N/A</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Motivo de la baja</ion-label>
-          <ion-select disabled formControlName="resp_28" interface="popover" [(ngModel)]="this.resp_28">
-            <ion-option value="Por TV">Por TV</ion-option>
-            <ion-option value="Por Internet">Por Internet</ion-option>
-            <ion-option value="Por Call (post venta)">Por Call (post venta)</ion-option>
-            <ion-option value="Por Técnico">Por Técnico</ion-option>
-            <ion-option value="Otra">Otra</ion-option>
+          <ion-label text-wrap>Buen nivel de señal 2 STB *</ion-label>
+          <ion-select formControlName="resp_35" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Cantidad decos según plan</ion-label>
-          <ion-input readonly="true" formControlName="resp_29" text-right type="number" [value]="this.resp_29"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cantidad decos existentes en domicilio</ion-label>
-          <ion-input readonly="true" formControlName="resp_30" text-right type="number" [value]="this.resp_30"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cantidad multiswitch</ion-label>
-          <ion-input readonly="true" formControlName="resp_31" text-right type="number" [value]="this.resp_31"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tamaño antena</ion-label>
-          <ion-select disabled formControlName="resp_32" interface="popover" [(ngModel)]="this.resp_32">
-            <ion-option value="60">60</ion-option>
-            <ion-option value="90">90</ion-option>
+          <ion-label text-wrap>Buen nivel de señal 3 STB *</ion-label>
+          <ion-select formControlName="resp_36" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
-        <ion-list-header color="primary">
-          Niveles a Tomar - Principal
+        <ion-item>
+          <ion-label text-wrap>Señal pixelada *</ion-label>
+          <ion-select formControlName="resp_37" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Auditor solicita visita técnica *</ion-label>
+          <ion-select formControlName="resp_38" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Motivo de la baja *</ion-label>
+          <ion-select formControlName="resp_39" interface="popover">
+            <ion-option value="TV">Si</ion-option>
+            <ion-option value="Internet">No</ion-option>
+            <ion-option value="Otra">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad decos según plan *</ion-label>
+          <ion-select formControlName="resp_40" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad decos existentes en domicilio *</ion-label>
+          <ion-select formControlName="resp_41" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad multiswitch *</ion-label>
+          <ion-select formControlName="resp_42" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Tamaño antena *</ion-label>
+          <ion-select formControlName="resp_43" interface="popover">
+            <ion-option value="Si">Si</ion-option>
+            <ion-option value="No">No</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-list-header text-center color="grey">
+          Niveles a tomar - Principal
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>T1 (10728 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_33" text-right type="number" [value]="this.resp_33"></ion-input>
+          <ion-label text-wrap>T1 (10728H) Principal *</ion-label>
+          <ion-input readonly="true" formControlName="resp_44" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T2 (10768 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_34" text-right type="number" [value]="this.resp_34"></ion-input>
+          <ion-label text-wrap>T2 (10768H) Principal *</ion-label>
+          <ion-input readonly="true" formControlName="resp_45" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T3 (10808 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_35" text-right type="number" [value]="this.resp_35"></ion-input>
+          <ion-label text-wrap>T3 (10808H) Principal *</ion-label>
+          <ion-input readonly="true" formControlName="resp_46" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T4 (10808 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_36" text-right type="number" [value]="this.resp_36"></ion-input>
+          <ion-label text-wrap>T4 (10808H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_47" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T5 (10888 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_37" text-right type="number" [value]="this.resp_37"></ion-input>
+          <ion-label text-wrap>T5 (10888H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_48" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T6 (10928 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_38" text-right type="number" [value]="this.resp_38"></ion-input>
+          <ion-label text-wrap>T6 (10928H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_49" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T7 (11222 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_39" text-right type="number" [value]="this.resp_39"></ion-input>
+          <ion-label text-wrap>T7 (11222H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_50" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T8 (11262 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_40" text-right type="number" [value]="this.resp_40"></ion-input>
+          <ion-label text-wrap>T8 (11262H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_51" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T9 (11302 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_41" text-right type="number" [value]="this.resp_41"></ion-input>
+          <ion-label text-wrap>T9 (11302H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_52" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T10 (11342 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_42" text-right type="number" [value]="this.resp_42"></ion-input>
+          <ion-label text-wrap>T10 (11342H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_53" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T11 (1382 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_43" text-right type="number" [value]="this.resp_43"></ion-input>
+          <ion-label text-wrap>T11 (1382H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_54" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T12 (11422 H) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_44" text-right type="number" [value]="this.resp_44"></ion-input>
+          <ion-label text-wrap>T12 (11422H) Principal</ion-label>
+          <ion-input readonly="true" formControlName="resp_55" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T13 (10728 V) Principal</ion-label>
-          <ion-input readonly="true" formControlName="resp_45" text-right type="number" [value]="this.resp_45"></ion-input>
+          <ion-label text-wrap>T13 (10728V) Principal *</ion-label>
+          <ion-input readonly="true" formControlName="resp_56" text-right type="number"></ion-input>
         </ion-item>
-        <ion-list-header color="primary">
-          Niveles a Tomar - Segundo
+        <ion-list-header text-center color="grey">
+          Niveles a tomar - Segundo
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>T1 (10728 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_46" text-right type="number" [value]="this.resp_46"></ion-input>
+          <ion-label text-wrap>T1 (10728H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_57" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T2 (10768 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_47" text-right type="number" [value]="this.resp_47"></ion-input>
+          <ion-label text-wrap>T2 (10768H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_58" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T3 (10808 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_48" text-right type="number" [value]="this.resp_48"></ion-input>
+          <ion-label text-wrap>T3 (10808H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_59" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T4 (10808 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_49" text-right type="number" [value]="this.resp_49"></ion-input>
+          <ion-label text-wrap>T4 (10808H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_60" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T5 (10888 H) Segundo</ion-label>167
-          <ion-input readonly="true" formControlName="resp_50" text-right type="number" [value]="this.resp_50"></ion-input>
+          <ion-label text-wrap>T5 (10888H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_61" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T6 (10928 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_51" text-right type="number" [value]="this.resp_51"></ion-input>
+          <ion-label text-wrap>T6 (10928H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_62" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T7 (11222 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_52" text-right type="number" [value]="this.resp_52"></ion-input>
+          <ion-label text-wrap>T7 (11222H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_63" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T8 (11262 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_53" text-right type="number" [value]="this.resp_53"></ion-input>
+          <ion-label text-wrap>T8 (11262H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_64" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T9 (11302 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_54" text-right type="number" [value]="this.resp_54"></ion-input>
+          <ion-label text-wrap>T9 (11302H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_65" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T10 (11342 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_55" text-right type="number" [value]="this.resp_55"></ion-input>
+          <ion-label text-wrap>T10 (11342H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_66" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T11 (1382 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_56" text-right type="number" [value]="this.resp_56"></ion-input>
+          <ion-label text-wrap>T11 (1382H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_67" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T12 (11422 H) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_57" text-right type="number" [value]="this.resp_57"></ion-input>
+          <ion-label text-wrap>T12 (11422H) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_68" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T13 (10728 V) Segundo</ion-label>
-          <ion-input readonly="true" formControlName="resp_58" text-right type="number" [value]="this.resp_58"></ion-input>
+          <ion-label text-wrap>T13 (10728V) Segundo</ion-label>
+          <ion-input readonly="true" formControlName="resp_69" text-right type="number"></ion-input>
         </ion-item>
-        <ion-list-header color="primary">
-          Niveles a Tomar - Tercero
+        <ion-list-header text-center color="grey">
+          Niveles a tomar - Tercero
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>T1 (10728 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_59" text-right type="number" [value]="this.resp_59"></ion-input>
+          <ion-label text-wrap>T1 (10728H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_70" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T2 (10768 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_60" text-right type="number" [value]="this.resp_60"></ion-input>
+          <ion-label text-wrap>T2 (10768H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_71" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T3 (10808 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_61" text-right type="number" [value]="this.resp_61"></ion-input>
+          <ion-label text-wrap>T3 (10808H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_72" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T4 (10808 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_62" text-right type="number" [value]="this.resp_62"></ion-input>
+          <ion-label text-wrap>T4 (10808H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_73" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T5 (10888 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_63" text-right type="number" [value]="this.resp_63"></ion-input>
+          <ion-label text-wrap>T5 (10888H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_74" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T6 (10928 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_64" text-right type="number" [value]="this.resp_64"></ion-input>
+          <ion-label text-wrap>T6 (10928H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_75" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T7 (11222 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_65" text-right type="number" [value]="this.resp_65"></ion-input>
+          <ion-label text-wrap>T7 (11222H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_76" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T8 (11262 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_66" text-right type="number" [value]="this.resp_66"></ion-input>
+          <ion-label text-wrap>T8 (11262H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_77" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T9 (11302 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_67" text-right type="number" [value]="this.resp_67"></ion-input>
+          <ion-label text-wrap>T9 (11302H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_78" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T10 (11342 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_68" text-right type="number" [value]="this.resp_68"></ion-input>
+          <ion-label text-wrap>T10 (11342H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_79" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T11 (1382 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_69" text-right type="number" [value]="this.resp_69"></ion-input>
+          <ion-label text-wrap>T11 (1382H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_80" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T12 (11422 H) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_70" text-right type="number" [value]="this.resp_70"></ion-input>
+          <ion-label text-wrap>T12 (11422H) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_81" text-right type="number"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>T13 (10728 V) Tercero</ion-label>
-          <ion-input readonly="true" formControlName="resp_71" text-right type="number" [value]="this.resp_71"></ion-input>
+          <ion-label text-wrap>T13 (10728V) Tercero</ion-label>
+          <ion-input readonly="true" formControlName="resp_82" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header text-center color="grey">
+          BAFI
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Valor del parámetro RSPR(dBm) *</ion-label>
+          <ion-input readonly="true" formControlName="resp_83" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Valor del parámetro SINR(dB) *</ion-label>
+          <ion-input readonly="true" formControlName="resp_84" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Velocidad de navegación de subida *</ion-label>
+          <ion-input readonly="true" formControlName="resp_85" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Velocidad de navegación de bajada *</ion-label>
+          <ion-input readonly="true" formControlName="resp_86" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-list-header color="primary">
+          Material Utilizado
+        </ion-list-header>
+        <ion-item>
+          <ion-label text-wrap>Cable Entel utilizado *</ion-label>
+          <ion-input readonly="true" formControlName="resp_87" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Conectores *</ion-label>
+          <ion-input readonly="true" formControlName="resp_88" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Amarras *</ion-label>
+          <ion-input readonly="true" formControlName="resp_89" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Pasamuros utilizados *</ion-label>
+          <ion-input readonly="true" formControlName="resp_90" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Tirafondos instalados *</ion-label>
+          <ion-input readonly="true" formControlName="resp_91" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Face Neutro *</ion-label>
+          <ion-input readonly="true" formControlName="resp_92" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Face Tierra *</ion-label>
+          <ion-input readonly="true" formControlName="resp_93" text-right type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Voltaje Neutro Tierra *</ion-label>
+          <ion-input readonly="true" formControlName="resp_94" text-right type="number"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Observaciones
         </ion-list-header>
         <ion-item>
-          <ion-label text-wrap>Observaciones</ion-label>
-          <ion-input readonly="true" formControlName="resp_72" text-right type="text" [value]="this.resp_72"></ion-input>
+          <ion-label text-wrap>Observaciones *</ion-label>
+          <ion-input readonly="true" formControlName="resp_95" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Reutiliza material con autorización cliente</ion-label>
-          <ion-select disabled formControlName="resp_73" interface="popover" [(ngModel)]="this.resp_73">
+          <ion-label text-wrap>Utiliza material con autorización cliente *</ion-label>
+          <ion-select formControlName="resp_96" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Se realiza reparación menor</ion-label>54
-          <ion-select disabled formControlName="resp_74" interface="popover" [(ngModel)]="this.resp_74">
+          <ion-label text-wrap>Se realiza reparación menor *</ion-label>
+          <ion-select formControlName="resp_97" interface="popover">
             <ion-option value="Si">Si</ion-option>
             <ion-option value="No">No</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Soluciones</ion-label>
-          <ion-input readonly="true" formControlName="resp_75" text-right type="text" [value]="this.resp_75"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cable Entel utilizado</ion-label>
-          <ion-input readonly="true" formControlName="resp_76" text-right type="number" [value]="this.resp_76"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Conectores</ion-label>
-          <ion-input readonly="true" formControlName="resp_77" text-right type="number" [value]="this.resp_77"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Amarras</ion-label>
-          <ion-input readonly="true" formControlName="resp_78" text-right type="number" [value]="this.resp_78"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Pasamuros utilizados</ion-label>
-          <ion-input readonly="true" formControlName="resp_79" text-right type="number" [value]="this.resp_79"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tirafondos instalados</ion-label>
-          <ion-input readonly="true" formControlName="resp_80" text-right type="number" [value]="this.resp_80"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Voltaje Fase Neutro</ion-label>
-          <ion-input readonly="true" formControlName="resp_81" text-right type="number" [value]="this.resp_81"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Voltaje Fase Tierra</ion-label>
-          <ion-input readonly="true" formControlName="resp_82" text-right type="number" [value]="this.resp_82"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Voltaje Neutro Tierra</ion-label>
-          <ion-input readonly="true" formControlName="resp_83" text-right type="number" [value]="this.resp_83"></ion-input>
+          <ion-label text-wrap>Soluciones *</ion-label>
+          <ion-input readonly="true" formControlName="resp_98" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Código de Barra
@@ -2917,7 +3748,7 @@
           <ion-label text-wrap>Código Decodificador</ion-label>
           <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''">N/A</a>
           <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
-        </ion-item>
+          </ion-item>
       </ion-list>
     </form>
 

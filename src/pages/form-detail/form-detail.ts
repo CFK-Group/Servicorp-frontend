@@ -34,6 +34,10 @@ export class FormDetailPage {
   mostrarFormDesconexion: boolean = false
   instalacionesDthEntelForm: FormGroup
   mostrarFormInstalacionesDthEntel: boolean = false
+  bafiEntelForm: FormGroup
+  mostrarFormBafiEntel: boolean = false
+  duoEntelForm: FormGroup
+  mostrarFormDuoEntel: boolean = false
   id_ot_servicorp: string
   id_folio_servicio: string
   ot_servicorp: string
@@ -127,6 +131,27 @@ export class FormDetailPage {
   resp_87: string
   resp_88: string
   resp_89: string
+  resp_90: string
+  resp_91: string
+  resp_92: string
+  resp_93: string
+  resp_94: string
+  resp_95: string
+  resp_96: string
+  resp_97: string
+  resp_98: string
+  resp_99: string
+  resp_100: string
+  resp_101: string
+  resp_102: string
+  resp_103: string
+  resp_104: string
+  resp_105: string
+  resp_106: string
+  resp_107: string
+  resp_108: string
+  resp_109: string
+  resp_110: string
   id_resp_1: string
   id_resp_2: string
   id_resp_3: string
@@ -216,6 +241,27 @@ export class FormDetailPage {
   id_resp_87: string
   id_resp_88: string
   id_resp_89: string
+  id_resp_90: string
+  id_resp_91: string
+  id_resp_92: string
+  id_resp_93: string
+  id_resp_94: string
+  id_resp_95: string
+  id_resp_96: string
+  id_resp_97: string
+  id_resp_98: string
+  id_resp_99: string
+  id_resp_100: string
+  id_resp_101: string
+  id_resp_102: string
+  id_resp_103: string
+  id_resp_104: string
+  id_resp_105: string
+  id_resp_106: string
+  id_resp_107: string
+  id_resp_108: string
+  id_resp_109: string
+  id_resp_110: string
   id_cod_decodificador: string
   cod_decodificador: string
 
@@ -247,6 +293,14 @@ export class FormDetailPage {
         this.tipoFormulario = 'instalacion dth entel'
         this.instalacionesDthEntelForm = this.createInstalacionesDthEntelForm()
       break
+      case 7:
+        this.tipoFormulario = 'bafi entel'
+        this.instalacionesDthEntelForm = this.createBafiEntelForm()
+      break
+      case 8:
+        this.tipoFormulario = 'duo entel'
+        this.instalacionesDthEntelForm = this.createDuoEntelForm()
+      break
     }
   }
 
@@ -272,14 +326,14 @@ export class FormDetailPage {
       resp_10: [null],
       resp_11: [null],
       resp_12: [null],
-      resp_13: ['N/A'],
+      resp_13: [null],
       resp_14: [null],
       resp_15: [null],
       resp_16: [null],
       resp_17: [null],
-      resp_18: ['N/A'],
-      resp_19: ['N/A'],
-      resp_20: ['N/A'],
+      resp_18: [null],
+      resp_19: [null],
+      resp_20: [null],
       resp_21: [null],
       resp_22: [null],
       resp_23: [null],
@@ -290,13 +344,13 @@ export class FormDetailPage {
       resp_28: [null],
       resp_29: [null],
       resp_30: [null],
-      resp_31: ['N/A'],
+      resp_31: [null],
       resp_32: [null],
-      resp_33: ['N/A'],
+      resp_33: [null],
       resp_34: [null],
-      resp_35: ['N/A'],
-      resp_36: ['N/A'],
-      resp_37: ['N/A'],
+      resp_35: [null],
+      resp_36: [null],
+      resp_37: [null],
       resp_38: [null],
       resp_39: [null],
       resp_40: [null],
@@ -309,9 +363,9 @@ export class FormDetailPage {
       resp_47: [null],
       resp_48: [null],
       resp_49: [null],
-      resp_50: ['N/A'],
-      resp_51: ['N/A'],
-      resp_52: ['N/A'],
+      resp_50: [null],
+      resp_51: [null],
+      resp_52: [null],
       resp_53: [null],
       resp_54: [null],
       resp_55: [null],
@@ -375,8 +429,8 @@ export class FormDetailPage {
       resp_12: [null],
       resp_13: [null],
       resp_14: [null],
-      resp_15: ['N/A'],
-      resp_16: ['N/A'],
+      resp_15: [null],
+      resp_16: [null],
       resp_17: [null],
       resp_18: [null],
       resp_19: [null],
@@ -401,12 +455,12 @@ export class FormDetailPage {
       resp_38: [null],
       resp_39: [null],
       resp_40: [null],
-      resp_41: ['N/A'],
-      resp_42: ['N/A'],
-      resp_43: ['N/A'],
-      resp_44: ['N/A'],
-      resp_45: ['N/A'],
-      resp_46: ['N/A'],
+      resp_41: [null],
+      resp_42: [null],
+      resp_43: [null],
+      resp_44: [null],
+      resp_45: [null],
+      resp_46: [null],
       resp_47: [null],
       resp_48: [null],
       resp_49: [null],
@@ -473,9 +527,9 @@ export class FormDetailPage {
       resp_12: [null],
       resp_13: [null],
       resp_14: [null],
-      resp_15: ['N/A'],
-      resp_16: ['N/A'],
-      resp_17: ['N/A'],
+      resp_15: [null],
+      resp_16: [null],
+      resp_17: [null],
       resp_18: [null],
       resp_19: [null],
       resp_20: [null],
@@ -502,12 +556,12 @@ export class FormDetailPage {
       resp_41: [null],
       resp_42: [null],
       resp_43: [null],
-      resp_44: ['N/A'],
-      resp_45: ['N/A'],
-      resp_46: ['N/A'],
-      resp_47: ['N/A'],
-      resp_48: ['N/A'],
-      resp_49: ['N/A'],
+      resp_44: [null],
+      resp_45: [null],
+      resp_46: [null],
+      resp_47: [null],
+      resp_48: [null],
+      resp_49: [null],
       resp_50: [null],
       resp_51: [null],
       resp_52: [null],
@@ -572,25 +626,25 @@ export class FormDetailPage {
       resp_10: [null],
       resp_11: [null],
       resp_12: [null],
-      resp_13: ['N/A'],
+      resp_13: [null],
       resp_14: [null],
       resp_15: [null],
       resp_16: [null],
-      resp_17: ['N/A'],
-      resp_18: ['N/A'],
+      resp_17: [null],
+      resp_18: [null],
       resp_19: [null],
-      resp_20: ['N/A'],
+      resp_20: [null],
       resp_21: [null],
       resp_22: [null],
-      resp_23: ['N/A'],
-      resp_24: ['N/A'],
-      resp_25: ['N/A'],
+      resp_23: [null],
+      resp_24: [null],
+      resp_25: [null],
       resp_26: [null],
       resp_27: [null],
       resp_28: [null],
       resp_29: [null],
-      resp_30: ['N/A'],
-      resp_31: ['N/A'],
+      resp_30: [null],
+      resp_31: [null],
       resp_32: [null],
       resp_33: [null],
       resp_34: [null],
@@ -606,9 +660,9 @@ export class FormDetailPage {
       resp_44: [null],
       resp_45: [null],
       resp_46: [null],
-      resp_47: ['N/A'],
-      resp_48: ['N/A'],
-      resp_49: ['N/A'],
+      resp_47: [null],
+      resp_48: [null],
+      resp_49: [null],
       resp_50: [null],
       resp_51: [null],
       resp_52: [null],
@@ -745,7 +799,7 @@ export class FormDetailPage {
     })
   }
 
-  private createDesconexionForm(){
+  private createBafiEntelForm(){
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
@@ -763,14 +817,160 @@ export class FormDetailPage {
       resp_6: [null],
       resp_7: [null],
       resp_8: [null],
-      id_resp_1: [null],
-      id_resp_2: [null],
-      id_resp_3: [null],
-      id_resp_4: [null],
-      id_resp_5: [null],
-      id_resp_6: [null],
-      id_resp_7: [null],
-      id_resp_8: [null]
+      resp_9: [null],
+      resp_10: [null],
+      resp_11: [null],
+      resp_12: [null],
+      resp_13: [null],
+      resp_14: [null],
+      resp_15: [null],
+      resp_16: [null],
+      resp_17: [null],
+      resp_18: [null],
+      resp_19: [null],
+      resp_20: [null],
+      resp_21: [null],
+      resp_22: [null],
+      resp_23: [null],
+      resp_24: [null],
+      resp_25: [null],
+      resp_26: [null],
+      resp_27: [null],
+      resp_28: [null],
+      cod_decodificador: [null]
+    })
+  }
+
+  private createDuoEntelForm(){
+    return this.formBuilder.group({
+      latitud: 0,
+      longitud: 0,
+      usuario_id: localStorage.getItem('userId'),
+      token: localStorage.getItem('userToken'),
+      ot_servicorp: [null],
+      folio_servicio: [null],
+      id_ot_servicorp: [null],
+      id_folio_servicio: [null],
+      resp_1: [null],
+      resp_2: [null],
+      resp_3: [null],
+      resp_4: [null],
+      resp_5: [null],
+      resp_6: [null],
+      resp_7: [null],
+      resp_8: [null],
+      resp_9: [null],
+      resp_10: [null],
+      resp_11: [null],
+      resp_12: [null],
+      resp_13: [null],
+      resp_14: [null],
+      resp_15: [null],
+      resp_16: [null],
+      resp_17: [null],
+      resp_18: [null],
+      resp_19: [null],
+      resp_20: [null],
+      resp_21: [null],
+      resp_22: [null],
+      resp_23: [null],
+      resp_24: [null],
+      resp_25: [null],
+      resp_26: [null],
+      resp_27: [null],
+      resp_28: [null],
+      resp_29: [null],
+      resp_30: [null],
+      resp_31: [null],
+      resp_32: [null],
+      resp_33: [null],
+      resp_34: [null],
+      resp_35: [null],
+      resp_36: [null],
+      resp_37: [null],
+      resp_38: [null],
+      resp_39: [null],
+      resp_40: [null],
+      resp_41: [null],
+      resp_42: [null],
+      resp_43: [null],
+      resp_44: [null],
+      resp_45: [null],
+      resp_46: [null],
+      resp_47: [null],
+      resp_48: [null],
+      resp_49: [null],
+      resp_50: [null],
+      resp_51: [null],
+      resp_52: [null],
+      resp_53: [null],
+      resp_54: [null],
+      resp_55: [null],
+      resp_56: [null],
+      resp_57: [null],
+      resp_58: [null],
+      resp_59: [null],
+      resp_60: [null],
+      resp_61: [null],
+      resp_62: [null],
+      resp_63: [null],
+      resp_64: [null],
+      resp_65: [null],
+      resp_66: [null],
+      resp_67: [null],
+      resp_68: [null],
+      resp_69: [null],
+      resp_70: [null],
+      resp_71: [null],
+      resp_72: [null],
+      resp_73: [null],
+      resp_74: [null],
+      resp_75: [null],
+      resp_76: [null],
+      resp_77: [null],
+      resp_78: [null],
+      resp_79: [null],
+      resp_80: [null],
+      resp_81: [null],
+      resp_82: [null],
+      resp_83: [null],
+      resp_84: [null],
+      resp_85: [null],
+      resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
+      resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      cod_decodificador: [null]
+    })
+  }
+
+  private createDesconexionForm(){
+    return this.formBuilder.group({
+      latitud: 0,
+      longitud: 0,
+      usuario_id: localStorage.getItem('userId'),
+      token: localStorage.getItem('userToken'),
+      ot_servicorp: [null],
+      folio_servicio: [null],
+      id_ot_servicorp: [null],
+      id_folio_servicio: [null],
+      resp_1: [null],
+      resp_2: [null],
+      resp_3: [null],
+      resp_4: [null],
+      resp_5: [null],
+      resp_6: [null],
+      resp_7: [null],
+      resp_8: [null]
     })
   }
 
@@ -804,6 +1004,12 @@ export class FormDetailPage {
           break
           case 6:
             this.mostrarFormInstalacionesDthEntel = true
+          break
+          case 7:
+            this.mostrarFormBafiEntel = true
+          break
+          case 8:
+            this.mostrarFormDuoEntel = true
           break
         }
         resolve()
