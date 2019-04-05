@@ -32,6 +32,14 @@ export class ApiServiceProvider {
     return this.api.post(`${this.url}/formulario/entel/instalacion/dth`, data).toPromise()
   }
 
+  enviarFormularioBafiEntel(data:string){
+    return this.api.post(`${this.url}/formulario/entel/bafi`, data).toPromise()
+  }
+
+  enviarFormularioDuoEntel(data:string){
+    return this.api.post(`${this.url}/formulario/entel/duo`, data).toPromise()
+  }
+
   enviarFormularioMantencionHFC(data:string){
     return this.api.post(`${this.url}/formulario/claro/mantencion/hfc`, data).toPromise()
   }

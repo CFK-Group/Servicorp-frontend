@@ -237,7 +237,7 @@ export class ModalDuoEntelPage {
         this.duoEntelForm.value.longitud = resp.coords.longitude || 'eclear'
         console.log('Coordenadas: ' + this.duoEntelForm.value.latitud + ',' + this.duoEntelForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.duoEntelForm.value)
+        this.api.enviarFormularioDuoEntel(this.duoEntelForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
             loading.dismiss()

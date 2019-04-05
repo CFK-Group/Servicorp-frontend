@@ -169,7 +169,7 @@ export class ModalBafiEntelPage {
         this.bafiForm.value.longitud = resp.coords.longitude || 'eclear'
         console.log('Coordenadas: ' + this.bafiForm.value.latitud + ',' + this.bafiForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.bafiForm.value)
+        this.api.enviarFormularioBafiEntel(this.bafiForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
             loading.dismiss()
