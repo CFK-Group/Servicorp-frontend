@@ -20,7 +20,7 @@ import * as moment from 'moment'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  mode: string = 'develop'  // cambiar entre develop y producion según sea el caso
+  mode: string = 'production'  // cambiar entre develop y production según sea el caso
   loginForm: FormGroup
   VersionNumber: string
 
