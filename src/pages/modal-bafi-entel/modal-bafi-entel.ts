@@ -176,7 +176,7 @@ export class ModalBafiEntelPage {
             if (res.success === true) {
               let alert = this.alertCtrl.create({
                 title: 'Formulario enviado',
-                subTitle: 'Formulario de Desconexión enviado correctamente',
+                subTitle: 'Formulario enviado correctamente',
                 buttons: ['OK']
               })
               alert.present()
