@@ -90,8 +90,8 @@
       <ion-item>
         <ion-label text-wrap>Explica como conectarse a la red WIFI</ion-label>
         <ion-select formControlName="resp_8" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -122,8 +122,8 @@
       <ion-item>
         <ion-label text-wrap>Entraga clave de acceso WIFI y personalizada a cliente</ion-label>
         <ion-select formControlName="resp_12" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -147,16 +147,16 @@
       <ion-item>
         <ion-label text-wrap>Técnico cambia acometida dañada</ion-label>
         <ion-select formControlName="resp_15" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>Técnico certifica o cambia ground block</ion-label>
         <ion-select formControlName="resp_16" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -171,8 +171,9 @@
       <ion-item>
         <ion-label text-wrap>Técnico instala bloqueador de voltaje (Filtro HUM)</ion-label>
         <ion-select formControlName="resp_18" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_19 === null}">
@@ -211,8 +212,8 @@
       <ion-item>
         <ion-label text-wrap>Técnico certifica o cambia cable PIN</ion-label>
         <ion-select formControlName="resp_23" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -227,8 +228,8 @@
       <ion-item>
         <ion-label text-wrap>Técnico certifica o cambia equipo telefónico</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -251,8 +252,8 @@
       <ion-item>
         <ion-label text-wrap>Técnico certifica o cambia canal de transmisión WIFI</ion-label>
         <ion-select formControlName="resp_28" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
@@ -529,15 +530,27 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>TX</ion-label>
-        <ion-input formControlName="resp_62" text-right type="text" [disabled]="true"></ion-input>
+        <ion-select formControlName="resp_62" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>RX</ion-label>
-        <ion-input formControlName="resp_63" text-right type="text" [disabled]="true"></ion-input>
+        <ion-select formControlName="resp_63" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-label text-wrap>SNR</ion-label>
-        <ion-input formControlName="resp_64" text-right type="text" [disabled]="true"></ion-input>
+        <ion-select formControlName="resp_64" interface="popover">
+          <!-- <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option> -->
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
       </ion-item>
       <ion-list-header color="primary">
         Observaciones

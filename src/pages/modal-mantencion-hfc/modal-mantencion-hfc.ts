@@ -56,9 +56,6 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.controls['resp_59'].disable()
     this.mantencionesHfc.controls['resp_60'].disable()
     this.mantencionesHfc.controls['resp_61'].disable()
-    this.mantencionesHfc.controls['resp_62'].disable()
-    this.mantencionesHfc.controls['resp_63'].disable()
-    this.mantencionesHfc.controls['resp_64'].disable()
   }
 
   private createMantencionesHfcForm(){

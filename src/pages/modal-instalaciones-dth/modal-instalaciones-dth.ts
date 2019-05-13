@@ -30,18 +30,18 @@ export class ModalInstalacionesDthPage {
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.instalacionesDth = this.createInstalacionesDthForm()
-    this.instalacionesDth.controls['resp_10'].disable()
+    this.instalacionesDth.controls['resp_9'].disable()
+    this.instalacionesDth.controls['resp_14'].disable()
     this.instalacionesDth.controls['resp_15'].disable()
     this.instalacionesDth.controls['resp_16'].disable()
-    this.instalacionesDth.controls['resp_17'].disable()
-    this.instalacionesDth.controls['resp_28'].disable()
-    this.instalacionesDth.controls['resp_30'].disable()
+    this.instalacionesDth.controls['resp_27'].disable()
+    this.instalacionesDth.controls['resp_29'].disable()
+    this.instalacionesDth.controls['resp_31'].disable()
     this.instalacionesDth.controls['resp_32'].disable()
     this.instalacionesDth.controls['resp_33'].disable()
-    this.instalacionesDth.controls['resp_34'].disable()
+    this.instalacionesDth.controls['resp_64'].disable()
     this.instalacionesDth.controls['resp_65'].disable()
     this.instalacionesDth.controls['resp_66'].disable()
-    this.instalacionesDth.controls['resp_67'].disable()
   }
 
   private createInstalacionesDthForm(){
@@ -89,7 +89,7 @@ export class ModalInstalacionesDthPage {
       resp_35: [null, Validators.required],
       resp_36: [null, Validators.required],
       resp_37: [null, Validators.required],
-      resp_38: [null],
+      resp_38: [null, Validators.required],
       resp_39: [null, Validators.required],
       resp_40: [null, Validators.required],
       resp_41: [null, Validators.required],
@@ -97,31 +97,31 @@ export class ModalInstalacionesDthPage {
       resp_43: [null, Validators.required],
       resp_44: [null, Validators.required],
       resp_45: [null, Validators.required],
-      resp_46: [null, Validators.required],
-      resp_47: [null, Validators.required],
-      resp_48: [null, Validators.required],
-      resp_49: [null, Validators.required],
-      resp_50: [null, Validators.required],
-      resp_51: [null, Validators.required],
-      resp_52: [null, Validators.required],
-      resp_53: [null, Validators.required],
-      resp_54: [null, Validators.required],
-      resp_55: [null, Validators.required],
+      resp_46: [null],
+      resp_47: [null],
+      resp_48: [null],
+      resp_49: [null],
+      resp_50: [null],
+      resp_51: [null],
+      resp_52: [null],
+      resp_53: [null],
+      resp_54: [null],
+      resp_55: [null],
       resp_56: [null],
       resp_57: [null],
-      resp_58: [null],
-      resp_59: [null],
-      resp_60: [null],
-      resp_61: [null],
-      resp_62: [null],
-      resp_63: [null],
+      resp_58: [null, Validators.required],
+      resp_59: [null, Validators.required],
+      resp_60: [null, Validators.required],
+      resp_61: [null, Validators.required],
+      resp_62: [null, Validators.required],
+      resp_63: [null, Validators.required],
       resp_64: ['N/A'],
       resp_65: ['N/A'],
       resp_66: ['N/A'],
-      resp_67: [null],
-      resp_68: [null],
-      resp_69: [null],
-      resp_70: [null],
+      resp_67: [null, Validators.required],
+      resp_68: [null, Validators.required],
+      resp_69: [null, Validators.required],
+      resp_70: [null, Validators.required],
       resp_71: [null],
       resp_72: [null],
       resp_73: [null],
