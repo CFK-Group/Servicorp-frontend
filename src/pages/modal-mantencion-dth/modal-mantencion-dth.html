@@ -217,7 +217,7 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_24 === null}">
+      <ion-item>
         <ion-label text-wrap>Técnico certifica o cambia roseta telefónica</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
@@ -290,8 +290,8 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Técnico visitó domicilio</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_33 === null}">
+        <ion-label text-wrap>Técnico visitó domicilio *</ion-label>
         <ion-select formControlName="resp_33" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -723,27 +723,27 @@
         <ion-input formControlName="resp_102" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_103 === null}">
-        <ion-label text-wrap>Cable Negro</ion-label>
+        <ion-label text-wrap>Cable Negro *</ion-label>
         <ion-input formControlName="resp_103" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_104 === null}">
-        <ion-label text-wrap>Cable Blanco</ion-label>
+        <ion-label text-wrap>Cable Blanco *</ion-label>
         <ion-input formControlName="resp_104" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_105 === null}">
-        <ion-label text-wrap>Conectores</ion-label>
+        <ion-label text-wrap>Conectores *</ion-label>
         <ion-input formControlName="resp_105" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_106 === null}">
-        <ion-label text-wrap>Grampas</ion-label>
+        <ion-label text-wrap>Grampas *</ion-label>
         <ion-input formControlName="resp_106" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_107 === null}">
-        <ion-label text-wrap>Splitter</ion-label>
+        <ion-label text-wrap>Splitter *</ion-label>
         <ion-input formControlName="resp_107" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_108 === null}">
-        <ion-label text-wrap>DCs</ion-label>
+        <ion-label text-wrap>DCs *</ion-label>
         <ion-input formControlName="resp_108" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">

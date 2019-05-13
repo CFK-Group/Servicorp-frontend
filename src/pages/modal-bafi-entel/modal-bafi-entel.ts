@@ -8,6 +8,7 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 
 /**
  * Generated class for the ModalBafiEntelPage page.
@@ -28,7 +29,7 @@ export class ModalBafiEntelPage {
   images = []
   cod_decodificador = ''
 
-  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private barcodeScanner: BarcodeScanner, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.bafiForm = this.createBafiForm()
   }
 
@@ -230,6 +231,17 @@ export class ModalBafiEntelPage {
       .catch(error => {
         console.error(error)
       })
+  }
+
+  getCodigoVerificador(){
+    this.barcodeScanner.scan({'showTorchButton': true})
+    .then(barcodeData => {
+      console.log('Barcode data', barcodeData)
+      this.cod_decodificador = barcodeData.text
+    })
+    .catch(err => {
+      console.log('Error', err)
+    })
   }
 
   savePicture(pictureBase64: string, prefix: string) {

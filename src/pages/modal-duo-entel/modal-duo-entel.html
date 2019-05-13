@@ -147,7 +147,7 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
+      <ion-item [ngClass]="{'invalid': duoEntelForm.value.resp_16 === null}">
         <ion-label text-wrap>En las esquinas de los ángulos de los cables (ángulo de curvatura) ¿Está según norma? *</ion-label>
         <ion-select formControlName="resp_16" interface="popover">
           <ion-option value="Si">Si</ion-option>
