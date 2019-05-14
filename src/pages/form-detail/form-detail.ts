@@ -295,11 +295,11 @@ export class FormDetailPage {
       break
       case 7:
         this.tipoFormulario = 'bafi entel'
-        this.instalacionesDthEntelForm = this.createBafiEntelForm()
+        this.bafiEntelForm = this.createBafiEntelForm()
       break
       case 8:
         this.tipoFormulario = 'duo entel'
-        this.instalacionesDthEntelForm = this.createDuoEntelForm()
+        this.duoEntelForm = this.createDuoEntelForm()
       break
     }
   }
@@ -3422,15 +3422,15 @@ export class FormDetailPage {
               this.resp_26 = this.formulario[i].respuesta	
               this.id_resp_26 = this.formulario[i].id	
               break
-              case	'Código ODU'	:	
+              case	'Visita técnica'	:	
               this.resp_27 = this.formulario[i].respuesta	
               this.id_resp_27 = this.formulario[i].id	
               break
-              case	'Visita técnica'	:	
+              case	'Motivo de la baja'	:	
               this.resp_28 = this.formulario[i].respuesta	
               this.id_resp_28 = this.formulario[i].id	
               break
-              case	'Motivo de la baja'	:	
+              case	'Código IDU'	:	
               this.cod_decodificador = this.formulario[i].respuesta	
               this.id_cod_decodificador = this.formulario[i].id	
               break
