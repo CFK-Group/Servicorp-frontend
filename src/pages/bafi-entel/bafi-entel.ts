@@ -77,7 +77,7 @@ export class BafiEntelPage {
     modal.present()
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
-      this.api.getFormularios(this.data, 'claro')
+      this.api.getFormularios(this.data, 'entel')
         .then((res: any) => {
           localStorage.setItem('FormulariosBafiEntel', JSON.stringify(res.data))
           this.formularios = res.data

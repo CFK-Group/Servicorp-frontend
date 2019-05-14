@@ -21,7 +21,7 @@ export class DuoEntelPage {
   formularios = []
 
   data = {
-    tipoFormulario: 'bafi',
+    tipoFormulario: 'duo',
     userToken: localStorage.getItem('userToken')
   }
 
@@ -29,7 +29,7 @@ export class DuoEntelPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BafiEntelPage');
+    console.log('ionViewDidLoad DuoEntelPage');
     let loading = this.loadingCtrl.create({
       content: 'Cargando Formularios'
     })
@@ -57,7 +57,7 @@ export class DuoEntelPage {
         content: 'Cargando Formularios'
       })
       loading.present()
-      this.api.getFormularios(this.data, 'claro')
+      this.api.getFormularios(this.data, 'entel')
         .then((res: any) => {
           localStorage.setItem('FormulariosDuoEntel', JSON.stringify(res.data))
           this.formularios = res.data

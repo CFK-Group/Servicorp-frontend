@@ -403,6 +403,27 @@ export class FormDetailPage {
       resp_87: [null],
       resp_88: [null],
       resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
+      resp_109: [null],
+      resp_110: [null],
       cod_decodificador: [null]
     })
   }
@@ -501,6 +522,28 @@ export class FormDetailPage {
       resp_84: [null],
       resp_85: [null],
       resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
+      resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       cod_decodificador: [null]
     })
   }
@@ -602,6 +645,25 @@ export class FormDetailPage {
       resp_87: [null],
       resp_88: [null],
       resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       cod_decodificador: [null]
     })
   }
@@ -700,6 +762,28 @@ export class FormDetailPage {
       resp_84: [null],
       resp_85: [null],
       resp_86: [null],
+      resp_87: [null],
+      resp_88: [null],
+      resp_89: [null],
+      resp_90: [null],
+      resp_91: [null],
+      resp_92: [null],
+      resp_93: [null],
+      resp_94: [null],
+      resp_95: [null],
+      resp_96: [null],
+      resp_97: [null],
+      resp_98: [null],
+      resp_99: [null],
+      resp_100: [null],
+      resp_101: [null],
+      resp_102: [null],
+      resp_103: [null],
+      resp_104: [null],
+      resp_105: [null],
+      resp_106: [null],
+      resp_107: [null],
+      resp_108: [null],
       cod_decodificador: [null]
     })
   }
@@ -1018,7 +1102,7 @@ export class FormDetailPage {
       .then((res:any) => {
         // aqui llenamos el formulario respectivo con las respuestas obtenidas del api
         if(this.tipoFormulario == 'instalacion hfc'){
-          for(let i=0; i<92; i++){
+          for(let i=0; i<108; i++){
             switch(this.formulario[i].glosa){
               case	'OT SERVICORP'	:	
               this.ot_servicorp = this.formulario[i].respuesta	
