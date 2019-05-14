@@ -63,11 +63,11 @@ export class ModalInstalacionesDthEntelPage {
       resp_21: [null, Validators.required],
       resp_22: [null, Validators.required],
       resp_23: [null, Validators.required],
-      resp_24: [null, Validators.required],
-      resp_25: [null, Validators.required],
+      resp_24: [null],
+      resp_25: [null],
       resp_26: [null, Validators.required],
       resp_27: [null, Validators.required],
-      resp_28: [null, Validators.required],
+      resp_28: [null],
       resp_29: [null, Validators.required],
       resp_30: [null, Validators.required],
       resp_31: [null, Validators.required],
@@ -75,42 +75,42 @@ export class ModalInstalacionesDthEntelPage {
       resp_33: [null, Validators.required],
       resp_34: [null, Validators.required],
       resp_35: [null, Validators.required],
-      resp_36: [null, Validators.required],
-      resp_37: [null, Validators.required],
-      resp_38: [null, Validators.required],
-      resp_39: [null, Validators.required],
-      resp_40: [null, Validators.required],
-      resp_41: [null, Validators.required],
-      resp_42: [null, Validators.required],
-      resp_43: [null, Validators.required],
-      resp_44: [null, Validators.required],
-      resp_45: [null, Validators.required],
-      resp_46: [null, Validators.required],
-      resp_47: [null, Validators.required],
-      resp_48: [null, Validators.required],
-      resp_49: [null, Validators.required],
-      resp_50: [null, Validators.required],
-      resp_51: [null, Validators.required],
-      resp_52: [null, Validators.required],
-      resp_53: [null, Validators.required],
-      resp_54: [null, Validators.required],
-      resp_55: [null, Validators.required],
-      resp_56: [null, Validators.required],
-      resp_57: [null, Validators.required],
-      resp_58: [null, Validators.required],
-      resp_59: [null, Validators.required],
-      resp_60: [null, Validators.required],
-      resp_61: [null, Validators.required],
-      resp_62: [null, Validators.required],
-      resp_63: [null, Validators.required],
-      resp_64: [null, Validators.required],
-      resp_65: [null, Validators.required],
-      resp_66: [null, Validators.required],
-      resp_67: [null, Validators.required],
-      resp_68: [null, Validators.required],
-      resp_69: [null, Validators.required],
-      resp_70: [null, Validators.required],
-      resp_71: [null, Validators.required],
+      resp_36: [null],
+      resp_37: [null],
+      resp_38: [null],
+      resp_39: [null],
+      resp_40: [null],
+      resp_41: [null],
+      resp_42: [null],
+      resp_43: [null],
+      resp_44: [null],
+      resp_45: [null],
+      resp_46: [null],
+      resp_47: [null],
+      resp_48: [null],
+      resp_49: [null],
+      resp_50: [null],
+      resp_51: [null],
+      resp_52: [null],
+      resp_53: [null],
+      resp_54: [null],
+      resp_55: [null],
+      resp_56: [null],
+      resp_57: [null],
+      resp_58: [null],
+      resp_59: [null],
+      resp_60: [null],
+      resp_61: [null],
+      resp_62: [null],
+      resp_63: [null],
+      resp_64: [null],
+      resp_65: [null],
+      resp_66: [null],
+      resp_67: [null],
+      resp_68: [null],
+      resp_69: [null],
+      resp_70: [null],
+      resp_71: [null],
       resp_72: [null, Validators.required],
       resp_73: [null, Validators.required],
       resp_74: [null, Validators.required],
@@ -138,11 +138,16 @@ export class ModalInstalacionesDthEntelPage {
   }
 
   enviar(){
+    let loading = this.loadingCtrl.create({
+      content: 'Enviando formulario'
+    })
+    loading.present()
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
       console.log('GPS COMMUNICATION SUCCESSFULL')
       if (res) {
         console.log('GPS ENABLED')
+        loading.dismiss()
         if (this.images[0] == null) {
           const confirm = this.alertCtrl.create({
             title: 'Formulario sin imágenes',
@@ -168,6 +173,7 @@ export class ModalInstalacionesDthEntelPage {
         }
       }else{
         console.log('GPS DISABLED')
+        loading.dismiss()
         const alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: 'Necesitas activar tu GPS',
@@ -176,12 +182,13 @@ export class ModalInstalacionesDthEntelPage {
         alert.present()
       }
     })
-    .catch(err => {
+    .catch(error => {
       console.log('Falla de comunicacion con el GPS')
-      console.log(err)
+      console.log('Error:', error)
+      loading.dismiss()
       const alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: JSON.stringify(err),
+        subTitle: JSON.stringify(error),
         buttons: ['OK']
       })
       alert.present()
@@ -189,10 +196,6 @@ export class ModalInstalacionesDthEntelPage {
   }
 
   enviarFormulario(){
-    let loading = this.loadingCtrl.create({
-      content: 'Enviando formulario'
-    })
-    loading.present()
     if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for(let i = 0; i < this.images.length; i++){
@@ -230,7 +233,6 @@ export class ModalInstalacionesDthEntelPage {
       this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
       .then( (res: any) => {
         console.log(this.instalacionesDth.value)
-        loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
@@ -249,7 +251,6 @@ export class ModalInstalacionesDthEntelPage {
         }
       })
       .catch( (reason:any) => {
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
@@ -258,7 +259,6 @@ export class ModalInstalacionesDthEntelPage {
         alert.present()
       })
     }).catch((error) => {
-      loading.dismiss()
       console.log('Error getting location', error)
     })
   }
@@ -317,7 +317,6 @@ export class ModalInstalacionesDthEntelPage {
     this.api.enviarFormularioInstalacionDTHEntel(this.instalacionesDth.value)
       .then( (res: any) => {
         console.log(this.instalacionesDth.value)
-        loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
@@ -336,7 +335,6 @@ export class ModalInstalacionesDthEntelPage {
         }
       })
       .catch( (reason:any) => {
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',

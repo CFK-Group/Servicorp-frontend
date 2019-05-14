@@ -82,62 +82,65 @@ export class ModalBafiEntelPage {
     })
   }
 
-  enviar(nombreFormulario: string) {
-    this.diagnostic.isGpsLocationEnabled()
-      .then((res: any) => {
-        console.log('GPS COMMUNICATION SUCCESSFULL')
-        if (res) {
-          console.log('GPS ENABLED')
-          if (this.images[0] == null) {
-            const confirm = this.alertCtrl.create({
-              title: 'Formulario sin imágenes',
-              message: '¿Desea enviar el formulario sin imágenes?',
-              buttons: [
-                {
-                  text: 'Cancelar',
-                  handler: () => {
-                    console.log('se canceló')
-                  }
-                },
-                {
-                  text: 'OK',
-                  handler: () => {
-                    this.enviarFormulario()
-                  }
-                }
-              ]
-            })
-            confirm.present()
-          } else {
-            this.enviarFormulario()
-          }
-        } else {
-          console.log('GPS DISABLED')
-          const alert = this.alertCtrl.create({
-            title: 'Error',
-            subTitle: 'Necesitas activar tu GPS',
-            buttons: ['OK']
-          })
-          alert.present()
-        }
-      })
-      .catch(err => {
-        console.log('Falla de comunicacion con el GPS')
-        console.log(err)
-        const alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: JSON.stringify(err),
-          buttons: ['OK']
-        })
-        alert.present()
-      })
-  }
-
-  enviarFormulario() {
+  enviar(){
     let loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
     loading.present()
+    this.diagnostic.isLocationEnabled()
+    .then((res:any) => {
+      console.log('GPS COMMUNICATION SUCCESSFULL')
+      if (res) {
+        console.log('GPS ENABLED')
+        loading.dismiss()
+        if (this.images[0] == null) {
+          const confirm = this.alertCtrl.create({
+            title: 'Formulario sin imágenes',
+            message: '¿Desea enviar el formulario sin imágenes?',
+            buttons: [
+              {
+                text: 'Cancelar',
+                handler: () => {
+                  console.log('se canceló')
+                }
+              },
+              {
+                text: 'OK',
+                handler: () => {
+                  this.enviarFormulario()
+                }
+              }
+            ]
+          })
+          confirm.present()
+        } else {
+          this.enviarFormulario()
+        }
+      }else{
+        console.log('GPS DISABLED')
+        loading.dismiss()
+        const alert = this.alertCtrl.create({
+          title: 'Error',
+          subTitle: 'Necesitas activar tu GPS',
+          buttons: ['OK']
+        })
+        alert.present()
+      }
+    })
+    .catch(error => {
+      console.log('Falla de comunicacion con el GPS')
+      console.log('Error:', error)
+      loading.dismiss()
+      const alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: JSON.stringify(error),
+        buttons: ['OK']
+      })
+      alert.present()
+    })
+  }
+
+  enviarFormulario() {
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
@@ -173,7 +176,6 @@ export class ModalBafiEntelPage {
         this.api.enviarFormularioBafiEntel(this.bafiForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
-            loading.dismiss()
             if (res.success === true) {
               let alert = this.alertCtrl.create({
                 title: 'Formulario enviado',
@@ -193,7 +195,6 @@ export class ModalBafiEntelPage {
           })
           .catch(err => {
             console.log('formulario NO enviado')
-            loading.dismiss()
             let alert = this.alertCtrl.create({
               title: 'Error al enviar formulario',
               subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
@@ -202,7 +203,6 @@ export class ModalBafiEntelPage {
             alert.present()
           })
       }).catch((error) => {
-        loading.dismiss()
         console.log('Error getting location', error.message)
       })
   }

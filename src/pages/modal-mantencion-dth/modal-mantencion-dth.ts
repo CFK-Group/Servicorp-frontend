@@ -174,11 +174,16 @@ export class ModalMantencionDthPage {
   }
 
   enviar(){
+    let loading = this.loadingCtrl.create({
+      content: 'Enviando formulario'
+    })
+    loading.present()
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
       console.log('GPS COMMUNICATION SUCCESSFULL')
       if (res) {
         console.log('GPS ENABLED')
+        loading.dismiss()
         if (this.images[0] == null) {
           const confirm = this.alertCtrl.create({
             title: 'Formulario sin imágenes',
@@ -204,6 +209,7 @@ export class ModalMantencionDthPage {
         }
       }else{
         console.log('GPS DISABLED')
+        loading.dismiss()
         const alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: 'Necesitas activar tu GPS',
@@ -212,12 +218,13 @@ export class ModalMantencionDthPage {
         alert.present()
       }
     })
-    .catch(err => {
+    .catch(error => {
       console.log('Falla de comunicacion con el GPS')
-      console.log(err)
+      console.log('Error:', error)
+      loading.dismiss()
       const alert = this.alertCtrl.create({
         title: 'Error',
-        subTitle: JSON.stringify(err),
+        subTitle: JSON.stringify(error),
         buttons: ['OK']
       })
       alert.present()
@@ -225,10 +232,6 @@ export class ModalMantencionDthPage {
   }
 
   enviarFormulario(){
-    let loading = this.loadingCtrl.create({
-      content: 'Enviando formulario'
-    })
-    loading.present()
     if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for(let i = 0; i < this.images.length; i++){
@@ -265,7 +268,6 @@ export class ModalMantencionDthPage {
       this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
       .then( (res: any) => {
         console.log(this.mantencionesDth.value)
-        loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
@@ -284,7 +286,6 @@ export class ModalMantencionDthPage {
         }
       })
       .catch( (reason:any) => {
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
@@ -293,7 +294,6 @@ export class ModalMantencionDthPage {
         alert.present()
       })
     }).catch((error) => {
-      loading.dismiss()
       console.log('Error getting location', error)
     })
   }
@@ -352,7 +352,6 @@ export class ModalMantencionDthPage {
     this.api.enviarFormularioMantencionDTH(this.mantencionesDth.value)
       .then( (res: any) => {
         console.log(this.mantencionesDth.value)
-        loading.dismiss()
         if(res.success === true){
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
@@ -371,7 +370,6 @@ export class ModalMantencionDthPage {
         }
       })
       .catch( (reason:any) => {
-        loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
