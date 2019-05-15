@@ -28,6 +28,7 @@ export class ModalBafiEntelPage {
   image: string = null
   images = []
   cod_decodificador = ''
+  loading
 
   constructor(private diagnostic: Diagnostic, private barcodeScanner: BarcodeScanner, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.bafiForm = this.createBafiForm()
@@ -83,16 +84,15 @@ export class ModalBafiEntelPage {
   }
 
   enviar(){
-    let loading = this.loadingCtrl.create({
+    this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
-    loading.present()
+    this.loading.present()
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
       console.log('GPS COMMUNICATION SUCCESSFULL')
       if (res) {
         console.log('GPS ENABLED')
-        loading.dismiss()
         if (this.images[0] == null) {
           const confirm = this.alertCtrl.create({
             title: 'Formulario sin imágenes',
@@ -118,7 +118,7 @@ export class ModalBafiEntelPage {
         }
       }else{
         console.log('GPS DISABLED')
-        loading.dismiss()
+        this.loading.dismiss()
         const alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: 'Necesitas activar tu GPS',
@@ -130,7 +130,7 @@ export class ModalBafiEntelPage {
     .catch(error => {
       console.log('Falla de comunicacion con el GPS')
       console.log('Error:', error)
-      loading.dismiss()
+      this.loading.dismiss()
       const alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: JSON.stringify(error),
@@ -171,12 +171,11 @@ export class ModalBafiEntelPage {
         console.log(resp)
         this.bafiForm.value.latitud = resp.coords.latitude || 'e'
         this.bafiForm.value.longitud = resp.coords.longitude || 'eclear'
-        console.log('Coordenadas: ' + this.bafiForm.value.latitud + ',' + this.bafiForm.value.longitud)
-        console.log('Enviando Formulario')
         this.api.enviarFormularioBafiEntel(this.bafiForm.value)
           .then((res: any) => {
             console.log('formulario enviado')
             if (res.success === true) {
+              this.loading.dismiss()
               let alert = this.alertCtrl.create({
                 title: 'Formulario enviado',
                 subTitle: 'Formulario enviado correctamente',
@@ -185,6 +184,7 @@ export class ModalBafiEntelPage {
               alert.present()
               this.closeModal()
             } else {
+              this.loading.dismiss()
               let alert = this.alertCtrl.create({
                 title: 'Error (500) en el servidor',
                 subTitle: 'Vuelva a intentarlo más tarde.',
@@ -194,6 +194,7 @@ export class ModalBafiEntelPage {
             }
           })
           .catch(err => {
+            this.loading.dismiss()
             console.log('formulario NO enviado')
             let alert = this.alertCtrl.create({
               title: 'Error al enviar formulario',

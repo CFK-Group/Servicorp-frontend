@@ -26,6 +26,7 @@ export class ModalDesconexionPage {
 
   image: string = null
   images = []
+  loading
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.desconexionForm = this.createDesconexionForm()
@@ -87,16 +88,15 @@ export class ModalDesconexionPage {
   }
 
   enviar(){
-    let loading = this.loadingCtrl.create({
+    this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
-    loading.present()
+    this.loading.present()
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
       console.log('GPS COMMUNICATION SUCCESSFULL')
       if (res) {
         console.log('GPS ENABLED')
-        loading.dismiss()
         if (this.images[0] == null) {
           const confirm = this.alertCtrl.create({
             title: 'Formulario sin imágenes',
@@ -122,7 +122,7 @@ export class ModalDesconexionPage {
         }
       }else{
         console.log('GPS DISABLED')
-        loading.dismiss()
+        this.loading.dismiss()
         const alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: 'Necesitas activar tu GPS',
@@ -134,7 +134,7 @@ export class ModalDesconexionPage {
     .catch(error => {
       console.log('Falla de comunicacion con el GPS')
       console.log('Error:', error)
-      loading.dismiss()
+      this.loading.dismiss()
       const alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: JSON.stringify(error),
@@ -179,6 +179,7 @@ export class ModalDesconexionPage {
       console.log('Enviando Formulario')
       this.api.enviarFormularioDesconexion(this.desconexionForm.value)
       .then( (res: any) => {
+        this.loading.dismiss()
         console.log('formulario enviado')
         if(res.success === true){
           let alert = this.alertCtrl.create({
@@ -189,6 +190,7 @@ export class ModalDesconexionPage {
           alert.present()
           this.closeModal()
         }else{
+          this.loading.dismiss()
           let alert = this.alertCtrl.create({
             title: 'Error (500) en el servidor',
             subTitle: 'Vuelva a intentarlo más tarde.',
@@ -198,6 +200,7 @@ export class ModalDesconexionPage {
         }
       })
       .catch( err => {
+        this.loading.dismiss()
         console.log('formulario NO enviado')
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',

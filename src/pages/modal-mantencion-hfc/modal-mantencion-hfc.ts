@@ -27,6 +27,7 @@ export class ModalMantencionHfcPage {
   mantencionesHfc: FormGroup
   images = []
   cod_decodificador = ''
+  loading
 
   constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
     this.mantencionesHfc = this.createMantencionesHfcForm()
@@ -189,16 +190,15 @@ export class ModalMantencionHfcPage {
   }
 
   enviar(){
-    let loading = this.loadingCtrl.create({
+    this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
-    loading.present()
+    this.loading.present()
     this.diagnostic.isLocationEnabled()
     .then((res:any) => {
       console.log('GPS COMMUNICATION SUCCESSFULL')
       if (res) {
         console.log('GPS ENABLED')
-        loading.dismiss()
         if (this.images[0] == null) {
           const confirm = this.alertCtrl.create({
             title: 'Formulario sin imágenes',
@@ -224,7 +224,7 @@ export class ModalMantencionHfcPage {
         }
       }else{
         console.log('GPS DISABLED')
-        loading.dismiss()
+        this.loading.dismiss()
         const alert = this.alertCtrl.create({
           title: 'Error',
           subTitle: 'Necesitas activar tu GPS',
@@ -236,7 +236,7 @@ export class ModalMantencionHfcPage {
     .catch(error => {
       console.log('Falla de comunicacion con el GPS')
       console.log('Error:', error)
-      loading.dismiss()
+      this.loading.dismiss()
       const alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: JSON.stringify(error),
@@ -278,6 +278,7 @@ export class ModalMantencionHfcPage {
       this.api.enviarFormularioMantencionHFC(this.mantencionesHfc.value)
       .then( (res: any) => {
         if(res.success === true){
+          this.loading.dismiss()
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
             subTitle: 'Formulario enviado correctamente',
@@ -286,6 +287,7 @@ export class ModalMantencionHfcPage {
           alert.present()
           this.closeModal()
         }else{
+          this.loading.dismiss()
           let alert = this.alertCtrl.create({
             title: 'Error al enviar formulario',
             subTitle: res.message,
@@ -295,6 +297,7 @@ export class ModalMantencionHfcPage {
         }
       })
       .catch( (reason:any) => {
+        this.loading.dismiss()
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
