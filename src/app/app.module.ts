@@ -30,6 +30,7 @@ import { BafiEntelPage } from "../pages/bafi-entel/bafi-entel"
 import { DuoEntelPage } from "../pages/duo-entel/duo-entel"
 import { ModalBafiEntelPage } from "../pages/modal-bafi-entel/modal-bafi-entel"
 import { ModalDuoEntelPage } from "../pages/modal-duo-entel/modal-duo-entel"
+import { NoFormsComponent } from "../components/no-forms/no-forms"
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ModalDuoEntelPage } from "../pages/modal-duo-entel/modal-duo-entel"
     BafiEntelPage,
     DuoEntelPage,
     ModalBafiEntelPage,
-    ModalDuoEntelPage
+    ModalDuoEntelPage,
+    NoFormsComponent
   ],
   imports: [
     BrowserModule,

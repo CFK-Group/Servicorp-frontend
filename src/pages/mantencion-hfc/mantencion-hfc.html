@@ -18,7 +18,7 @@
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="openModal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
-  <ion-list>
+  <ion-list *ngIf="formularios; else sinFormularios">
     <ion-item color="primary">Formularios</ion-item>
     <ion-item text-center *ngFor="let formulario of formularios" (click)="detail(formulario)">
       <p>Certificación Mantención HFC</p>
@@ -27,3 +27,7 @@
   </ion-list>
 
 </ion-content>
+
+<ng-template #sinFormularios>
+  <no-forms></no-forms>
+</ng-template>
