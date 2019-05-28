@@ -60,7 +60,7 @@ export class ModalInstalacionesHfcPage {
     this.instalacionesHfc.controls['resp_61'].disable()
   }
 
-  private createInstalacionesHfcForm(){
+  private createInstalacionesHfcForm() {
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
@@ -190,67 +190,70 @@ export class ModalInstalacionesHfcPage {
     })
   }
 
-  enviar(){
+  enviar() {
     this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
     this.loading.present()
-    this.diagnostic.isLocationEnabled()
-    .then((res:any) => {
-      console.log('GPS COMMUNICATION SUCCESSFULL')
-      if (res) {
-        console.log('GPS ENABLED')
-        if (this.images[0] == null) {
-          const confirm = this.alertCtrl.create({
-            title: 'Formulario sin imágenes',
-            message: '¿Desea enviar el formulario sin imágenes?',
-            buttons: [
-              {
-                text: 'Cancelar',
-                handler: () => {
-                  console.log('se canceló')
-                }
-              },
-              {
-                text: 'OK',
-                handler: () => {
-                  this.enviarFormulario()
-                }
+      .then(() => {
+        this.diagnostic.isLocationEnabled()
+          .then((res: any) => {
+            console.log('GPS COMMUNICATION SUCCESSFULL')
+            if (res) {
+              console.log('GPS ENABLED')
+              if (this.images[0] == null) {
+                const confirm = this.alertCtrl.create({
+                  title: 'Formulario sin imágenes',
+                  message: '¿Desea enviar el formulario sin imágenes?',
+                  buttons: [
+                    {
+                      text: 'Cancelar',
+                      handler: () => {
+                        console.log('se canceló')
+                      }
+                    },
+                    {
+                      text: 'OK',
+                      handler: () => {
+                        this.enviarFormulario()
+                      }
+                    }
+                  ]
+                })
+                confirm.present()
+              } else {
+                this.enviarFormulario()
               }
-            ]
+            } else {
+              console.log('GPS DISABLED')
+              this.loading.dismiss()
+              const alert = this.alertCtrl.create({
+                title: 'Error',
+                subTitle: 'Necesitas activar tu GPS',
+                buttons: ['OK']
+              })
+              alert.present()
+            }
           })
-          confirm.present()
-        } else {
-          this.enviarFormulario()
-        }
-      }else{
-        console.log('GPS DISABLED')
-        this.loading.dismiss()
-        const alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: 'Necesitas activar tu GPS',
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch(error => {
-      console.log('Falla de comunicacion con el GPS')
-      console.log('Error:', error)
-      this.loading.dismiss()
-      const alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: JSON.stringify(error),
-        buttons: ['OK']
+          .catch(error => {
+            console.log('Falla de comunicacion con el GPS')
+            console.log('Error:', error)
+            this.loading.dismiss()
+            const alert = this.alertCtrl.create({
+              title: 'Error',
+              subTitle: JSON.stringify(error),
+              buttons: ['OK']
+            })
+            alert.present()
+          })
       })
-      alert.present()
-    })
+
   }
 
-  enviarFormulario(){
-    if(this.images.length > 0){
+  enviarFormulario() {
+    if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
-      for(let i = 0; i < this.images.length; i++){
+      for (let i = 0; i < this.images.length; i++) {
         this.savePicture(this.images[i], this.instalacionesHfc.value.ot_servicorp)
       }
       console.log('Imagenes guardadas.')
@@ -277,37 +280,37 @@ export class ModalInstalacionesHfcPage {
       this.instalacionesHfc.value.latitud = resp.coords.latitude || 'e'
       this.instalacionesHfc.value.longitud = resp.coords.longitude || 'eclear'
       this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
-      .then( (res: any) => {
-        console.log(this.instalacionesHfc.value)
-        if(res.success === true){
-          this.loading.dismiss()
-          let alert = this.alertCtrl.create({
-            title: 'Formulario enviado',
-            subTitle: 'Formulario enviado correctamente',
-            buttons: ['OK']
-          })
-          alert.present()
-          this.closeModal()
-        }else{
+        .then((res: any) => {
+          console.log(this.instalacionesHfc.value)
+          if (res.success === true) {
+            this.loading.dismiss()
+            let alert = this.alertCtrl.create({
+              title: 'Formulario enviado',
+              subTitle: 'Formulario enviado correctamente',
+              buttons: ['OK']
+            })
+            alert.present()
+            this.closeModal()
+          } else {
+            this.loading.dismiss()
+            let alert = this.alertCtrl.create({
+              title: 'Error al enviar formulario',
+              subTitle: res.message,
+              buttons: ['OK']
+            })
+            alert.present()
+          }
+        })
+        .catch((error: any) => {
           this.loading.dismiss()
           let alert = this.alertCtrl.create({
             title: 'Error al enviar formulario',
-            subTitle: res.message,
+            subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
             buttons: ['OK']
           })
           alert.present()
-        }
-      })
-      .catch( (error:any) => {
-        this.loading.dismiss()
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',
-          buttons: ['OK']
+          console.log('Error:', error)
         })
-        alert.present()
-        console.log('Error:', error)
-      })
     }).catch((error) => {
       console.log('Error getting location', error)
     })
@@ -321,7 +324,7 @@ export class ModalInstalacionesHfcPage {
     this.view.dismiss()
   }
 
-  getPicture(){
+  getPicture() {
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
       targetWidth: 1000,
@@ -329,27 +332,27 @@ export class ModalInstalacionesHfcPage {
       quality: 100,
       correctOrientation: true
     }
-    this.camera.getPicture( options )
+    this.camera.getPicture(options)
       .then(imageData => {
         this.images.push(imageData)
       })
-      .catch(error =>{
-        console.error( error )
+      .catch(error => {
+        console.error(error)
       })
   }
 
-  getCodigoVerificador(){
-    this.barcodeScanner.scan({'showTorchButton': true})
-    .then(barcodeData => {
-      console.log('Barcode data', barcodeData)
-      this.cod_decodificador = barcodeData.text
-    })
-    .catch(error => {
-      console.log('Error', error)
-    })
+  getCodigoVerificador() {
+    this.barcodeScanner.scan({ 'showTorchButton': true })
+      .then(barcodeData => {
+        console.log('Barcode data', barcodeData)
+        this.cod_decodificador = barcodeData.text
+      })
+      .catch(error => {
+        console.log('Error', error)
+      })
   }
 
-  savePicture(pictureBase64:string, prefix:string){
+  savePicture(pictureBase64: string, prefix: string) {
     this.base64ToGallery.base64ToGallery(
       pictureBase64,
       {
@@ -357,17 +360,17 @@ export class ModalInstalacionesHfcPage {
         mediaScanner: true
       }
     )
-    .then(
-      (res) => console.log('Saved image to gallery ', res),
-      (err) => console.log('Error saving image to gallery ', err)
-    )
+      .then(
+        (res) => console.log('Saved image to gallery ', res),
+        (err) => console.log('Error saving image to gallery ', err)
+      )
   }
 
-  send(loading){
+  send(loading) {
     this.api.enviarFormularioInstalacionHFC(this.instalacionesHfc.value)
-      .then( (res: any) => {
+      .then((res: any) => {
         console.log(this.instalacionesHfc.value)
-        if(res.success === true){
+        if (res.success === true) {
           let alert = this.alertCtrl.create({
             title: 'Formulario enviado',
             subTitle: 'Formulario enviado correctamente',
@@ -375,7 +378,7 @@ export class ModalInstalacionesHfcPage {
           })
           alert.present()
           this.closeModal()
-        }else{
+        } else {
           let alert = this.alertCtrl.create({
             title: 'Error al enviar formulario',
             subTitle: res.message,
@@ -384,7 +387,7 @@ export class ModalInstalacionesHfcPage {
           alert.present()
         }
       })
-      .catch( (error:any) => {
+      .catch((error: any) => {
         let alert = this.alertCtrl.create({
           title: 'Error al enviar formulario',
           subTitle: 'Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde.',

@@ -151,61 +151,63 @@ export class ModalDuoEntelPage {
     })
   }
 
-  enviar(){
+  enviar() {
     this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
     this.loading.present()
-    this.diagnostic.isLocationEnabled()
-    .then((res:any) => {
-      console.log('GPS COMMUNICATION SUCCESSFULL')
-      if (res) {
-        console.log('GPS ENABLED')
-        if (this.images[0] == null) {
-          const confirm = this.alertCtrl.create({
-            title: 'Formulario sin imágenes',
-            message: '¿Desea enviar el formulario sin imágenes?',
-            buttons: [
-              {
-                text: 'Cancelar',
-                handler: () => {
-                  console.log('se canceló')
-                }
-              },
-              {
-                text: 'OK',
-                handler: () => {
-                  this.enviarFormulario()
-                }
+      .then(() => {
+        this.diagnostic.isLocationEnabled()
+          .then((res: any) => {
+            console.log('GPS COMMUNICATION SUCCESSFULL')
+            if (res) {
+              console.log('GPS ENABLED')
+              if (this.images[0] == null) {
+                const confirm = this.alertCtrl.create({
+                  title: 'Formulario sin imágenes',
+                  message: '¿Desea enviar el formulario sin imágenes?',
+                  buttons: [
+                    {
+                      text: 'Cancelar',
+                      handler: () => {
+                        console.log('se canceló')
+                      }
+                    },
+                    {
+                      text: 'OK',
+                      handler: () => {
+                        this.enviarFormulario()
+                      }
+                    }
+                  ]
+                })
+                confirm.present()
+              } else {
+                this.enviarFormulario()
               }
-            ]
+            } else {
+              console.log('GPS DISABLED')
+              this.loading.dismiss()
+              const alert = this.alertCtrl.create({
+                title: 'Error',
+                subTitle: 'Necesitas activar tu GPS',
+                buttons: ['OK']
+              })
+              alert.present()
+            }
           })
-          confirm.present()
-        } else {
-          this.enviarFormulario()
-        }
-      }else{
-        console.log('GPS DISABLED')
-        this.loading.dismiss()
-        const alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: 'Necesitas activar tu GPS',
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch(error => {
-      console.log('Falla de comunicacion con el GPS')
-      console.log('Error:', error)
-      this.loading.dismiss()
-      const alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: JSON.stringify(error),
-        buttons: ['OK']
+          .catch(error => {
+            console.log('Falla de comunicacion con el GPS')
+            console.log('Error:', error)
+            this.loading.dismiss()
+            const alert = this.alertCtrl.create({
+              title: 'Error',
+              subTitle: JSON.stringify(error),
+              buttons: ['OK']
+            })
+            alert.present()
+          })
       })
-      alert.present()
-    })
   }
 
   enviarFormulario() {
@@ -243,7 +245,7 @@ export class ModalDuoEntelPage {
         console.log('Enviando Formulario')
         this.api.enviarFormularioDuoEntel(this.duoEntelForm.value)
           .then((res: any) => {
-          this.loading.dismiss()
+            this.loading.dismiss()
             console.log('formulario enviado')
             if (res.success === true) {
               let alert = this.alertCtrl.create({
@@ -254,7 +256,7 @@ export class ModalDuoEntelPage {
               alert.present()
               this.closeModal()
             } else {
-          this.loading.dismiss()
+              this.loading.dismiss()
               let alert = this.alertCtrl.create({
                 title: 'Error (500) en el servidor',
                 subTitle: 'Vuelva a intentarlo más tarde.',
@@ -304,15 +306,15 @@ export class ModalDuoEntelPage {
       })
   }
 
-  getCodigoVerificador(){
-    this.barcodeScanner.scan({'showTorchButton': true})
-    .then(barcodeData => {
-      console.log('Barcode data', barcodeData)
-      this.cod_decodificador = barcodeData.text
-    })
-    .catch(error => {
-      console.log('Error', error)
-    })
+  getCodigoVerificador() {
+    this.barcodeScanner.scan({ 'showTorchButton': true })
+      .then(barcodeData => {
+        console.log('Barcode data', barcodeData)
+        this.cod_decodificador = barcodeData.text
+      })
+      .catch(error => {
+        console.log('Error', error)
+      })
   }
 
   savePicture(pictureBase64: string, prefix: string) {

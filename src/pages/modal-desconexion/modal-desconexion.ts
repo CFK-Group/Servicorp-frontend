@@ -32,7 +32,7 @@ export class ModalDesconexionPage {
     this.desconexionForm = this.createDesconexionForm()
   }
 
-  private createDesconexionForm(){
+  private createDesconexionForm() {
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
@@ -87,67 +87,69 @@ export class ModalDesconexionPage {
     // })
   }
 
-  enviar(){
+  enviar() {
     this.loading = this.loadingCtrl.create({
       content: 'Enviando formulario'
     })
     this.loading.present()
-    this.diagnostic.isLocationEnabled()
-    .then((res:any) => {
-      console.log('GPS COMMUNICATION SUCCESSFULL')
-      if (res) {
-        console.log('GPS ENABLED')
-        if (this.images[0] == null) {
-          const confirm = this.alertCtrl.create({
-            title: 'Formulario sin imágenes',
-            message: '¿Desea enviar el formulario sin imágenes?',
-            buttons: [
-              {
-                text: 'Cancelar',
-                handler: () => {
-                  console.log('se canceló')
-                }
-              },
-              {
-                text: 'OK',
-                handler: () => {
-                  this.enviarFormulario()
-                }
+      .then(() => {
+        this.diagnostic.isLocationEnabled()
+          .then((res: any) => {
+            console.log('GPS COMMUNICATION SUCCESSFULL')
+            if (res) {
+              console.log('GPS ENABLED')
+              if (this.images[0] == null) {
+                const confirm = this.alertCtrl.create({
+                  title: 'Formulario sin imágenes',
+                  message: '¿Desea enviar el formulario sin imágenes?',
+                  buttons: [
+                    {
+                      text: 'Cancelar',
+                      handler: () => {
+                        console.log('se canceló')
+                      }
+                    },
+                    {
+                      text: 'OK',
+                      handler: () => {
+                        this.enviarFormulario()
+                      }
+                    }
+                  ]
+                })
+                confirm.present()
+              } else {
+                this.enviarFormulario()
               }
-            ]
+            } else {
+              console.log('GPS DISABLED')
+              this.loading.dismiss()
+              const alert = this.alertCtrl.create({
+                title: 'Error',
+                subTitle: 'Necesitas activar tu GPS',
+                buttons: ['OK']
+              })
+              alert.present()
+            }
           })
-          confirm.present()
-        } else {
-          this.enviarFormulario()
-        }
-      }else{
-        console.log('GPS DISABLED')
-        this.loading.dismiss()
-        const alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: 'Necesitas activar tu GPS',
-          buttons: ['OK']
-        })
-        alert.present()
-      }
-    })
-    .catch(error => {
-      console.log('Falla de comunicacion con el GPS')
-      console.log('Error:', error)
-      this.loading.dismiss()
-      const alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: JSON.stringify(error),
-        buttons: ['OK']
+          .catch(error => {
+            console.log('Falla de comunicacion con el GPS')
+            console.log('Error:', error)
+            this.loading.dismiss()
+            const alert = this.alertCtrl.create({
+              title: 'Error',
+              subTitle: JSON.stringify(error),
+              buttons: ['OK']
+            })
+            alert.present()
+          })
       })
-      alert.present()
-    })
   }
 
-  enviarFormulario(){
-    if(this.images.length > 0){
+  enviarFormulario() {
+    if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
-      for(let i = 0; i < this.images.length; i++){
+      for (let i = 0; i < this.images.length; i++) {
         this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp)
       }
       console.log('Imagenes guardadas.')
@@ -170,48 +172,48 @@ export class ModalDesconexionPage {
       maximumAge: 0
     };
     this.geolocation.getCurrentPosition(options)
-    .then((resp) => {
-      console.log('tomando coordenadas')
-      console.log(resp)
-      this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
-      this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
-      console.log('Coordenadas: ' + this.desconexionForm.value.latitud+','+this.desconexionForm.value.longitud)
-      console.log('Enviando Formulario')
-      this.api.enviarFormularioDesconexion(this.desconexionForm.value)
-      .then( (res: any) => {
-        this.loading.dismiss()
-        console.log('formulario enviado')
-        if(res.success === true){
-          let alert = this.alertCtrl.create({
-            title: 'Formulario enviado',
-            subTitle: 'Formulario enviado correctamente',
-            buttons: ['OK']
+      .then((resp) => {
+        console.log('tomando coordenadas')
+        console.log(resp)
+        this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
+        this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
+        console.log('Coordenadas: ' + this.desconexionForm.value.latitud + ',' + this.desconexionForm.value.longitud)
+        console.log('Enviando Formulario')
+        this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+          .then((res: any) => {
+            this.loading.dismiss()
+            console.log('formulario enviado')
+            if (res.success === true) {
+              let alert = this.alertCtrl.create({
+                title: 'Formulario enviado',
+                subTitle: 'Formulario enviado correctamente',
+                buttons: ['OK']
+              })
+              alert.present()
+              this.closeModal()
+            } else {
+              this.loading.dismiss()
+              let alert = this.alertCtrl.create({
+                title: 'Error (500) en el servidor',
+                subTitle: 'Vuelva a intentarlo más tarde.',
+                buttons: ['OK']
+              })
+              alert.present()
+            }
           })
-          alert.present()
-          this.closeModal()
-        }else{
-          this.loading.dismiss()
-          let alert = this.alertCtrl.create({
-            title: 'Error (500) en el servidor',
-            subTitle: 'Vuelva a intentarlo más tarde.',
-            buttons: ['OK']
+          .catch(err => {
+            this.loading.dismiss()
+            console.log('formulario NO enviado')
+            let alert = this.alertCtrl.create({
+              title: 'Error al enviar formulario',
+              subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
+              buttons: ['OK']
+            })
+            alert.present()
           })
-          alert.present()
-        }
+      }).catch((error) => {
+        console.log('Error getting location', error.message)
       })
-      .catch( err => {
-        this.loading.dismiss()
-        console.log('formulario NO enviado')
-        let alert = this.alertCtrl.create({
-          title: 'Error al enviar formulario',
-          subTitle: `Ha ocurrido un error al enviar el formulario. Por favor inténtelo de nuevo más tarde. ${err.message}`,
-          buttons: ['OK']
-        })
-        alert.present()
-      })
-    }).catch((error) => {
-      console.log('Error getting location', error.message)
-    })
   }
 
   ionViewDidLoad() {
@@ -223,7 +225,7 @@ export class ModalDesconexionPage {
     this.view.dismiss()
   }
 
-  getPicture(){
+  getPicture() {
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
       targetWidth: 1000,
@@ -231,16 +233,16 @@ export class ModalDesconexionPage {
       quality: 100,
       correctOrientation: true
     }
-    this.camera.getPicture( options )
+    this.camera.getPicture(options)
       .then(imageData => {
         this.images.push(imageData)
       })
-      .catch(error =>{
-        console.error( error )
+      .catch(error => {
+        console.error(error)
       })
   }
 
-  savePicture(pictureBase64:string, prefix:string){
+  savePicture(pictureBase64: string, prefix: string) {
     this.base64ToGallery.base64ToGallery(
       pictureBase64,
       {
@@ -248,10 +250,10 @@ export class ModalDesconexionPage {
         mediaScanner: true
       }
     )
-    .then(
-      (res) => console.log('Saved image to gallery ', res),
-      (err) => console.log('Error saving image to gallery ', err)
-    )
+      .then(
+        (res) => console.log('Saved image to gallery ', res),
+        (err) => console.log('Error saving image to gallery ', err)
+      )
   }
 
 }
