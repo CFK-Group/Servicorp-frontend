@@ -210,6 +210,7 @@ export class ModalInstalacionesHfcPage {
                       text: 'Cancelar',
                       handler: () => {
                         console.log('se canceló')
+                        this.loading.dismiss()
                       }
                     },
                     {

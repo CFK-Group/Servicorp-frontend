@@ -197,6 +197,7 @@ export class ModalInstalacionesDthPage {
                       text: 'Cancelar',
                       handler: () => {
                         console.log('se canceló')
+                        this.loading.dismiss()
                       }
                     },
                     {

@@ -171,6 +171,7 @@ export class ModalDuoEntelPage {
                       text: 'Cancelar',
                       handler: () => {
                         console.log('se canceló')
+                        this.loading.dismiss()
                       }
                     },
                     {
