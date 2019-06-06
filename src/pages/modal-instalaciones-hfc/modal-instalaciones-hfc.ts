@@ -251,8 +251,35 @@ export class ModalInstalacionesHfcPage {
 
   }
 
-  enviarFormulario() {
-    if (this.images.length > 0) {
+  enviarFormulario(){
+    this.instalacionesHfc.controls['resp_11'].enable()
+    this.instalacionesHfc.controls['resp_12'].enable()
+    this.instalacionesHfc.controls['resp_13'].enable()
+    this.instalacionesHfc.controls['resp_38'].enable()
+    this.instalacionesHfc.controls['resp_39'].enable()
+    this.instalacionesHfc.controls['resp_40'].enable()
+    this.instalacionesHfc.controls['resp_41'].enable()
+    this.instalacionesHfc.controls['resp_42'].enable()
+    this.instalacionesHfc.controls['resp_43'].enable()
+    this.instalacionesHfc.controls['resp_44'].enable()
+    this.instalacionesHfc.controls['resp_45'].enable()
+    this.instalacionesHfc.controls['resp_46'].enable()
+    this.instalacionesHfc.controls['resp_47'].enable()
+    this.instalacionesHfc.controls['resp_48'].enable()
+    this.instalacionesHfc.controls['resp_49'].enable()
+    this.instalacionesHfc.controls['resp_50'].enable()
+    this.instalacionesHfc.controls['resp_51'].enable()
+    this.instalacionesHfc.controls['resp_52'].enable()
+    this.instalacionesHfc.controls['resp_53'].enable()
+    this.instalacionesHfc.controls['resp_54'].enable()
+    this.instalacionesHfc.controls['resp_55'].enable()
+    this.instalacionesHfc.controls['resp_56'].enable()
+    this.instalacionesHfc.controls['resp_57'].enable()
+    this.instalacionesHfc.controls['resp_58'].enable()
+    this.instalacionesHfc.controls['resp_59'].enable()
+    this.instalacionesHfc.controls['resp_60'].enable()
+    this.instalacionesHfc.controls['resp_61'].enable()
+    if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
         this.savePicture(this.images[i], this.instalacionesHfc.value.ot_servicorp)

@@ -249,8 +249,34 @@ export class ModalMantencionHfcPage {
       })
   }
 
-  enviarFormulario() {
-    if (this.images.length > 0) {
+  enviarFormulario(){
+    this.mantencionesHfc.controls['resp_10'].enable()
+    this.mantencionesHfc.controls['resp_11'].enable()
+    this.mantencionesHfc.controls['resp_38'].enable()
+    this.mantencionesHfc.controls['resp_39'].enable()
+    this.mantencionesHfc.controls['resp_40'].enable()
+    this.mantencionesHfc.controls['resp_41'].enable()
+    this.mantencionesHfc.controls['resp_42'].enable()
+    this.mantencionesHfc.controls['resp_43'].enable()
+    this.mantencionesHfc.controls['resp_44'].enable()
+    this.mantencionesHfc.controls['resp_45'].enable()
+    this.mantencionesHfc.controls['resp_46'].enable()
+    this.mantencionesHfc.controls['resp_47'].enable()
+    this.mantencionesHfc.controls['resp_48'].enable()
+    this.mantencionesHfc.controls['resp_49'].enable()
+    this.mantencionesHfc.controls['resp_50'].enable()
+    this.mantencionesHfc.controls['resp_51'].enable()
+    this.mantencionesHfc.controls['resp_52'].enable()
+    this.mantencionesHfc.controls['resp_53'].enable()
+    this.mantencionesHfc.controls['resp_54'].enable()
+    this.mantencionesHfc.controls['resp_55'].enable()
+    this.mantencionesHfc.controls['resp_56'].enable()
+    this.mantencionesHfc.controls['resp_57'].enable()
+    this.mantencionesHfc.controls['resp_58'].enable()
+    this.mantencionesHfc.controls['resp_59'].enable()
+    this.mantencionesHfc.controls['resp_60'].enable()
+    this.mantencionesHfc.controls['resp_61'].enable()
+    if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
         this.savePicture(this.images[i], this.mantencionesHfc.value.ot_servicorp)
