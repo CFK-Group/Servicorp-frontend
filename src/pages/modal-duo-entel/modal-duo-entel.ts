@@ -215,7 +215,7 @@ export class ModalDuoEntelPage {
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.duoEntelForm.value.ot_servicorp)
+        this.savePicture(this.images[i], this.duoEntelForm.value.folio_servicio + '_entel_' + (i+1))
       }
       console.log('Imagenes guardadas.')
     }
