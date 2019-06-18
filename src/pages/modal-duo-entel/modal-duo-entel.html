@@ -623,7 +623,7 @@
       </ion-row>
       <ion-row>
         <ion-col col>
-          <button ion-button block type="submit">Enviar</button>
+          <button ion-button block type="submit" [disabled]="!duoEntelForm.valid">Enviar</button>
         </ion-col>
       </ion-row>
     </ion-grid>
