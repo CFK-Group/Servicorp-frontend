@@ -237,11 +237,23 @@ export class ModalInstalacionesDthPage {
       })
   }
 
-  enviarFormulario() {
-    if (this.images.length > 0) {
+  enviarFormulario(){
+    this.instalacionesDth.controls['resp_9'].enable()
+    this.instalacionesDth.controls['resp_14'].enable()
+    this.instalacionesDth.controls['resp_15'].enable()
+    this.instalacionesDth.controls['resp_16'].enable()
+    this.instalacionesDth.controls['resp_27'].enable()
+    this.instalacionesDth.controls['resp_29'].enable()
+    this.instalacionesDth.controls['resp_31'].enable()
+    this.instalacionesDth.controls['resp_32'].enable()
+    this.instalacionesDth.controls['resp_33'].enable()
+    this.instalacionesDth.controls['resp_64'].enable()
+    this.instalacionesDth.controls['resp_65'].enable()
+    this.instalacionesDth.controls['resp_66'].enable()
+    if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.instalacionesDth.value.ot_servicorp)
+        this.savePicture(this.images[i], this.instalacionesDth.value.folio_servicio + '_entel_' + (i+1))
       }
       console.log('Imagenes guardadas.')
     }

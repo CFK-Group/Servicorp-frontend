@@ -234,11 +234,22 @@ export class ModalMantencionDthPage {
       })
   }
 
-  enviarFormulario() {
-    if (this.images.length > 0) {
+  enviarFormulario(){
+    this.mantencionesDth.controls['resp_8'].enable()
+    this.mantencionesDth.controls['resp_12'].enable()
+    this.mantencionesDth.controls['resp_15'].enable()
+    this.mantencionesDth.controls['resp_16'].enable()
+    this.mantencionesDth.controls['resp_18'].enable()
+    this.mantencionesDth.controls['resp_23'].enable()
+    this.mantencionesDth.controls['resp_25'].enable()
+    this.mantencionesDth.controls['resp_28'].enable()
+    this.mantencionesDth.controls['resp_62'].enable()
+    this.mantencionesDth.controls['resp_63'].enable()
+    this.mantencionesDth.controls['resp_64'].enable()
+    if(this.images.length > 0){
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.mantencionesDth.value.ot_servicorp)
+        this.savePicture(this.images[i], this.mantencionesDth.value.folio_servicio + '_entel_' + (i+1))
       }
       console.log('Imagenes guardadas.')
     }
