@@ -222,14 +222,6 @@
         <ion-label text-wrap>Soluciones *</ion-label>
         <ion-input formControlName="resp_26" text-right type="text"></ion-input>
       </ion-item>
-      <ion-list-header color="primary">
-        Código de Barra
-      </ion-list-header>
-      <ion-item>
-        <ion-label text-wrap>Código IDU</ion-label>
-        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
-        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
-      </ion-item>
       <ion-item [ngClass]="{'invalid': bafiForm.value.resp_27 === null}">
         <ion-label text-wrap>Visita Técnica *</ion-label>
         <ion-select formControlName="resp_27" interface="popover">
@@ -249,6 +241,14 @@
           <ion-option>Otra</ion-option>
           <ion-option>N/A</ion-option>
         </ion-select>
+      </ion-item>
+      <ion-list-header color="primary">
+        Código de Barra
+      </ion-list-header>
+      <ion-item>
+        <ion-label text-wrap>Código IDU</ion-label>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''">{{cod_decodificador}}</div>
       </ion-item>
     </ion-list>
     <ion-grid>

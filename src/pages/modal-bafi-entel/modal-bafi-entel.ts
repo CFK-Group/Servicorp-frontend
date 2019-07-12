@@ -79,7 +79,8 @@ export class ModalBafiEntelPage {
       imagen_7: this.images[6],
       imagen_8: this.images[7],
       imagen_9: this.images[8],
-      imagen_10: this.images[9]
+      imagen_10: this.images[9],
+      cod_decodificador: [null]
     })
   }
 
@@ -161,6 +162,7 @@ export class ModalBafiEntelPage {
     this.bafiForm.value.imagen_8 = this.images[7]
     this.bafiForm.value.imagen_9 = this.images[8]
     this.bafiForm.value.imagen_10 = this.images[9]
+    this.bafiForm.value.cod_decodificador = this.cod_decodificador
     console.log('iniciando toma de coordenadas')
     // capturando posicion gps
     var options = {
