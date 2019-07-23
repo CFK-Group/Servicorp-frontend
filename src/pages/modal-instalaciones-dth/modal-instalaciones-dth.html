@@ -20,13 +20,13 @@
 <ion-content>
   <form [formGroup]="instalacionesDth" (ngSubmit)="enviar()">
     <ion-list>
-      <ion-item [ngClass]="{'invalid': instalacionesDth.value.ot_servicorp === null}">
-        <ion-label text-wrap>OT SERVICORP *</ion-label>
-        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
-      </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesDth.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': instalacionesDth.value.ot_servicorp === null}">
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente
@@ -665,7 +665,7 @@
       </ion-list-header>
       <ion-item>
         <ion-label text-wrap>Código Decodificador</ion-label>
-        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">TomarCódigo</a>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
         <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''" (click)="getCodigoVerificador()">{{cod_decodificador}}</div>
       </ion-item>
     </ion-list>

@@ -3431,11 +3431,11 @@ export class FormDetailPage {
         }else if(this.tipoFormulario == 'duo entel'){
           for(let i=0; i<this.formulario.length; i++){
             switch(this.formulario[i].glosa){
-              case	'FOLIO DE SERVICIO'	:	
+              case	'OT SERVICORP'	:	
               this.ot_servicorp = this.formulario[i].respuesta	
               this.id_ot_servicorp = this.formulario[i].id	
               break
-              case	'OT SERVICORP'	:	
+              case	'FOLIO DE SERVICIO'	:	
               this.folio_servicio = this.formulario[i].respuesta	
               this.id_folio_servicio = this.formulario[i].id	
               break

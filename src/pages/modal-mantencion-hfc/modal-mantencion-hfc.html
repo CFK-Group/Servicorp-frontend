@@ -21,13 +21,13 @@
 <ion-content>
   <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar('mantencionesHfc')">
     <ion-list>
-      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
-        <ion-label text-wrap>OT SERVICORP *</ion-label>
-        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
-      </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
       <ion-list-header color="primary">
         Atención Cliente - Respuestas Cliente

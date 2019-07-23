@@ -20,13 +20,13 @@
 <ion-content>
   <form [formGroup]="desconexionForm" (ngSubmit)="enviar()">
     <ion-list>
-      <ion-item [ngClass]="{'invalid': desconexionForm.value.ot_servicorp === null}">
-        <ion-label text-wrap>OT SERVICORP *</ion-label>
-        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
-      </ion-item>
       <ion-item [ngClass]="{'invalid': desconexionForm.value.folio_servicio === null}">
         <ion-label text-wrap>FOLIO DE SERVICIO *</ion-label>
         <ion-input formControlName="folio_servicio" text-right type="number"></ion-input>
+      </ion-item>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.ot_servicorp === null}">
+        <ion-label text-wrap>OT SERVICORP *</ion-label>
+        <ion-input formControlName="ot_servicorp" text-right type="number"></ion-input>
       </ion-item>
       <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_1 === null}">
         <ion-label text-wrap>Técnico corta acometida *</ion-label>
