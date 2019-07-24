@@ -31,6 +31,7 @@ import { DuoEntelPage } from "../pages/duo-entel/duo-entel"
 import { ModalBafiEntelPage } from "../pages/modal-bafi-entel/modal-bafi-entel"
 import { ModalDuoEntelPage } from "../pages/modal-duo-entel/modal-duo-entel"
 import { NoFormsComponent } from "../components/no-forms/no-forms"
+import { CanGoBackProvider } from '../providers/can-go-back/can-go-back';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { NoFormsComponent } from "../components/no-forms/no-forms"
     Base64ToGallery,
     BarcodeScanner,
     Geolocation,
-    Diagnostic
+    Diagnostic,
+    CanGoBackProvider
   ]
 })
 export class AppModule {}

@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { CanGoBackProvider } from '../../providers/can-go-back/can-go-back';
 
 /**
  * Generated class for the ModalBafiEntelPage page.
@@ -30,8 +31,14 @@ export class ModalBafiEntelPage {
   cod_decodificador = ''
   loading
 
-  constructor(private diagnostic: Diagnostic, private barcodeScanner: BarcodeScanner, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private barcodeScanner: BarcodeScanner, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController, public canGoBack: CanGoBackProvider) {
     this.bafiForm = this.createBafiForm()
+  }
+
+  ionViewCanLeave() {
+    let canGoBack = this.canGoBack.getValue();
+    this.canGoBack.setValue(true);
+    return canGoBack;
   }
 
   private createBafiForm() {
@@ -242,8 +249,14 @@ export class ModalBafiEntelPage {
   getCodigoVerificador() {
     this.barcodeScanner.scan({ 'showTorchButton': true })
       .then(barcodeData => {
-        console.log('Barcode data', barcodeData)
-        this.cod_decodificador = barcodeData.text
+        if (barcodeData.cancelled) {
+          console.log('Scan Cancelled');
+          this.canGoBack.setValue(false);
+        } else if (!barcodeData.cancelled) {
+          this.canGoBack.setValue(true)
+          console.log('Barcode data', barcodeData)
+          this.cod_decodificador = barcodeData.text
+        }
       })
       .catch(err => {
         console.log('Error', err)

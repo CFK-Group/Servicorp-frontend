@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams } from 'ionic-angular'
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular'
 import { InstalacionesDthPage } from "../instalaciones-dth/instalaciones-dth"
 import { InstalacionesHfcPage } from "../instalaciones-hfc/instalaciones-hfc"
 import { MantencionHfcPage } from "../mantencion-hfc/mantencion-hfc"
@@ -27,7 +27,7 @@ export class CategoriasPage {
   mostrarEntel = localStorage.getItem('empresa') == 'Entel'
   mostrarClaro = localStorage.getItem('empresa') == 'Claro'
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {

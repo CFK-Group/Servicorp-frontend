@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
+import { CanGoBackProvider } from '../../providers/can-go-back/can-go-back';
 
 /**
  * Generated class for the ModalMantencionHfcPage page.
@@ -29,7 +30,7 @@ export class ModalMantencionHfcPage {
   cod_decodificador = ''
   loading
 
-  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController, public canGoBack: CanGoBackProvider) {
     this.mantencionesHfc = this.createMantencionesHfcForm()
     this.mantencionesHfc.controls['resp_10'].disable()
     this.mantencionesHfc.controls['resp_11'].disable()
@@ -57,6 +58,12 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.controls['resp_59'].disable()
     this.mantencionesHfc.controls['resp_60'].disable()
     this.mantencionesHfc.controls['resp_61'].disable()
+  }
+
+  ionViewCanLeave() {
+    let canGoBack = this.canGoBack.getValue();
+    this.canGoBack.setValue(true);
+    return canGoBack;
   }
 
   private createMantencionesHfcForm() {
@@ -367,8 +374,14 @@ export class ModalMantencionHfcPage {
   getCodigoVerificador() {
     this.barcodeScanner.scan({ 'showTorchButton': true })
       .then(barcodeData => {
-        console.log('Barcode data', barcodeData)
-        this.cod_decodificador = barcodeData.text
+        if (barcodeData.cancelled) {
+          console.log('Scan Cancelled');
+          this.canGoBack.setValue(false);
+        } else if (!barcodeData.cancelled) {
+          this.canGoBack.setValue(true)
+          console.log('Barcode data', barcodeData)
+          this.cod_decodificador = barcodeData.text
+        }
       })
       .catch(err => {
         console.log('Error', err)

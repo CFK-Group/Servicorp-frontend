@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
+import { CanGoBackProvider } from '../../providers/can-go-back/can-go-back';
 
 /**
  * Generated class for the ModalInstalacionesDthPage page.
@@ -29,7 +30,7 @@ export class ModalInstalacionesDthPage {
   cod_decodificador = ''
   loading
 
-  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
+  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, private barcodeScanner: BarcodeScanner, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController, public canGoBack: CanGoBackProvider) {
     this.instalacionesDth = this.createInstalacionesDthForm()
     this.instalacionesDth.controls['resp_9'].disable()
     this.instalacionesDth.controls['resp_14'].disable()
@@ -43,6 +44,12 @@ export class ModalInstalacionesDthPage {
     this.instalacionesDth.controls['resp_64'].disable()
     this.instalacionesDth.controls['resp_65'].disable()
     this.instalacionesDth.controls['resp_66'].disable()
+  }
+
+  ionViewCanLeave() {
+    let canGoBack = this.canGoBack.getValue();
+    this.canGoBack.setValue(true);
+    return canGoBack;
   }
 
   private createInstalacionesDthForm() {
@@ -237,7 +244,7 @@ export class ModalInstalacionesDthPage {
       })
   }
 
-  enviarFormulario(){
+  enviarFormulario() {
     this.instalacionesDth.controls['resp_9'].enable()
     this.instalacionesDth.controls['resp_14'].enable()
     this.instalacionesDth.controls['resp_15'].enable()
@@ -250,10 +257,10 @@ export class ModalInstalacionesDthPage {
     this.instalacionesDth.controls['resp_64'].enable()
     this.instalacionesDth.controls['resp_65'].enable()
     this.instalacionesDth.controls['resp_66'].enable()
-    if(this.images.length > 0){
+    if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.instalacionesDth.value.folio_servicio + '_entel_' + (i+1))
+        this.savePicture(this.images[i], this.instalacionesDth.value.folio_servicio + '_entel_' + (i + 1))
       }
       console.log('Imagenes guardadas.')
     }
@@ -347,8 +354,14 @@ export class ModalInstalacionesDthPage {
   getCodigoVerificador() {
     this.barcodeScanner.scan({ 'showTorchButton': true })
       .then(barcodeData => {
-        console.log('Barcode data', barcodeData)
-        this.cod_decodificador = barcodeData.text
+        if (barcodeData.cancelled) {
+          console.log('Scan Cancelled');
+          this.canGoBack.setValue(false);
+        } else if (!barcodeData.cancelled) {
+          this.canGoBack.setValue(true)
+          console.log('Barcode data', barcodeData)
+          this.cod_decodificador = barcodeData.text
+        }
       })
       .catch(err => {
         console.log('Error', err)
