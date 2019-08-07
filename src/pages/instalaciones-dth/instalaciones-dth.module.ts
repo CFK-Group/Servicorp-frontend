@@ -4,10 +4,10 @@ import { InstalacionesDthPage } from './instalaciones-dth';
 
 @NgModule({
   declarations: [
-    InstalacionesDthPage,
+    InstalacionesDthPage
   ],
   imports: [
     IonicPageModule.forChild(InstalacionesDthPage),
-  ],
+  ]
 })
 export class InstalacionesDthPageModule {}
