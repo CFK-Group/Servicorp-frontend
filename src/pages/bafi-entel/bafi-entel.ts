@@ -50,7 +50,14 @@ export class BafiEntelPage {
 
   openModal() {
     let modal = this.modalCtrl.create(ModalBafiEntelPage)
-    modal.present()
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando...'
+    })
+    loading.present().then(() => {
+      modal.present().then(() => {
+        loading.dismiss()
+      })
+    })
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
       let loading = this.loadingCtrl.create({

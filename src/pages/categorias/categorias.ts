@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular'
+import { IonicPage, NavController, NavParams, AlertController, Platform } from 'ionic-angular'
 import { InstalacionesDthPage } from "../instalaciones-dth/instalaciones-dth"
 import { InstalacionesHfcPage } from "../instalaciones-hfc/instalaciones-hfc"
 import { MantencionHfcPage } from "../mantencion-hfc/mantencion-hfc"
@@ -9,6 +9,7 @@ import { DesconexionPage } from "../desconexion/desconexion"
 import { LoginPage } from "../../pages/login/login"
 import { BafiEntelPage } from "../../pages/bafi-entel/bafi-entel"
 import { DuoEntelPage } from "../../pages/duo-entel/duo-entel"
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 /**
  * Generated class for the CategoriasPage page.
@@ -27,7 +28,16 @@ export class CategoriasPage {
   mostrarEntel = localStorage.getItem('empresa') == 'Entel'
   mostrarClaro = localStorage.getItem('empresa') == 'Claro'
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public alertCtrl: AlertController,
+    public platform: Platform,
+    public splashscreen: SplashScreen
+  ) {
+    platform.ready().then(() => {
+      this.splashscreen.hide();
+    });
   }
 
   ionViewDidLoad() {

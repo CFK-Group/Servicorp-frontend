@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular'
+import { IonicPage, NavController, NavParams, LoadingController, Platform } from 'ionic-angular'
 import { AlertController } from "ionic-angular"
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { User } from '../../app/user'
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
 import { CategoriasPage } from "../categorias/categorias"
 import * as moment from 'moment'
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 /**
  * Generated class for the LoginPage page.
@@ -24,7 +25,19 @@ export class LoginPage {
   loginForm: FormGroup
   VersionNumber: string
 
-  constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, private api: ApiServiceProvider, public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+  constructor(
+    public alertCtrl: AlertController, 
+    public loadingCtrl: LoadingController, 
+    private api: ApiServiceProvider, 
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public formBuilder: FormBuilder,
+    public platform: Platform,
+    public splashscreen: SplashScreen
+  ) {
+    platform.ready().then(() => {
+      this.splashscreen.hide();
+    });
     this.loginForm = this.createLoginForm()
     if(localStorage.getItem('empresa')){
       this.navCtrl.push(CategoriasPage)

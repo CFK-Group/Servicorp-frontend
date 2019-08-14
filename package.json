@@ -9,7 +9,7 @@
     "build": "ionic cordova build android",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "start": "ionic serve --lab -c"
+    "start": "ionic serve --lab -c --devapp"
   },
   "dependencies": {
     "@angular/common": "5.0.3",

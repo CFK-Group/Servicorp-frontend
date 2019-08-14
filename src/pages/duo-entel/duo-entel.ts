@@ -3,6 +3,7 @@ import { IonicPage, ModalController, NavController, NavParams, LoadingController
 import { ModalDuoEntelPage } from "../modal-duo-entel/modal-duo-entel"
 import { FormDetailPage } from "../form-detail/form-detail"
 import { ApiServiceProvider } from "../../providers/api-service/api-service"
+import { resolveDep } from '@angular/core/src/view/provider';
 
 /**
  * Generated class for the DuoEntelPage page.
@@ -50,7 +51,14 @@ export class DuoEntelPage {
 
   openModal() {
     let modal = this.modalCtrl.create(ModalDuoEntelPage)
-    modal.present()
+    let loading = this.loadingCtrl.create({
+      content: 'Cargando...'
+    })
+    loading.present().then(() => {
+      modal.present().then(() => {
+        loading.dismiss()
+      })
+    })
     modal.onDidDismiss(data => {
       console.log('modal cerrado')
       let loading = this.loadingCtrl.create({
