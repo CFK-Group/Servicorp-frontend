@@ -148,10 +148,11 @@ export class ModalDesconexionPage {
   }
 
   enviarFormulario() {
+    let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.desconexionForm.value.folio_servicio + '_entel_' + (i+1))
+        this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp + '_claro_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
       }
       console.log('Imagenes guardadas.')
     }

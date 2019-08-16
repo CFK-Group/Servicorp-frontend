@@ -286,10 +286,11 @@ export class ModalInstalacionesHfcPage {
     this.instalacionesHfc.controls['resp_59'].enable()
     this.instalacionesHfc.controls['resp_60'].enable()
     this.instalacionesHfc.controls['resp_61'].enable()
-    if(this.images.length > 0){
+    let date =  new Date()
+    if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.instalacionesHfc.value.folio_servicio + '_entel_' + (i+1))
+        this.savePicture(this.images[i], this.instalacionesHfc.value.ot_servicorp + '_claro_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
       }
       console.log('Imagenes guardadas.')
     }
