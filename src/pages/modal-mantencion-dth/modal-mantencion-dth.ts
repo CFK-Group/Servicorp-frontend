@@ -66,7 +66,7 @@ export class ModalMantencionDthPage {
       resp_5: [null, Validators.required],
       resp_6: [null, Validators.required],
       resp_7: [null, Validators.required],
-      resp_8: [null, Validators.required],
+      resp_8: [null],
       resp_9: [null, Validators.required],
       resp_10: [null, Validators.required],
       resp_11: [null, Validators.required],
