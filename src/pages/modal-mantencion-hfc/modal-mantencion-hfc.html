@@ -17,9 +17,8 @@
 
 </ion-header>
 
-
 <ion-content>
-  <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar('mantencionesHfc')">
+  <form [formGroup]="mantencionesHfc" (ngSubmit)="enviar()">
     <ion-list>
       <ion-item [ngClass]="{'invalid': mantencionesHfc.value.ot_servicorp === null}">
         <ion-label text-wrap>OT CLARO *</ion-label>
