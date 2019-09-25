@@ -249,9 +249,25 @@
           <ion-option value="No">No</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Tiene filtro Hum en instalación de TV</ion-label>
+        <ion-select formControlName="resp_109" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-item [ngClass]="{'invalid': instalacionesHfc.value.resp_29 === null}">
         <ion-label text-wrap>Tiene cable HDMI en decodificador y TV HD *</ion-label>
         <ion-select formControlName="resp_29" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap>Deja equipo Modo Nat (CM-Emta)</ion-label>
+        <ion-select formControlName="resp_110" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>

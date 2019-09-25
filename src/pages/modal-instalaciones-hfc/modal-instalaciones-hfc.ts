@@ -183,6 +183,8 @@ export class ModalInstalacionesHfcPage {
       resp_106: [null, Validators.required],
       resp_107: [null, Validators.required],
       resp_108: [null, Validators.required],
+      resp_109: [null],
+      resp_110: [null],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
