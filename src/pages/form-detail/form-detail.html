@@ -22,8 +22,8 @@
 
   <ion-list>
 
-    <!-- formulario de instalacion hfc -->
-    <form *ngIf="this.mostrarFormInstalacionesHfc">
+    <!-- formulario de instalaciones -->
+    <form *ngIf="this.mostrarFormInstalaciones">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT CLARO</ion-label>
@@ -57,7 +57,8 @@
           <ion-input readonly="true" [value]="this.resp_5" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad</ion-label>
+          <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad
+          </ion-label>
           <ion-input readonly="true" [value]="this.resp_6" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -112,7 +113,7 @@
           <ion-input readonly="true" [value]="this.resp_18" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Fijación de spliters</ion-label>
+          <ion-label text-wrap>Fijación de splitters</ion-label>
           <ion-input readonly="true" [value]="this.resp_19" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -155,43 +156,51 @@
           <ion-input readonly="true" [value]="this.resp_28" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Tiene cable HDMI en decodificador y TV HD</ion-label>
+          <ion-label text-wrap>Tiene filtro Hum en instalación de TV</ion-label>
           <ion-input readonly="true" [value]="this.resp_29" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Tiene cable HDMI en decodificador y TV HD</ion-label>
+          <ion-input readonly="true" [value]="this.resp_30" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Deja equipo Modo Nat (CM-Emta)</ion-label>
+          <ion-input readonly="true" [value]="this.resp_31" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>Certifica / cambia canal de transmisión de wifi</ion-label>
-          <ion-input readonly="true" [value]="this.resp_30" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_32" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Informó número telefónico asignado</ion-label>
-          <ion-input readonly="true" [value]="this.resp_31" text-right type="text"></ion-input>
+          <ion-label text-wrap>Se instala roseta FTTH correctamente</ion-label>
+          <ion-input readonly="true" [value]="this.resp_33" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Revisión de Equipos
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>Dirección correcta</ion-label>
-          <ion-input readonly="true" [value]="this.resp_32" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Técnico visitó domicilio</ion-label>
-          <ion-input readonly="true" [value]="this.resp_33" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>HFC/DTH</ion-label>
           <ion-input readonly="true" [value]="this.resp_34" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Decos Std</ion-label>
+          <ion-label text-wrap>Técnico visitó domicilio</ion-label>
           <ion-input readonly="true" [value]="this.resp_35" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Decos HD</ion-label>
+          <ion-label text-wrap>HFC/DTH</ion-label>
           <ion-input readonly="true" [value]="this.resp_36" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Cantidad de equipos corresponde a contrato</ion-label>
+          <ion-label text-wrap>Decos Std</ion-label>
           <ion-input readonly="true" [value]="this.resp_37" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Decos HD</ion-label>
+          <ion-input readonly="true" [value]="this.resp_38" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>Cantidad de equipos corresponde a contrato</ion-label>
+          <ion-input readonly="true" [value]="this.resp_39" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Niveles DTH
@@ -201,672 +210,171 @@
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_38" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_39" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_40" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
+          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
           <ion-input readonly="true" [value]="this.resp_41" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_42" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
           <ion-input readonly="true" [value]="this.resp_43" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-input readonly="true" [value]="this.resp_44" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-input readonly="true" [value]="this.resp_45" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header text-center color="grey">
           Decodificador Segundo
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_44" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_45" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_46" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
+          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
           <ion-input readonly="true" [value]="this.resp_47" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_48" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
           <ion-input readonly="true" [value]="this.resp_49" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-input readonly="true" [value]="this.resp_50" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-input readonly="true" [value]="this.resp_51" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header text-center color="grey">
           Decodificador Tercero
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_50" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_51" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_52" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
+          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
           <ion-input readonly="true" [value]="this.resp_53" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_54" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
           <ion-input readonly="true" [value]="this.resp_55" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-input readonly="true" [value]="this.resp_56" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-input readonly="true" [value]="this.resp_57" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header text-center color="grey">
           Decodificador HD
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_56" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_57" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_58" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
+          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
           <ion-input readonly="true" [value]="this.resp_59" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
           <ion-input readonly="true" [value]="this.resp_60" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
           <ion-input readonly="true" [value]="this.resp_61" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
+          <ion-input readonly="true" [value]="this.resp_62" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
+          <ion-input readonly="true" [value]="this.resp_63" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Niveles HFC
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>TX</ion-label>
-          <ion-input readonly="true" [value]="this.resp_62" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_64" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>RX</ion-label>
-          <ion-input readonly="true" [value]="this.resp_63" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_65" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>SNR</ion-label>
-          <ion-input readonly="true" [value]="this.resp_64" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_66" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Observaciones
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>Observaciones</ion-label>
-          <ion-input readonly="true" [value]="this.resp_65" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_67" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Conformidad Control Certificación Calidad
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>Se genera vista técnica por garantía</ion-label>
-          <ion-input readonly="true" [value]="this.resp_66" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_68" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>Se realiza reparación menor</ion-label>
-          <ion-input readonly="true" [value]="this.resp_67" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_69" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>No es necesario reparación</ion-label>
-          <ion-input readonly="true" [value]="this.resp_68" text-right type="text"></ion-input>
+          <ion-label text-wrap>Reutiliza Instalación</ion-label>
+          <ion-input readonly="true" [value]="this.resp_70" text-right type="text"></ion-input>
         </ion-item>
         <ion-list-header color="primary">
           Consumo de Materiales
         </ion-list-header>
         <ion-item>
           <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión</ion-label>
-          <ion-input readonly="true" [value]="this.resp_69" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_70" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
           <ion-input readonly="true" [value]="this.resp_71" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
+          <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
           <ion-input readonly="true" [value]="this.resp_72" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
+          <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
           <ion-input readonly="true" [value]="this.resp_73" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
+          <ion-input readonly="true" [value]="this.resp_74" text-right type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
+          <ion-input readonly="true" [value]="this.resp_75" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>1004174 - splitter 3 vías</ion-label>
-          <ion-input readonly="true" [value]="this.resp_74" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004171 - Amarra cables nylon 4,8 x 15,6</ion-label>
-          <ion-input readonly="true" [value]="this.resp_75" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004167 - Gomas para Taps</ion-label>
-          <ion-input readonly="true" [value]="this.resp_76" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004179 - Grampa RG-6 blancas</ion-label>
-          <ion-input readonly="true" [value]="this.resp_77" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
-          <ion-input readonly="true" [value]="this.resp_78" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004812 - Bloqueador de voltaje</ion-label>
-          <ion-input readonly="true" [value]="this.resp_79" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004183 - Atenuador Fam 3</ion-label>
-          <ion-input readonly="true" [value]="this.resp_80" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004184 - Atenuador Fam 6</ion-label>
-          <ion-input readonly="true" [value]="this.resp_81" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004185 - Atenuador Fam 8</ion-label>
-          <ion-input readonly="true" [value]="this.resp_82" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004186 - Atenuador Fam 10</ion-label>
-          <ion-input readonly="true" [value]="this.resp_83" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004173 - Splitter 2 vías (4dB)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_84" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1003508 - Conector RJ-45</ion-label>
-          <ion-input readonly="true" [value]="this.resp_85" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1003507 - Conector RJ-11</ion-label>
-          <ion-input readonly="true" [value]="this.resp_86" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004270 - Ficha abonado (marca acometida) rojo</ion-label>
-          <ion-input readonly="true" [value]="this.resp_87" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1003553 - Roseta telefónica RJ-11</ion-label>
-          <ion-input readonly="true" [value]="this.resp_88" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004181 - Conectores ground block</ion-label>
-          <ion-input readonly="true" [value]="this.resp_89" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004518 - Control remoto caja digital</ion-label>
-          <ion-input readonly="true" [value]="this.resp_90" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1008608 - Cable teléfono plano 4 conductores</ion-label>
-          <ion-input readonly="true" [value]="this.resp_91" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004409 - Pilas alcalinas AAA</ion-label>
-          <ion-input readonly="true" [value]="this.resp_92" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004526 - Cable video componente 3 conexiones</ion-label>
-          <ion-input readonly="true" [value]="this.resp_93" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004836 - Cable HDMI</ion-label>
-          <ion-input readonly="true" [value]="this.resp_94" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004233 - Cable audio video RCA</ion-label>
-          <ion-input readonly="true" [value]="this.resp_95" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004176 - Acopladores direccional interior 1 vía 6dB</ion-label>
-          <ion-input readonly="true" [value]="this.resp_96" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004288 - LNB</ion-label>
-          <ion-input readonly="true" [value]="this.resp_97" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1008635 - Cable coaxial blanco</ion-label>
-          <ion-input readonly="true" [value]="this.resp_98" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004311 - Conectores</ion-label>
-          <ion-input readonly="true" [value]="this.resp_99" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004672 - LNB dual</ion-label>
-          <ion-input readonly="true" [value]="this.resp_100" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004191 - LNB quad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_101" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004648 - Spliter</ion-label>
-          <ion-input readonly="true" [value]="this.resp_102" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cable Negro</ion-label>
-          <ion-input readonly="true" [value]="this.resp_103" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cable Blanco</ion-label>
-          <ion-input readonly="true" [value]="this.resp_104" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Conectores</ion-label>
-          <ion-input readonly="true" [value]="this.resp_105" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Grampas</ion-label>
-          <ion-input readonly="true" [value]="this.resp_106" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Splitter</ion-label>
-          <ion-input readonly="true" [value]="this.resp_107" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>DCs</ion-label>
-          <ion-input readonly="true" [value]="this.resp_108" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Código de Barra
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Código Decodificador</ion-label>
-          <a ion-button item-end color="primary" *ngIf="this.cod_decodificador === ''">N/A</a>
-          <div ion-button item-end color="primary" *ngIf="this.cod_decodificador !== ''">{{cod_decodificador}}</div>
-        </ion-item>
-      </ion-list>
-    </form>
-
-    <!-- formulario de instalacion dth -->
-    <form *ngIf="this.mostrarFormInstalacionesDth">
-      <ion-list>
-        <ion-item>
-          <ion-label text-wrap>OT CLARO</ion-label>
-          <ion-input readonly="true" [value]="this.ot_servicorp" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>FOLIO DE SERVICIO</ion-label>
-          <ion-input readonly="true" [value]="this.folio_servicio" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Atención Cliente - Respuestas Cliente
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Técnico se identificó con credencial, nombre, apellido</ion-label>
-          <ion-input readonly="true" [value]="this.resp_1" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Vestían uniforme y correctamente ordenados</ion-label>
-          <ion-input readonly="true" [value]="this.resp_2" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Explicaron el detalle del trabajo antes de comenzar</ion-label>
-          <ion-input readonly="true" [value]="this.resp_3" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Respondieron sus dudas durante la actividad ejecutada</ion-label>
-          <ion-input readonly="true" [value]="this.resp_4" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Efectuaron capacitación del uso de los equipos</ion-label>
-          <ion-input readonly="true" [value]="this.resp_5" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_6" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Dejaron el lugar limpio al concluir la actividad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_7" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_8" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Entrega clave de acceso wifi y personalizada a cliente</ion-label>
-          <ion-input readonly="true" [value]="this.resp_9" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Capacitó en el uso de control remoto del decodificador</ion-label>
-          <ion-input readonly="true" [value]="this.resp_10" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Instalación Exterior - Revisión Control Calidad
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Fijación de antena (4 pernos)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_11" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Conector LNB protegido</ion-label>
-          <ion-input readonly="true" [value]="this.resp_12" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Antena debidamente firma (Sin movimientos)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_13" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Altura acometida en norma (4,5 Mts)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_14" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>La acometida es nueva (no reutilizada)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_15" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Ficha de abonado en TAP rotulada correctamente</ion-label>
-          <ion-input readonly="true" [value]="this.resp_16" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Loop de mantención</ion-label>
-          <ion-input readonly="true" [value]="this.resp_17" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Ruteo y cableado correcto (40 cms distancia entre grampas)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_18" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Fijacion de splitters</ion-label>
-          <ion-input readonly="true" [value]="this.resp_19" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tiene pasamuros exterior</ion-label>
-          <ion-input readonly="true" [value]="this.resp_20" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tiene loop de goteo bota agua</ion-label>
-          <ion-input readonly="true" [value]="this.resp_21" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Instalación Interior - Revisión Control Calidad
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Los nivelesestán dentro del rango</ion-label>
-          <ion-input readonly="true" [value]="this.resp_22" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Ruteo y grampeado correctos (40 cms distancia entre grampas)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_23" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Curva de cableado mayor o igual a 90 grados</ion-label>
-          <ion-input readonly="true" [value]="this.resp_24" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Conector armado y prensado correctamente</ion-label>
-          <ion-input readonly="true" [value]="this.resp_25" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Uso conector decompresión Claro</ion-label>
-          <ion-input readonly="true" [value]="this.resp_26" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cable PIN es nuevo</ion-label>
-          <ion-input readonly="true" [value]="this.resp_27" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Conectores correctamente torqueados</ion-label>
-          <ion-input readonly="true" [value]="this.resp_28" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tiene filtro HUM en instalación de TV</ion-label>
-          <ion-input readonly="true" [value]="this.resp_29" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Tiene cable HDMI en decodificador y TV HD</ion-label>
-          <ion-input readonly="true" [value]="this.resp_30" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Deja equipo modo nat (CM-Emta)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_31" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Certifica / cambia canal de tranasmisión de wifi</ion-label>
-          <ion-input readonly="true" [value]="this.resp_32" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Informó número telefónico asignado</ion-label>
-          <ion-input readonly="true" [value]="this.resp_33" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Revisión de Equipos
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Dirección correcta</ion-label>
-          <ion-input readonly="true" [value]="this.resp_34" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Técnico visitó domicilio</ion-label>
-          <ion-input readonly="true" [value]="this.resp_35" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>HFC/DTH</ion-label>
-          <ion-input readonly="true" [value]="this.resp_36" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Decos Std</ion-label>
-          <ion-input readonly="true" [value]="this.resp_37" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Decos HD</ion-label>
-          <ion-input readonly="true" [value]="this.resp_38" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Cantidad de equipos corresponde a contrato</ion-label>
-          <ion-input readonly="true" [value]="this.resp_39" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Niveles DTH
-        </ion-list-header>
-        <ion-list-header text-center color="grey">
-          Decodificador Principal
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_40" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_41" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_42" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_43" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_44" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_45" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header text-center color="grey">
-          Decodificador Segundo
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_46" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_47" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_48" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_49" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_50" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_51" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header text-center color="grey">
-          Decodificador Tercero
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_52" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_53" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_54" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_55" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_56" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_57" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header text-center color="grey">
-          Decodificador HD
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_58" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_59" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_60" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-          <ion-input readonly="true" [value]="this.resp_61" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-          <ion-input readonly="true" [value]="this.resp_62" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-          <ion-input readonly="true" [value]="this.resp_63" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Niveles HFC
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>TX</ion-label>
-          <ion-input readonly="true" [value]="this.resp_64" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>RX</ion-label>
-          <ion-input readonly="true" [value]="this.resp_65" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>SNR</ion-label>
-          <ion-input readonly="true" [value]="this.resp_66" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Observaciones
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Observaciones</ion-label>
-          <ion-input readonly="true" [value]="this.resp_67" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Conformidad Control Certificación Calidad
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>Se genera vista técnica por garantía</ion-label>
-          <ion-input readonly="true" [value]="this.resp_68" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Se realiza reparación menor</ion-label>
-          <ion-input readonly="true" [value]="this.resp_69" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>Reutilizada instalación</ion-label>
-          <ion-input readonly="true" [value]="this.resp_70" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-list-header color="primary">
-          Consumo de Materiales
-        </ion-list-header>
-        <ion-item>
-          <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión</ion-label>
-          <ion-input readonly="true" [value]="this.resp_71" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_72" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
-          <ion-input readonly="true" [value]="this.resp_73" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
-          <ion-input readonly="true" [value]="this.resp_74" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
-          <ion-input readonly="true" [value]="this.resp_75" text-right type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label text-wrap>1004174 - Spliter 3 vías</ion-label>
           <ion-input readonly="true" [value]="this.resp_76" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -882,7 +390,7 @@
           <ion-input readonly="true" [value]="this.resp_79" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
+          <ion-label text-wrap>1004180 - Grampa RG-6 negras</ion-label>
           <ion-input readonly="true" [value]="this.resp_80" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -1016,8 +524,8 @@
       </ion-list>
     </form>
 
-    <!-- formulario de matencion hfc -->
-    <form *ngIf="this.mostrarFormMantencionesHfc">
+    <!-- formulario de matencion -->
+    <form *ngIf="this.mostrarFormMantenciones">
       <ion-list>
         <ion-item>
           <ion-label text-wrap>OT CLARO</ion-label>
@@ -1055,7 +563,8 @@
           <ion-input readonly="true" [value]="this.resp_6" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad</ion-label>
+          <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente, al término de la actividad
+          </ion-label>
           <ion-input readonly="true" [value]="this.resp_7" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -1375,7 +884,7 @@
           <ion-input readonly="true" [value]="this.resp_77" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
+          <ion-label text-wrap>1004180 - Grampa RG-6 negras</ion-label>
           <ion-input readonly="true" [value]="this.resp_78" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -1509,499 +1018,6 @@
       </ion-list>
     </form>
 
-    <!-- formulario de matencion dth -->
-    <form *ngIf="this.mostrarFormMantencionesDth">
-        <ion-list>
-          <ion-item>
-            <ion-label text-wrap>OT CLARO</ion-label>
-            <ion-input readonly="true" [value]="this.ot_servicorp" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>FOLIO DE SERVICIO</ion-label>
-            <ion-input readonly="true" [value]="this.folio_servicio" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Atención Cliente - Respuestas Cliente
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Técnico se identificó con credencial, nombre, apellido</ion-label>
-            <ion-input readonly="true" [value]="this.resp_1" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Vestían uniforme y correctamente ordenados</ion-label>
-            <ion-input readonly="true" [value]="this.resp_2" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Explicaron el detalle del trabajo antes de comenzar</ion-label>
-            <ion-input readonly="true" [value]="this.resp_3" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Respondieron sus dudas durante la actividad ejecutada</ion-label>
-            <ion-input readonly="true" [value]="this.resp_4" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Dejaron copia de orden de trabajo</ion-label>
-            <ion-input readonly="true" [value]="this.resp_5" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Efectuaron capacitación del uso de los equipos</ion-label>
-            <ion-input readonly="true" [value]="this.resp_6" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Explica importancia de instalar o reemplazar el cableado por uno nuevo</ion-label>
-            <ion-input readonly="true" [value]="this.resp_7" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Explica como conectarse a la red WIFI</ion-label>
-            <ion-input readonly="true" [value]="this.resp_8" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico explicó no desenchufar equipos de electricidad (Decos-C.M.EMTA)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_9" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Quedaron todos los servicios funcionando correctamente al término de la actividad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_10" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Dejaron el lugar limpio al concluir la actividad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_11" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Entraga clave de acceso WIFI y personalizada a cliente</ion-label>
-            <ion-input readonly="true" [value]="this.resp_12" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Instalación Exterior - Revisión Control Calidad
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Fijación de antena con (4 pernos)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_13" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico deja antena debidamente firme (Sin movimiento)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_14" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico cambia acometida dañada</ion-label>
-            <ion-input readonly="true" [value]="this.resp_15" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia ground block</ion-label>
-            <ion-input readonly="true" [value]="this.resp_16" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico fija splitter</ion-label>
-            <ion-input readonly="true" [value]="this.resp_17" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico instala bloqueador de voltaje (Filtro HUM)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_18" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia conectores</ion-label>
-            <ion-input readonly="true" [value]="this.resp_19" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico deja conectores correctamente torqueados</ion-label>
-            <ion-input readonly="true" [value]="this.resp_20" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Instalación Interior - Revisión Control Calidad
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia cableado interior</ion-label>
-            <ion-input readonly="true" [value]="this.resp_21" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia conectores</ion-label>
-            <ion-input readonly="true" [value]="this.resp_22" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia cable PIN</ion-label>
-            <ion-input readonly="true" [value]="this.resp_23" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia roseta telefónica</ion-label>
-            <ion-input readonly="true" [value]="this.resp_24" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia equipo telefónico</ion-label>
-            <ion-input readonly="true" [value]="this.resp_25" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico deja conectores correctamente torqueados</ion-label>
-            <ion-input readonly="true" [value]="this.resp_26" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia decodificador/Cmo MTA</ion-label>
-            <ion-input readonly="true" [value]="this.resp_27" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia canal de transmisión WIFI</ion-label>
-            <ion-input readonly="true" [value]="this.resp_28" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica niveles operaciones (CM-MTA-DECO)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_29" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia control remoto</ion-label>
-            <ion-input readonly="true" [value]="this.resp_30" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico certifica o cambia pasivos splitter-dc</ion-label>
-            <ion-input readonly="true" [value]="this.resp_31" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Revisión de Equipos
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Dirección correcta</ion-label>
-            <ion-input readonly="true" [value]="this.resp_32" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Técnico visitó domicilio</ion-label>
-            <ion-input readonly="true" [value]="this.resp_33" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>HFC/DTH</ion-label>
-            <ion-input readonly="true" [value]="this.resp_34" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Decos Std</ion-label>
-            <ion-input readonly="true" [value]="this.resp_35" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Decos HD</ion-label>
-            <ion-input readonly="true" [value]="this.resp_36" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Cantidad de equipos corresponde a contrato</ion-label>
-            <ion-input readonly="true" [value]="this.resp_37" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Niveles DTH
-          </ion-list-header>
-          <ion-list-header text-center color="grey">
-            Decodificador Principal
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_38" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_39" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_40" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_41" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_42" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_43" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header text-center color="grey">
-            Decodificador Segundo
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_44" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_45" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_46" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_47" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_48" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_49" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header text-center color="grey">
-            Decodificador Tercero
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_50" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_51" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_52" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_53" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_54" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_55" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header text-center color="grey">
-            Decodificador HD
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_56" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_57" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12092) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_58" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Señal</ion-label>
-            <ion-input readonly="true" [value]="this.resp_59" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) N. Calidad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_60" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1 TP (12172) C/N</ion-label>
-            <ion-input readonly="true" [value]="this.resp_61" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Niveles HFC
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>TX</ion-label>
-            <ion-input readonly="true" [value]="this.resp_62" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>RX</ion-label>
-            <ion-input readonly="true" [value]="this.resp_63" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>SNR</ion-label>
-            <ion-input readonly="true" [value]="this.resp_64" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Observaciones
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Observaciones</ion-label>
-            <ion-input readonly="true" [value]="this.resp_65" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Conformidad Control Certificación Calidad
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Se genera vista técnica por garantía</ion-label>
-            <ion-input readonly="true" [value]="this.resp_66" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Se realiza reparación menor</ion-label>
-            <ion-input readonly="true" [value]="this.resp_67" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Reutilizada instalación</ion-label>
-            <ion-input readonly="true" [value]="this.resp_68" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Consumo de Materiales
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>1004311 - Conectores RG-06 F a compresión</ion-label>
-            <ion-input readonly="true" [value]="this.resp_69" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1008635 - Cable coaxial doble malla RG-6 blanco sin mensajero (indoor)(1)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_70" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004177 - Acopladores direccional interior 1 vía 9dB</ion-label>
-            <ion-input readonly="true" [value]="this.resp_71" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004178 - Acopladores direccional interior 1 vía 12dB</ion-label>
-            <ion-input readonly="true" [value]="this.resp_72" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004271 - Grampa blanca Telefónica Nº 7 (pin interior)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_73" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004174 - Spliter 3 vías</ion-label>
-            <ion-input readonly="true" [value]="this.resp_74" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004171 - Amarra cables nylon 4,8 x 15,6</ion-label>
-            <ion-input readonly="true" [value]="this.resp_75" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004167 - Gomas para Taps</ion-label>
-            <ion-input readonly="true" [value]="this.resp_76" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004179 - Grampa RG-6 blancas</ion-label>
-            <ion-input readonly="true" [value]="this.resp_77" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
-            <ion-input readonly="true" [value]="this.resp_78" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004812 - Bloqueador de voltaje</ion-label>
-            <ion-input readonly="true" [value]="this.resp_79" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004183 - Atenuador Fam 3</ion-label>
-            <ion-input readonly="true" [value]="this.resp_80" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004184 - Atenuador Fam 6</ion-label>
-            <ion-input readonly="true" [value]="this.resp_81" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004185 - Atenuador Fam 8</ion-label>
-            <ion-input readonly="true" [value]="this.resp_82" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004186 - Atenuador Fam 10</ion-label>
-            <ion-input readonly="true" [value]="this.resp_83" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004173 - Splitter 2 vías (4dB)</ion-label>
-            <ion-input readonly="true" [value]="this.resp_84" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1003508 - Conector RJ-45</ion-label>
-            <ion-input readonly="true" [value]="this.resp_85" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1003507 - Conector RJ-11</ion-label>
-            <ion-input readonly="true" [value]="this.resp_86" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004270 - Ficha abonado (marca acometida) rojo</ion-label>
-            <ion-input readonly="true" [value]="this.resp_87" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1003553 - Roseta telefónica RJ-11</ion-label>
-            <ion-input readonly="true" [value]="this.resp_88" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004181 - Conectores ground block</ion-label>
-            <ion-input readonly="true" [value]="this.resp_89" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004518 - Control remoto caja digital</ion-label>
-            <ion-input readonly="true" [value]="this.resp_90" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1008608 - Cable teléfono plano 4 conductores</ion-label>
-            <ion-input readonly="true" [value]="this.resp_91" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004409 - Pilas alcalinas AAA</ion-label>
-            <ion-input readonly="true" [value]="this.resp_92" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004526 - Cable video componente 3 conexiones</ion-label>
-            <ion-input readonly="true" [value]="this.resp_93" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004836 - Cable HDMI</ion-label>
-            <ion-input readonly="true" [value]="this.resp_94" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004233 - Cable audio video RCA</ion-label>
-            <ion-input readonly="true" [value]="this.resp_95" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004176 - Acopladores direccional interior 1 vía 6dB</ion-label>
-            <ion-input readonly="true" [value]="this.resp_96" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004288 - LNB</ion-label>
-            <ion-input readonly="true" [value]="this.resp_97" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1008635 - Cable coaxial blanco</ion-label>
-            <ion-input readonly="true" [value]="this.resp_98" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004311 - Conectores</ion-label>
-            <ion-input readonly="true" [value]="this.resp_99" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004672 - LNB dual</ion-label>
-            <ion-input readonly="true" [value]="this.resp_100" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004191 - LNB quad</ion-label>
-            <ion-input readonly="true" [value]="this.resp_101" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>1004648 - Splitter</ion-label>
-            <ion-input readonly="true" [value]="this.resp_102" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Cable Negro</ion-label>
-            <ion-input readonly="true" [value]="this.resp_103" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Cable Blanco</ion-label>
-            <ion-input readonly="true" [value]="this.resp_104" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Conectores</ion-label>
-            <ion-input readonly="true" [value]="this.resp_105" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Grampas</ion-label>
-            <ion-input readonly="true" [value]="this.resp_106" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>Splitter</ion-label>
-            <ion-input readonly="true" [value]="this.resp_107" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label text-wrap>DCs</ion-label>
-            <ion-input readonly="true" [value]="this.resp_108" text-right type="text"></ion-input>
-          </ion-item>
-          <ion-list-header color="primary">
-            Código de Barra
-          </ion-list-header>
-          <ion-item>
-            <ion-label text-wrap>Código Decodificador</ion-label>
-            <a ion-button item-end color="primary" *ngIf="this.cod_decodificador === ''">N/A</a>
-            <div ion-button item-end color="primary" *ngIf="this.cod_decodificador !== ''">{{cod_decodificador}}</div>
-          </ion-item>
-        </ion-list>
-    </form>
-
     <!-- formulario de desconexión -->
     <form *ngIf="this.mostrarFormDesconexion">
       <ion-list>
@@ -2126,7 +1142,8 @@
           <ion-input readonly="true" [value]="this.resp_15" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma</ion-label>
+          <ion-label text-wrap>En las esquinas de muros los ángulos de los cables (ángulo de curvatura) está según norma
+          </ion-label>
           <ion-input readonly="true" [value]="this.resp_16" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
@@ -2373,7 +1390,7 @@
         </ion-item>
         <ion-item>
           <ion-label text-wrap>Utiliza material con autorización cliente</ion-label>
-            <ion-input readonly="true" [value]="this.resp_73" text-right type="text"></ion-input>
+          <ion-input readonly="true" [value]="this.resp_73" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label text-wrap>Se realiza reparación menor</ion-label>
@@ -2657,7 +1674,8 @@
           <ion-input readonly="true" [value]="this.resp_16" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label text-wrap>En las esquinas de los ángulos de los cables (ángulo de curvatura) ¿Está según norma? *</ion-label>
+          <ion-label text-wrap>En las esquinas de los ángulos de los cables (ángulo de curvatura) ¿Está según norma? *
+          </ion-label>
           <ion-input readonly="true" [value]="this.resp_17" text-right type="text"></ion-input>
         </ion-item>
         <ion-item>

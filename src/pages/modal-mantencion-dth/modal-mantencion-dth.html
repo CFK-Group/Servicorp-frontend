@@ -161,7 +161,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_17 === null}">
-        <ion-label text-wrap>Técnico Fija Spliter *</ion-label>
+        <ion-label text-wrap>Técnico Fija Splitter *</ion-label>
         <ion-select formControlName="resp_17" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -218,7 +218,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>Técnico Certifica o Cambia Roseta telefonica</ion-label>
+        <ion-label text-wrap>Técnico Certifica o Cambia Roseta telefónica</ion-label>
         <ion-select formControlName="resp_24" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -226,7 +226,7 @@
         </ion-select>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>Técnico Certifica o Cambia Equipo telefonico</ion-label>
+        <ion-label text-wrap>Técnico Certifica o Cambia Equipo telefónico</ion-label>
         <ion-select formControlName="resp_25" interface="popover">
           <!-- <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option> -->
@@ -241,32 +241,17 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Cable PIN es Nuevo</ion-label>
+      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_27 === null}">
+        <ion-label text-wrap>Técnico Certifica o Cambia Decodificador/Cmo MTA *</ion-label>
         <ion-select formControlName="resp_27" interface="popover">
-          <!-- <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option> -->
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_28 === null}">
-        <ion-label text-wrap>Conectores correctamente torqueados *</ion-label>
-        <ion-select formControlName="resp_28" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_29 === null}">
-        <ion-label text-wrap>Técnico Certifica o Cambia Decodificador/Cmo MTA *</ion-label>
-        <ion-select formControlName="resp_29" interface="popover">
-          <ion-option value="Si">Si</ion-option>
-          <ion-option value="No">No</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
         <ion-label text-wrap>Técnico Certifica o Cambia canal de transmision de Wifi</ion-label>
-        <ion-select formControlName="resp_30" interface="popover">
+        <ion-select formControlName="resp_28" interface="popover">
           <!-- <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option> -->
           <ion-option value="N/A">N/A</ion-option>
@@ -306,7 +291,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_35 === null}">
-        <ion-label text-wrap>Técnico Visito Domicilio *</ion-label>
+        <ion-label text-wrap>Técnico Visitó Domicilio *</ion-label>
         <ion-select formControlName="resp_35" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -497,7 +482,7 @@
         </ion-select>
       </ion-item>
       <ion-item [ngClass]="{'invalid': mantencionesDth.value.resp_70 === null}">
-        <ion-label text-wrap>Reutilizada instalación *</ion-label>
+        <ion-label text-wrap>Reutiliza instalación *</ion-label>
         <ion-select formControlName="resp_70" interface="popover">
           <ion-option value="Si">Si</ion-option>
           <ion-option value="No">No</ion-option>
@@ -543,7 +528,7 @@
         <ion-input formControlName="resp_79" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap>1004180 - Grampa RG-6 negra</ion-label>
+        <ion-label text-wrap>1004180 - Grampa RG-6 negras</ion-label>
         <ion-input formControlName="resp_80" text-right type="number"></ion-input>
       </ion-item>
       <ion-item>

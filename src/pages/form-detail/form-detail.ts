@@ -20,14 +20,10 @@ export class FormDetailPage {
   formulario = []
   imagenes = []
   tipoFormulario: string
-  instalacionesHfcForm: FormGroup
-  mostrarFormInstalacionesHfc: boolean = false
-  instalacionesDthForm: FormGroup
-  mostrarFormInstalacionesDth: boolean = false
-  mantencionesHfcForm: FormGroup
-  mostrarFormMantencionesHfc: boolean = false
-  mantencionesDthForm: FormGroup
-  mostrarFormMantencionesDth: boolean = false
+  instalacionesForm: FormGroup
+  mostrarFormInstalaciones: boolean = false
+  mantencionesForm: FormGroup
+  mostrarFormMantenciones: boolean = false
   desconexionForm: FormGroup
   mostrarFormDesconexion: boolean = false
   instalacionesDthEntelForm: FormGroup
@@ -201,16 +197,16 @@ export class FormDetailPage {
       let promise = new Promise((resolve, reject) => {
         switch(this.navParams.get('formData').tipo_formulario_id){
           case 1:
-            this.mostrarFormInstalacionesHfc = true
+            this.mostrarFormInstalaciones = true
           break
           case 2:
-            this.mostrarFormInstalacionesDth = true
+            this.mostrarFormInstalaciones = true
           break
           case 3:
-            this.mostrarFormMantencionesHfc = true
+            this.mostrarFormMantenciones = true
           break
           case 4:
-            this.mostrarFormMantencionesDth = true
+            this.mostrarFormMantenciones = true
           break
           case 5:
             this.mostrarFormDesconexion = true
@@ -341,7 +337,9 @@ export class FormDetailPage {
           this.resp_106 = this.formulario[107].respuesta
           this.resp_107 = this.formulario[108].respuesta
           this.resp_108 = this.formulario[109].respuesta
-          this.cod_decodificador = this.formulario[110].respuesta
+          this.resp_109 = this.formulario[110].respuesta
+          this.resp_110 = this.formulario[111].respuesta
+          this.cod_decodificador = this.formulario[112].respuesta
         }else if(this.tipoFormulario == 'desconexion'){
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
