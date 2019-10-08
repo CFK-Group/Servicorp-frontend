@@ -40,9 +40,9 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.controls['resp_23'].disable()
     this.mantencionesDth.controls['resp_25'].disable()
     this.mantencionesDth.controls['resp_28'].disable()
-    this.mantencionesDth.controls['resp_62'].disable()
-    this.mantencionesDth.controls['resp_63'].disable()
     this.mantencionesDth.controls['resp_64'].disable()
+    this.mantencionesDth.controls['resp_65'].disable()
+    this.mantencionesDth.controls['resp_66'].disable()
   }
 
   ionViewCanLeave() {
@@ -252,9 +252,9 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.controls['resp_23'].enable()
     this.mantencionesDth.controls['resp_25'].enable()
     this.mantencionesDth.controls['resp_28'].enable()
-    this.mantencionesDth.controls['resp_62'].enable()
-    this.mantencionesDth.controls['resp_63'].enable()
     this.mantencionesDth.controls['resp_64'].enable()
+    this.mantencionesDth.controls['resp_65'].enable()
+    this.mantencionesDth.controls['resp_66'].enable()
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
