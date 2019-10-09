@@ -183,8 +183,8 @@ export class ModalInstalacionesHfcPage {
       resp_106: [null, Validators.required],
       resp_107: [null, Validators.required],
       resp_108: [null, Validators.required],
-      resp_109: [null],
-      resp_110: [null],
+      resp_109: [null, Validators.required],
+      resp_110: [null, Validators.required],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
@@ -248,6 +248,7 @@ export class ModalInstalacionesHfcPage {
           .catch(error => {
             console.log('Falla de comunicacion con el GPS')
             console.log('Error:', error)
+            console.table(this.instalacionesHfc.value)
             this.loading.dismiss()
             const alert = this.alertCtrl.create({
               title: 'Error',
