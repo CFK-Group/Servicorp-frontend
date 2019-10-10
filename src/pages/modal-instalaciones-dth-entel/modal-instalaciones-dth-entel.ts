@@ -206,6 +206,7 @@ export class ModalInstalacionesDthEntelPage {
   }
 
   enviarFormulario() {
+    console.log(this.instalacionesDth.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')

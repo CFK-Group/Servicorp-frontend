@@ -38,6 +38,7 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.controls['resp_16'].disable()
     this.mantencionesDth.controls['resp_18'].disable()
     this.mantencionesDth.controls['resp_23'].disable()
+    this.mantencionesDth.controls['resp_24'].disable()
     this.mantencionesDth.controls['resp_25'].disable()
     this.mantencionesDth.controls['resp_28'].disable()
     this.mantencionesDth.controls['resp_64'].disable()
@@ -82,7 +83,7 @@ export class ModalMantencionDthPage {
       resp_21: [null, Validators.required],
       resp_22: [null, Validators.required],
       resp_23: ['N/A'],
-      resp_24: [null],
+      resp_24: ['N/A'],
       resp_25: ['N/A'],
       resp_26: [null, Validators.required],
       resp_27: [null, Validators.required],
@@ -248,11 +249,14 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.controls['resp_16'].enable()
     this.mantencionesDth.controls['resp_18'].enable()
     this.mantencionesDth.controls['resp_23'].enable()
+    this.mantencionesDth.controls['resp_24'].enable()
     this.mantencionesDth.controls['resp_25'].enable()
     this.mantencionesDth.controls['resp_28'].enable()
     this.mantencionesDth.controls['resp_64'].enable()
     this.mantencionesDth.controls['resp_65'].enable()
     this.mantencionesDth.controls['resp_66'].enable()
+    console.log(this.mantencionesDth.value)
+    
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')

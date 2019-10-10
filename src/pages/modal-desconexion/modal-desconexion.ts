@@ -148,6 +148,7 @@ export class ModalDesconexionPage {
   }
 
   enviarFormulario() {
+    console.log(this.desconexionForm.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')

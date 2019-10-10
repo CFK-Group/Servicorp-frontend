@@ -152,6 +152,7 @@ export class ModalBafiEntelPage {
   }
 
   enviarFormulario() {
+    console.log(this.bafiForm.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')

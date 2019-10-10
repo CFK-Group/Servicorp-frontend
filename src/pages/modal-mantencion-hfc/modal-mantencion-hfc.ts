@@ -283,6 +283,7 @@ export class ModalMantencionHfcPage {
     this.mantencionesHfc.controls['resp_59'].enable()
     this.mantencionesHfc.controls['resp_60'].enable()
     this.mantencionesHfc.controls['resp_61'].enable()
+    console.log(this.mantencionesHfc.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
