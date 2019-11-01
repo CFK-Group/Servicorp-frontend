@@ -248,7 +248,6 @@ export class ModalInstalacionesHfcPage {
           .catch(error => {
             console.log('Falla de comunicacion con el GPS')
             console.log('Error:', error)
-            console.table(this.instalacionesHfc.value)
             this.loading.dismiss()
             const alert = this.alertCtrl.create({
               title: 'Error',
@@ -289,7 +288,6 @@ export class ModalInstalacionesHfcPage {
     this.instalacionesHfc.controls['resp_59'].enable()
     this.instalacionesHfc.controls['resp_60'].enable()
     this.instalacionesHfc.controls['resp_61'].enable()
-    console.log(this.instalacionesHfc.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')

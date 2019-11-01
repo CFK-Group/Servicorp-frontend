@@ -84,8 +84,8 @@
           <ion-option value="N/A">N/A</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label text-wrap>Observaciones</ion-label>
+      <ion-item [ngClass]="{'invalid': desconexionForm.value.resp_8 === null}">
+        <ion-label text-wrap>Observaciones *</ion-label>
         <ion-input formControlName="resp_8" text-right type="text"></ion-input>
       </ion-item>
     </ion-list>

@@ -47,7 +47,7 @@ export class ModalDesconexionPage {
       resp_5: [null, Validators.required],
       resp_6: [null, Validators.required],
       resp_7: [null, Validators.required],
-      resp_8: [null],
+      resp_8: [null, Validators.required],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],

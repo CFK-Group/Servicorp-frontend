@@ -232,6 +232,7 @@ export class ModalMantencionDthPage {
             console.log('Falla de comunicacion con el GPS')
             console.log('Error:', error)
             this.loading.dismiss()
+            console.table(this.mantencionesDth.value)
             const alert = this.alertCtrl.create({
               title: 'Error',
               subTitle: JSON.stringify(error),
@@ -255,7 +256,6 @@ export class ModalMantencionDthPage {
     this.mantencionesDth.controls['resp_64'].enable()
     this.mantencionesDth.controls['resp_65'].enable()
     this.mantencionesDth.controls['resp_66'].enable()
-    console.log(this.mantencionesDth.value)
     
     let date =  new Date()
     if (this.images.length > 0) {
