@@ -10,6 +10,7 @@ import { LoginPage } from "../../pages/login/login"
 import { BafiEntelPage } from "../../pages/bafi-entel/bafi-entel"
 import { DuoEntelPage } from "../../pages/duo-entel/duo-entel"
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FibraEntelPage } from '../fibra-entel/fibra-entel'
 
 /**
  * Generated class for the CategoriasPage page.
@@ -74,6 +75,10 @@ export class CategoriasPage {
 
   goToDuoEntel(){
     this.navCtrl.push(DuoEntelPage)
+  }
+
+  goToFibraEntel(){
+    this.navCtrl.push(FibraEntelPage)
   }
 
   logout(){

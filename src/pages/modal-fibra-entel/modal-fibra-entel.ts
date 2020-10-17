@@ -8,9 +8,13 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery'
 import { DomSanitizer } from '@angular/platform-browser'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Diagnostic } from '@ionic-native/diagnostic'
+import { Pregunta } from '../../models/preguntas.interface'
+import { Observable } from 'rxjs'
+import { PreguntasProvider } from '../../providers/preguntas/preguntas'
+import { tap } from 'rxjs/operators'
 
 /**
- * Generated class for the ModalDesconexionPage page.
+ * Generated class for the ModalFibraEntelPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -18,21 +22,36 @@ import { Diagnostic } from '@ionic-native/diagnostic'
 
 @IonicPage()
 @Component({
-  selector: 'page-modal-desconexion',
-  templateUrl: 'modal-desconexion.html',
+  selector: 'page-modal-fibra-entel',
+  templateUrl: 'modal-fibra-entel.html',
 })
-export class ModalDesconexionPage {
-  desconexionForm: FormGroup
+export class ModalFibraEntelPage {
+
+  fibraEntelForm: FormGroup
 
   image: string = null
   images = []
   loading
+  cod_decodificador = ''
+  preguntas$: Observable<Pregunta[]>
 
-  constructor(private diagnostic: Diagnostic, private geolocation: Geolocation, public DomSanitizer: DomSanitizer, private base64ToGallery: Base64ToGallery, private camera: Camera, public alertCtrl: AlertController, private api: ApiServiceProvider, public loadingCtrl: LoadingController, public formBuilder: FormBuilder, private view: ViewController) {
-    this.desconexionForm = this.createDesconexionForm()
+  constructor(
+    private diagnostic: Diagnostic,
+    private geolocation: Geolocation,
+    public DomSanitizer: DomSanitizer,
+    private base64ToGallery: Base64ToGallery,
+    private camera: Camera,
+    public alertCtrl: AlertController,
+    private api: ApiServiceProvider,
+    public loadingCtrl: LoadingController,
+    public formBuilder: FormBuilder,
+    private view: ViewController,
+    private preguntas: PreguntasProvider
+  ) {
+    this.fibraEntelForm = this.createFibraEntelForm()
   }
 
-  private createDesconexionForm() {
+  private createFibraEntelForm() {
     return this.formBuilder.group({
       latitud: 0,
       longitud: 0,
@@ -48,6 +67,57 @@ export class ModalDesconexionPage {
       resp_6: [null, Validators.required],
       resp_7: [null, Validators.required],
       resp_8: [null, Validators.required],
+      resp_9: [null, Validators.required],
+      resp_10: [null, Validators.required],
+      resp_11: [null, Validators.required],
+      resp_12: [null, Validators.required],
+      resp_13: [null, Validators.required],
+      resp_14: [null, Validators.required],
+      resp_15: [null, Validators.required],
+      resp_16: [null, Validators.required],
+      resp_17: [null, Validators.required],
+      resp_18: [null, Validators.required],
+      resp_19: [null, Validators.required],
+      resp_20: [null, Validators.required],
+      resp_21: [null, Validators.required],
+      resp_22: [null, Validators.required],
+      resp_23: [null, Validators.required],
+      resp_24: [null, Validators.required],
+      resp_25: [null, Validators.required],
+      resp_26: [null, Validators.required],
+      resp_27: [null, Validators.required],
+      resp_28: [null, Validators.required],
+      resp_29: [null, Validators.required],
+      resp_30: [null, Validators.required],
+      resp_31: [null, Validators.required],
+      resp_32: [null, Validators.required],
+      resp_33: [null, Validators.required],
+      resp_34: [null, Validators.required],
+      resp_35: [null, Validators.required],
+      resp_36: [null, Validators.required],
+      resp_37: [null, Validators.required],
+      resp_38: [null, Validators.required],
+      resp_39: [null, Validators.required],
+      resp_40: [null, Validators.required],
+      resp_41: [null, Validators.required],
+      resp_42: [null, Validators.required],
+      resp_43: [null, Validators.required],
+      resp_44: [null, Validators.required],
+      resp_45: [null, Validators.required],
+      resp_46: [null, Validators.required],
+      resp_47: [null, Validators.required],
+      resp_48: [null, Validators.required],
+      resp_49: [null, Validators.required],
+      resp_50: [null, Validators.required],
+      resp_51: [null, Validators.required],
+      resp_52: [null, Validators.required],
+      resp_53: [null, Validators.required],
+      resp_54: [null, Validators.required],
+      resp_55: [null, Validators.required],
+      resp_56: [null, Validators.required],
+      resp_57: [null, Validators.required],
+      resp_58: [null, Validators.required],
+      resp_59: [null, Validators.required],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],
@@ -57,7 +127,8 @@ export class ModalDesconexionPage {
       imagen_7: this.images[6],
       imagen_8: this.images[7],
       imagen_9: this.images[8],
-      imagen_10: this.images[9]
+      imagen_10: this.images[9],
+      cod_decodificador: [null]
     })
   }
 
@@ -122,25 +193,25 @@ export class ModalDesconexionPage {
   }
 
   enviarFormulario() {
-    console.log(this.desconexionForm.value)
+    console.log(this.fibraEntelForm.value)
     let date =  new Date()
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.desconexionForm.value.ot_servicorp + '_claro_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
+        this.savePicture(this.images[i], this.fibraEntelForm.value.ot_servicorp + '_claro_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
       }
       console.log('Imagenes guardadas.')
     }
-    this.desconexionForm.value.imagen_1 = this.images[0]
-    this.desconexionForm.value.imagen_2 = this.images[1]
-    this.desconexionForm.value.imagen_3 = this.images[2]
-    this.desconexionForm.value.imagen_4 = this.images[3]
-    this.desconexionForm.value.imagen_5 = this.images[4]
-    this.desconexionForm.value.imagen_6 = this.images[5]
-    this.desconexionForm.value.imagen_7 = this.images[6]
-    this.desconexionForm.value.imagen_8 = this.images[7]
-    this.desconexionForm.value.imagen_9 = this.images[8]
-    this.desconexionForm.value.imagen_10 = this.images[9]
+    this.fibraEntelForm.value.imagen_1 = this.images[0]
+    this.fibraEntelForm.value.imagen_2 = this.images[1]
+    this.fibraEntelForm.value.imagen_3 = this.images[2]
+    this.fibraEntelForm.value.imagen_4 = this.images[3]
+    this.fibraEntelForm.value.imagen_5 = this.images[4]
+    this.fibraEntelForm.value.imagen_6 = this.images[5]
+    this.fibraEntelForm.value.imagen_7 = this.images[6]
+    this.fibraEntelForm.value.imagen_8 = this.images[7]
+    this.fibraEntelForm.value.imagen_9 = this.images[8]
+    this.fibraEntelForm.value.imagen_10 = this.images[9]
     console.log('iniciando toma de coordenadas')
     // capturando posicion gps
     var options = {
@@ -152,11 +223,11 @@ export class ModalDesconexionPage {
       .then((resp) => {
         console.log('tomando coordenadas')
         console.log(resp)
-        this.desconexionForm.value.latitud = resp.coords.latitude || 'e'
-        this.desconexionForm.value.longitud = resp.coords.longitude || 'eclear'
-        console.log('Coordenadas: ' + this.desconexionForm.value.latitud + ',' + this.desconexionForm.value.longitud)
+        this.fibraEntelForm.value.latitud = resp.coords.latitude || 'e'
+        this.fibraEntelForm.value.longitud = resp.coords.longitude || 'eclear'
+        console.log('Coordenadas: ' + this.fibraEntelForm.value.latitud + ',' + this.fibraEntelForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.desconexionForm.value)
+        this.api.enviarFormularioDesconexion(this.fibraEntelForm.value)
           .then((res: any) => {
             this.loading.dismiss()
             console.log('formulario enviado')
@@ -196,6 +267,7 @@ export class ModalDesconexionPage {
   ionViewDidLoad() {
     // console.log('ionViewDidLoad ModalDesconexionPage')
     console.log(this.images[0] == undefined)
+    this.preguntas$ = this.preguntas.getPreguntasFibraEntel()
   }
 
   closeModal() {

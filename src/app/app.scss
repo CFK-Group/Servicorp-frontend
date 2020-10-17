@@ -15,7 +15,18 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-ion-list-header{
-    margin: 0 !important;
+ion-list-header {
+  margin: 0 !important;
 }
 
+ion-list {
+  margin: 0 !important;
+}
+
+.list-md .item-select:last-child {
+    border-bottom: 1px solid #dedede;
+}
+
+.invalid{
+    background-color: #ffebee;
+}

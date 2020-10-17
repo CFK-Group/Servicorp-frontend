@@ -1,5 +1,5 @@
 <!--
-  Generated template for the DuoEntelPage page.
+  Generated template for the FibraEntelPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>DUO</ion-title>
+    <ion-title>FIBRA</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,14 +15,12 @@
 <ion-content>
 
   <ion-fab right bottom>
-    <button ion-fab color="primary" (click)="openModal()">
-      <ion-icon name="add"></ion-icon>
-    </button>
+    <button ion-fab color="primary" (click)="openModal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-list *ngIf="formularios.length > 0; else sinFormularios">
     <ion-item color="primary">Formularios</ion-item>
     <ion-item text-center *ngFor="let formulario of formularios" (click)="detail(formulario)">
-      <p>DUO</p>
+      <p>FIBRA</p>
       <p>{{formulario.create_time | date: 'medium'}}</p>
     </ion-item>
   </ion-list>
@@ -32,4 +30,3 @@
 <ng-template #sinFormularios>
   <no-forms></no-forms>
 </ng-template>
-

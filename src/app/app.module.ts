@@ -32,6 +32,9 @@ import { ModalBafiEntelPage } from "../pages/modal-bafi-entel/modal-bafi-entel"
 import { ModalDuoEntelPage } from "../pages/modal-duo-entel/modal-duo-entel"
 import { NoFormsComponent } from "../components/no-forms/no-forms"
 import { CanGoBackProvider } from '../providers/can-go-back/can-go-back';
+import { ModalFibraEntelPage } from '../pages/modal-fibra-entel/modal-fibra-entel'
+import { FibraEntelPage } from '../pages/fibra-entel/fibra-entel'
+import { PreguntasProvider } from '../providers/preguntas/preguntas';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { CanGoBackProvider } from '../providers/can-go-back/can-go-back';
     ModalInstalacionesDthEntelPage,
     ModalBafiEntelPage,
     ModalDuoEntelPage,
+    ModalFibraEntelPage,
+    FibraEntelPage
   ],
   imports: [
     BrowserModule,
@@ -84,6 +89,8 @@ import { CanGoBackProvider } from '../providers/can-go-back/can-go-back';
     ModalInstalacionesDthEntelPage,
     ModalBafiEntelPage,
     ModalDuoEntelPage,
+    ModalFibraEntelPage,
+    FibraEntelPage
   ],
   providers: [
     StatusBar,
@@ -95,7 +102,8 @@ import { CanGoBackProvider } from '../providers/can-go-back/can-go-back';
     BarcodeScanner,
     Geolocation,
     Diagnostic,
-    CanGoBackProvider
+    CanGoBackProvider,
+    PreguntasProvider
   ]
 })
 export class AppModule {}

@@ -1,0 +1,143 @@
+<!--
+  Generated template for the ModalFibraEntelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>modalFibraEntel</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>
+<!--
+  Generated template for the ModalInstalacionesDthPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Formulario Fibra</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="fibraEntelForm" (ngSubmit)="enviar()" ngNativeValidate>
+    <ion-list *ngFor="let pregunta of preguntas$ | async" [ngSwitch]="pregunta.tipo">
+      
+      <!-- caso numero -->
+      <ion-item *ngSwitchCase="'numero'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <ion-input [formControlName]="pregunta.formControlName" text-right type="number"></ion-input>
+      </ion-item>
+      
+      <!-- caso si/no/no aplica -->
+      <ion-item *ngSwitchCase="'si/no/no aplica'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <ion-select [formControlName]="pregunta.formControlName" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <!-- caso si/no -->
+      <ion-item *ngSwitchCase="'si/no'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <ion-select [formControlName]="pregunta.formControlName" interface="popover">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <!-- caso combo-box -->
+      <ion-item *ngSwitchCase="'combo-box'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <ion-select [formControlName]="pregunta.formControlName" interface="popover">
+          <ion-option value="Si">Velocidad de Internet</ion-option>
+          <ion-option value="No">Portabilidad</ion-option>
+          <ion-option value="Si">Canales Premium</ion-option>
+          <ion-option value="No">Intermitencia</ion-option>
+          <ion-option value="Si">Otra</ion-option>
+          <ion-option value="N/A">N/A</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <!-- caso texto -->
+      <ion-item *ngSwitchCase="'texto'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <ion-input [formControlName]="pregunta.formControlName" text-right type="text"></ion-input>
+        <div *ngIf="!pregunta.necesitaFoto; else necesitaFoto">{{ pregunta.necesitaFoto }}</div>
+      </ion-item>
+      
+      <!-- caso cod_decodificador -->
+      <ion-item *ngSwitchCase="'cod_decodificador'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+        <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
+        <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
+        <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''" (click)="getCodigoVerificador()">{{ cod_decodificador }}</div>
+      </ion-item>
+
+      <!-- aquí incertamos el "menú" de las fotos en caso de ser necesario -->
+      <div *ngIf="!pregunta.necesitaFoto || fibraEntelForm.value[pregunta.formControlName] !== 'No'; else necesitaFoto"></div> 
+    </ion-list>
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col col>
+            <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block *ngIf="images.length === 10">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3 *ngFor="let image of images">
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col>
+            <button ion-button block type="submit" [disabled]="!fibraEntelForm.valid">Enviar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+  </form>
+</ion-content>
+
+<!-- template menú fotos -->
+<ng-template #necesitaFoto>
+  <ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col col>
+          <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
+          <a ion-button icon-only block *ngIf="images.length === 10">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 *ngFor="let image of images">
+          <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-buttons>
+</ng-template>

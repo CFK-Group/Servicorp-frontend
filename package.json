@@ -52,7 +52,7 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "^3.2.2",
+    "@ionic/app-scripts": "^3.2.4",
     "@ionic/lab": "1.0.9",
     "typescript": "2.4.2"
   },
@@ -83,8 +83,6 @@
         "ANDROID_SUPPORT_VERSION": "27.+"
       }
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }

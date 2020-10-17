@@ -17,7 +17,7 @@
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="openModal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
-  <ion-list *ngIf="formularios; else sinFormularios">
+  <ion-list *ngIf="formularios.length > 0; else sinFormularios">
     <ion-item color="primary">Formularios</ion-item>
     <ion-item text-center *ngFor="let formulario of formularios" (click)="detail(formulario)">
       <p>Certificación Instalación DTH</p>
