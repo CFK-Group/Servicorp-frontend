@@ -11,8 +11,8 @@ import "rxjs/Rx"
 */
 @Injectable()
 export class ApiServiceProvider {
-  // url: string = "http://genesis.xpass.cl:3001"
-  url: string = "http://192.168.0.13:3001"
+  url: string = "http://genesis.xpass.cl:3001"
+  // url: string = "http://192.168.0.14:3001"
 
   constructor(public api: HttpClient) { }
 
@@ -50,6 +50,10 @@ export class ApiServiceProvider {
 
   enviarFormularioDesconexion(data:string){
     return this.api.post(`${this.url}/formulario/claro/desconexion`, data).toPromise()
+  }
+
+  enviarFormularioFibra(data:string){
+    return this.api.post(`${this.url}/formulario/entel/fibra`, data).toPromise()
   }
 
   getFormularios(data, empresa:string){

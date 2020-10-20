@@ -11,7 +11,8 @@ import { Diagnostic } from '@ionic-native/diagnostic'
 import { Pregunta } from '../../models/preguntas.interface'
 import { Observable } from 'rxjs'
 import { PreguntasProvider } from '../../providers/preguntas/preguntas'
-import { tap } from 'rxjs/operators'
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { CanGoBackProvider } from '../../providers/can-go-back/can-go-back'
 
 /**
  * Generated class for the ModalFibraEntelPage page.
@@ -31,6 +32,7 @@ export class ModalFibraEntelPage {
 
   image: string = null
   images = []
+  questionImgs = [null, null, null, null]
   loading
   cod_decodificador = ''
   preguntas$: Observable<Pregunta[]>
@@ -46,7 +48,9 @@ export class ModalFibraEntelPage {
     public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder,
     private view: ViewController,
-    private preguntas: PreguntasProvider
+    private preguntas: PreguntasProvider,
+    private barcodeScanner: BarcodeScanner,
+    public canGoBack: CanGoBackProvider
   ) {
     this.fibraEntelForm = this.createFibraEntelForm()
   }
@@ -198,7 +202,7 @@ export class ModalFibraEntelPage {
     if (this.images.length > 0) {
       console.log('Guardando imagenes en el dispositivo...')
       for (let i = 0; i < this.images.length; i++) {
-        this.savePicture(this.images[i], this.fibraEntelForm.value.ot_servicorp + '_claro_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
+        this.savePicture(this.images[i], this.fibraEntelForm.value.ot_servicorp + '_entel_' + date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear() + (i+1))
       }
       console.log('Imagenes guardadas.')
     }
@@ -227,7 +231,7 @@ export class ModalFibraEntelPage {
         this.fibraEntelForm.value.longitud = resp.coords.longitude || 'eclear'
         console.log('Coordenadas: ' + this.fibraEntelForm.value.latitud + ',' + this.fibraEntelForm.value.longitud)
         console.log('Enviando Formulario')
-        this.api.enviarFormularioDesconexion(this.fibraEntelForm.value)
+        this.api.enviarFormularioFibra(this.fibraEntelForm.value)
           .then((res: any) => {
             this.loading.dismiss()
             console.log('formulario enviado')
@@ -266,7 +270,6 @@ export class ModalFibraEntelPage {
 
   ionViewDidLoad() {
     // console.log('ionViewDidLoad ModalDesconexionPage')
-    console.log(this.images[0] == undefined)
     this.preguntas$ = this.preguntas.getPreguntasFibraEntel()
   }
 
@@ -274,7 +277,7 @@ export class ModalFibraEntelPage {
     this.view.dismiss()
   }
 
-  getPicture() {
+  getPicture(questionPhoto?: string) {
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
       targetWidth: 1000,
@@ -285,6 +288,20 @@ export class ModalFibraEntelPage {
     this.camera.getPicture(options)
       .then(imageData => {
         this.images.push(imageData)
+        switch (questionPhoto) {
+          case 'resp_43':
+            this.questionImgs[0] = imageData
+            break
+          case 'resp_45':
+            this.questionImgs[1] = imageData
+            break
+          case 'resp_47':
+            this.questionImgs[2] = imageData
+            break
+          case 'resp_49':
+            this.questionImgs[3] = imageData
+            break
+        }
       })
       .catch(error => {
         console.error(error)
@@ -303,6 +320,23 @@ export class ModalFibraEntelPage {
         (res) => console.log('Saved image to gallery ', res),
         (err) => console.log('Error saving image to gallery ', err)
       )
+  }
+
+  getCodigoVerificador() {
+    this.barcodeScanner.scan({ 'showTorchButton': true })
+      .then(barcodeData => {
+        if (barcodeData.cancelled) {
+          console.log('Scan Cancelled');
+          this.canGoBack.setValue(false);
+        } else if (!barcodeData.cancelled) {
+          this.canGoBack.setValue(true)
+          console.log('Barcode data', barcodeData)
+          this.cod_decodificador = barcodeData.text
+        }
+      })
+      .catch(err => {
+        console.log('Error', err)
+      })
   }
 
 }

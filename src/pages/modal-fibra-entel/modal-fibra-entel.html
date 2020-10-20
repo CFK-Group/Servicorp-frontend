@@ -90,22 +90,60 @@
       </ion-item>
       
       <!-- caso cod_decodificador -->
-      <ion-item *ngSwitchCase="'cod_decodificador'" [ngClass]="{'invalid': fibraEntelForm.value[pregunta.formControlName] === null && pregunta.obligatoria === true}">
+      <ion-item *ngSwitchCase="'cod_decodificador'" [ngClass]="{'invalid': cod_decodificador === null && pregunta.obligatoria === true}">
         <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
         <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
         <a ion-button item-end color="primary" *ngIf="cod_decodificador === ''" (click)="getCodigoVerificador()">Tomar Código</a>
         <div ion-button item-end color="primary" *ngIf="cod_decodificador !== ''" (click)="getCodigoVerificador()">{{ cod_decodificador }}</div>
       </ion-item>
-
+      
       <!-- aquí incertamos el "menú" de las fotos en caso de ser necesario -->
-      <div *ngIf="!pregunta.necesitaFoto || fibraEntelForm.value[pregunta.formControlName] !== 'No'; else necesitaFoto"></div> 
+      <ion-buttons *ngIf="pregunta.necesitaFoto && fibraEntelForm.value[pregunta.formControlName] === 'No'">
+        <ion-grid>
+          <ion-row>
+            <ion-col col>
+              <a ion-button icon-only block (click)="getPicture(pregunta.formControlName)"><ion-icon name="camera"></ion-icon></a>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+
+      <ion-grid *ngIf="pregunta.formControlName === 'resp_43' && questionImgs[0] !== null">
+        <ion-row>
+          <ion-col col-4 offset-4>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+questionImgs[0])">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid *ngIf="pregunta.formControlName === 'resp_45' && questionImgs[1] !== null">
+        <ion-row>
+          <ion-col col-4 offset-4>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+questionImgs[1])">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid *ngIf="pregunta.formControlName === 'resp_47' && questionImgs[2] !== null">
+        <ion-row>
+          <ion-col col-4 offset-4>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+questionImgs[2])">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid *ngIf="pregunta.formControlName === 'resp_49' && questionImgs[3] !== null">
+        <ion-row>
+          <ion-col col-4 offset-4>
+            <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+questionImgs[3])">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
     </ion-list>
     <ion-buttons>
       <ion-grid>
         <ion-row>
           <ion-col col>
-            <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
-            <a ion-button icon-only block *ngIf="images.length === 10">{{images.length}}/10<ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
+            <a ion-button icon-only block *ngIf="images.length === 10">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -122,22 +160,3 @@
     </ion-buttons>
   </form>
 </ion-content>
-
-<!-- template menú fotos -->
-<ng-template #necesitaFoto>
-  <ion-buttons>
-    <ion-grid>
-      <ion-row>
-        <ion-col col>
-          <a ion-button icon-only block *ngIf="images.length !== 10" (click)="getPicture()">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
-          <a ion-button icon-only block *ngIf="images.length === 10">{{ images.length }}/10<ion-icon name="camera"></ion-icon></a>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-3 *ngFor="let image of images">
-          <img [src]="DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+image)">
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-buttons>
-</ng-template>
