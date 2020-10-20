@@ -216,6 +216,7 @@ export class ModalFibraEntelPage {
     this.fibraEntelForm.value.imagen_8 = this.images[7]
     this.fibraEntelForm.value.imagen_9 = this.images[8]
     this.fibraEntelForm.value.imagen_10 = this.images[9]
+    this.fibraEntelForm.value.cod_decodificador = this.cod_decodificador
     console.log('iniciando toma de coordenadas')
     // capturando posicion gps
     var options = {

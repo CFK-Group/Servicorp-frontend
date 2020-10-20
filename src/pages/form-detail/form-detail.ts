@@ -2,6 +2,9 @@ import { Component } from '@angular/core'
 import { IonicPage, NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular'
 import { ApiServiceProvider } from '../../providers/api-service/api-service'
 import { FormBuilder, FormGroup } from "@angular/forms"
+import { Observable } from 'rxjs'
+import { Pregunta } from '../../models/preguntas.interface'
+import { PreguntasProvider } from '../../providers/preguntas/preguntas'
 
 /**
  * Generated class for the FormDetailPage page.
@@ -17,6 +20,7 @@ import { FormBuilder, FormGroup } from "@angular/forms"
 })
 export class FormDetailPage {
 
+  preguntas$: Observable<Pregunta[]>
   formulario = []
   imagenes = []
   tipoFormulario: string
@@ -32,6 +36,8 @@ export class FormDetailPage {
   mostrarFormBafiEntel: boolean = false
   duoEntelForm: FormGroup
   mostrarFormDuoEntel: boolean = false
+  fibraEntelForm: FormGroup
+  mostrarFormFibraEntel: boolean = false
   ot_servicorp: string
   folio_servicio: string
   resp_1: string
@@ -153,6 +159,7 @@ export class FormDetailPage {
     private view: ViewController, 
     public loadingCtrl: LoadingController, 
     public formBuilder: FormBuilder,
+    private preguntas: PreguntasProvider,
     public toastCtrl: ToastController
   ) {
     console.log('id de tipo_formulario:',this.navParams.get('formData').tipo_formulario_id)
@@ -181,6 +188,9 @@ export class FormDetailPage {
       break
       case 8:
         this.tipoFormulario = 'duo entel'
+      break
+      case 9:
+        this.tipoFormulario = 'fibra entel'
       break
     }
   }
@@ -220,13 +230,17 @@ export class FormDetailPage {
           case 8:
             this.mostrarFormDuoEntel = true
           break
+          case 9:
+            this.preguntas$ = this.preguntas.getPreguntasFibraEntel()
+            this.mostrarFormFibraEntel = true
+          break
         }
         resolve()
       })
       promise
       .then((res:any) => {
         // aqui llenamos el formulario respectivo con las respuestas obtenidas del api
-        if(this.tipoFormulario == 'instalacion hfc' || this.tipoFormulario == 'instalacion dth'){
+        if (this.tipoFormulario == 'instalacion hfc' || this.tipoFormulario == 'instalacion dth') {
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -340,7 +354,7 @@ export class FormDetailPage {
           this.resp_109 = this.formulario[110].respuesta
           this.resp_110 = this.formulario[111].respuesta
           this.cod_decodificador = this.formulario[112].respuesta
-        }else if(this.tipoFormulario == 'mantencion hfc' || this.tipoFormulario == 'mantencion dth'){
+        } else if (this.tipoFormulario == 'mantencion hfc' || this.tipoFormulario == 'mantencion dth') {
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -452,7 +466,7 @@ export class FormDetailPage {
           this.resp_107 = this.formulario[108].respuesta
           this.resp_108 = this.formulario[109].respuesta
           this.cod_decodificador = this.formulario[110].respuesta
-        } else if(this.tipoFormulario == 'desconexion'){
+        } else if (this.tipoFormulario == 'desconexion') {
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -463,7 +477,7 @@ export class FormDetailPage {
           this.resp_6 = this.formulario[7].respuesta
           this.resp_7 = this.formulario[8].respuesta
           this.resp_8 = this.formulario[9].respuesta
-        }else if(this.tipoFormulario == 'instalacion dth entel'){
+        } else if (this.tipoFormulario == 'instalacion dth entel') {
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -550,7 +564,7 @@ export class FormDetailPage {
           this.resp_82 = this.formulario[83].respuesta
           this.resp_83 = this.formulario[84].respuesta
           this.cod_decodificador = this.formulario[85].respuesta
-        }else if(this.tipoFormulario == 'bafi entel'){
+        } else if (this.tipoFormulario == 'bafi entel'){ 
           this.ot_servicorp = this.formulario[0].respuesta
           this.folio_servicio = this.formulario[1].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -582,7 +596,7 @@ export class FormDetailPage {
           this.resp_27 = this.formulario[28].respuesta
           this.resp_28 = this.formulario[29].respuesta
           this.cod_decodificador = this.formulario[30].respuesta
-        }else if(this.tipoFormulario == 'duo entel'){
+        } else if (this.tipoFormulario == 'duo entel') {
           this.ot_servicorp = this.formulario[1].respuesta
           this.folio_servicio = this.formulario[0].respuesta
           this.resp_1 = this.formulario[2].respuesta
@@ -685,6 +699,69 @@ export class FormDetailPage {
           this.resp_98 = this.formulario[99].respuesta
           this.resp_99 = this.formulario[100].respuesta
           this.cod_decodificador = this.formulario[101].respuesta
+        } else if (this.tipoFormulario == 'fibra entel'){ 
+          this.ot_servicorp = this.formulario[1].respuesta
+          this.folio_servicio = this.formulario[0].respuesta
+          this.resp_1 = this.formulario[2].respuesta
+          this.resp_2 = this.formulario[3].respuesta
+          this.resp_3 = this.formulario[4].respuesta
+          this.resp_4 = this.formulario[5].respuesta
+          this.resp_5 = this.formulario[6].respuesta
+          this.resp_6 = this.formulario[7].respuesta
+          this.resp_7 = this.formulario[8].respuesta
+          this.resp_8 = this.formulario[9].respuesta
+          this.resp_9 = this.formulario[10].respuesta
+          this.resp_10 = this.formulario[11].respuesta
+          this.resp_11 = this.formulario[12].respuesta
+          this.resp_12 = this.formulario[13].respuesta
+          this.resp_13 = this.formulario[14].respuesta
+          this.resp_14 = this.formulario[15].respuesta
+          this.resp_15 = this.formulario[16].respuesta
+          this.resp_16 = this.formulario[17].respuesta
+          this.resp_17 = this.formulario[18].respuesta
+          this.resp_18 = this.formulario[19].respuesta
+          this.resp_19 = this.formulario[20].respuesta
+          this.resp_20 = this.formulario[21].respuesta
+          this.resp_21 = this.formulario[22].respuesta
+          this.resp_22 = this.formulario[23].respuesta
+          this.resp_23 = this.formulario[24].respuesta
+          this.resp_24 = this.formulario[25].respuesta
+          this.resp_25 = this.formulario[26].respuesta
+          this.resp_26 = this.formulario[27].respuesta
+          this.resp_27 = this.formulario[28].respuesta
+          this.resp_28 = this.formulario[29].respuesta
+          this.resp_29 = this.formulario[30].respuesta
+          this.resp_30 = this.formulario[31].respuesta
+          this.resp_31 = this.formulario[32].respuesta
+          this.resp_32 = this.formulario[33].respuesta
+          this.resp_33 = this.formulario[34].respuesta
+          this.resp_34 = this.formulario[35].respuesta
+          this.resp_35 = this.formulario[36].respuesta
+          this.resp_36 = this.formulario[37].respuesta
+          this.resp_37 = this.formulario[38].respuesta
+          this.resp_38 = this.formulario[39].respuesta
+          this.resp_39 = this.formulario[40].respuesta
+          this.resp_40 = this.formulario[41].respuesta
+          this.resp_41 = this.formulario[42].respuesta
+          this.resp_42 = this.formulario[43].respuesta
+          this.resp_43 = this.formulario[44].respuesta
+          this.resp_44 = this.formulario[45].respuesta
+          this.resp_45 = this.formulario[46].respuesta
+          this.resp_46 = this.formulario[47].respuesta
+          this.resp_47 = this.formulario[48].respuesta
+          this.resp_48 = this.formulario[49].respuesta
+          this.resp_49 = this.formulario[50].respuesta
+          this.resp_50 = this.formulario[51].respuesta
+          this.resp_51 = this.formulario[52].respuesta
+          this.resp_52 = this.formulario[53].respuesta
+          this.resp_53 = this.formulario[54].respuesta
+          this.resp_54 = this.formulario[55].respuesta
+          this.resp_55 = this.formulario[56].respuesta
+          this.resp_56 = this.formulario[57].respuesta
+          this.resp_57 = this.formulario[58].respuesta
+          this.resp_58 = this.formulario[59].respuesta
+          this.resp_59 = this.formulario[60].respuesta
+          this.cod_decodificador = this.formulario[61].respuesta
         }
         // fin del llenado del formulario
       })

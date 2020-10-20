@@ -2044,6 +2044,13 @@
       </ion-list>
     </form>
 
+    <form *ngIf="this.mostrarFormFibraEntel">
+      <ion-item *ngFor="let pregunta of preguntas$ | async">
+        <ion-label text-wrap>{{ pregunta.glosa }}</ion-label>
+        <ion-input readonly="true" [value]="this[pregunta.formControlName]" text-right type="text"></ion-input>
+      </ion-item>
+    </form>
+
     <ion-item *ngFor="let img of imagenes">
       <img [src]="'http://genesis.xpass.cl:3001/'+img.ruta">
     </ion-item>
