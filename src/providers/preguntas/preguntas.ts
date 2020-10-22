@@ -18,8 +18,8 @@ export class PreguntasProvider {
 
   getPreguntasFibraEntel(): Observable<Pregunta[]> {
     return of([
-      { obligatoria: true, necesitaFoto: false, formControlName: 'folio_servicio', estado: 'activo', id: 683, glosa: 'FOLIO DE SERVICIO', orden: 1, tipo: 'numero' },
-      { obligatoria: true, necesitaFoto: false, formControlName: 'ot_servicorp', estado: 'activo', id: 684, glosa: 'OT SERVICORP', orden: 2, tipo: 'numero' },
+      { obligatoria: true, necesitaFoto: false, formControlName: 'ot_servicorp', estado: 'activo', id: 684, glosa: 'OT ENTEL', orden: 1, tipo: 'numero' },
+      { obligatoria: true, necesitaFoto: false, formControlName: 'folio_servicio', estado: 'activo', id: 683, glosa: 'FOLIO DE SERVICIO', orden: 2, tipo: 'numero' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_1', estado: 'activo', id: 685, glosa: '¿Quién responde la encuesta es la misma persona que estuvo presente durante la instalación de los servicios?', orden: 3, tipo: 'si/no' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_2', estado: 'activo', id: 686, glosa: '¿Técnico se presentó con Mascarilla, Antiparra?', orden: 4, tipo: 'si/no/no aplica' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_3', estado: 'activo', id: 687, glosa: '¿El Técnico respetó las recomendaciones de COVID (distanciamiento, etc.)?', orden: 5, tipo: 'si/no/no aplica' },
@@ -72,12 +72,12 @@ export class PreguntasProvider {
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_50', estado: 'activo', id: 734, glosa: 'Velocidad  de internet de Subida', orden: 52, tipo: 'numero' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_51', estado: 'activo', id: 735, glosa: 'Velocidad  de internet de Bajada', orden: 53, tipo: 'numero' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_52', estado: 'activo', id: 736, glosa: 'Auditor solicita Visita Técnica', orden: 54, tipo: 'si/no/no aplica' },
-      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_53', estado: 'activo', id: 737, glosa: 'Motivo de la baja', orden: 55, tipo: 'si/no/no aplica' },
+      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_53', estado: 'activo', id: 737, glosa: 'Motivo de la baja', orden: 55, tipo: 'combo-box', opciones: ['Velocidad de Internet', 'Telefonía', 'Canales Premium', 'Internet', 'N/A'] },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_54', estado: 'activo', id: 738, glosa: 'Serie de un equipo en el domicilio (ONT)', orden: 56, tipo: 'si/no' },
-      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_55', estado: 'activo', id: 739, glosa: 'Observación del auditor', orden: 57, tipo: 'si/no' },
+      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_55', estado: 'activo', id: 739, glosa: 'Observación del auditor', orden: 57, tipo: 'texto' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_56', estado: 'activo', id: 740, glosa: 'Desde que se le instaló el servicio ¿ha tenido algún problema grave con el servicio?', orden: 58, tipo: 'si/no' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_57', estado: 'activo', id: 741, glosa: 'Si tuvo un problema ¿lo solucionaron rápidamente?', orden: 59, tipo: 'si/no' },
-      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_58', estado: 'activo', id: 742, glosa: '¿Cuál fue el problema?', orden: 60, tipo: 'combo-box' },
+      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_58', estado: 'activo', id: 742, glosa: '¿Cuál fue el problema?', orden: 60, tipo: 'combo-box', opciones: ['Velocidad de Internet', 'Portabilidad', 'Canales Premium', 'Intermitencia', 'Otra', 'N/A'] },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_59', estado: 'activo', id: 743, glosa: 'Se escaló a plataforma', orden: 61, tipo: 'si/no/no aplica' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'cod_decodificador', estado: 'activo', id: 744, glosa: 'Código Decodificador', orden: 62, tipo: 'cod_decodificador' },
     ])

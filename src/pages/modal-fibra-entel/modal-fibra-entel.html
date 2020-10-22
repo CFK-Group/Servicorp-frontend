@@ -72,12 +72,7 @@
         <ion-label *ngIf="!pregunta.obligatoria" text-wrap>{{ pregunta.glosa }}</ion-label>
         <ion-label *ngIf="pregunta.obligatoria" text-wrap>{{ pregunta.glosa }} *</ion-label>
         <ion-select [formControlName]="pregunta.formControlName" interface="popover">
-          <ion-option value="Si">Velocidad de Internet</ion-option>
-          <ion-option value="No">Portabilidad</ion-option>
-          <ion-option value="Si">Canales Premium</ion-option>
-          <ion-option value="No">Intermitencia</ion-option>
-          <ion-option value="Si">Otra</ion-option>
-          <ion-option value="N/A">N/A</ion-option>
+          <ion-option *ngFor="let opcion of pregunta.opciones" [value]="opcion">{{ opcion }}</ion-option>
         </ion-select>
       </ion-item>
       
