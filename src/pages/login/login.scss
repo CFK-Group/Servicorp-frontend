@@ -1,3 +1,12 @@
 page-login {
-    
+  #pass {
+    text-security: disc;
+    -webkit-text-security: disc;
+    -mox-text-security: disc;
+  }
+
+  .input-cover {
+    width: 0px;
+    height: 0px;
+  }
 }

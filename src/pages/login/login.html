@@ -16,16 +16,16 @@
     <ion-list inset>
       <ion-item>
         <ion-label fixed>Usuario</ion-label>
-        <ion-input formControlName="username" type="text" autofocus></ion-input>
+        <ion-input formControlName="username" type="url"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label fixed>Contraseña</ion-label>
-        <ion-input formControlName="password" type="password"></ion-input>
+        <ion-input id="pass" formControlName="password" type="url"></ion-input>
       </ion-item>
     </ion-list>
     <div padding>
       <button ion-button block type="submit" [disabled]="!loginForm.valid">Entrar</button>
     </div>
   </form>
-  <ion-label>v1.1.0-beta</ion-label>
+  <ion-label>v1.1.0</ion-label>
 </ion-content>

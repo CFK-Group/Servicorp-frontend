@@ -121,7 +121,7 @@ export class ModalFibraEntelPage {
       resp_56: [null, Validators.required],
       resp_57: [null, Validators.required],
       resp_58: [null, Validators.required],
-      resp_59: [null, Validators.required],
+      resp_59: [null],
       imagen_1: this.images[0],
       imagen_2: this.images[1],
       imagen_3: this.images[2],

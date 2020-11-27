@@ -78,7 +78,7 @@ export class PreguntasProvider {
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_56', estado: 'activo', id: 740, glosa: 'Desde que se le instaló el servicio ¿ha tenido algún problema grave con el servicio?', orden: 58, tipo: 'si/no' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_57', estado: 'activo', id: 741, glosa: 'Si tuvo un problema ¿lo solucionaron rápidamente?', orden: 59, tipo: 'si/no' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'resp_58', estado: 'activo', id: 742, glosa: '¿Cuál fue el problema?', orden: 60, tipo: 'combo-box', opciones: ['Velocidad de Internet', 'Portabilidad', 'Canales Premium', 'Intermitencia', 'Otra', 'N/A'] },
-      { obligatoria: true, necesitaFoto: false, formControlName: 'resp_59', estado: 'activo', id: 743, glosa: 'Se escaló a plataforma', orden: 61, tipo: 'si/no/no aplica' },
+      { obligatoria: false, necesitaFoto: false, formControlName: 'resp_59', estado: 'activo', id: 743, glosa: 'Si la respuesta es otro, indicar a qué se refiere', orden: 61, tipo: 'texto' },
       { obligatoria: true, necesitaFoto: false, formControlName: 'cod_decodificador', estado: 'activo', id: 744, glosa: 'Código Decodificador', orden: 62, tipo: 'cod_decodificador' },
     ])
   }
