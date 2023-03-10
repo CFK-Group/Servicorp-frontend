@@ -11,8 +11,8 @@ import "rxjs/Rx"
 */
 @Injectable()
 export class ApiServiceProvider {
-  url: string = "http://genesis.xpass.cl:3001"
-  // url: string = "http://192.168.0.14:3001"
+  //url: string = "http://genesis.xpass.cl:3001"
+   url: string = "http://162.209.100.180:3001"
 
   constructor(public api: HttpClient) { }
 
